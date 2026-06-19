@@ -20,10 +20,12 @@ const TuiContainer = React.forwardRef<HTMLFieldSetElement, TuiContainerProps>(
         )}
         {...props}
       >
-        <legend className={cn("px-2 text-xs font-bold uppercase tracking-widest flex items-center gap-2 select-none transition-colors duration-300", textColor)}>
-          <span>[{label}]</span>
-          {badge && <span className="normal-case font-normal">{badge}</span>}
-        </legend>
+        {label && (
+          <legend className={cn("px-2 text-xs font-bold uppercase tracking-widest flex items-center gap-2 select-none transition-colors duration-300", textColor)}>
+            <span>[{label}]</span>
+            {badge && <span className="normal-case font-normal">{badge}</span>}
+          </legend>
+        )}
         <div className="w-full h-full text-sm">
           {children}
         </div>

@@ -45,16 +45,16 @@ function TooltipContent({
       >
         <fieldset
           className={cn(
-            "z-50 inline-flex w-fit max-w-xs origin-(--radix-tooltip-content-transform-origin) flex-col rounded-none bg-popover px-3 pb-2 pt-1 text-xs text-popover-foreground border border-primary font-mono shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+            "z-50 inline-flex w-64 md:w-80 max-w-sm origin-(--radix-tooltip-content-transform-origin) flex-col rounded-none bg-popover px-4 pt-2 pb-3 text-xs text-popover-foreground border border-primary font-mono shadow-md duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
             className
           )}
         >
           {label && (
-            <legend className="px-1.5 text-[9px] font-bold uppercase tracking-widest text-primary select-none">
+            <legend className="px-2 text-xs font-bold uppercase tracking-widest text-primary select-none">
               [{label}]
             </legend>
           )}
-          <div className="text-[10px] leading-relaxed w-full h-full">
+          <div className="leading-relaxed w-full h-full py-1.5">
             {children}
           </div>
         </fieldset>

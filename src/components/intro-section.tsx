@@ -1,0 +1,141 @@
+import * as React from "react"
+import { TuiContainer } from "@/components/ui/tui-container"
+import { Separator } from "@/components/ui/separator"
+import { useTheme } from "@/components/theme-provider"
+import FlickerSpinner from "@/components/flicker-spinner"
+
+export function IntroSection() {
+  const [time, setTime] = React.useState("")
+  const { theme, setTheme } = useTheme()
+  const [animationStage, setAnimationStage] = React.useState<"initial" | "expanding" | "expanded">("initial")
+
+  React.useEffect(() => {
+    const updateTime = () => {
+      const now = new Date()
+      setTime(
+        now.toLocaleTimeString("en-US", {
+          hour12: false,
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        })
+      )
+    }
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  React.useEffect(() => {
+    // 1. Show the small box with loader for 1000ms, then expand
+    const timer1 = setTimeout(() => {
+      setAnimationStage("expanding")
+    }, 1085)
+
+    // 2. Stagger content reveal to after the 800ms expansion completes (total 1885ms)
+    const timer2 = setTimeout(() => {
+      setAnimationStage("expanded")
+    }, 1885)
+
+    return () => {
+      clearTimeout(timer1)
+      clearTimeout(timer2)
+    }
+  }, [])
+
+  const containerClasses =
+    animationStage === "initial"
+      ? "w-28 h-28 md:w-36 md:h-36 flex items-center justify-center transition-all duration-800 ease-out"
+      : "w-full h-[60vh] sm:h-[80vh] md:h-[95vh] flex flex-col transition-all duration-800 ease-out"
+
+  return (
+    <div className="w-full min-h-[60vh] sm:min-h-[80vh] md:min-h-[95vh] flex items-center justify-center p-6">
+      <TuiContainer
+        label={animationStage !== "initial" ? "INTRO" : "Loading"}
+        borderColor="border-border/80 hover:border-foreground/40"
+        textColor="text-foreground/80 font-bold"
+        className={containerClasses}
+      >
+        {animationStage === "initial" && (
+          <div className="flex items-center justify-center w-full h-full animate-fade-in">
+            <FlickerSpinner size={60} />
+          </div>
+        )}
+        {animationStage === "expanded" && (
+          <div className="flex flex-col justify-between h-full flex-1 p-6 md:p-16 animate-fade-in duration-300">
+            {/* Top Metadata Bar */}
+            <div className="border-b border-border/40 pb-8 overflow-hidden">
+              <div 
+                className="flex flex-wrap items-center justify-between gap-6 text-[clamp(11px,1vw,14px)] text-muted-foreground animate-slide-down-reveal"
+                style={{ animationDelay: "0.8s" }}
+              >
+                <div className="flex items-center gap-6">
+                  <span>STATUS: AVAILABLE FOR PROJECTS</span>
+                  <Separator orientation="vertical" className="h-4 hidden sm:block bg-border/40" />
+                  <span>LOCATION: Quezon City, Philippines</span>
+                </div>
+                <div className="flex items-center gap-6">
+                  <span>TIME: {time || "00:00:00"}</span>
+                  <Separator orientation="vertical" className="h-4 bg-border/40" />
+                  <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="text-[clamp(10px,0.9vw,13px)] text-muted-foreground hover:text-foreground font-mono transition-colors border border-border/40 hover:border-foreground/30 px-2 py-0.5 bg-card/30 hover:bg-card select-none cursor-pointer"
+                    aria-label="Toggle theme"
+                  >
+                    {theme.toUpperCase()}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Spacer to push everything else to the bottom */}
+            <div className="flex-1"></div>
+
+            {/* Bottom Area: Huge Title & Metadata aligned closely below it */}
+            <div className="w-full pt-12">
+              <div className="overflow-hidden">
+                <div className="animate-slide-up-reveal" style={{ animationDelay: "0.05s" }}>
+                  <div className="mb-0.5 md:-mb-2.5">
+                    <span 
+                      className="text-base sm:text-xl font-bold tracking-[0.25em] text-primary uppercase block ml-[1.6vw] pb-1 font-mono"
+                    >
+                      BOOTLEGYOUKI
+                    </span>
+                  </div>
+                  <div>
+                    <h1 
+                      className="text-[13vw] sm:text-[17vw] md:text-[21vw] font-black tracking-tighter leading-[0.8] select-none text-foreground font-nippo w-full"
+                    >
+                      Por<span className="pl-[0.045em]">tfolio</span>
+                    </h1>
+                  </div>
+                  <div className="h-4"></div>
+                </div>
+              </div>
+
+              <div className="border-t border-border/40 pt-4 overflow-hidden">
+                <div 
+                  className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 text-[clamp(12px,1.1vw,15px)] animate-slide-up-reveal"
+                  style={{ animationDelay: "0.8s" }}
+                >
+                  <div className="flex flex-wrap gap-x-4 gap-y-2 text-muted-foreground font-semibold text-[clamp(13px,1.2vw,16px)]">
+                    <span>App Developer</span>
+                    <span className="text-foreground/30">/</span>
+                    <span>Web Developer</span>
+                    <span className="text-foreground/30">/</span>
+                    <span>Designer</span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 text-[clamp(13px,1.2vw,16px)] font-semibold tracking-wider">
+                    <span className="text-muted-foreground">EMAIL: <a href="mailto:oandasan.markdarren.ocaya@gmail.com" className="text-foreground hover:underline transition-all">oandasan.markdarren.ocaya@gmail.com</a></span>
+                    <span className="text-muted-foreground">PHONE: <span className="text-foreground">+63 968 235 1236</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </TuiContainer>
+    </div>
+  )
+}

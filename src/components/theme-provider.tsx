@@ -93,8 +93,12 @@ export function ThemeProvider({
     return defaultTheme
   })
 
+  const isFirstMount = React.useRef(true)
+  const userInitiated = React.useRef(false)
+
   const setTheme = React.useCallback(
     (nextTheme: Theme) => {
+      userInitiated.current = true
       localStorage.setItem(storageKey, nextTheme)
       setThemeState(nextTheme)
     },
@@ -102,26 +106,48 @@ export function ThemeProvider({
   )
 
   const applyTheme = React.useCallback(
-    (nextTheme: Theme) => {
+    (nextTheme: Theme, skipTransition = false) => {
       const root = document.documentElement
       const resolvedTheme =
         nextTheme === "system" ? getSystemTheme() : nextTheme
-      const restoreTransitions = disableTransitionOnChange
-        ? disableTransitionsTemporarily()
-        : null
 
-      root.classList.remove("light", "dark")
-      root.classList.add(resolvedTheme)
-
-      if (restoreTransitions) {
-        restoreTransitions()
+      const updateTheme = () => {
+        root.classList.remove("light", "dark")
+        root.classList.add(resolvedTheme)
       }
+
+      // Check if browser supports View Transitions API
+      const supportsViewTransition =
+        !skipTransition &&
+        userInitiated.current &&
+        typeof document !== "undefined" &&
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (document as any).startViewTransition !== undefined &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+      if (!supportsViewTransition) {
+        const restoreTransitions = disableTransitionOnChange
+          ? disableTransitionsTemporarily()
+          : null
+        updateTheme()
+        if (restoreTransitions) {
+          restoreTransitions()
+        }
+        return
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(document as any).startViewTransition(() => {
+        updateTheme()
+      })
+      userInitiated.current = false
     },
     [disableTransitionOnChange]
   )
 
   React.useEffect(() => {
-    applyTheme(theme)
+    applyTheme(theme, isFirstMount.current)
+    isFirstMount.current = false
 
     if (theme !== "system") {
       return undefined
@@ -157,6 +183,7 @@ export function ThemeProvider({
         return
       }
 
+      userInitiated.current = true
       setThemeState((currentTheme) => {
         const nextTheme =
           currentTheme === "dark"

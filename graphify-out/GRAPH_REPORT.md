@@ -1,16 +1,16 @@
-# Graph Report - template-tui  (2026-05-30)
+# Graph Report - portfolio  (2026-06-19)
 
 ## Corpus Check
-- 38 files · ~17,432 words
+- 40 files · ~16,919 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 311 nodes · 658 edges · 18 communities (14 shown, 4 thin omitted)
+- 449 nodes · 588 edges · 23 communities (19 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `899e480b`
+- Built from commit: `c25ad14c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -32,56 +32,61 @@
 - [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Nimble Pnpm Pioneers|Nimble Pnpm Pioneers]]
+- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_Community 20|Community 20]]
+- [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 23|Community 23]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `cn()` - 83 edges
-2. `ComponentsSection()` - 68 edges
-3. `TacticalWidgets()` - 29 edges
-4. `compilerOptions` - 19 edges
-5. `DropdownMenu()` - 17 edges
-6. `compilerOptions` - 16 edges
-7. `TelemetrySection()` - 16 edges
-8. `Badge()` - 13 edges
-9. `Button()` - 13 edges
-10. `scripts` - 12 edges
+1. `cn()` - 84 edges
+2. `compilerOptions` - 19 edges
+3. `compilerOptions` - 19 edges
+4. `compilerOptions` - 16 edges
+5. `compilerOptions` - 16 edges
+6. `DropdownMenu()` - 15 edges
+7. `scripts` - 12 edges
+8. `scripts` - 10 edges
+9. `Installing Webfonts` - 7 edges
+10. `📟 template-tui — Retro-Brutalist TUI Design System` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `graphify pipeline` --conceptually_related_to--> `Graphify Memory & Ingestion Layer`  [INFERRED]
   .agents/workflows/graphify.md → CLAUDE.md
-- `CardAction()` --calls--> `cn()`  [EXTRACTED]
-  src/components/ui/card.tsx → src/lib/utils.ts
-- `DialogOverlay()` --calls--> `cn()`  [EXTRACTED]
-  src/components/ui/dialog.tsx → src/lib/utils.ts
-- `SheetOverlay()` --calls--> `cn()`  [EXTRACTED]
-  src/components/ui/sheet.tsx → src/lib/utils.ts
-- `SheetFooter()` --calls--> `cn()`  [EXTRACTED]
-  src/components/ui/sheet.tsx → src/lib/utils.ts
+- `ChartContainer()` --calls--> `cn()`  [EXTRACTED]
+  src/components/ui/chart.tsx → src/lib/utils.ts
+- `DropdownMenuItem()` --calls--> `cn()`  [EXTRACTED]
+  src/components/ui/dropdown-menu.tsx → src/lib/utils.ts
+- `DropdownMenuLabel()` --calls--> `cn()`  [EXTRACTED]
+  src/components/ui/dropdown-menu.tsx → src/lib/utils.ts
+- `Graphify Memory & Ingestion Layer` --references--> `graphify-out/`  [EXTRACTED]
+  CLAUDE.md → README.md
 
-## Communities (18 total, 4 thin omitted)
+## Communities (23 total, 4 thin omitted)
 
 ### Community 0 - "Tactical UI Components Forge"
-Cohesion: 0.16
-Nodes (27): cn(), BrutalistSlider(), BrutalistSliderProps, LogMessage, TacticalWidgets(), TacticalWidgetsProps, Avatar(), AvatarBadge() (+19 more)
+Cohesion: 0.09
+Nodes (22): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+14 more)
 
 ### Community 1 - "Vivid TUI Components Hub"
-Cohesion: 0.11
-Nodes (21): ResolvedTheme, Theme, THEME_VALUES, ThemeProvider(), ThemeProviderContext, ThemeProviderProps, ThemeProviderState, useTheme() (+13 more)
+Cohesion: 0.08
+Nodes (24): AboutSection(), IntroSection(), Project, projects, ProjectsSection(), ResolvedTheme, Theme, THEME_VALUES (+16 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.23
-Nodes (15): DropdownMenu(), DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuGroup(), DropdownMenuItem(), DropdownMenuLabel(), DropdownMenuPortal(), DropdownMenuRadioGroup() (+7 more)
+Cohesion: 0.13
+Nodes (15): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, prettier, prettier-plugin-tailwindcss (+7 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.09
-Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
+Cohesion: 0.05
+Nodes (42): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+34 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.09
-Nodes (21): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+13 more)
+Cohesion: 0.10
+Nodes (20): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+12 more)
 
 ### Community 5 - "Data Pulse Hub"
-Cohesion: 0.13
-Nodes (22): TuiContainer, StyleSection(), latencyData, processData, radarData, TelemetrySection(), TelemetrySectionProps, weeklyData (+14 more)
+Cohesion: 0.18
+Nodes (10): ChartConfig, ChartContainer(), ChartContext, ChartContextProps, ChartLegendContent(), ChartTooltipContent(), INITIAL_DIMENSION, THEMES (+2 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.09
@@ -89,47 +94,67 @@ Nodes (21): APP_TSX_PATH, __dirname, __filename, ROOT_DIR, TEMPLATE_DIR_PATH, AP
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
-Nodes (33): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, radix-ui, react, react-dom, recharts (+25 more)
+Nodes (33): name, private, scripts, build, dev, format, init-template, int-template (+25 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.11
-Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
+Cohesion: 0.09
+Nodes (7): iconMap, TechTicker(), tools, Tooltip(), TooltipContent(), TooltipProvider(), TooltipTrigger()
 
 ### Community 9 - "Terminal UI Collective"
-Cohesion: 0.12
-Nodes (31): ComponentsSection(), ComponentsSectionProps, ICON_LIST, IconItem, Card(), CardAction(), CardContent(), CardDescription() (+23 more)
+Cohesion: 0.06
+Nodes (40): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Button() (+32 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.15
-Nodes (12): Adding components, 🧼 Clean the Template (Start Fresh), 🧹 How to Clean the Template (Start Fresh), 🚀 Key Features, 🧠 maintaining the Graphify Knowledge Graph, 🛠️ Quick Start, React + TypeScript + Vite + shadcn/ui, 📟 Restore/Initialize the Template (+4 more)
+Cohesion: 0.10
+Nodes (20): 🧼 Clean the Template (Start Fresh), 🚀 Key Features, 🧠 maintaining the Graphify Knowledge Graph, 🛠️ Quick Start, 📟 Restore/Initialize the Template, 🧹 Template Management (Cleanup & Restore), 📟 template-tui — Retro-Brutalist TUI Design System, 📸 Visual Showcase (+12 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.18
-Nodes (11): Graphify Memory & Ingestion Layer, graphify-out/, template-tui, graphify, graphify query, 1. Verification & Map First (Rule), 2. Maintenance Workflow (Workflow), CLAUDE.md — Workspace Rules & Workflows (+3 more)
+Cohesion: 0.11
+Nodes (18): Graphify Memory & Ingestion Layer, 1. Verification & Map First (Rule), 2. Maintenance Workflow (Workflow), CLAUDE.md — Workspace Rules & Workflows, Command Guidelines, Graphify Memory & Ingestion Layer, graphify-out/, template-tui (+10 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.33
-Nodes (5): compilerOptions, paths, files, @/*, references
+Cohesion: 0.18
+Nodes (10): compilerOptions, paths, files, @/*, references, compilerOptions, paths, files (+2 more)
+
+### Community 18 - "Community 18"
+Cohesion: 0.06
+Nodes (34): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+26 more)
+
+### Community 19 - "Community 19"
+Cohesion: 0.23
+Nodes (15): DropdownMenu(), DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuGroup(), DropdownMenuItem(), DropdownMenuLabel(), DropdownMenuPortal(), DropdownMenuRadioGroup() (+7 more)
+
+### Community 20 - "Community 20"
+Cohesion: 0.14
+Nodes (14): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, radix-ui, react, react-dom, recharts (+6 more)
+
+### Community 21 - "Community 21"
+Cohesion: 0.25
+Nodes (7): 1., 2., 3. (Optional), 4., 5., 6. (Optional), Installing Webfonts
+
+### Community 23 - "Community 23"
+Cohesion: 0.12
+Nodes (16): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, gsap, lenis, radix-ui, react (+8 more)
 
 ## Knowledge Gaps
-- **138 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+133 more)
+- **255 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+250 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Tactical UI Components Forge` to `Terminal UI Collective`, `Community 2`, `Data Pulse Hub`, `Vivid TUI Components Hub`?**
-  _High betweenness centrality (0.107) - this node is a cross-community bridge._
-- **Why does `ComponentsSection()` connect `Terminal UI Collective` to `Tactical UI Components Forge`, `Vivid TUI Components Hub`, `Community 2`, `Data Pulse Hub`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
-- **Why does `TuiContainer` connect `Data Pulse Hub` to `Tactical UI Components Forge`, `Terminal UI Collective`, `Community 11`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Terminal UI Collective` to `Vivid TUI Components Hub`, `Data Pulse Hub`, `Community 8`, `Community 11`, `Community 19`?**
+  _High betweenness centrality (0.103) - this node is a cross-community bridge._
+- **Why does `TuiContainer` connect `Community 11` to `Terminal UI Collective`?**
+  _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _141 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _258 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Tactical UI Components Forge` be split into smaller, more focused modules?**
+  _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `Vivid TUI Components Hub` be split into smaller, more focused modules?**
-  _Cohesion score 0.11397849462365592 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08292682926829269 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.046511627906976744 - nodes in this community are weakly interconnected._
