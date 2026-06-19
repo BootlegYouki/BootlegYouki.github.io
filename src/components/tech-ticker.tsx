@@ -89,15 +89,15 @@ export function TechTicker() {
   return (
     <TooltipProvider delayDuration={0}>
       <div 
-        className="w-full py-6 select-none bg-card/10 overflow-hidden relative"
+        className="w-full py-4 md:py-6 select-none bg-card/10 overflow-hidden relative"
       >
         {/* Overlay Gradients for smooth fade out at edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
         <div 
           className={cn(
-            "flex gap-8 w-max animate-marquee",
+            "flex gap-4 md:gap-8 w-max animate-marquee",
             isPaused && "[animation-play-state:paused]"
           )}
           onMouseEnter={pauseScrollingImmediately}
@@ -123,7 +123,7 @@ export function TechTicker() {
                 <TooltipTrigger asChild>
                   <span
                     className={cn(
-                      "group border border-border/60 px-8 py-4 text-lg font-extrabold text-muted-foreground cursor-pointer transition-all duration-200 bg-card/20 rounded-none font-mono whitespace-nowrap inline-flex items-center gap-3",
+                      "group border border-border/60 px-4 py-2 md:px-8 md:py-4 text-xs md:text-lg font-extrabold text-muted-foreground cursor-pointer transition-all duration-200 bg-card/20 rounded-none font-mono whitespace-nowrap inline-flex items-center gap-2 md:gap-3",
                       tool.hoverStyle
                     )}
                     onMouseEnter={() => {
@@ -142,7 +142,7 @@ export function TechTicker() {
                     {IconComponent && (
                       <IconComponent
                         className={cn(
-                          "h-7 w-auto opacity-60 dark:opacity-85 group-hover:opacity-100 transition-all duration-200 select-none pointer-events-none",
+                          "h-5 md:h-7 w-auto opacity-60 dark:opacity-85 group-hover:opacity-100 transition-all duration-200 select-none pointer-events-none",
                           tool.iconClass
                         )}
                       />

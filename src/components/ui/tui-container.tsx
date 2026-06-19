@@ -26,7 +26,7 @@ const TuiContainer = React.forwardRef<HTMLFieldSetElement, TuiContainerProps>(
             {badge && <span className="normal-case font-normal">{badge}</span>}
           </legend>
         )}
-        <div className="w-full h-full text-sm">
+        <div className="w-full h-full text-sm flex flex-col flex-1">
           {children}
         </div>
       </fieldset>

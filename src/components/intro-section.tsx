@@ -46,10 +46,10 @@ export function IntroSection() {
   const containerClasses =
     animationStage === "initial"
       ? "w-28 h-28 md:w-36 md:h-36 flex items-center justify-center transition-all duration-800 ease-out"
-      : "w-full h-[60vh] sm:h-[80vh] md:h-[95vh] flex flex-col transition-all duration-800 ease-out"
+      : "w-full h-[calc(100dvh-3rem)] md:h-[calc(95vh-3rem)] flex flex-col transition-all duration-800 ease-out"
 
   return (
-    <div className="w-full min-h-[60vh] sm:min-h-[80vh] md:min-h-[95vh] flex items-center justify-center p-6">
+    <div className="w-full min-h-[100dvh] md:min-h-[95vh] flex items-center justify-center p-6">
       <TuiContainer
         label={animationStage !== "initial" ? "INTRO" : "Loading"}
         borderColor="border-border/80 hover:border-foreground/40"
@@ -126,9 +126,9 @@ export function IntroSection() {
                     <span>Designer</span>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 text-[clamp(13px,1.2vw,16px)] font-semibold tracking-wider">
-                    <span className="text-muted-foreground">EMAIL: <a href="mailto:oandasan.markdarren.ocaya@gmail.com" className="text-foreground hover:underline transition-all">oandasan.markdarren.ocaya@gmail.com</a></span>
-                    <span className="text-muted-foreground">PHONE: <span className="text-foreground">+63 968 235 1236</span></span>
+                  <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 text-[clamp(12px,1.2vw,16px)] font-semibold tracking-wider overflow-hidden">
+                    <span className="text-muted-foreground break-all">EMAIL: <a href="mailto:oandasan.markdarren.ocaya@gmail.com" className="text-foreground hover:underline transition-all break-all">oandasan.markdarren.ocaya@gmail.com</a></span>
+                    <span className="text-muted-foreground whitespace-nowrap">PHONE: <span className="text-foreground">+63 968 235 1236</span></span>
                   </div>
                 </div>
               </div>
