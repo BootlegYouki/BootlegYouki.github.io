@@ -45,6 +45,20 @@ const tools = [
 export function TechTicker() {
   const [isPaused, setIsPaused] = useState(false)
 
+  const handleMouseEnter = () => {
+    setIsPaused(true)
+    if ((window as any).lenis) {
+      (window as any).lenis.stop()
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setIsPaused(false)
+    if ((window as any).lenis) {
+      (window as any).lenis.start()
+    }
+  }
+
   return (
     <TooltipProvider delayDuration={0}>
       <div 
@@ -59,8 +73,8 @@ export function TechTicker() {
             "flex gap-8 w-max animate-marquee",
             isPaused && "[animation-play-state:paused]"
           )}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           {/* Loop multiple times for seamless scrolling */}
           {[...tools, ...tools, ...tools, ...tools].map((tool, idx) => {
@@ -93,8 +107,8 @@ export function TechTicker() {
                   }}
                   sideOffset={-90}
                   side="top"
-                  onMouseEnter={() => setIsPaused(true)}
-                  onMouseLeave={() => setIsPaused(false)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <div 
                     className="p-4 flex items-center gap-3 border-b border-border/40"

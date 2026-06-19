@@ -21,6 +21,9 @@ export function App() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
     })
 
+    // Expose lenis globally to allow components to control scrolling momentum
+    ;(window as any).lenis = lenis
+
     // Connect Lenis scroll events to ScrollTrigger updates
     lenis.on("scroll", ScrollTrigger.update)
 
@@ -43,6 +46,7 @@ export function App() {
     return () => {
       clearTimeout(timer)
       lenis.destroy()
+      delete (window as any).lenis
       gsap.ticker.remove(tickerUpdate)
     }
   }, [])
