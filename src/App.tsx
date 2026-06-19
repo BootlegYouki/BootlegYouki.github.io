@@ -4,6 +4,7 @@ import { IntroSection } from "@/components/intro-section"
 import { TechTicker } from "@/components/tech-ticker"
 import { AboutSection } from "@/components/about-section"
 import { ProjectsSection } from "@/components/projects-section"
+import { ScrollProgress } from "@/components/scroll-progress"
 import Lenis from "lenis"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -66,6 +67,7 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-mono transition-colors duration-300 relative">
+      <ScrollProgress />
       {/* Main container holding the sections */}
       <main className="w-full p-0 flex flex-col">
         <IntroSection />
@@ -82,3 +84,4 @@ export function App() {
 }
 
 export default App
+

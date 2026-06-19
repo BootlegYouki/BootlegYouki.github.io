@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\package.json": {
-    "mtime": 1781854345.5838256,
-    "ast_hash": "4d6531dde5414303b04ed681a16d3754",
+    "mtime": 1781856463.3171904,
+    "ast_hash": "dfbae3a61ce3687c2c410d5ec38e8bd3",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\tsconfig.app.json": {
@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\vite.config.ts": {
-    "mtime": 1781838365.6059234,
-    "ast_hash": "1c08667244f95c08569f47ce06e84702",
+    "mtime": 1781856785.8003435,
+    "ast_hash": "9c57f09b277c4421277614ffb1b87a2c",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\scripts\\int-template.js": {
@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.tsx": {
-    "mtime": 1781853814.9645014,
-    "ast_hash": "366eb45568db6435b3d8db5712bf2138",
+    "mtime": 1781857839.3878784,
+    "ast_hash": "7977bef87b8d4a235f4782135fc4074f",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.tsx": {
@@ -250,13 +250,13 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\intro-section.tsx": {
-    "mtime": 1781853808.476377,
-    "ast_hash": "125e2e26beaa94d9368ce2d896ed4959",
+    "mtime": 1781864554.8203354,
+    "ast_hash": "d157a326134427f5d7e8f522daf97b78",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\theme-provider.tsx": {
-    "mtime": 1781852882.7990668,
-    "ast_hash": "819a53e5b5eaf9b2d94ae34ffd047980",
+    "mtime": 1781863985.6063464,
+    "ast_hash": "c57303dbff4d442087c2e36b831967f8",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\avatar.tsx": {
@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\tui-container.tsx": {
-    "mtime": 1781853539.5274887,
-    "ast_hash": "cbdc058b5ed65db8e1a1e2f7e68528b5",
+    "mtime": 1781859538.503286,
+    "ast_hash": "422b2ad1d8030a608832ace886e27857",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\lib\\utils.ts": {
@@ -355,8 +355,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\index.html": {
-    "mtime": 1781852812.9981291,
-    "ast_hash": "386b3386ab6390efd6c50a0443d20aeb",
+    "mtime": 1781856488.359584,
+    "ast_hash": "fc597c32f65fd6b5cc5a985c75202772",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\README.md": {
@@ -385,28 +385,33 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\tech-ticker.tsx": {
-    "mtime": 1781855903.481389,
-    "ast_hash": "7823ab4a662664adf36ca135cfe82d58",
+    "mtime": 1781864982.062564,
+    "ast_hash": "dc8e473cd0fd2ca51b37aa58437954e7",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\about-section.tsx": {
-    "mtime": 1781855667.481788,
-    "ast_hash": "22866f6d490e61e24e0ddef675b4d60e",
+    "mtime": 1781856088.5085168,
+    "ast_hash": "90e98ac6d9cc78e173cb8e562e7f6667",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\projects-section.tsx": {
-    "mtime": 1781855875.0181196,
-    "ast_hash": "15e7e8dcac411946b80898debb2ca6f4",
+    "mtime": 1781864826.0037413,
+    "ast_hash": "0a2562645b72e06ac8ccadf14f4803f4",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\icons.tsx": {
-    "mtime": 1781851566.5388627,
-    "ast_hash": "fb1191e99a71d5c3cfa9583d03b9effe",
+    "mtime": 1781865056.034177,
+    "ast_hash": "bd92e3f14512c1bd4646e7c131478cbd",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\flicker-spinner.tsx": {
     "mtime": 1781853596.5317256,
     "ast_hash": "5d7620b5c9cefd41c9a39bdc57ec522d",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\.github\\workflows\\deploy.yml": {
+    "mtime": 1781856957.7196693,
+    "ast_hash": "e010bd784f998797878d110b696ad419",
     "semantic_hash": ""
   }
 }

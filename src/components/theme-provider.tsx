@@ -136,10 +136,23 @@ export function ThemeProvider({
         return
       }
 
+      const currentResolvedTheme = root.classList.contains("dark") ? "dark" : "light"
+      if (currentResolvedTheme !== resolvedTheme) {
+        root.setAttribute("data-theme-direction", currentResolvedTheme === "dark" ? "to-light" : "to-dark")
+      }
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ;(document as any).startViewTransition(() => {
+      const transition = (document as any).startViewTransition(() => {
         updateTheme()
       })
+
+      transition.finished
+        .then(() => {
+          root.removeAttribute("data-theme-direction")
+        })
+        .catch(() => {
+          root.removeAttribute("data-theme-direction")
+        })
       userInitiated.current = false
     },
     [disableTransitionOnChange]

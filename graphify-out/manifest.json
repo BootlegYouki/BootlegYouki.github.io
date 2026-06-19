@@ -205,7 +205,7 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\package.json": {
-    "mtime": 1781856463.3171904,
+    "mtime": 1781865610.2237701,
     "ast_hash": "dfbae3a61ce3687c2c410d5ec38e8bd3",
     "semantic_hash": ""
   },
@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.tsx": {
-    "mtime": 1781857839.3878784,
-    "ast_hash": "7977bef87b8d4a235f4782135fc4074f",
+    "mtime": 1781867051.7717803,
+    "ast_hash": "a2ecb9f02fd5b88fc66c1d80bf00b529",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.tsx": {
@@ -250,13 +250,13 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\intro-section.tsx": {
-    "mtime": 1781859693.5497189,
-    "ast_hash": "af05900e00883916fe50a936476bdc0a",
+    "mtime": 1781866079.5781145,
+    "ast_hash": "949e83eec4ecf1a241f654e1631181ea",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\theme-provider.tsx": {
-    "mtime": 1781852882.7990668,
-    "ast_hash": "819a53e5b5eaf9b2d94ae34ffd047980",
+    "mtime": 1781863985.6063464,
+    "ast_hash": "c57303dbff4d442087c2e36b831967f8",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\avatar.tsx": {
@@ -340,7 +340,7 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\tui-container.tsx": {
-    "mtime": 1781859538.503286,
+    "mtime": 1781865329.650833,
     "ast_hash": "422b2ad1d8030a608832ace886e27857",
     "semantic_hash": ""
   },
@@ -385,8 +385,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\tech-ticker.tsx": {
-    "mtime": 1781859751.595502,
-    "ast_hash": "86e19710fd49ce2c118bb28adf280c11",
+    "mtime": 1781866098.3487353,
+    "ast_hash": "b56ef19af9fb479c8a5a806614eeaf47",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\about-section.tsx": {
@@ -395,23 +395,28 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\projects-section.tsx": {
-    "mtime": 1781856024.3184135,
-    "ast_hash": "0db36727018a406bfc0345333c74ff37",
+    "mtime": 1781867283.1562672,
+    "ast_hash": "381bed8ede4046537ae98d14f517eca6",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\icons.tsx": {
-    "mtime": 1781851566.5388627,
-    "ast_hash": "fb1191e99a71d5c3cfa9583d03b9effe",
+    "mtime": 1781865056.034177,
+    "ast_hash": "bd92e3f14512c1bd4646e7c131478cbd",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\flicker-spinner.tsx": {
-    "mtime": 1781853596.5317256,
-    "ast_hash": "5d7620b5c9cefd41c9a39bdc57ec522d",
+    "mtime": 1781865905.5777392,
+    "ast_hash": "84e649bcc9e888f81e45c2e391131cf5",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.github\\workflows\\deploy.yml": {
     "mtime": 1781856957.7196693,
     "ast_hash": "e010bd784f998797878d110b696ad419",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\scroll-progress.tsx": {
+    "mtime": 1781865916.2181957,
+    "ast_hash": "9321ab0fa2306bde78cdfde5536a9f3e",
     "semantic_hash": ""
   }
 }

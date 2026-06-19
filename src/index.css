@@ -35,6 +35,13 @@
         to { opacity: 1; }
     }
 
+    --animate-border-expand: border-expand 0.8s cubic-bezier(0.85, 0, 0.15, 1) both;
+
+    @keyframes border-expand {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+    }
+
     --font-nippo: 'Nippo-Variable', 'Nippo-Bold', sans-serif;
     --font-heading: var(--font-mono);
     --font-mono: 'JetBrains Mono Variable', monospace;
@@ -159,19 +166,42 @@
     }
 }
 
-/* Custom View Transition for Light/Dark mode: slide/wipe from left to right */
+/* Disable CSS transitions during active view transitions to prevent color fade fighting the wipe */
+html:active-view-transition * {
+  transition: none !important;
+}
+
+/* Custom View Transition for Light/Dark mode: directional slide/wipe */
 ::view-transition-old(root) {
   animation: none;
   mix-blend-mode: normal;
 }
-::view-transition-new(root) {
-  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both theme-wipe;
+
+/* Default / to-light (dark to light): slide/wipe from left to right */
+html:not([data-theme-direction="to-dark"])::view-transition-new(root),
+html[data-theme-direction="to-light"]::view-transition-new(root) {
+  animation: 700ms cubic-bezier(0.85, 0, 0.15, 1) both theme-wipe-left-to-right;
   mix-blend-mode: normal;
 }
 
-@keyframes theme-wipe {
+/* to-dark (light to dark): slide/wipe from right to left */
+html[data-theme-direction="to-dark"]::view-transition-new(root) {
+  animation: 700ms cubic-bezier(0.85, 0, 0.15, 1) both theme-wipe-right-to-left;
+  mix-blend-mode: normal;
+}
+
+@keyframes theme-wipe-left-to-right {
   from {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes theme-wipe-right-to-left {
+  from {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
   to {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -198,4 +228,4 @@ html.lenis body {
 
 .lenis-scrolling iframe {
   pointer-events: none;
-}
+}

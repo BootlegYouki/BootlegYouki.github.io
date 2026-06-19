@@ -1,16 +1,16 @@
 # Graph Report - portfolio  (2026-06-19)
 
 ## Corpus Check
-- 40 files · ~17,030 words
+- 40 files · ~17,054 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 448 nodes · 587 edges · 23 communities (19 shown, 4 thin omitted)
+- 449 nodes · 588 edges · 23 communities (19 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c25ad14c`
+- Built from commit: `91ca8f37`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -70,7 +70,7 @@ Nodes (22): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx
 
 ### Community 1 - "Vivid TUI Components Hub"
 Cohesion: 0.08
-Nodes (25): AboutSection(), IntroSection(), Project, projects, ProjectsSection(), ResolvedTheme, Theme, THEME_VALUES (+17 more)
+Nodes (24): AboutSection(), IntroSection(), Project, projects, ProjectsSection(), ResolvedTheme, Theme, THEME_VALUES (+16 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.13
@@ -94,7 +94,7 @@ Nodes (21): APP_TSX_PATH, __dirname, __filename, ROOT_DIR, TEMPLATE_DIR_PATH, AP
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
-Nodes (32): name, private, scripts, build, dev, format, init-template, int-template (+24 more)
+Nodes (33): name, private, scripts, build, dev, format, init-template, int-template (+25 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.09
@@ -102,15 +102,15 @@ Nodes (7): iconMap, TechTicker(), tools, Tooltip(), TooltipContent(), TooltipPro
 
 ### Community 9 - "Terminal UI Collective"
 Cohesion: 0.06
-Nodes (41): cn(), TuiContainer, Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage() (+33 more)
+Nodes (40): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Button() (+32 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.10
 Nodes (20): 🧼 Clean the Template (Start Fresh), 🚀 Key Features, 🧠 maintaining the Graphify Knowledge Graph, 🛠️ Quick Start, 📟 Restore/Initialize the Template, 🧹 Template Management (Cleanup & Restore), 📟 template-tui — Retro-Brutalist TUI Design System, 📸 Visual Showcase (+12 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.12
-Nodes (16): Graphify Memory & Ingestion Layer, 1. Verification & Map First (Rule), 2. Maintenance Workflow (Workflow), CLAUDE.md — Workspace Rules & Workflows, Command Guidelines, Graphify Memory & Ingestion Layer, graphify-out/, template-tui (+8 more)
+Cohesion: 0.11
+Nodes (18): Graphify Memory & Ingestion Layer, 1. Verification & Map First (Rule), 2. Maintenance Workflow (Workflow), CLAUDE.md — Workspace Rules & Workflows, Command Guidelines, Graphify Memory & Ingestion Layer, graphify-out/, template-tui (+10 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.18
@@ -125,36 +125,36 @@ Cohesion: 0.23
 Nodes (15): DropdownMenu(), DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuGroup(), DropdownMenuItem(), DropdownMenuLabel(), DropdownMenuPortal(), DropdownMenuRadioGroup() (+7 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.13
-Nodes (15): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, prettier, prettier-plugin-tailwindcss (+7 more)
+Cohesion: 0.14
+Nodes (14): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, radix-ui, react, react-dom, recharts (+6 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.25
 Nodes (7): 1., 2., 3. (Optional), 4., 5., 6. (Optional), Installing Webfonts
 
 ### Community 23 - "Community 23"
-Cohesion: 0.13
-Nodes (15): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, gsap, radix-ui, react, react-dom (+7 more)
+Cohesion: 0.12
+Nodes (16): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, gsap, lenis, radix-ui, react (+8 more)
 
 ## Knowledge Gaps
-- **254 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+249 more)
+- **255 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+250 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Terminal UI Collective` to `Community 8`, `Vivid TUI Components Hub`, `Community 19`, `Data Pulse Hub`?**
+- **Why does `cn()` connect `Terminal UI Collective` to `Vivid TUI Components Hub`, `Data Pulse Hub`, `Community 8`, `Community 11`, `Community 19`?**
   _High betweenness centrality (0.103) - this node is a cross-community bridge._
-- **Why does `TuiContainer` connect `Terminal UI Collective` to `Vivid TUI Components Hub`, `Community 11`?**
+- **Why does `TuiContainer` connect `Community 11` to `Terminal UI Collective`?**
   _High betweenness centrality (0.029) - this node is a cross-community bridge._
-- **Why does `template-tui` connect `Community 11` to `Terminal UI Collective`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _257 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _258 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tactical UI Components Forge` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `Vivid TUI Components Hub` be split into smaller, more focused modules?**
-  _Cohesion score 0.08013937282229965 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08292682926829269 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.046511627906976744 - nodes in this community are weakly interconnected._

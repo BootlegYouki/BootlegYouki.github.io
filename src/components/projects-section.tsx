@@ -215,42 +215,101 @@ const projects: Project[] = [
 ]
 
 export function ProjectsSection() {
-  const [openProjectId, setOpenProjectId] = React.useState<string | null>(null)
+  const [openProjectId, setOpenProjectId] = React.useState<string | null>("01")
   const itemRefs = React.useRef<{ [key: string]: HTMLDivElement | null }>({})
   const headerRef = React.useRef<HTMLDivElement>(null)
 
+  React.useEffect(() => {
+    // Preload all project images into browser cache on mount
+    projects.forEach((project) => {
+      if (project.images) {
+        project.images.forEach((src) => {
+          const img = new Image()
+          img.src = src
+        })
+      }
+    })
+  }, [])
 
+  const openProjectIdRef = React.useRef<string | null>(null)
+  openProjectIdRef.current = openProjectId
+
+  const containerRef = React.useRef<HTMLDivElement>(null)
+  const [translateY, setTranslateY] = React.useState(0)
+
+  React.useEffect(() => {
+    // Ensure container exists
+    if (!containerRef.current) return
+
+    // Create the pinning ScrollTrigger
+    const pinTrigger = ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top top",
+      // End distance is proportional to the number of projects
+      end: `+=${projects.length * 500}px`,
+      pin: true,
+      scrub: true,
+      onUpdate: (self) => {
+        // Calculate the project index based on scroll progress (0 to 1)
+        const activeIndex = Math.min(
+          Math.floor(self.progress * projects.length),
+          projects.length - 1
+        )
+        const targetId = projects[activeIndex].id
+        if (targetId !== openProjectIdRef.current) {
+          setOpenProjectId(targetId)
+        }
+      },
+    })
+
+    return () => {
+      pinTrigger.kill()
+    }
+  }, [])
+
+  React.useEffect(() => {
+    if (openProjectId) {
+      const activeIndex = projects.findIndex((p) => p.id === openProjectId)
+      if (activeIndex !== -1) {
+        let stableOffsetTop = 0
+        for (let j = 0; j < activeIndex; j++) {
+          const prevElement = itemRefs.current[projects[j].id]
+          if (prevElement) {
+            const headerButton = prevElement.querySelector("button")
+            const headerHeight = headerButton ? headerButton.offsetHeight : 90
+            // Add the 16px gap (gap-4) plus 2px for borders (1px top + 1px bottom border of the card)
+            stableOffsetTop += headerHeight + 18
+          }
+        }
+        setTranslateY(-stableOffsetTop)
+      }
+    } else {
+      setTranslateY(0)
+    }
+  }, [openProjectId])
 
   const toggleProject = (id: string) => {
-    const isOpening = openProjectId !== id
-    setOpenProjectId(isOpening ? id : null)
-
-    if (isOpening) {
-      setTimeout(() => {
-        const element = itemRefs.current[id]
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          })
-        }
-      }, 200) // Delay to let DOM expand and scroll accurately
-    }
+    // Keep manual toggling working if they click
+    setOpenProjectId(openProjectId === id ? null : id)
   }
 
   return (
-    <div className="w-full p-6 animate-fade-in">
+    <div ref={containerRef} className="w-full p-6 animate-fade-in min-h-screen flex flex-col justify-start">
       {/* Centered Projects Header */}
       <div 
         ref={headerRef}
-        className="flex flex-col items-center justify-center py-10 md:py-20 border-t border-border/40 select-none"
+        className="flex flex-col items-center justify-center py-3 md:py-4 select-none"
       >
         <h2 className="text-6xl sm:text-8xl md:text-9xl font-black font-nippo tracking-tight text-foreground">
            PROJECTS 
         </h2>
       </div>
 
-      <div className="flex flex-col gap-4 w-full font-mono">
+      <div className="w-full overflow-hidden flex-1 relative py-4">
+        <div 
+          className="flex flex-col gap-4 w-full font-mono transition-transform duration-500 ease-[cubic-bezier(0.85,0,0.15,1)]"
+          style={{ transform: `translateY(${translateY}px)` }}
+        >
         {projects.map((project) => {
           const isOpen = openProjectId === project.id
           return (
@@ -285,14 +344,18 @@ export function ProjectsSection() {
                 </div>
               </button>
  
-              {/* Accordion Content Wrapper with height transition */}
               <div
                 className={cn(
-                  "grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-card/10",
+                  "grid bg-card/10",
                   isOpen 
                     ? "grid-rows-[1fr] opacity-100 border-t border-border/40" 
                     : "grid-rows-[0fr] opacity-0 border-t-0"
                 )}
+                style={{
+                  transition: isOpen
+                    ? "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms cubic-bezier(0.85, 0, 0.15, 1), border-color 200ms"
+                    : "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms ease-out, border-color 200ms"
+                }}
               >
                 <div className="overflow-hidden">
                   <div className="p-8 md:p-10">
@@ -403,5 +466,6 @@ export function ProjectsSection() {
         })}
       </div>
     </div>
+  </div>
   )
 }
