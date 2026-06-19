@@ -345,6 +345,7 @@ export function ProjectsSection() {
       end: `+=${projects.length * 500}px`,
       pin: true,
       scrub: true,
+      anticipatePin: 1,
       onUpdate: (self) => {
         // Calculate the project index based on scroll progress (0 to 1)
         const activeIndex = Math.min(
