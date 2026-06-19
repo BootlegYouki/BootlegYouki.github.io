@@ -1402,7 +1402,7 @@
       "label": "Project",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "components_projects_section_project",
       "community": 1,
       "norm_label": "project"
@@ -1411,7 +1411,7 @@
       "label": "ProjectCarousel()",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L24",
+      "source_location": "L27",
       "id": "components_projects_section_projectcarousel",
       "community": 1,
       "norm_label": "projectcarousel()"
@@ -1420,7 +1420,7 @@
       "label": "projects",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L119",
+      "source_location": "L165",
       "id": "components_projects_section_projects",
       "community": 1,
       "norm_label": "projects"
@@ -1429,7 +1429,7 @@
       "label": "ProjectsSection()",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L217",
+      "source_location": "L313",
       "id": "components_projects_section_projectssection",
       "community": 1,
       "norm_label": "projectssection()"
@@ -5621,9 +5621,9 @@
       "source_file": "src/App.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_tsx",
-      "target": "components_scroll_progress_scrollprogress",
-      "confidence_score": 1.0
+      "target": "components_scroll_progress_scrollprogress"
     },
     {
       "relation": "imports",
@@ -5729,9 +5729,9 @@
       "source_file": "src/App.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_tsx",
-      "target": "src_components_scroll_progress_tsx",
-      "confidence_score": 1.0
+      "target": "src_components_scroll_progress_tsx"
     },
     {
       "relation": "imports_from",
@@ -6420,9 +6420,9 @@
       "source_file": "src/components/scroll-progress.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_scroll_progress_tsx",
-      "target": "components_scroll_progress_scrollprogress",
-      "confidence_score": 1.0
+      "target": "components_scroll_progress_scrollprogress"
     },
     {
       "relation": "contains",
@@ -10189,5 +10189,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "91ca8f378aa7dfb4b31f32fc6a98fe04907d6304"
+  "built_at_commit": "f80348965789ab32837299b3d0ad0983cb36f1c8"
 }

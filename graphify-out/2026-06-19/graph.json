@@ -1168,7 +1168,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "id": "src_app_app",
       "community": 1,
       "norm_label": "app()"
@@ -1249,7 +1249,7 @@
       "label": "TauriIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L137",
+      "source_location": "L136",
       "id": "components_icons_tauriicon",
       "community": 8,
       "norm_label": "tauriicon()"
@@ -1258,7 +1258,7 @@
       "label": "NodejsIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L148",
+      "source_location": "L147",
       "id": "components_icons_nodejsicon",
       "community": 8,
       "norm_label": "nodejsicon()"
@@ -1267,7 +1267,7 @@
       "label": "TypescriptIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L156",
+      "source_location": "L155",
       "id": "components_icons_typescripticon",
       "community": 8,
       "norm_label": "typescripticon()"
@@ -1276,7 +1276,7 @@
       "label": "ElectronIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L165",
+      "source_location": "L164",
       "id": "components_icons_electronicon",
       "community": 8,
       "norm_label": "electronicon()"
@@ -1285,7 +1285,7 @@
       "label": "TailwindcssIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L173",
+      "source_location": "L172",
       "id": "components_icons_tailwindcssicon",
       "community": 8,
       "norm_label": "tailwindcssicon()"
@@ -1294,7 +1294,7 @@
       "label": "CssIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L187",
+      "source_location": "L186",
       "id": "components_icons_cssicon",
       "community": 8,
       "norm_label": "cssicon()"
@@ -1303,7 +1303,7 @@
       "label": "SvelteIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L196",
+      "source_location": "L195",
       "id": "components_icons_svelteicon",
       "community": 8,
       "norm_label": "svelteicon()"
@@ -1312,7 +1312,7 @@
       "label": "ExpoIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L205",
+      "source_location": "L204",
       "id": "components_icons_expoicon",
       "community": 8,
       "norm_label": "expoicon()"
@@ -1321,7 +1321,7 @@
       "label": "GithubIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L213",
+      "source_location": "L212",
       "id": "components_icons_githubicon",
       "community": 8,
       "norm_label": "githubicon()"
@@ -1330,7 +1330,7 @@
       "label": "HtmlIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L221",
+      "source_location": "L220",
       "id": "components_icons_htmlicon",
       "community": 8,
       "norm_label": "htmlicon()"
@@ -1339,7 +1339,7 @@
       "label": "PostgresqlIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L233",
+      "source_location": "L232",
       "id": "components_icons_postgresqlicon",
       "community": 8,
       "norm_label": "postgresqlicon()"
@@ -1348,7 +1348,7 @@
       "label": "SqliteIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L244",
+      "source_location": "L243",
       "id": "components_icons_sqliteicon",
       "community": 8,
       "norm_label": "sqliteicon()"
@@ -1357,7 +1357,7 @@
       "label": "SupabaseIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L262",
+      "source_location": "L261",
       "id": "components_icons_supabaseicon",
       "community": 8,
       "norm_label": "supabaseicon()"
@@ -1366,7 +1366,7 @@
       "label": "RustIcon()",
       "file_type": "code",
       "source_file": "src/components/icons.tsx",
-      "source_location": "L282",
+      "source_location": "L281",
       "id": "components_icons_rusticon",
       "community": 8,
       "norm_label": "rusticon()"
@@ -1420,7 +1420,7 @@
       "label": "projects",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L119",
+      "source_location": "L161",
       "id": "components_projects_section_projects",
       "community": 1,
       "norm_label": "projects"
@@ -1429,10 +1429,28 @@
       "label": "ProjectsSection()",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L217",
+      "source_location": "L301",
       "id": "components_projects_section_projectssection",
       "community": 1,
       "norm_label": "projectssection()"
+    },
+    {
+      "label": "scroll-progress.tsx",
+      "file_type": "code",
+      "source_file": "src/components/scroll-progress.tsx",
+      "source_location": "L1",
+      "id": "src_components_scroll_progress_tsx",
+      "community": 1,
+      "norm_label": "scroll-progress.tsx"
+    },
+    {
+      "label": "ScrollProgress()",
+      "file_type": "code",
+      "source_file": "src/components/scroll-progress.tsx",
+      "source_location": "L3",
+      "id": "components_scroll_progress_scrollprogress",
+      "community": 1,
+      "norm_label": "scrollprogress()"
     },
     {
       "label": "tech-ticker.tsx",
@@ -3131,7 +3149,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L17",
-      "community": 20,
+      "community": 7,
       "norm_label": "dependencies",
       "id": "template_tui_package_dependencies"
     },
@@ -3140,7 +3158,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L18",
-      "community": 20,
+      "community": 7,
       "norm_label": "@fontsource-variable/jetbrains-mono",
       "id": "template_tui_package_dependencies_fontsource_variable_jetbrains_mono"
     },
@@ -3149,7 +3167,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L19",
-      "community": 20,
+      "community": 7,
       "norm_label": "@remixicon/react",
       "id": "template_tui_package_dependencies_remixicon_react"
     },
@@ -3158,7 +3176,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L20",
-      "community": 20,
+      "community": 7,
       "norm_label": "@tailwindcss/vite",
       "id": "template_tui_package_dependencies_tailwindcss_vite"
     },
@@ -3167,7 +3185,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L21",
-      "community": 20,
+      "community": 7,
       "norm_label": "class-variance-authority",
       "id": "template_tui_package_dependencies_class_variance_authority"
     },
@@ -3176,7 +3194,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L22",
-      "community": 20,
+      "community": 7,
       "norm_label": "clsx",
       "id": "template_tui_package_dependencies_clsx"
     },
@@ -3185,7 +3203,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L23",
-      "community": 20,
+      "community": 7,
       "norm_label": "radix-ui",
       "id": "template_tui_package_dependencies_radix_ui"
     },
@@ -3194,7 +3212,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L24",
-      "community": 20,
+      "community": 7,
       "norm_label": "react",
       "id": "template_tui_package_dependencies_react"
     },
@@ -3203,7 +3221,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L25",
-      "community": 20,
+      "community": 7,
       "norm_label": "react-dom",
       "id": "template_tui_package_dependencies_react_dom"
     },
@@ -3212,7 +3230,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L26",
-      "community": 20,
+      "community": 7,
       "norm_label": "recharts",
       "id": "template_tui_package_dependencies_recharts"
     },
@@ -3221,7 +3239,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L27",
-      "community": 20,
+      "community": 7,
       "norm_label": "shadcn",
       "id": "template_tui_package_dependencies_shadcn"
     },
@@ -3230,7 +3248,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L28",
-      "community": 20,
+      "community": 7,
       "norm_label": "tailwind-merge",
       "id": "template_tui_package_dependencies_tailwind_merge"
     },
@@ -3239,7 +3257,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L29",
-      "community": 20,
+      "community": 7,
       "norm_label": "tailwindcss",
       "id": "template_tui_package_dependencies_tailwindcss"
     },
@@ -3248,7 +3266,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L30",
-      "community": 20,
+      "community": 7,
       "norm_label": "tw-animate-css",
       "id": "template_tui_package_dependencies_tw_animate_css"
     },
@@ -3257,7 +3275,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L32",
-      "community": 7,
+      "community": 20,
       "norm_label": "devdependencies",
       "id": "template_tui_package_devdependencies"
     },
@@ -3266,7 +3284,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L33",
-      "community": 7,
+      "community": 20,
       "norm_label": "@eslint/js",
       "id": "template_tui_package_devdependencies_eslint_js"
     },
@@ -3275,7 +3293,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L34",
-      "community": 7,
+      "community": 20,
       "norm_label": "@types/node",
       "id": "template_tui_package_devdependencies_types_node"
     },
@@ -3284,7 +3302,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L35",
-      "community": 7,
+      "community": 20,
       "norm_label": "@types/react",
       "id": "template_tui_package_devdependencies_types_react"
     },
@@ -3293,7 +3311,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L36",
-      "community": 7,
+      "community": 20,
       "norm_label": "@types/react-dom",
       "id": "template_tui_package_devdependencies_types_react_dom"
     },
@@ -3302,7 +3320,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L37",
-      "community": 7,
+      "community": 20,
       "norm_label": "@vitejs/plugin-react",
       "id": "template_tui_package_devdependencies_vitejs_plugin_react"
     },
@@ -3311,7 +3329,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L38",
-      "community": 7,
+      "community": 20,
       "norm_label": "eslint",
       "id": "template_tui_package_devdependencies_eslint"
     },
@@ -3320,7 +3338,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L39",
-      "community": 7,
+      "community": 20,
       "norm_label": "eslint-plugin-react-hooks",
       "id": "template_tui_package_devdependencies_eslint_plugin_react_hooks"
     },
@@ -3329,7 +3347,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L40",
-      "community": 7,
+      "community": 20,
       "norm_label": "eslint-plugin-react-refresh",
       "id": "template_tui_package_devdependencies_eslint_plugin_react_refresh"
     },
@@ -3338,7 +3356,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L41",
-      "community": 7,
+      "community": 20,
       "norm_label": "globals",
       "id": "template_tui_package_devdependencies_globals"
     },
@@ -3347,7 +3365,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L42",
-      "community": 7,
+      "community": 20,
       "norm_label": "prettier",
       "id": "template_tui_package_devdependencies_prettier"
     },
@@ -3356,7 +3374,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L43",
-      "community": 7,
+      "community": 20,
       "norm_label": "prettier-plugin-tailwindcss",
       "id": "template_tui_package_devdependencies_prettier_plugin_tailwindcss"
     },
@@ -3365,7 +3383,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L44",
-      "community": 7,
+      "community": 20,
       "norm_label": "typescript",
       "id": "template_tui_package_devdependencies_typescript"
     },
@@ -3374,7 +3392,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L45",
-      "community": 7,
+      "community": 20,
       "norm_label": "typescript-eslint",
       "id": "template_tui_package_devdependencies_typescript_eslint"
     },
@@ -3383,7 +3401,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L46",
-      "community": 7,
+      "community": 20,
       "norm_label": "vite",
       "id": "template_tui_package_devdependencies_vite"
     },
@@ -5601,6 +5619,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_tsx",
+      "target": "components_scroll_progress_scrollprogress"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5692,6 +5721,17 @@
       "confidence_score": 1.0,
       "source": "src_app_tsx",
       "target": "src_components_projects_section_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_tsx",
+      "target": "src_components_scroll_progress_tsx"
     },
     {
       "relation": "imports_from",
@@ -6373,6 +6413,16 @@
       "confidence_score": 1.0,
       "source": "src_components_projects_section_tsx",
       "target": "ui_tui_container_tuicontainer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/scroll-progress.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_scroll_progress_tsx",
+      "target": "components_scroll_progress_scrollprogress"
     },
     {
       "relation": "contains",
@@ -10139,5 +10189,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "91ca8f378aa7dfb4b31f32fc6a98fe04907d6304"
+  "built_at_commit": "f80348965789ab32837299b3d0ad0983cb36f1c8"
 }

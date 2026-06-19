@@ -1,16 +1,16 @@
 # Graph Report - portfolio  (2026-06-19)
 
 ## Corpus Check
-- 40 files · ~17,054 words
+- 41 files · ~17,739 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 449 nodes · 588 edges · 23 communities (19 shown, 4 thin omitted)
+- 451 nodes · 591 edges · 23 communities (19 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `91ca8f37`
+- Built from commit: `f8034896`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -70,7 +70,7 @@ Nodes (22): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx
 
 ### Community 1 - "Vivid TUI Components Hub"
 Cohesion: 0.08
-Nodes (24): AboutSection(), IntroSection(), Project, projects, ProjectsSection(), ResolvedTheme, Theme, THEME_VALUES (+16 more)
+Nodes (25): AboutSection(), IntroSection(), Project, projects, ProjectsSection(), ScrollProgress(), ResolvedTheme, Theme (+17 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.13
@@ -94,7 +94,7 @@ Nodes (21): APP_TSX_PATH, __dirname, __filename, ROOT_DIR, TEMPLATE_DIR_PATH, AP
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
-Nodes (33): name, private, scripts, build, dev, format, init-template, int-template (+25 more)
+Nodes (32): name, private, scripts, build, dev, format, init-template, int-template (+24 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.09
@@ -125,8 +125,8 @@ Cohesion: 0.23
 Nodes (15): DropdownMenu(), DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuGroup(), DropdownMenuItem(), DropdownMenuLabel(), DropdownMenuPortal(), DropdownMenuRadioGroup() (+7 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.14
-Nodes (14): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, radix-ui, react, react-dom, recharts (+6 more)
+Cohesion: 0.13
+Nodes (15): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, prettier, prettier-plugin-tailwindcss (+7 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.25
@@ -153,7 +153,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Tactical UI Components Forge` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `Vivid TUI Components Hub` be split into smaller, more focused modules?**
-  _Cohesion score 0.08292682926829269 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07862679955703211 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
