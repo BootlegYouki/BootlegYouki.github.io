@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import * as Icons from "@/components/icons.tsx"
@@ -44,20 +44,47 @@ const tools = [
 
 export function TechTicker() {
   const [isPaused, setIsPaused] = useState(false)
+  const [openToolId, setOpenToolId] = useState<string | null>(null)
+  const hoveredToolIdRef = useRef<string | null>(null)
+  const isScrollingRef = useRef(false)
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  const handleMouseEnter = () => {
+  const pauseScrollingImmediately = () => {
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current)
+      pauseTimeoutRef.current = null
+    }
     setIsPaused(true)
-    if ((window as any).lenis) {
-      (window as any).lenis.stop()
-    }
   }
 
-  const handleMouseLeave = () => {
-    setIsPaused(false)
-    if ((window as any).lenis) {
-      (window as any).lenis.start()
-    }
+  const resumeScrollingWithDelay = () => {
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current)
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false)
+      pauseTimeoutRef.current = null
+    }, 800) // 800ms delay before continuing the marquee movement
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      isScrollingRef.current = true
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false
+        // When scroll stops, if the mouse is no longer hovering the open tool, close it
+        setOpenToolId(hoveredToolIdRef.current)
+      }, 150)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current)
+    }
+  }, [])
 
   return (
     <TooltipProvider delayDuration={0}>
@@ -73,20 +100,44 @@ export function TechTicker() {
             "flex gap-8 w-max animate-marquee",
             isPaused && "[animation-play-state:paused]"
           )}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={pauseScrollingImmediately}
+          onMouseLeave={resumeScrollingWithDelay}
         >
           {/* Loop multiple times for seamless scrolling */}
           {[...tools, ...tools, ...tools, ...tools].map((tool, idx) => {
             const IconComponent = iconMap[tool.icon]
+            const uniqueId = `${tool.name}-${idx}`
+            const isOpen = openToolId === uniqueId
+
             return (
-              <Tooltip key={`${tool.name}-${idx}`}>
+              <Tooltip 
+                key={uniqueId}
+                open={isOpen}
+                onOpenChange={(open) => {
+                  if (!open && isScrollingRef.current) {
+                    return // Ignore Radix auto-close requests while scrolling
+                  }
+                  setOpenToolId(open ? uniqueId : null)
+                }}
+              >
                 <TooltipTrigger asChild>
                   <span
                     className={cn(
                       "group border border-border/60 px-8 py-4 text-lg font-extrabold text-muted-foreground cursor-pointer transition-all duration-200 bg-card/20 rounded-none font-mono whitespace-nowrap inline-flex items-center gap-3",
                       tool.hoverStyle
                     )}
+                    onMouseEnter={() => {
+                      pauseScrollingImmediately()
+                      hoveredToolIdRef.current = uniqueId
+                      setOpenToolId(uniqueId)
+                    }}
+                    onMouseLeave={() => {
+                      hoveredToolIdRef.current = null
+                      if (!isScrollingRef.current) {
+                        setOpenToolId(null)
+                      }
+                      resumeScrollingWithDelay()
+                    }}
                   >
                     {IconComponent && (
                       <IconComponent
@@ -107,8 +158,18 @@ export function TechTicker() {
                   }}
                   sideOffset={-90}
                   side="top"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseEnter={() => {
+                    pauseScrollingImmediately()
+                    hoveredToolIdRef.current = uniqueId
+                    setOpenToolId(uniqueId)
+                  }}
+                  onMouseLeave={() => {
+                    hoveredToolIdRef.current = null
+                    if (!isScrollingRef.current) {
+                      setOpenToolId(null)
+                    }
+                    resumeScrollingWithDelay()
+                  }}
                 >
                   <div 
                     className="p-4 flex items-center gap-3 border-b border-border/40"

@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\vite.config.ts": {
-    "mtime": 1781856454.9946177,
-    "ast_hash": "2bd2f5c941803d849e59dc05fb5983c2",
+    "mtime": 1781856785.8003435,
+    "ast_hash": "9c57f09b277c4421277614ffb1b87a2c",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\scripts\\int-template.js": {
@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.tsx": {
-    "mtime": 1781856319.8514464,
-    "ast_hash": "279efc6522f870fb81844cfd46779d7a",
+    "mtime": 1781857839.3878784,
+    "ast_hash": "7977bef87b8d4a235f4782135fc4074f",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.tsx": {
@@ -385,8 +385,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\tech-ticker.tsx": {
-    "mtime": 1781855903.481389,
-    "ast_hash": "7823ab4a662664adf36ca135cfe82d58",
+    "mtime": 1781858014.797192,
+    "ast_hash": "06023a81055cece369a156d71567a51f",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\about-section.tsx": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.github\\workflows\\deploy.yml": {
-    "mtime": 1781856465.831268,
-    "ast_hash": "eb88469353b69c9a21771ee2a58a2f8c",
+    "mtime": 1781856957.7196693,
+    "ast_hash": "e010bd784f998797878d110b696ad419",
     "semantic_hash": ""
   }
 }

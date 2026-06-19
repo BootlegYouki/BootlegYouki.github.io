@@ -20,9 +20,6 @@ export function App() {
       lerp: 0.08, // Controls the deceleration speed (0.05 to 0.12 is typical)
     })
 
-    // Expose lenis globally to allow components to control scrolling momentum
-    ;(window as any).lenis = lenis
-
     // Connect Lenis scroll events to ScrollTrigger updates
     lenis.on("scroll", ScrollTrigger.update)
 
@@ -45,7 +42,6 @@ export function App() {
     return () => {
       clearTimeout(timer)
       lenis.destroy()
-      delete (window as any).lenis
       gsap.ticker.remove(tickerUpdate)
     }
   }, [])
