@@ -17,8 +17,7 @@ export function App() {
   useEffect(() => {
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
-      duration: 2.8,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+      lerp: 0.08, // Controls the deceleration speed (0.05 to 0.12 is typical)
     })
 
     // Expose lenis globally to allow components to control scrolling momentum
