@@ -56,7 +56,7 @@ export function TechTicker() {
 
         <div 
           className={cn(
-            "flex gap-8 w-max animate-marquee transition-all duration-300",
+            "flex gap-8 w-max animate-marquee",
             isPaused && "[animation-play-state:paused]"
           )}
           onMouseEnter={() => setIsPaused(true)}
