@@ -1402,7 +1402,7 @@
       "label": "Project",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "components_projects_section_project",
       "community": 1,
       "norm_label": "project"
@@ -1411,7 +1411,7 @@
       "label": "ProjectCarousel()",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L24",
+      "source_location": "L27",
       "id": "components_projects_section_projectcarousel",
       "community": 1,
       "norm_label": "projectcarousel()"
@@ -1420,7 +1420,7 @@
       "label": "projects",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L161",
+      "source_location": "L165",
       "id": "components_projects_section_projects",
       "community": 1,
       "norm_label": "projects"
@@ -1429,7 +1429,7 @@
       "label": "ProjectsSection()",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L301",
+      "source_location": "L313",
       "id": "components_projects_section_projectssection",
       "community": 1,
       "norm_label": "projectssection()"

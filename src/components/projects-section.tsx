@@ -54,18 +54,17 @@ function ProjectCarousel({ images, name }: { images: string[]; name: string }) {
   if (!currentSlide) return null
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <div className="w-full flex flex-col select-none relative overflow-hidden mx-auto">
-        {/* Image Display Area */}
-        <div className="w-full flex items-center justify-center relative group mx-auto min-h-[180px] sm:min-h-[350px] md:min-h-[550px]">
+    <div className="w-full h-full flex flex-col items-center justify-center min-h-0">
+      <div className="w-full h-full flex flex-col select-none relative overflow-hidden mx-auto min-h-0">
+        <div className="w-full flex-1 flex items-center justify-center relative group mx-auto min-h-[180px] sm:min-h-[350px] md:min-h-0 md:h-full">
           {currentSlide.type === "paired" ? (
-            <div className="flex gap-4 items-center justify-center w-full">
+            <div className="flex gap-4 items-center justify-center w-full h-full">
               {currentSlide.images.map((imgSrc, idx) => (
                 <img
                   key={idx}
                   src={imgSrc}
                   alt={`${name} Screenshot`}
-                  className="max-h-[180px] sm:max-h-[350px] md:max-h-[550px] w-auto h-auto object-contain block cursor-zoom-in select-none"
+                  className="max-h-[180px] sm:max-h-[350px] md:max-h-[calc(100dvh-27rem)] w-auto h-auto object-contain block cursor-zoom-in select-none"
                   onClick={() => setPreviewImage(imgSrc)}
                   draggable="false"
                   onContextMenu={(e) => e.preventDefault()}
@@ -76,7 +75,7 @@ function ProjectCarousel({ images, name }: { images: string[]; name: string }) {
             <img
               src={currentSlide.images[0]}
               alt={`${name} Screenshot`}
-              className="max-h-[180px] sm:max-h-[350px] md:max-h-[550px] w-auto h-auto object-contain block cursor-zoom-in select-none"
+              className="max-h-[180px] sm:max-h-[350px] md:max-h-[calc(100dvh-27rem)] w-auto h-auto object-contain block cursor-zoom-in select-none"
               onClick={() => setPreviewImage(currentSlide.images[0])}
               draggable="false"
               onContextMenu={(e) => e.preventDefault()}
@@ -443,22 +442,22 @@ export function ProjectsSection() {
  
               <div
                 className={cn(
-                  "grid bg-card/10",
+                  "grid bg-card/10 transition-all",
                   isOpen 
-                    ? "grid-rows-[1fr] opacity-100 border-t border-border/40" 
-                    : "grid-rows-[0fr] opacity-0 border-t-0"
+                    ? "grid-rows-[1fr] opacity-100 border-t border-border/40 md:h-[calc(100dvh-20rem)]" 
+                    : "grid-rows-[0fr] opacity-0 border-t-0 md:h-0 pointer-events-none"
                 )}
                 style={{
                   transition: isOpen
-                    ? "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms cubic-bezier(0.85, 0, 0.15, 1), border-color 200ms"
-                    : "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms ease-out, border-color 200ms"
+                    ? "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), height 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms cubic-bezier(0.85, 0, 0.15, 1), border-color 200ms"
+                    : "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), height 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms ease-out, border-color 200ms"
                 }}
               >
-                <div className="overflow-hidden">
-                  <div className="p-8 md:p-10 relative overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+                <div className="overflow-hidden md:max-h-full h-full">
+                  <div className="p-8 md:p-10 relative overflow-hidden h-full flex flex-col justify-start">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-10 flex-1 min-h-0">
                     {/* Left Column: Content + Stack */}
-                    <div className="md:col-span-2 flex flex-col justify-between py-2 pb-16 md:pb-2">
+                    <div className="md:col-span-2 flex flex-col justify-between py-2 pb-16 md:pb-2 md:max-h-full md:overflow-hidden min-h-0 h-full">
                       <div className="space-y-3.5 md:space-y-6">
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2.5">
@@ -478,10 +477,11 @@ export function ProjectsSection() {
                         </p>
                       </div>
 
-
+                      {/* Dynamic Spacer (Desktop Only) */}
+                      <div className="hidden md:block flex-1 min-h-0"></div>
 
                       {/* Stack and Meta (Desktop Only) */}
-                      <div className="hidden md:block pt-6 space-y-3 mt-8">
+                      <div className="hidden md:block pt-6 space-y-3">
                         {(project.sourceUrl || project.sourceUrls || project.demoUrl || project.releasesUrl || project.releasesUrls) && (
                           <div className="flex flex-wrap gap-3 pb-3">
                             {project.sourceUrls ? (
@@ -574,7 +574,7 @@ export function ProjectsSection() {
                       </div>
                     </div>
 
-                    <div className="hidden md:flex md:col-span-3 flex-col justify-start">
+                    <div className="hidden md:flex md:col-span-3 flex-col justify-center h-full overflow-hidden min-h-0">
                       {project.images && project.images.length > 0 ? (
                         <ProjectCarousel images={project.images} name={project.name} />
                       ) : (
@@ -589,7 +589,7 @@ export function ProjectsSection() {
 
                     {/* Mobile Drawer: Slides up from the absolute bottom of the container */}
                     <div
-                      className="absolute bottom-0 left-0 right-0 bg-background border-t border-border z-40 transition-transform duration-300 ease-[cubic-bezier(0.85,0,0.15,1)] md:hidden shadow-2xl"
+                      className="absolute bottom-0 left-0 right-0 h-[280px] bg-background border-t border-border z-40 transition-transform duration-300 ease-[cubic-bezier(0.85,0,0.15,1)] md:hidden shadow-2xl flex flex-col"
                       style={{
                         transform: expandedMobileInfo[project.id]
                           ? "translateY(0)"
@@ -611,7 +611,7 @@ export function ProjectsSection() {
                         <span>{expandedMobileInfo[project.id] ? "CLOSE" : "VIEW TECH & LINKS"}</span>
                       </button>
 
-                      <div className="p-6 space-y-4">
+                      <div className="flex-1 overflow-y-auto p-6 space-y-4">
                         {(project.sourceUrl || project.sourceUrls || project.demoUrl || project.releasesUrl || project.releasesUrls) && (
                           <div className="flex flex-wrap gap-2.5">
                             {project.sourceUrls ? (

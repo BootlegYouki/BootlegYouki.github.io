@@ -1420,7 +1420,7 @@
       "label": "projects",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L165",
+      "source_location": "L164",
       "id": "components_projects_section_projects",
       "community": 1,
       "norm_label": "projects"
@@ -1429,7 +1429,7 @@
       "label": "ProjectsSection()",
       "file_type": "code",
       "source_file": "src/components/projects-section.tsx",
-      "source_location": "L313",
+      "source_location": "L312",
       "id": "components_projects_section_projectssection",
       "community": 1,
       "norm_label": "projectssection()"
@@ -10189,5 +10189,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f80348965789ab32837299b3d0ad0983cb36f1c8"
+  "built_at_commit": "11a3225ad62b837e40e73cfa2acd9e5a2898817b"
 }
