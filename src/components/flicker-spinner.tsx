@@ -8,10 +8,18 @@ export default function FlickerSpinner({ size = 28 }: { size?: number }) {
       viewBox="0 0 42 42"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      style={{ '--on': '#F5F5F5', '--off': 'transparent', '--dur': '1.100s' } as CSSProperties}
+      style={{ '--dur': '1.100s' } as CSSProperties}
     >
       <title>Loading</title>
       <style>{`
+        svg {
+          --on: #242424;
+          --off: transparent;
+        }
+        :root.dark svg, html.dark svg, .dark svg, [data-theme="dark"] svg {
+          --on: #F5F5F5;
+          --off: transparent;
+        }
         circle { fill: var(--off); }
         circle.on { fill: var(--on); }
         @media (prefers-reduced-motion: reduce) { circle { animation: none !important; } }

@@ -312,6 +312,7 @@ const projects: Project[] = [
 
 export function ProjectsSection() {
   const [openProjectId, setOpenProjectId] = React.useState<string | null>("01")
+  const [expandedMobileInfo, setExpandedMobileInfo] = React.useState<Record<string, boolean>>({})
   const itemRefs = React.useRef<{ [key: string]: HTMLDivElement | null }>({})
   const headerRef = React.useRef<HTMLDivElement>(null)
 
@@ -454,11 +455,11 @@ export function ProjectsSection() {
                 }}
               >
                 <div className="overflow-hidden">
-                  <div className="p-8 md:p-10">
+                  <div className="p-8 md:p-10 relative overflow-hidden">
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
                     {/* Left Column: Content + Stack */}
-                    <div className="md:col-span-2 flex flex-col justify-between py-2">
-                      <div className="space-y-6">
+                    <div className="md:col-span-2 flex flex-col justify-between py-2 pb-16 md:pb-2">
+                      <div className="space-y-3.5 md:space-y-6">
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2.5">
                           {project.tags.map((tag) => (
@@ -472,13 +473,15 @@ export function ProjectsSection() {
                         </div>
 
                         {/* Description */}
-                        <p className="text-base text-muted-foreground leading-relaxed">
+                        <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                           {project.description}
                         </p>
                       </div>
 
-                      {/* Stack and Meta */}
-                      <div className="pt-6 space-y-3 mt-8">
+
+
+                      {/* Stack and Meta (Desktop Only) */}
+                      <div className="hidden md:block pt-6 space-y-3 mt-8">
                         {(project.sourceUrl || project.sourceUrls || project.demoUrl || project.releasesUrl || project.releasesUrls) && (
                           <div className="flex flex-wrap gap-3 pb-3">
                             {project.sourceUrls ? (
@@ -488,7 +491,7 @@ export function ProjectsSection() {
                                   href={repo.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-4 py-2.5 transition-all font-mono"
+                                  className="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
                                 >
                                   <svg className="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" />
@@ -502,7 +505,7 @@ export function ProjectsSection() {
                                   href={project.sourceUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-4 py-2.5 transition-all font-mono"
+                                  className="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
                                 >
                                   <svg className="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" />
@@ -518,7 +521,7 @@ export function ProjectsSection() {
                                   href={rel.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-4 py-2.5 transition-all font-mono"
+                                  className="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
                                 >
                                   <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -532,7 +535,7 @@ export function ProjectsSection() {
                                   href={project.releasesUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-4 py-2.5 transition-all font-mono"
+                                  className="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
                                 >
                                   <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -546,7 +549,7 @@ export function ProjectsSection() {
                                 href={project.demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-4 py-2.5 transition-all font-mono"
+                                className="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
                               >
                                 <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -562,7 +565,7 @@ export function ProjectsSection() {
                           {project.stack.map((tech) => (
                             <span
                               key={tech}
-                              className="text-sm font-bold px-3.5 py-1.5 bg-card border border-border/60 text-foreground font-mono select-none"
+                              className="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none"
                             >
                               {tech}
                             </span>
@@ -582,6 +585,124 @@ export function ProjectsSection() {
                           </div>
                         </div>
                       )}
+                    </div>
+
+                    {/* Mobile Drawer: Slides up from the absolute bottom of the container */}
+                    <div
+                      className="absolute bottom-0 left-0 right-0 bg-background border-t border-border z-40 transition-transform duration-300 ease-[cubic-bezier(0.85,0,0.15,1)] md:hidden shadow-2xl"
+                      style={{
+                        transform: expandedMobileInfo[project.id]
+                          ? "translateY(0)"
+                          : "translateY(calc(100% - 54px))"
+                      }}
+                    >
+                      {/* Header Button: visible at the bottom of the card when collapsed, slides up with container */}
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedMobileInfo(prev => ({
+                            ...prev,
+                            [project.id]: !prev[project.id]
+                          }));
+                        }}
+                        className="w-full flex items-center justify-center px-8 h-[54px] border-b border-border/40 hover:text-primary text-xs font-mono font-bold select-none cursor-pointer bg-card/95 text-center"
+                      >
+                        <span>{expandedMobileInfo[project.id] ? "CLOSE" : "VIEW TECH & LINKS"}</span>
+                      </button>
+
+                      <div className="p-6 space-y-4">
+                        {(project.sourceUrl || project.sourceUrls || project.demoUrl || project.releasesUrl || project.releasesUrls) && (
+                          <div className="flex flex-wrap gap-2.5">
+                            {project.sourceUrls ? (
+                              project.sourceUrls.map((repo) => (
+                                <a
+                                  key={repo.url}
+                                  href={repo.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 transition-all font-mono"
+                                >
+                                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" />
+                                  </svg>
+                                  {repo.label}
+                                </a>
+                              ))
+                            ) : (
+                              project.sourceUrl && (
+                                <a
+                                  href={project.sourceUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 transition-all font-mono"
+                                >
+                                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" />
+                                  </svg>
+                                  REPOSITORY
+                                </a>
+                              )
+                            )}
+                            {project.releasesUrls ? (
+                              project.releasesUrls.map((rel) => (
+                                <a
+                                  key={rel.url}
+                                  href={rel.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 transition-all font-mono"
+                                >
+                                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                  </svg>
+                                  {rel.label}
+                                </a>
+                              ))
+                            ) : (
+                              project.releasesUrl && (
+                                <a
+                                  href={project.releasesUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 transition-all font-mono"
+                                >
+                                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                  </svg>
+                                  RELEASES
+                                </a>
+                              )
+                            )}
+                            {project.demoUrl && (
+                              <a
+                                href={project.demoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 transition-all font-mono"
+                              >
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                LIVE_DEMO
+                              </a>
+                            )}
+                          </div>
+                        )}
+                        <div className="space-y-1.5">
+                          <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">TECH STACK:</span>
+                          <div className="flex flex-wrap gap-1.5 font-mono">
+                            {project.stack.map((tech) => (
+                              <span
+                                key={tech}
+                                className="text-xs font-bold px-2 py-1 bg-card border border-border/60 text-foreground font-mono select-none"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
