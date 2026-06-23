@@ -280,13 +280,13 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.github\\workflows\\deploy.yml": {
-    "mtime": 1781856957.7196693,
-    "ast_hash": "e010bd784f998797878d110b696ad419",
+    "mtime": 1782181139.0612748,
+    "ast_hash": "6ac7234453c47feed75db57eae9e60a3",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.svelte": {
-    "mtime": 1782180282.3632324,
-    "ast_hash": "edc1f15173b38f8923690c8c45f38d16",
+    "mtime": 1782182660.3602836,
+    "ast_hash": "8a37d270d4dba074a3ade7492c933de3",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.ts": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ProjectsSection.svelte": {
-    "mtime": 1782180381.6392436,
-    "ast_hash": "193f0ec6898c33b467b19b7663ed9f11",
+    "mtime": 1782182477.4433475,
+    "ast_hash": "4c1ee8d78025ee1b5f8ae33435536ecb",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ScrollProgress.svelte": {
@@ -352,6 +352,11 @@
   "E:\\Github\\portfolio\\svelte.config.js": {
     "mtime": 1782180428.9547799,
     "ast_hash": "050554be04a585a31057f55e877df7b7",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ScrollToTop.svelte": {
+    "mtime": 1782182719.6968362,
+    "ast_hash": "15c4236367b0c25be9973ad1d472cb78",
     "semantic_hash": ""
   }
 }

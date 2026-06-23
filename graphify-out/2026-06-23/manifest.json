@@ -280,8 +280,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.github\\workflows\\deploy.yml": {
-    "mtime": 1781856957.7196693,
-    "ast_hash": "e010bd784f998797878d110b696ad419",
+    "mtime": 1782181139.0612748,
+    "ast_hash": "6ac7234453c47feed75db57eae9e60a3",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.svelte": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ProjectsSection.svelte": {
-    "mtime": 1782180381.6392436,
-    "ast_hash": "193f0ec6898c33b467b19b7663ed9f11",
+    "mtime": 1782182279.7598684,
+    "ast_hash": "911c580068905a643e2d8ad57ea5b4d8",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ScrollProgress.svelte": {
@@ -347,6 +347,11 @@
   "E:\\Github\\portfolio\\src\\components\\ui\\TuiContainer.svelte": {
     "mtime": 1782180341.4361382,
     "ast_hash": "c57249ad915ad4f17e71656aa82f105e",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\svelte.config.js": {
+    "mtime": 1782180428.9547799,
+    "ast_hash": "050554be04a585a31057f55e877df7b7",
     "semantic_hash": ""
   }
 }

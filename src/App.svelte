@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import ScrollProgress from "@/components/ScrollProgress.svelte";
+  import ScrollToTop from "@/components/ScrollToTop.svelte";
   import IntroSection from "@/components/IntroSection.svelte";
   import TechTicker from "@/components/TechTicker.svelte";
   import AboutSection from "@/components/AboutSection.svelte";
@@ -18,6 +19,7 @@
     const lenis = new Lenis({
       lerp: 0.08, // Controls the deceleration speed
     });
+    (window as any).lenis = lenis;
 
     // Connect Lenis scroll events to ScrollTrigger updates
     lenis.on("scroll", ScrollTrigger.update);
@@ -48,6 +50,7 @@
 
 <div class="min-h-screen bg-background text-foreground font-mono transition-colors duration-300 relative">
   <ScrollProgress />
+  <ScrollToTop />
   <!-- Main container holding the sections -->
   <main class="w-full p-0 flex flex-col">
     <IntroSection />

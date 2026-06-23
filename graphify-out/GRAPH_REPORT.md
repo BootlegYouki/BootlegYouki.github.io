@@ -1,16 +1,16 @@
 # Graph Report - portfolio  (2026-06-23)
 
 ## Corpus Check
-- 28 files · ~14,147 words
+- 29 files · ~14,319 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 329 nodes · 335 edges · 25 communities (21 shown, 4 thin omitted)
+- 330 nodes · 337 edges · 25 communities (21 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `788d97b7`
+- Built from commit: `25d3b4c8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -95,7 +95,7 @@ Nodes (18): name, private, scripts, build, dev, format, init-template, int-templ
 
 ### Community 8 - "Community 8"
 Cohesion: 0.33
-Nodes (6): aliases, components, hooks, lib, ui, utils
+Nodes (6): tailwind, baseColor, config, css, cssVariables, prefix
 
 ### Community 9 - "Terminal UI Collective"
 Cohesion: 0.14
@@ -146,7 +146,7 @@ Nodes (15): dependencies, class-variance-authority, clsx, @fontsource-variable/j
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `Community 23` to `Vivid TUI Components Hub`, `Community 7`?**
-  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 6` to `Community 7`?**
   _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Community 2` to `Community 7`?**
@@ -155,7 +155,7 @@ _Questions this graph is uniquely positioned to answer:_
   _246 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tactical UI Components Forge` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
+- **Should `Vivid TUI Components Hub` be split into smaller, more focused modules?**
+  _Cohesion score 0.14624505928853754 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.06451612903225806 - nodes in this community are weakly interconnected._

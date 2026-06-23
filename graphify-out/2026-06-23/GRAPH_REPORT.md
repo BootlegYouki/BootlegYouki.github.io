@@ -1,16 +1,16 @@
 # Graph Report - portfolio  (2026-06-23)
 
 ## Corpus Check
-- 27 files · ~14,135 words
+- 28 files · ~14,181 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 328 nodes · 335 edges · 24 communities (20 shown, 4 thin omitted)
+- 329 nodes · 335 edges · 25 communities (21 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `788d97b7`
+- Built from commit: `25d3b4c8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,7 +59,7 @@
 - `graphify query` --references--> `graphify-out/`  [EXTRACTED]
   .agents/rules/graphify.md → README.md
 
-## Communities (24 total, 4 thin omitted)
+## Communities (25 total, 4 thin omitted)
 
 ### Community 0 - "Tactical UI Components Forge"
 Cohesion: 0.09
@@ -146,7 +146,7 @@ Nodes (15): dependencies, class-variance-authority, clsx, @fontsource-variable/j
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `Community 23` to `Vivid TUI Components Hub`, `Community 7`?**
-  _High betweenness centrality (0.069) - this node is a cross-community bridge._
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 6` to `Community 7`?**
   _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Community 2` to `Community 7`?**
