@@ -158,7 +158,7 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground transition-colors duration-500;
+    @apply bg-background text-foreground transition-colors duration-500 select-none;
     }
   html {
     @apply font-mono;

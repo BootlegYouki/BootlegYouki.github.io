@@ -22,7 +22,7 @@
 
 <fieldset
   class={cn(
-    "group border bg-card/30 backdrop-blur-sm p-4 font-mono relative transition-all duration-300 rounded-none w-full",
+    "group border bg-card/90 p-4 font-mono relative transition-colors duration-300 rounded-none w-full",
     borderColor,
     className
   )}
