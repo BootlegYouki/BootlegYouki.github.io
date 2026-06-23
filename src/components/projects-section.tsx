@@ -372,10 +372,8 @@ export function ProjectsSection() {
         for (let j = 0; j < activeIndex; j++) {
           const prevElement = itemRefs.current[projects[j].id]
           if (prevElement) {
-            const headerButton = prevElement.querySelector("button")
-            const headerHeight = headerButton ? headerButton.offsetHeight : 90
-            // Add the 16px gap (gap-4) plus 2px for borders (1px top + 1px bottom border of the card)
-            stableOffsetTop += headerHeight + 18
+            // Since all cards are fully expanded, calculate stableOffsetTop using the full card offsetHeight
+            stableOffsetTop += prevElement.offsetHeight + 16
           }
         }
         setTranslateY(-stableOffsetTop)
@@ -386,8 +384,7 @@ export function ProjectsSection() {
   }, [openProjectId])
 
   const toggleProject = (id: string) => {
-    // Keep manual toggling working if they click
-    setOpenProjectId(openProjectId === id ? null : id)
+    setOpenProjectId(id)
   }
 
   return (
@@ -424,34 +421,15 @@ export function ProjectsSection() {
                   <span className="text-base md:text-xl text-muted-foreground font-bold">{project.id}</span>
                   <span className="text-xl md:text-4xl font-extrabold text-foreground">{project.name}</span>
                 </div>
-                
-                <div className="flex items-center text-sm shrink-0">
-                  {/* Chevron Toggle */}
-                  <span className="text-muted-foreground transition-transform duration-300">
-                    {isOpen ? (
-                      <svg className="w-6 h-6 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-                      </svg>
-                    ) : (
-                      <svg className="w-6 h-6 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    )}
-                  </span>
-                </div>
               </button>
  
               <div
                 className={cn(
-                  "grid bg-card/10 transition-all",
-                  isOpen 
-                    ? "grid-rows-[1fr] opacity-100 border-t border-border/40 md:h-[calc(100dvh-20rem)]" 
-                    : "grid-rows-[0fr] opacity-0 border-t-0 md:h-0 pointer-events-none"
+                  "grid bg-card/10 transition-all grid-rows-[1fr] border-t border-border/40 md:h-[calc(100dvh-20rem)]",
+                  isOpen ? "opacity-100" : "opacity-40 pointer-events-none"
                 )}
                 style={{
-                  transition: isOpen
-                    ? "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), height 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms cubic-bezier(0.85, 0, 0.15, 1), border-color 200ms"
-                    : "grid-template-rows 500ms cubic-bezier(0.85, 0, 0.15, 1), height 500ms cubic-bezier(0.85, 0, 0.15, 1), opacity 200ms ease-out, border-color 200ms"
+                  transition: "opacity 400ms cubic-bezier(0.85, 0, 0.15, 1)"
                 }}
               >
                 <div className="overflow-hidden md:max-h-full h-full">
