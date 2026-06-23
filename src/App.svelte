@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import ScrollProgress from "@/components/ScrollProgress.svelte";
   import ScrollToTop from "@/components/ScrollToTop.svelte";
+  import MouseTrail from "@/components/MouseTrail.svelte";
   import IntroSection from "@/components/IntroSection.svelte";
   import TechTicker from "@/components/TechTicker.svelte";
   import AboutSection from "@/components/AboutSection.svelte";
@@ -51,6 +52,7 @@
 <div class="min-h-screen bg-background text-foreground font-mono transition-colors duration-300 relative">
   <ScrollProgress />
   <ScrollToTop />
+  <MouseTrail />
   <!-- Main container holding the sections -->
   <main class="w-full p-0 flex flex-col">
     <IntroSection />

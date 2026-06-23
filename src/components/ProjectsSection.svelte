@@ -275,7 +275,6 @@
       end: `+=${projects.length * 500}px`,
       pin: true,
       scrub: true,
-      anticipatePin: 1,
       onUpdate: (self) => {
         const activeIndex = Math.min(
           Math.floor(self.progress * projects.length),

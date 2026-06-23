@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.svelte": {
-    "mtime": 1782180282.3632324,
-    "ast_hash": "edc1f15173b38f8923690c8c45f38d16",
+    "mtime": 1782183114.2400608,
+    "ast_hash": "fcc11c0cf31f5ab1af924bcaa58bdaf9",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.ts": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ProjectsSection.svelte": {
-    "mtime": 1782182279.7598684,
-    "ast_hash": "911c580068905a643e2d8ad57ea5b4d8",
+    "mtime": 1782182477.4433475,
+    "ast_hash": "4c1ee8d78025ee1b5f8ae33435536ecb",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ScrollProgress.svelte": {
@@ -352,6 +352,16 @@
   "E:\\Github\\portfolio\\svelte.config.js": {
     "mtime": 1782180428.9547799,
     "ast_hash": "050554be04a585a31057f55e877df7b7",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ScrollToTop.svelte": {
+    "mtime": 1782182719.6968362,
+    "ast_hash": "15c4236367b0c25be9973ad1d472cb78",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\MouseTrail.svelte": {
+    "mtime": 1782183485.6082718,
+    "ast_hash": "79f83ee18fb8f404a0edeb6d293236b7",
     "semantic_hash": ""
   }
 }

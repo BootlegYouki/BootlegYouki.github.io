@@ -54,7 +54,7 @@
       "source_file": "components.json",
       "source_location": "L6",
       "id": "portfolio_components_tailwind",
-      "community": 3,
+      "community": 8,
       "norm_label": "tailwind"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "components.json",
       "source_location": "L7",
       "id": "portfolio_components_tailwind_config",
-      "community": 3,
+      "community": 8,
       "norm_label": "config"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "components.json",
       "source_location": "L8",
       "id": "portfolio_components_tailwind_css",
-      "community": 3,
+      "community": 8,
       "norm_label": "css"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "components.json",
       "source_location": "L9",
       "id": "portfolio_components_tailwind_basecolor",
-      "community": 3,
+      "community": 8,
       "norm_label": "basecolor"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "components.json",
       "source_location": "L10",
       "id": "portfolio_components_tailwind_cssvariables",
-      "community": 3,
+      "community": 8,
       "norm_label": "cssvariables"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "components.json",
       "source_location": "L11",
       "id": "portfolio_components_tailwind_prefix",
-      "community": 3,
+      "community": 8,
       "norm_label": "prefix"
     },
     {
@@ -1121,6 +1121,26 @@
       "norm_label": "scrollprogress.svelte"
     },
     {
+      "label": "ScrollToTop.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ScrollToTop.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_scrolltotop_svelte",
+      "community": 1,
+      "norm_label": "scrolltotop.svelte"
+    },
+    {
+      "label": "MouseTrail.svelte",
+      "file_type": "code",
+      "source_file": "src/components/MouseTrail.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_mousetrail_svelte",
+      "community": 1,
+      "norm_label": "mousetrail.svelte"
+    },
+    {
       "label": "IntroSection.svelte",
       "file_type": "code",
       "source_file": "src/components/IntroSection.svelte",
@@ -1255,6 +1275,15 @@
       "norm_label": "@/components/theme-provider"
     },
     {
+      "label": "hovering",
+      "file_type": "code",
+      "source_file": "src/components/MouseTrail.svelte",
+      "source_location": "L77",
+      "id": "components_mousetrail_hovering",
+      "community": 1,
+      "norm_label": "hovering"
+    },
+    {
       "label": "./ProjectCarousel.svelte",
       "file_type": "code",
       "source_file": "src/components/ProjectCarousel.svelte",
@@ -1277,7 +1306,7 @@
       "label": "project()",
       "file_type": "code",
       "source_file": "src/components/ProjectsSection.svelte",
-      "source_location": "L265",
+      "source_location": "L338",
       "id": "components_projectssection_project",
       "community": 1,
       "norm_label": "project()"
@@ -1791,7 +1820,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L6",
-      "community": 22,
+      "community": 3,
       "norm_label": "tailwind",
       "id": "template_tui_components_tailwind"
     },
@@ -1800,7 +1829,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L7",
-      "community": 22,
+      "community": 3,
       "norm_label": "config",
       "id": "template_tui_components_tailwind_config"
     },
@@ -1809,7 +1838,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L8",
-      "community": 22,
+      "community": 3,
       "norm_label": "css",
       "id": "template_tui_components_tailwind_css"
     },
@@ -1818,7 +1847,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L9",
-      "community": 22,
+      "community": 3,
       "norm_label": "basecolor",
       "id": "template_tui_components_tailwind_basecolor"
     },
@@ -1827,7 +1856,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L10",
-      "community": 22,
+      "community": 3,
       "norm_label": "cssvariables",
       "id": "template_tui_components_tailwind_cssvariables"
     },
@@ -1836,7 +1865,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L11",
-      "community": 22,
+      "community": 3,
       "norm_label": "prefix",
       "id": "template_tui_components_tailwind_prefix"
     },
@@ -1863,7 +1892,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L15",
-      "community": 8,
+      "community": 22,
       "norm_label": "aliases",
       "id": "template_tui_components_aliases"
     },
@@ -1872,7 +1901,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L16",
-      "community": 8,
+      "community": 22,
       "norm_label": "components",
       "id": "template_tui_components_aliases_components"
     },
@@ -1881,7 +1910,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L17",
-      "community": 8,
+      "community": 22,
       "norm_label": "utils",
       "id": "template_tui_components_aliases_utils"
     },
@@ -1890,7 +1919,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L18",
-      "community": 8,
+      "community": 22,
       "norm_label": "ui",
       "id": "template_tui_components_aliases_ui"
     },
@@ -1899,7 +1928,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L19",
-      "community": 8,
+      "community": 22,
       "norm_label": "lib",
       "id": "template_tui_components_aliases_lib"
     },
@@ -1908,7 +1937,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L20",
-      "community": 8,
+      "community": 22,
       "norm_label": "hooks",
       "id": "template_tui_components_aliases_hooks"
     },
@@ -4602,6 +4631,14 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
+      "target": "src_components_mousetrail_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.svelte",
+      "confidence_score": 1.0,
+      "source": "src_app_svelte",
       "target": "src_components_projectssection_svelte"
     },
     {
@@ -4611,6 +4648,14 @@
       "confidence_score": 1.0,
       "source": "src_app_svelte",
       "target": "src_components_scrollprogress_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.svelte",
+      "confidence_score": 1.0,
+      "source": "src_app_svelte",
+      "target": "src_components_scrolltotop_svelte"
     },
     {
       "relation": "imports_from",
@@ -4658,6 +4703,14 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/MouseTrail.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_mousetrail_svelte",
+      "target": "svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/ProjectsSection.svelte",
       "confidence_score": 1.0,
       "source": "src_components_projectssection_svelte",
@@ -4669,6 +4722,14 @@
       "source_file": "src/components/ScrollProgress.svelte",
       "confidence_score": 1.0,
       "source": "src_components_scrollprogress_svelte",
+      "target": "svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ScrollToTop.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_scrolltotop_svelte",
       "target": "svelte"
     },
     {
@@ -4691,6 +4752,16 @@
       "confidence_score": 1.0,
       "source": "src_components_scrollprogress_svelte",
       "target": "components_scrollprogress_if"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MouseTrail.svelte",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "src_components_mousetrail_svelte",
+      "target": "components_mousetrail_hovering",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -6324,5 +6395,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "25d3b4c894c008a9a55fa9c0453e22572cf7a5cd"
+  "built_at_commit": "cbb005acf1a7cdae76d14ef17e55194dea3d3eb2"
 }
