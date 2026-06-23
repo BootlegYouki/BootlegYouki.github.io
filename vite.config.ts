@@ -1,11 +1,11 @@
 import path from "path"
 import tailwindcss from "@tailwindcss/vite"
-import react from "@vitejs/plugin-react"
+import { svelte } from "@sveltejs/vite-plugin-svelte"
 import { defineConfig } from "vite"
 
 export default defineConfig({
   base: "/",
-  plugins: [react(), tailwindcss()],
+  plugins: [svelte(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
