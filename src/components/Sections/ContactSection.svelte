@@ -284,6 +284,19 @@
             </a>
           </div>
 
+          <div class="group/item flex flex-col justify-start">
+            <span
+              class="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-0.5"
+              >Phone</span
+            >
+            <a
+              href="tel:+639682351236"
+              class="text-base font-bold text-primary hover:underline"
+            >
+              +63 968 235 1236
+            </a>
+          </div>
+
           <div class="group/item flex flex-col justify-start md:col-span-2">
             <span
               class="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-0.5"
