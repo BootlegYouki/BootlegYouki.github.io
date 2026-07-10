@@ -1,16 +1,16 @@
-# Graph Report - portfolio  (2026-06-23)
+# Graph Report - portfolio  (2026-07-10)
 
 ## Corpus Check
-- 30 files · ~14,654 words
+- 33 files · ~17,942 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 332 nodes · 340 edges · 25 communities (21 shown, 4 thin omitted)
+- 339 nodes · 357 edges · 24 communities (20 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cbb005ac`
+- Built from commit: `9ae55691`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,7 +36,6 @@
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 21|Community 21]]
-- [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
 
 ## God Nodes (most connected - your core abstractions)
@@ -59,31 +58,31 @@
 - `graphify query` --references--> `graphify-out/`  [EXTRACTED]
   .agents/rules/graphify.md → README.md
 
-## Communities (25 total, 4 thin omitted)
+## Communities (24 total, 4 thin omitted)
 
 ### Community 0 - "Tactical UI Components Forge"
 Cohesion: 0.09
 Nodes (22): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+14 more)
 
 ### Community 1 - "Vivid TUI Components Hub"
-Cohesion: 0.13
-Nodes (10): hovering, @/components/theme-provider, @/lib/utils, svelte/elements, gsap, svelte, gsap/ScrollTrigger, @/components/FlickerSpinner.svelte (+2 more)
+Cohesion: 0.14
+Nodes (9): @/assets/Photos/Photo1.jpg, @/assets/Photos/Photo2.jpg, @/components/theme-provider, @/lib/utils, svelte/easing, svelte/elements, gsap/ScrollTrigger, @/components/ui/Icons.svelte (+1 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.12
 Nodes (17): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, prettier, prettier-plugin-tailwindcss (+9 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.06
-Nodes (30): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+22 more)
+Cohesion: 0.05
+Nodes (36): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+28 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.10
 Nodes (20): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+12 more)
 
 ### Community 5 - "Data Pulse Hub"
-Cohesion: 0.11
-Nodes (18): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+10 more)
+Cohesion: 0.12
+Nodes (16): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+8 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.09
@@ -114,8 +113,8 @@ Cohesion: 0.18
 Nodes (10): compilerOptions, paths, files, @/*, references, compilerOptions, paths, files (+2 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.12
-Nodes (16): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+8 more)
+Cohesion: 0.11
+Nodes (18): include, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution (+10 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.22
@@ -129,13 +128,9 @@ Nodes (15): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, esli
 Cohesion: 0.25
 Nodes (7): 1., 2., 3. (Optional), 4., 5., 6. (Optional), Installing Webfonts
 
-### Community 22 - "Community 22"
-Cohesion: 0.33
-Nodes (6): aliases, components, hooks, lib, ui, utils
-
 ### Community 23 - "Community 23"
-Cohesion: 0.12
-Nodes (15): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, lenis, radix-ui, react, react-dom (+7 more)
+Cohesion: 0.10
+Nodes (18): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, gsap, lenis, phosphor-svelte, radix-ui (+10 more)
 
 ## Knowledge Gaps
 - **244 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+239 more)
@@ -145,17 +140,17 @@ Nodes (15): dependencies, class-variance-authority, clsx, @fontsource-variable/j
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `Community 23` to `Vivid TUI Components Hub`, `Community 7`?**
-  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Community 23` to `Community 7`?**
+  _High betweenness centrality (0.082) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 6` to `Community 7`?**
-  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Community 2` to `Community 7`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
   _247 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tactical UI Components Forge` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `Vivid TUI Components Hub` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13756613756613756 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._

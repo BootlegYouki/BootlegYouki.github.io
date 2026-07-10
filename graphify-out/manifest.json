@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\package.json": {
-    "mtime": 1782180064.8752463,
-    "ast_hash": "3fbedc6b1084ae931878d4ee91d9b2de",
+    "mtime": 1783696456.9334235,
+    "ast_hash": "6a95c441fb566168c58b390f64e77567",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\tsconfig.app.json": {
@@ -280,58 +280,18 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.github\\workflows\\deploy.yml": {
-    "mtime": 1782181139.0612748,
-    "ast_hash": "6ac7234453c47feed75db57eae9e60a3",
+    "mtime": 1783700848.8830585,
+    "ast_hash": "2430178ef4318bd0af0bd68cf3996431",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.svelte": {
-    "mtime": 1782188918.656686,
-    "ast_hash": "4bcffe41613fa3ed851be0d0f99082c2",
+    "mtime": 1783697446.000249,
+    "ast_hash": "70c2b47d464c669e6022d59a3854ef8e",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.ts": {
     "mtime": 1782180273.7961113,
     "ast_hash": "c5c6245e8128be526ff68a02750f77a3",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\AboutSection.svelte": {
-    "mtime": 1782188994.7369478,
-    "ast_hash": "3c674dbf8531a880f9c32d0e9001cc6b",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\FlickerSpinner.svelte": {
-    "mtime": 1782180132.6880054,
-    "ast_hash": "73b57be4f52b29cb25b1f19b5ce0ca31",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\Icons.svelte": {
-    "mtime": 1782190067.9601066,
-    "ast_hash": "5a9ad6ee44c502c71efeeea35c78890a",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\IntroSection.svelte": {
-    "mtime": 1782180335.845734,
-    "ast_hash": "c41ecad312649e9b648b0d3498663b84",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\ProjectCarousel.svelte": {
-    "mtime": 1782189138.9501023,
-    "ast_hash": "5719247e7ecfcd5c4054ce3d4d9fec3d",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\ProjectsSection.svelte": {
-    "mtime": 1782189134.026095,
-    "ast_hash": "5aa849b43046bf19fdc38832d9752a85",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\ScrollProgress.svelte": {
-    "mtime": 1782180329.971448,
-    "ast_hash": "9399959be144e88e663cc51492d2fc06",
-    "semantic_hash": ""
-  },
-  "E:\\Github\\portfolio\\src\\components\\TechTicker.svelte": {
-    "mtime": 1782190076.187154,
-    "ast_hash": "4cf8316d84564d3a8133c63ef55b6dec",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\theme-provider.ts": {
@@ -345,8 +305,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\TuiContainer.svelte": {
-    "mtime": 1782189672.007496,
-    "ast_hash": "1f402e314c31360c08cd83d48623f062",
+    "mtime": 1783700191.1631556,
+    "ast_hash": "261d31e1701460140006479247143303",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\svelte.config.js": {
@@ -354,14 +314,69 @@
     "ast_hash": "050554be04a585a31057f55e877df7b7",
     "semantic_hash": ""
   },
-  "E:\\Github\\portfolio\\src\\components\\ScrollToTop.svelte": {
-    "mtime": 1782182719.6968362,
-    "ast_hash": "15c4236367b0c25be9973ad1d472cb78",
+  "E:\\Github\\portfolio\\src\\components\\Sections\\AboutSection.svelte": {
+    "mtime": 1783700114.1108646,
+    "ast_hash": "c8a8606a6275c73cdc7c5030d313a640",
     "semantic_hash": ""
   },
-  "E:\\Github\\portfolio\\src\\components\\MouseTrail.svelte": {
-    "mtime": 1782189778.5824692,
-    "ast_hash": "0e45f95e12bcb115f889b38d31e9552b",
+  "E:\\Github\\portfolio\\src\\components\\Sections\\IntroSection.svelte": {
+    "mtime": 1783699819.6684165,
+    "ast_hash": "46e77dd89dbb94121344878224170a45",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\Sections\\ProjectsSection.svelte": {
+    "mtime": 1783699584.4429753,
+    "ast_hash": "d15cb6cd88f472d248596aabd5f20b05",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\FlickerSpinner.svelte": {
+    "mtime": 1782180132.6880054,
+    "ast_hash": "73b57be4f52b29cb25b1f19b5ce0ca31",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\Icons.svelte": {
+    "mtime": 1782190175.742168,
+    "ast_hash": "26f106229fc5292d2eaeaac544cde875",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\MouseTrail.svelte": {
+    "mtime": 1783700359.4413395,
+    "ast_hash": "8631ca0a3e272ad747e7717faafe8f5e",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\ProjectCarousel.svelte": {
+    "mtime": 1782189138.9501023,
+    "ast_hash": "5719247e7ecfcd5c4054ce3d4d9fec3d",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\ScrollProgress.svelte": {
+    "mtime": 1782180329.971448,
+    "ast_hash": "9399959be144e88e663cc51492d2fc06",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\ScrollToTop.svelte": {
+    "mtime": 1783690570.415014,
+    "ast_hash": "42b9946159ba1065f4097d4faaaa47a7",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\TechTicker.svelte": {
+    "mtime": 1783695744.5341718,
+    "ast_hash": "5741a6251f2c3f4dd963ad189bd9cf00",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\Sections\\ConceptSection.svelte": {
+    "mtime": 1783699853.437343,
+    "ast_hash": "0f5e5f1ec1b2f2a3d14dcdf70d47e234",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\Sections\\ContactSection.svelte": {
+    "mtime": 1783700845.7065628,
+    "ast_hash": "f66e70b2aca79211fd5539f151114a53",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\Footer.svelte": {
+    "mtime": 1783697475.1866798,
+    "ast_hash": "f499d85b869bbfc86e705618cd1bc4a1",
     "semantic_hash": ""
   }
 }

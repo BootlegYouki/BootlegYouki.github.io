@@ -21,7 +21,7 @@
   let mouseX = $state(0);
   let mouseY = $state(0);
   let isVisible = $state(false);
-  let isDrawing = $state(false);
+  let isEnabled = $state(false);
 
   let lastX = 0;
   let lastY = 0;
@@ -31,8 +31,7 @@
     mouseY = e.clientY;
     isVisible = true;
 
-    // Use denser spawning (4px) when drawing for smooth lines, regular (8px) for normal trail
-    const minDistance = isDrawing ? 4 : 8;
+    const minDistance = 8;
     const dist = Math.hypot(e.clientX - lastX, e.clientY - lastY);
     
     if (dist > minDistance) {
@@ -40,7 +39,7 @@
         id: Math.random(),
         x: e.clientX,
         y: e.clientY,
-        type: isDrawing ? "draw" : "trail"
+        type: "trail"
       });
       lastX = e.clientX;
       lastY = e.clientY;
@@ -48,7 +47,6 @@
   };
 
   const handleMouseDown = (e: MouseEvent) => {
-    isDrawing = true;
     lastX = e.clientX;
     lastY = e.clientY;
 
@@ -72,13 +70,8 @@
     particles.push(...newParticles);
   };
 
-  const handleMouseUp = () => {
-    isDrawing = false;
-  };
-
   const handleMouseLeave = () => {
     isVisible = false;
-    isDrawing = false;
   };
 
   const removeBox = (id: number) => {
@@ -90,15 +83,17 @@
   };
 
   onMount(() => {
+    const media = window.matchMedia("(pointer: fine)");
+    isEnabled = media.matches;
+    if (!isEnabled) return;
+
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("mousedown", handleMouseDown, { passive: true });
-    window.addEventListener("mouseup", handleMouseUp, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
     
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
   });
@@ -117,35 +112,37 @@
 </svelte:head>
 
 <!-- Stays on top (z-50) for both custom cursor, explosions, and trails -->
-<div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
-  <!-- Active Custom Cursor -->
-  {#if isVisible}
-    <div
-      class="custom-cursor bg-foreground"
-      style="left: {mouseX}px; top: {mouseY}px;"
-    ></div>
-  {/if}
+{#if isEnabled}
+  <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+    <!-- Active Custom Cursor -->
+    {#if isVisible}
+      <div
+        class="custom-cursor bg-foreground"
+        style="left: {mouseX}px; top: {mouseY}px;"
+      ></div>
+    {/if}
 
-  <!-- Click Explosion Particles -->
-  {#each particles as p (p.id)}
-    <div
-      class="explosion-particle bg-foreground"
-      style="left: {p.x}px; top: {p.y}px; --tx: {p.tx}; --ty: {p.ty};"
-      onanimationend={() => removeParticle(p.id)}
-    ></div>
-  {/each}
+    <!-- Click Explosion Particles -->
+    {#each particles as p (p.id)}
+      <div
+        class="explosion-particle bg-foreground"
+        style="left: {p.x}px; top: {p.y}px; --tx: {p.tx}; --ty: {p.ty};"
+        onanimationend={() => removeParticle(p.id)}
+      ></div>
+    {/each}
 
-  <!-- Drawing and Trail Boxes -->
-  {#each trailBoxes as box (box.id)}
-    <div
-      class="trail-box bg-foreground"
-      class:trail={box.type === "trail"}
-      class:draw={box.type === "draw"}
-      style="left: {box.x}px; top: {box.y}px;"
-      onanimationend={() => removeBox(box.id)}
-    ></div>
-  {/each}
-</div>
+    <!-- Drawing and Trail Boxes -->
+    {#each trailBoxes as box (box.id)}
+      <div
+        class="trail-box bg-foreground"
+        class:trail={box.type === "trail"}
+        class:draw={box.type === "draw"}
+        style="left: {box.x}px; top: {box.y}px;"
+        onanimationend={() => removeBox(box.id)}
+      ></div>
+    {/each}
+  </div>
+{/if}
 
 <style>
   /* Custom Cursor Styling */

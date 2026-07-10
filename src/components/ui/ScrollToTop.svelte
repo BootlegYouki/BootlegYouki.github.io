@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
 
   let showButton = $state(false);
+  let isModalOpen = $state(false);
 
   const checkScroll = () => {
     showButton = window.scrollY > 300;
@@ -11,8 +12,14 @@
     window.addEventListener("scroll", checkScroll, { passive: true });
     checkScroll();
 
+    const handleToggle = (e: any) => {
+      isModalOpen = e.detail.open;
+    };
+    window.addEventListener("projectModalToggle", handleToggle);
+
     return () => {
       window.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("projectModalToggle", handleToggle);
     };
   });
 
@@ -28,7 +35,7 @@
   };
 </script>
 
-{#if showButton}
+{#if showButton && !isModalOpen}
   <button
     onclick={scrollToTop}
     class="fixed bottom-6 right-6 z-40 w-10 h-10 flex items-center justify-center border border-foreground/10 bg-foreground text-background hover:bg-background hover:text-foreground hover:border-border transition-all duration-200 select-none cursor-pointer active:scale-95 animate-fade-in shadow-lg"

@@ -1,12 +1,15 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import ScrollProgress from "@/components/ScrollProgress.svelte";
-  import ScrollToTop from "@/components/ScrollToTop.svelte";
-  import MouseTrail from "@/components/MouseTrail.svelte";
-  import IntroSection from "@/components/IntroSection.svelte";
-  import TechTicker from "@/components/TechTicker.svelte";
-  import AboutSection from "@/components/AboutSection.svelte";
-  import ProjectsSection from "@/components/ProjectsSection.svelte";
+  import ScrollProgress from "@/components/ui/ScrollProgress.svelte";
+  import ScrollToTop from "@/components/ui/ScrollToTop.svelte";
+  import MouseTrail from "@/components/ui/MouseTrail.svelte";
+  import IntroSection from "@/components/Sections/IntroSection.svelte";
+  import TechTicker from "@/components/ui/TechTicker.svelte";
+  import AboutSection from "@/components/Sections/AboutSection.svelte";
+  import ProjectsSection from "@/components/Sections/ProjectsSection.svelte";
+  import ConceptSection from "@/components/Sections/ConceptSection.svelte";
+  import ContactSection from "@/components/Sections/ContactSection.svelte";
+  import Footer from "@/components/ui/Footer.svelte";
   import Lenis from "lenis";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -61,6 +64,9 @@
         <TechTicker />
         <AboutSection />
         <ProjectsSection />
+        <ConceptSection />
+        <ContactSection />
+        <Footer />
       </div>
     {/if}
   </main>

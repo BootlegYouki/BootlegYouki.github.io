@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from "@/lib/utils";
-  import Icons from "@/components/Icons.svelte";
+  import Icons from "@/components/ui/Icons.svelte";
 
   const tools = [
     { name: "React", icon: "react", color: "#61dafb", description: "Component-based UI library for building dynamic, responsive web interfaces.", hoverStyle: "hover:bg-[#61dafb]/15 hover:border-[#61dafb]/80 hover:text-[#61dafb] hover:shadow-[0_0_20px_rgba(97,218,251,0.2)]" },
@@ -56,7 +56,7 @@
       <!-- svelte-ignore a11y_no_static_element_interactions -->
       <span
         class={cn(
-          "group border border-border/60 px-4 py-2 md:px-8 md:py-4 text-xs md:text-lg font-extrabold text-muted-foreground cursor-pointer transition-all duration-200 bg-card/20 rounded-none font-mono whitespace-nowrap inline-flex items-center gap-2 md:gap-3",
+          "group border border-border/60 px-6 py-3 md:px-10 md:py-5 text-sm md:text-xl font-extrabold text-muted-foreground cursor-pointer transition-all duration-200 bg-card/20 rounded-none font-mono whitespace-nowrap inline-flex items-center gap-3 md:gap-4",
           tool.hoverStyle
         )}
         onmouseenter={pauseScrolling}
@@ -65,7 +65,7 @@
         <Icons
           name={tool.icon as any}
           class={cn(
-            "h-5 md:h-7 w-auto opacity-60 dark:opacity-85 group-hover:opacity-100 transition-all duration-200 select-none pointer-events-none",
+            "h-6 md:h-8 w-auto opacity-60 dark:opacity-85 group-hover:opacity-100 transition-all duration-200 select-none pointer-events-none",
             tool.iconClass
           )}
         />

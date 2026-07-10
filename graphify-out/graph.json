@@ -396,7 +396,7 @@
       "source_file": "package.json",
       "source_location": "L23",
       "id": "portfolio_package_dependencies_gsap",
-      "community": 1,
+      "community": 23,
       "norm_label": "gsap"
     },
     {
@@ -409,19 +409,28 @@
       "norm_label": "lenis"
     },
     {
-      "label": "svelte",
+      "label": "phosphor-svelte",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L25",
+      "id": "portfolio_package_dependencies_phosphor_svelte",
+      "community": 23,
+      "norm_label": "phosphor-svelte"
+    },
+    {
+      "label": "svelte",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
       "id": "portfolio_package_dependencies_svelte",
-      "community": 1,
+      "community": 23,
       "norm_label": "svelte"
     },
     {
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "id": "portfolio_package_dependencies_tailwind_merge",
       "community": 23,
       "norm_label": "tailwind-merge"
@@ -430,7 +439,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "id": "portfolio_package_dependencies_tailwindcss",
       "community": 23,
       "norm_label": "tailwindcss"
@@ -439,7 +448,7 @@
       "label": "tw-animate-css",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "id": "portfolio_package_dependencies_tw_animate_css",
       "community": 23,
       "norm_label": "tw-animate-css"
@@ -448,7 +457,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "id": "portfolio_package_devdependencies",
       "community": 2,
       "norm_label": "devdependencies"
@@ -457,7 +466,7 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "id": "portfolio_package_devdependencies_eslint_js",
       "community": 2,
       "norm_label": "@eslint/js"
@@ -466,7 +475,7 @@
       "label": "@sveltejs/vite-plugin-svelte",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "id": "portfolio_package_devdependencies_sveltejs_vite_plugin_svelte",
       "community": 2,
       "norm_label": "@sveltejs/vite-plugin-svelte"
@@ -475,7 +484,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "id": "portfolio_package_devdependencies_types_node",
       "community": 2,
       "norm_label": "@types/node"
@@ -484,7 +493,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "id": "portfolio_package_devdependencies_eslint",
       "community": 2,
       "norm_label": "eslint"
@@ -493,7 +502,7 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "id": "portfolio_package_devdependencies_globals",
       "community": 2,
       "norm_label": "globals"
@@ -502,7 +511,7 @@
       "label": "prettier",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "id": "portfolio_package_devdependencies_prettier",
       "community": 2,
       "norm_label": "prettier"
@@ -511,7 +520,7 @@
       "label": "prettier-plugin-tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L38",
       "id": "portfolio_package_devdependencies_prettier_plugin_tailwindcss",
       "community": 2,
       "norm_label": "prettier-plugin-tailwindcss"
@@ -520,7 +529,7 @@
       "label": "svelte-check",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "id": "portfolio_package_devdependencies_svelte_check",
       "community": 2,
       "norm_label": "svelte-check"
@@ -529,7 +538,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "id": "portfolio_package_devdependencies_typescript",
       "community": 2,
       "norm_label": "typescript"
@@ -538,7 +547,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L41",
       "id": "portfolio_package_devdependencies_vite",
       "community": 2,
       "norm_label": "vite"
@@ -810,7 +819,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L1",
       "id": "tsconfig_node_json",
-      "community": 5,
+      "community": 18,
       "norm_label": "tsconfig.node.json"
     },
     {
@@ -963,7 +972,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L23",
       "id": "portfolio_tsconfig_node_include",
-      "community": 5,
+      "community": 18,
       "norm_label": "include"
     },
     {
@@ -1113,72 +1122,102 @@
     {
       "label": "ScrollProgress.svelte",
       "file_type": "code",
-      "source_file": "src/components/ScrollProgress.svelte",
+      "source_file": "src/components/ui/ScrollProgress.svelte",
       "confidence": "EXTRACTED",
       "source_location": "L1",
-      "id": "src_components_scrollprogress_svelte",
+      "id": "src_components_ui_scrollprogress_svelte",
       "community": 1,
       "norm_label": "scrollprogress.svelte"
     },
     {
       "label": "ScrollToTop.svelte",
       "file_type": "code",
-      "source_file": "src/components/ScrollToTop.svelte",
+      "source_file": "src/components/ui/ScrollToTop.svelte",
       "confidence": "EXTRACTED",
       "source_location": "L1",
-      "id": "src_components_scrolltotop_svelte",
+      "id": "src_components_ui_scrolltotop_svelte",
       "community": 1,
       "norm_label": "scrolltotop.svelte"
     },
     {
       "label": "MouseTrail.svelte",
       "file_type": "code",
-      "source_file": "src/components/MouseTrail.svelte",
+      "source_file": "src/components/ui/MouseTrail.svelte",
       "confidence": "EXTRACTED",
       "source_location": "L1",
-      "id": "src_components_mousetrail_svelte",
+      "id": "src_components_ui_mousetrail_svelte",
       "community": 1,
       "norm_label": "mousetrail.svelte"
     },
     {
       "label": "IntroSection.svelte",
       "file_type": "code",
-      "source_file": "src/components/IntroSection.svelte",
+      "source_file": "src/components/Sections/IntroSection.svelte",
       "confidence": "EXTRACTED",
       "source_location": "L1",
-      "id": "src_components_introsection_svelte",
+      "id": "src_components_sections_introsection_svelte",
       "community": 1,
       "norm_label": "introsection.svelte"
     },
     {
       "label": "TechTicker.svelte",
       "file_type": "code",
-      "source_file": "src/components/TechTicker.svelte",
+      "source_file": "src/components/ui/TechTicker.svelte",
       "confidence": "EXTRACTED",
       "source_location": "L1",
-      "id": "src_components_techticker_svelte",
+      "id": "src_components_ui_techticker_svelte",
       "community": 1,
       "norm_label": "techticker.svelte"
     },
     {
       "label": "AboutSection.svelte",
       "file_type": "code",
-      "source_file": "src/components/AboutSection.svelte",
+      "source_file": "src/components/Sections/AboutSection.svelte",
       "confidence": "EXTRACTED",
       "source_location": "L1",
-      "id": "src_components_aboutsection_svelte",
+      "id": "src_components_sections_aboutsection_svelte",
       "community": 1,
       "norm_label": "aboutsection.svelte"
     },
     {
       "label": "ProjectsSection.svelte",
       "file_type": "code",
-      "source_file": "src/components/ProjectsSection.svelte",
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence": "EXTRACTED",
       "source_location": "L1",
-      "id": "src_components_projectssection_svelte",
+      "id": "src_components_sections_projectssection_svelte",
       "community": 1,
       "norm_label": "projectssection.svelte"
+    },
+    {
+      "label": "ConceptSection.svelte",
+      "file_type": "code",
+      "source_file": "src/components/Sections/ConceptSection.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_sections_conceptsection_svelte",
+      "community": 1,
+      "norm_label": "conceptsection.svelte"
+    },
+    {
+      "label": "ContactSection.svelte",
+      "file_type": "code",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_sections_contactsection_svelte",
+      "community": 1,
+      "norm_label": "contactsection.svelte"
+    },
+    {
+      "label": "Footer.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/Footer.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_footer_svelte",
+      "community": 1,
+      "norm_label": "footer.svelte"
     },
     {
       "label": "lenis",
@@ -1215,101 +1254,6 @@
       "id": "src_main_ts",
       "community": 1,
       "norm_label": "main.ts"
-    },
-    {
-      "label": "TuiContainer.svelte",
-      "file_type": "code",
-      "source_file": "src/components/ui/TuiContainer.svelte",
-      "confidence": "EXTRACTED",
-      "source_location": "L1",
-      "id": "src_components_ui_tuicontainer_svelte",
-      "community": 1,
-      "norm_label": "tuicontainer.svelte"
-    },
-    {
-      "label": "@/components/FlickerSpinner.svelte",
-      "file_type": "code",
-      "source_file": "src/components/FlickerSpinner.svelte",
-      "source_location": "L1",
-      "confidence": "EXTRACTED",
-      "id": "src_components_flickerspinner_svelte",
-      "community": 1,
-      "norm_label": "@/components/flickerspinner.svelte"
-    },
-    {
-      "label": "@/components/Icons.svelte",
-      "file_type": "code",
-      "source_file": "src/components/Icons.svelte",
-      "source_location": "L1",
-      "confidence": "EXTRACTED",
-      "id": "src_components_icons_svelte",
-      "community": 1,
-      "norm_label": "@/components/icons.svelte"
-    },
-    {
-      "label": "svelte/elements",
-      "file_type": "code",
-      "source_file": "svelte/elements",
-      "confidence": "EXTRACTED",
-      "id": "elements",
-      "community": 1,
-      "norm_label": "svelte/elements"
-    },
-    {
-      "label": "Separator.svelte",
-      "file_type": "code",
-      "source_file": "src/components/ui/Separator.svelte",
-      "confidence": "EXTRACTED",
-      "source_location": "L1",
-      "id": "src_components_ui_separator_svelte",
-      "community": 1,
-      "norm_label": "separator.svelte"
-    },
-    {
-      "label": "@/components/theme-provider",
-      "file_type": "code",
-      "source_file": "src/components/theme-provider",
-      "confidence": "EXTRACTED",
-      "id": "e_github_portfolio_src_components_theme_provider",
-      "community": 1,
-      "norm_label": "@/components/theme-provider"
-    },
-    {
-      "label": "./ProjectCarousel.svelte",
-      "file_type": "code",
-      "source_file": "src/components/ProjectCarousel.svelte",
-      "source_location": "L1",
-      "confidence": "EXTRACTED",
-      "id": "src_components_projectcarousel_svelte",
-      "community": 1,
-      "norm_label": "./projectcarousel.svelte"
-    },
-    {
-      "label": "@/lib/utils",
-      "file_type": "code",
-      "source_file": "src/lib/utils",
-      "confidence": "EXTRACTED",
-      "id": "e_github_portfolio_src_lib_utils",
-      "community": 1,
-      "norm_label": "@/lib/utils"
-    },
-    {
-      "label": "project()",
-      "file_type": "code",
-      "source_file": "src/components/ProjectsSection.svelte",
-      "source_location": "L337",
-      "id": "components_projectssection_project",
-      "community": 1,
-      "norm_label": "project()"
-    },
-    {
-      "label": "if()",
-      "file_type": "code",
-      "source_file": "src/components/ScrollProgress.svelte",
-      "source_location": "L30",
-      "id": "components_scrollprogress_if",
-      "community": 1,
-      "norm_label": "if()"
     },
     {
       "label": "theme-provider.ts",
@@ -1409,6 +1353,137 @@
       "id": "components_theme_provider_settheme",
       "community": 19,
       "norm_label": "settheme()"
+    },
+    {
+      "label": "TuiContainer.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/TuiContainer.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_tuicontainer_svelte",
+      "community": 1,
+      "norm_label": "tuicontainer.svelte"
+    },
+    {
+      "label": "@/assets/Photos/Photo1.jpg",
+      "file_type": "code",
+      "source_file": "src/assets/Photos/Photo1.jpg",
+      "confidence": "EXTRACTED",
+      "id": "e_github_portfolio_src_assets_photos_photo1_jpg",
+      "community": 1,
+      "norm_label": "@/assets/photos/photo1.jpg"
+    },
+    {
+      "label": "@/assets/Photos/Photo2.jpg",
+      "file_type": "code",
+      "source_file": "src/assets/Photos/Photo2.jpg",
+      "confidence": "EXTRACTED",
+      "id": "e_github_portfolio_src_assets_photos_photo2_jpg",
+      "community": 1,
+      "norm_label": "@/assets/photos/photo2.jpg"
+    },
+    {
+      "label": "phosphor-svelte",
+      "file_type": "code",
+      "source_file": "phosphor-svelte",
+      "confidence": "EXTRACTED",
+      "id": "phosphor_svelte",
+      "community": 23,
+      "norm_label": "phosphor-svelte"
+    },
+    {
+      "label": "Separator.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/Separator.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_separator_svelte",
+      "community": 1,
+      "norm_label": "separator.svelte"
+    },
+    {
+      "label": "@/components/theme-provider",
+      "file_type": "code",
+      "source_file": "src/components/theme-provider",
+      "confidence": "EXTRACTED",
+      "id": "e_github_portfolio_src_components_theme_provider",
+      "community": 1,
+      "norm_label": "@/components/theme-provider"
+    },
+    {
+      "label": "FlickerSpinner.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/FlickerSpinner.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_flickerspinner_svelte",
+      "community": 1,
+      "norm_label": "flickerspinner.svelte"
+    },
+    {
+      "label": "svelte/transition",
+      "file_type": "code",
+      "source_file": "svelte/transition",
+      "confidence": "EXTRACTED",
+      "id": "transition",
+      "community": 1,
+      "norm_label": "svelte/transition"
+    },
+    {
+      "label": "svelte/easing",
+      "file_type": "code",
+      "source_file": "svelte/easing",
+      "confidence": "EXTRACTED",
+      "id": "easing",
+      "community": 1,
+      "norm_label": "svelte/easing"
+    },
+    {
+      "label": "ProjectCarousel.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/ProjectCarousel.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_projectcarousel_svelte",
+      "community": 1,
+      "norm_label": "projectcarousel.svelte"
+    },
+    {
+      "label": "@/components/ui/Icons.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/Icons.svelte",
+      "source_location": "L1",
+      "confidence": "EXTRACTED",
+      "id": "src_components_ui_icons_svelte",
+      "community": 1,
+      "norm_label": "@/components/ui/icons.svelte"
+    },
+    {
+      "label": "svelte/elements",
+      "file_type": "code",
+      "source_file": "svelte/elements",
+      "confidence": "EXTRACTED",
+      "id": "elements",
+      "community": 1,
+      "norm_label": "svelte/elements"
+    },
+    {
+      "label": "@/lib/utils",
+      "file_type": "code",
+      "source_file": "src/lib/utils",
+      "confidence": "EXTRACTED",
+      "id": "e_github_portfolio_src_lib_utils",
+      "community": 1,
+      "norm_label": "@/lib/utils"
+    },
+    {
+      "label": "if()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrollProgress.svelte",
+      "source_location": "L30",
+      "id": "ui_scrollprogress_if",
+      "community": 1,
+      "norm_label": "if()"
     },
     {
       "label": "utils.ts",
@@ -1672,15 +1747,6 @@
       "norm_label": "6. (optional)"
     },
     {
-      "label": "hovering",
-      "file_type": "code",
-      "source_file": "src/components/MouseTrail.svelte",
-      "source_location": "L77",
-      "community": 1,
-      "norm_label": "hovering",
-      "id": "components_mousetrail_hovering"
-    },
-    {
       "label": "radix-ui",
       "file_type": "code",
       "source_file": "package.json",
@@ -1892,7 +1958,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L15",
-      "community": 22,
+      "community": 3,
       "norm_label": "aliases",
       "id": "template_tui_components_aliases"
     },
@@ -1901,7 +1967,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L16",
-      "community": 22,
+      "community": 3,
       "norm_label": "components",
       "id": "template_tui_components_aliases_components"
     },
@@ -1910,7 +1976,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L17",
-      "community": 22,
+      "community": 3,
       "norm_label": "utils",
       "id": "template_tui_components_aliases_utils"
     },
@@ -1919,7 +1985,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L18",
-      "community": 22,
+      "community": 3,
       "norm_label": "ui",
       "id": "template_tui_components_aliases_ui"
     },
@@ -1928,7 +1994,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L19",
-      "community": 22,
+      "community": 3,
       "norm_label": "lib",
       "id": "template_tui_components_aliases_lib"
     },
@@ -1937,7 +2003,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L20",
-      "community": 22,
+      "community": 3,
       "norm_label": "hooks",
       "id": "template_tui_components_aliases_hooks"
     },
@@ -2738,7 +2804,7 @@
       "file_type": "code",
       "source_file": "tsconfig.node.json",
       "source_location": "L23",
-      "community": 5,
+      "community": 18,
       "norm_label": "include",
       "id": "template_tui_tsconfig_node_include"
     },
@@ -3656,6 +3722,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "portfolio_package_dependencies",
+      "target": "portfolio_package_dependencies_phosphor_svelte"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L23",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3783,6 +3859,17 @@
       "confidence_score": 1.0,
       "source": "portfolio_package_dependencies_lenis",
       "target": "lenis"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "portfolio_package_dependencies_phosphor_svelte",
+      "target": "phosphor_svelte"
     },
     {
       "relation": "imports",
@@ -4615,7 +4702,7 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_aboutsection_svelte"
+      "target": "src_components_sections_aboutsection_svelte"
     },
     {
       "relation": "imports_from",
@@ -4623,7 +4710,7 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_introsection_svelte"
+      "target": "src_components_sections_conceptsection_svelte"
     },
     {
       "relation": "imports_from",
@@ -4631,7 +4718,7 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_mousetrail_svelte"
+      "target": "src_components_sections_contactsection_svelte"
     },
     {
       "relation": "imports_from",
@@ -4639,7 +4726,7 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_projectssection_svelte"
+      "target": "src_components_sections_introsection_svelte"
     },
     {
       "relation": "imports_from",
@@ -4647,7 +4734,15 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_scrollprogress_svelte"
+      "target": "src_components_sections_projectssection_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.svelte",
+      "source": "src_app_svelte",
+      "target": "src_components_ui_footer_svelte",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -4655,7 +4750,7 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_scrolltotop_svelte"
+      "target": "src_components_ui_mousetrail_svelte"
     },
     {
       "relation": "imports_from",
@@ -4663,7 +4758,23 @@
       "source_file": "src/App.svelte",
       "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_techticker_svelte"
+      "target": "src_components_ui_scrollprogress_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.svelte",
+      "confidence_score": 1.0,
+      "source": "src_app_svelte",
+      "target": "src_components_ui_scrolltotop_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.svelte",
+      "confidence_score": 1.0,
+      "source": "src_app_svelte",
+      "target": "src_components_ui_techticker_svelte"
     },
     {
       "relation": "imports_from",
@@ -4687,49 +4798,65 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/AboutSection.svelte",
+      "source_file": "src/components/Sections/AboutSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_aboutsection_svelte",
+      "source": "src_components_sections_aboutsection_svelte",
       "target": "svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/IntroSection.svelte",
+      "source_file": "src/components/Sections/ConceptSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_introsection_svelte",
+      "source": "src_components_sections_conceptsection_svelte",
       "target": "svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/MouseTrail.svelte",
+      "source_file": "src/components/Sections/ContactSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_mousetrail_svelte",
+      "source": "src_components_sections_contactsection_svelte",
       "target": "svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProjectsSection.svelte",
+      "source_file": "src/components/Sections/IntroSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_projectssection_svelte",
+      "source": "src_components_sections_introsection_svelte",
       "target": "svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ScrollProgress.svelte",
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_scrollprogress_svelte",
+      "source": "src_components_sections_projectssection_svelte",
       "target": "svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ScrollToTop.svelte",
+      "source_file": "src/components/ui/MouseTrail.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_scrolltotop_svelte",
+      "source": "src_components_ui_mousetrail_svelte",
+      "target": "svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ScrollProgress.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_scrollprogress_svelte",
+      "target": "svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ScrollToTop.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_scrolltotop_svelte",
       "target": "svelte"
     },
     {
@@ -4746,168 +4873,212 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ScrollProgress.svelte",
+      "source_file": "src/components/ui/ScrollProgress.svelte",
       "source_location": "L30",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_components_scrollprogress_svelte",
-      "target": "components_scrollprogress_if"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/MouseTrail.svelte",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_mousetrail_svelte",
-      "target": "components_mousetrail_hovering"
+      "source": "src_components_ui_scrollprogress_svelte",
+      "target": "ui_scrollprogress_if"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/IntroSection.svelte",
+      "source_file": "src/components/Sections/IntroSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_introsection_svelte",
+      "source": "src_components_sections_introsection_svelte",
       "target": "e_github_portfolio_src_components_theme_provider"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/IntroSection.svelte",
+      "source_file": "src/components/Sections/IntroSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_introsection_svelte",
-      "target": "src_components_flickerspinner_svelte"
+      "source": "src_components_sections_introsection_svelte",
+      "target": "src_components_ui_flickerspinner_svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/IntroSection.svelte",
+      "source_file": "src/components/Sections/IntroSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_introsection_svelte",
+      "source": "src_components_sections_introsection_svelte",
       "target": "src_components_ui_separator_svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/IntroSection.svelte",
+      "source_file": "src/components/Sections/IntroSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_introsection_svelte",
+      "source": "src_components_sections_introsection_svelte",
       "target": "src_components_ui_tuicontainer_svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/TechTicker.svelte",
+      "source_file": "src/components/ui/TechTicker.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_techticker_svelte",
+      "source": "src_components_ui_techticker_svelte",
       "target": "e_github_portfolio_src_lib_utils"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/TechTicker.svelte",
+      "source_file": "src/components/ui/TechTicker.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_techticker_svelte",
-      "target": "src_components_icons_svelte"
+      "source": "src_components_ui_techticker_svelte",
+      "target": "src_components_ui_icons_svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/AboutSection.svelte",
+      "source_file": "src/components/Sections/AboutSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_aboutsection_svelte",
+      "source": "src_components_sections_aboutsection_svelte",
+      "target": "e_github_portfolio_src_assets_photos_photo1_jpg"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/AboutSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_aboutsection_svelte",
+      "target": "e_github_portfolio_src_assets_photos_photo2_jpg"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/AboutSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_aboutsection_svelte",
       "target": "gsap"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/AboutSection.svelte",
+      "source_file": "src/components/Sections/AboutSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_aboutsection_svelte",
+      "source": "src_components_sections_aboutsection_svelte",
       "target": "scrolltrigger"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/AboutSection.svelte",
+      "source_file": "src/components/Sections/AboutSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_aboutsection_svelte",
+      "source": "src_components_sections_aboutsection_svelte",
       "target": "src_components_ui_tuicontainer_svelte"
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProjectsSection.svelte",
-      "source_location": "L259",
-      "weight": 1.0,
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_projectssection_svelte",
-      "target": "components_projectssection_project"
+      "source": "src_components_sections_projectssection_svelte",
+      "target": "easing"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProjectsSection.svelte",
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_projectssection_svelte",
-      "target": "e_github_portfolio_src_lib_utils"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ProjectsSection.svelte",
-      "confidence_score": 1.0,
-      "source": "src_components_projectssection_svelte",
+      "source": "src_components_sections_projectssection_svelte",
       "target": "gsap"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProjectsSection.svelte",
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_projectssection_svelte",
+      "source": "src_components_sections_projectssection_svelte",
       "target": "scrolltrigger"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProjectsSection.svelte",
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_projectssection_svelte",
-      "target": "src_components_projectcarousel_svelte"
+      "source": "src_components_sections_projectssection_svelte",
+      "target": "src_components_ui_projectcarousel_svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ui/TuiContainer.svelte",
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_ui_tuicontainer_svelte",
-      "target": "e_github_portfolio_src_lib_utils"
+      "source": "src_components_sections_projectssection_svelte",
+      "target": "src_components_ui_tuicontainer_svelte"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/Icons.svelte",
+      "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_icons_svelte",
-      "target": "elements"
+      "source": "src_components_sections_projectssection_svelte",
+      "target": "transition"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ui/Separator.svelte",
+      "source_file": "src/components/Sections/ConceptSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_ui_separator_svelte",
-      "target": "e_github_portfolio_src_lib_utils"
+      "source": "src_components_sections_conceptsection_svelte",
+      "target": "gsap"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProjectCarousel.svelte",
+      "source_file": "src/components/Sections/ConceptSection.svelte",
       "confidence_score": 1.0,
-      "source": "src_components_projectcarousel_svelte",
-      "target": "e_github_portfolio_src_lib_utils"
+      "source": "src_components_sections_conceptsection_svelte",
+      "target": "scrolltrigger"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ConceptSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_conceptsection_svelte",
+      "target": "src_components_ui_tuicontainer_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "gsap"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "phosphor_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "scrolltrigger"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "src_components_ui_icons_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "src_components_ui_tuicontainer_svelte"
     },
     {
       "relation": "contains",
@@ -5030,6 +5201,38 @@
       "confidence_score": 1.0,
       "source": "components_theme_provider_applytheme",
       "target": "components_theme_provider_disabletransitionstemporarily"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/TuiContainer.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_tuicontainer_svelte",
+      "target": "e_github_portfolio_src_lib_utils"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/Separator.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_separator_svelte",
+      "target": "e_github_portfolio_src_lib_utils"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ProjectCarousel.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_projectcarousel_svelte",
+      "target": "e_github_portfolio_src_lib_utils"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/Icons.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_icons_svelte",
+      "target": "elements"
     },
     {
       "relation": "imports_from",
@@ -6395,5 +6598,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "cbb005acf1a7cdae76d14ef17e55194dea3d3eb2"
+  "built_at_commit": "9ae556919a7e27ff8545bc0417b982e01aefe57a"
 }
