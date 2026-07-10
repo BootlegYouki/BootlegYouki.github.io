@@ -143,37 +143,7 @@ if (typeof window !== "undefined") {
     }
   })
 
-  // Keydown listener for toggle theme ('d')
-  window.addEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.repeat || event.metaKey || event.ctrlKey || event.altKey) {
-      return
-    }
 
-    if (isEditableTarget(event.target)) {
-      return
-    }
-
-    if (event.key.toLowerCase() !== "d") {
-      return
-    }
-
-    userInitiated = true
-    let currentTheme: Theme = "system"
-    theme.subscribe((t) => {
-      currentTheme = t
-    })()
-
-    const nextTheme =
-      currentTheme === "dark"
-        ? "light"
-        : currentTheme === "light"
-          ? "dark"
-          : getSystemTheme() === "dark"
-            ? "light"
-            : "dark"
-
-    setTheme(nextTheme)
-  })
 
   // Storage listener for synchronization across tabs
   window.addEventListener("storage", (event: StorageEvent) => {

@@ -22,9 +22,37 @@
   let isSubmitting = $state(false)
   let submitSuccess = $state(false)
   let submitError = $state("")
+  let cooldownRemaining = $state(0)
+  let timerInterval: number | undefined
 
   // validation errors
   let errors = $state({ name: "", email: "", message: "" })
+
+  function startCooldownTimer() {
+    if (timerInterval) clearInterval(timerInterval)
+
+    const checkCooldown = () => {
+      const lastSubmit = localStorage.getItem("contact_form_last_submit")
+      if (lastSubmit) {
+        const timePassed = Date.now() - parseInt(lastSubmit, 10)
+        const COOLDOWN_MS = 60000 // 60 seconds
+        if (timePassed < COOLDOWN_MS) {
+          cooldownRemaining = Math.ceil((COOLDOWN_MS - timePassed) / 1000)
+          return
+        }
+      }
+      cooldownRemaining = 0
+      if (timerInterval) {
+        clearInterval(timerInterval)
+        timerInterval = undefined
+      }
+    }
+
+    checkCooldown()
+    if (cooldownRemaining > 0) {
+      timerInterval = window.setInterval(checkCooldown, 1000)
+    }
+  }
 
   function validate() {
     let isValid = true
@@ -51,13 +79,17 @@
 
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault()
+    if (cooldownRemaining > 0) {
+      submitError = `Please wait ${cooldownRemaining} second(s) before sending another message.`
+      return
+    }
     if (!validate()) return
 
     isSubmitting = true
     submitSuccess = false
     submitError = ""
 
-    // Rate limiting: 60-second cooldown
+    // Rate limiting: 60-second cooldown check
     const lastSubmit = localStorage.getItem("contact_form_last_submit")
     const now = Date.now()
     const COOLDOWN_MS = 60000 // 60 seconds
@@ -67,6 +99,7 @@
         const secondsLeft = Math.ceil((COOLDOWN_MS - timePassed) / 1000)
         submitError = `Please wait ${secondsLeft} second(s) before sending another message.`
         isSubmitting = false
+        startCooldownTimer()
         return
       }
     }
@@ -102,6 +135,7 @@
       if (response.ok && result.success) {
         submitSuccess = true
         localStorage.setItem("contact_form_last_submit", Date.now().toString())
+        startCooldownTimer()
         // Clear form after success
         name = ""
         email = ""
@@ -181,7 +215,12 @@
       })
     }, containerRef)
 
-    return () => ctx.revert()
+    startCooldownTimer()
+
+    return () => {
+      ctx.revert()
+      if (timerInterval) clearInterval(timerInterval)
+    }
   })
 </script>
 
@@ -363,10 +402,14 @@
           <div class="flex items-center gap-6">
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || cooldownRemaining > 0}
               class="px-8 py-3 border border-border/60 bg-card/20 text-muted-foreground font-bold font-mono text-sm transition-all duration-300 cursor-pointer select-none hover:border-primary/80 hover:bg-card/40 hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
             >
-              {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
+              {isSubmitting
+                ? "SENDING..."
+                : cooldownRemaining > 0
+                  ? `COOLDOWN (${cooldownRemaining}s)`
+                  : "SEND MESSAGE"}
             </button>
             {#if submitSuccess}
               <span
