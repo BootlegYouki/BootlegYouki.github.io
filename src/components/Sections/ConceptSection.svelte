@@ -202,11 +202,14 @@
     >
       <div class="relative z-10 flex flex-col h-full justify-between gap-4">
         <h3
-          class="text-4xl lg:text-5xl font-black font-nippo text-foreground uppercase tracking-tight"
+          class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
         >
-          Tell Me The<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
-            >Problem.</span
+          Tell Me The<br />
+          <span
+            class="text-primary font-black font-nippo step-subject"
           >
+            Problem.
+          </span>
         </h3>
         <p
           class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
@@ -230,11 +233,14 @@
     >
       <div class="relative z-10 flex flex-col h-full justify-between gap-4">
         <h3
-          class="text-4xl lg:text-5xl font-black font-nippo text-foreground uppercase tracking-tight"
+          class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
         >
-          Designing A<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
-            >Solution.</span
+          Designing A<br />
+          <span
+            class="text-primary font-black font-nippo step-subject"
           >
+            Solution.
+          </span>
         </h3>
         <p
           class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
@@ -260,11 +266,14 @@
     >
       <div class="relative z-10 flex flex-col h-full justify-between gap-4">
         <h3
-          class="text-4xl lg:text-5xl font-black font-nippo text-foreground uppercase tracking-tight"
+          class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
         >
-          Building The<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
-            >Product.</span
+          Building The<br />
+          <span
+            class="text-primary font-black font-nippo step-subject"
           >
+            Product.
+          </span>
         </h3>
         <p
           class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
@@ -285,3 +294,23 @@
     </TuiContainer>
   </div>
 </section>
+
+<style>
+  .step-prefix {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    line-height: 1.05;
+  }
+  .step-subject {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    line-height: 0.95;
+  }
+
+  @media (min-width: 1024px) {
+    .step-prefix {
+      font-size: clamp(1.8rem, 2.2vw, 3.5rem);
+    }
+    .step-subject {
+      font-size: clamp(2.8rem, 3.8vw, 5.8rem);
+    }
+  }
+</style>
