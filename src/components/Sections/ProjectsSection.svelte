@@ -279,6 +279,8 @@
   let isContentVisible = $state(false)
   let isMobile = $state(false)
   let isBottomSheetOpen = $state(false)
+  let isThumbnailVisible = $state(false)
+  let showThumbnailPhoto = $state(false)
   let containerRef = $state<HTMLDivElement>()
 
   // Dynamic grid layouts based on project count
@@ -519,21 +521,31 @@
       // 1. Fade out the content first (200ms CSS duration)
       isContentVisible = false
       isBottomSheetOpen = false
+      isThumbnailVisible = false
+      showThumbnailPhoto = false
 
       // 2. Wait 120ms, then start container zoom out (500ms CSS duration)
       setTimeout(() => {
         isExpanded = false
       }, 120)
 
-      // 3. Wait for container to finish zooming out (120ms + 500ms = 620ms), then fade out container (300ms CSS duration)
+      // 3. Fade in thumbnail layout (number + photo) when almost fully shrunken (at 430ms from start)
+      setTimeout(() => {
+        isThumbnailVisible = true
+        showThumbnailPhoto = true
+      }, 430)
+
+      // 4. Trigger container fade-out when it is almost zoomed out (at 530ms from start)
       setTimeout(() => {
         isContainerVisible = false
-      }, 620)
+      }, 530)
 
-      // 4. Wait for container fade-out to finish (620ms + 300ms = 920ms)
+      // 5. Wait for container fade-out to finish (530ms + 300ms = 830ms)
       setTimeout(() => {
         openProjectId = null
         originRect = null
+        isThumbnailVisible = false
+        showThumbnailPhoto = false
 
         // Re-enable scroll only after animation is fully complete
         if ((window as any).lenis) {
@@ -541,7 +553,7 @@
         }
         document.body.style.overflow = ""
         document.documentElement.style.overflow = ""
-      }, 920)
+      }, 830)
     } else {
       // Disable scroll
       if ((window as any).lenis) {
@@ -564,6 +576,8 @@
       isContainerVisible = false
       isContentVisible = false
       isBottomSheetOpen = false
+      isThumbnailVisible = true // Show thumbnail layout during zoom-in
+      showThumbnailPhoto = false // Do not show photo during zoom-in
 
       // 1. Fade in the container and start widening concurrently (500ms CSS duration)
       setTimeout(() => {
@@ -571,7 +585,12 @@
         isExpanded = true
       }, 50)
 
-      // 2. Wait for container to finish widening (50ms + 500ms = 550ms) before fading in content (200ms CSS duration)
+      // 2. Hide thumbnail layout after "a bit of zooming" (at 250ms from start)
+      setTimeout(() => {
+        isThumbnailVisible = false
+      }, 250)
+
+      // 3. Wait for container to finish widening (550ms total) before fading in content (200ms CSS duration)
       setTimeout(() => {
         isContentVisible = true
       }, 550)
@@ -680,6 +699,33 @@
             class="absolute inset-0 overflow-hidden"
             style="border-radius: {isExpanded ? 0 : 4}px;"
           >
+            <!-- Thumbnail Card Layout (visible when main content is fading/faded out) -->
+            {#if isThumbnailVisible}
+              <div 
+                class="absolute inset-0 z-0 overflow-hidden pointer-events-none"
+                transition:fade={{ duration: 150 }}
+              >
+                {#if showThumbnailPhoto && project.images && project.images.length > 0}
+                  <img
+                    src={project.images[0]}
+                    alt={project.name}
+                    class="w-full h-full object-cover opacity-30"
+                  />
+                {:else}
+                  <div class="w-full h-full bg-muted/10"></div>
+                {/if}
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"></div>
+                
+                <!-- Giant Number -->
+                <div class="absolute inset-0 p-6 md:p-8 flex flex-col h-full w-full justify-end items-end">
+                  <span class="text-7xl sm:text-8xl font-black font-nippo text-foreground select-none leading-none opacity-80">
+                    {project.id}
+                  </span>
+                </div>
+              </div>
+            {/if}
+
             <!-- Project content container (fades content in/out controlled by JS lifecycle) -->
             <div
               class="absolute inset-0 flex flex-col transition-opacity duration-200 {isContentVisible
@@ -718,13 +764,13 @@
               </button>
               <!-- Scrollable Content Area -->
               <div
-                class="flex-1 overflow-y-auto overflow-x-hidden"
+                class="flex-1 overflow-y-auto overflow-x-hidden md:overflow-visible md:h-full md:flex md:flex-col"
                 style="-webkit-overflow-scrolling: touch;"
                 data-lenis-prevent
               >
 <!-- Content Area -->
               <div
-                class="grid bg-card/10 transition-all grid-rows-[1fr] flex-1 relative"
+                class="grid bg-card/10 transition-all grid-rows-[1fr] flex-1 relative md:h-full"
               >
                 <div
                   class="p-4 pb-20 sm:pb-6 sm:p-6 md:p-10 flex flex-col md:grid md:grid-cols-5 gap-6 md:gap-10 flex-1"
@@ -919,7 +965,7 @@
             </div>
           </div>
 
-            {#if isMobile}
+            {#if isMobile && isContentVisible}
               <!-- Bottom Sheet Backdrop -->
               {#if isBottomSheetOpen}
                 <!-- svelte-ignore a11y_click_events_have_key_events -->
