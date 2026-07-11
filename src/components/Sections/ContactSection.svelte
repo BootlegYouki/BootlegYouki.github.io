@@ -227,7 +227,8 @@
 <section
   id="contact-section"
   bind:this={containerRef}
-  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in min-h-screen flex flex-col justify-start relative z-10 max-w-[90rem] mx-auto"
+  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10 max-w-[90rem] mx-auto"
+  style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <div
     class="w-full flex flex-col lg:flex-row gap-16 lg:gap-36 xl:gap-48 relative z-10 mt-8 md:mt-16"
@@ -245,8 +246,7 @@
         <p
           class="text-base md:text-lg text-muted-foreground leading-relaxed font-mono max-w-lg"
         >
-          Have an idea, project, or bottleneck you want to solve? Drop a line
-          and let's build something together.
+          Got a cool idea, a fun project, or some annoying bottleneck you need fixed? Hit me up and let's build something awesome together.
         </p>
       </div>
     </div>

@@ -141,7 +141,8 @@
 <section
   id="workflow-section"
   bind:this={containerRef}
-  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in min-h-screen flex flex-col justify-start relative z-10"
+  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10"
+  style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <!-- Centered Workflow Header -->
   <div
@@ -203,7 +204,7 @@
         <h3
           class="text-4xl lg:text-5xl font-black font-nippo text-foreground uppercase tracking-tight"
         >
-          Provide Your<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
+          Tell Me The<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
             >Problem.</span
           >
         </h3>
@@ -212,13 +213,10 @@
         >
           Everything starts with a <span class="text-primary font-bold"
             >bottleneck</span
-          >. Reach out and tell me what's
-          <span class="text-primary font-bold">slowing down your workflow</span
-          >, costing you money, or keeping you from
-          <span class="text-primary font-bold">scaling</span>. Don't worry about
+          >. Just shoot me a message and tell me what's
+          <span class="text-primary font-bold">slowing you down</span>, costing you money, or driving you crazy. Don't worry about
           the technical details yet—just explain the
-          <span class="text-primary font-bold">core business problem</span> that needs
-          to be solved.
+          <span class="text-primary font-bold">core issue</span> you want fixed.
         </p>
       </div>
     </TuiContainer>
@@ -234,22 +232,21 @@
         <h3
           class="text-4xl lg:text-5xl font-black font-nippo text-foreground uppercase tracking-tight"
         >
-          Architecting<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
-            >Solutions.</span
+          Designing A<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
+            >Solution.</span
           >
         </h3>
         <p
           class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
         >
-          I don't just jump into code; <span class="text-primary font-bold"
-            >I architect systems</span
-          >. I will undergo deep research into your specific use case, evaluate
-          the most
-          <span class="text-primary font-bold">efficient technologies</span>,
-          and design a
+          I don't just start blindly typing code. I actually take the time to <span class="text-primary font-bold"
+            >figure out the best approach</span
+          > for your specific situation. We'll look at the
+          <span class="text-primary font-bold">right tools for the job</span>
+          and map out a
           <span class="text-primary font-bold"
-            >scalable, cost-effective blueprint</span
-          > tailored exactly to your operational environment.
+            >solid, cost-effective game plan</span
+          > that makes sense for you.
         </p>
       </div>
     </TuiContainer>
@@ -265,23 +262,23 @@
         <h3
           class="text-4xl lg:text-5xl font-black font-nippo text-foreground uppercase tracking-tight"
         >
-          Delivering The<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
+          Building The<br /><span class="text-primary text-5xl sm:text-6xl lg:text-8xl"
             >Product.</span
           >
         </h3>
         <p
           class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
         >
-          From proof-of-concept to <span class="text-primary font-bold"
-            >production deployment</span
-          >. I will deliver a
+          From the first prototype all the way to <span class="text-primary font-bold"
+            >launch day</span
+          >, I'll handle the heavy lifting. You'll get a
           <span class="text-primary font-bold"
-            >complete, polished software product</span
+            >fully polished app</span
           >
-          that permanently resolves the bottleneck you outlined in step one,
-          complete with an
+          that actually solves the problem we talked about in step one,
+          complete with a
           <span class="text-primary font-bold"
-            >intuitive and seamless user experience</span
+            >super smooth user experience</span
           >.
         </p>
       </div>

@@ -19,6 +19,22 @@
   let introExpanded = $state(false);
 
   onMount(() => {
+    // Set dynamic viewport height variable for mobile devices
+    const updateVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    updateVh();
+
+    let lastWidth = window.innerWidth;
+    const handleResize = () => {
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        updateVh();
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       lerp: 0.08, // Controls the deceleration speed
@@ -48,11 +64,15 @@
       clearTimeout(timer);
       lenis.destroy();
       gsap.ticker.remove(tickerUpdate);
+      window.removeEventListener("resize", handleResize);
     };
   });
 </script>
 
-<div class="min-h-screen bg-background text-foreground font-mono transition-colors duration-300 relative">
+<div 
+  class="bg-background text-foreground font-mono transition-colors duration-300 relative"
+  style="min-height: calc(var(--vh, 1vh) * 100);"
+>
   <ScrollProgress />
   <ScrollToTop />
   <MouseTrail />

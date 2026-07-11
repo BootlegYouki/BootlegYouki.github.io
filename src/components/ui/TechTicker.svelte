@@ -26,6 +26,16 @@
   const repeatedTools = [...tools, ...tools, ...tools, ...tools];
 
   let isPaused = $state(false);
+  let position = $state(0);
+  let isDragging = $state(false);
+  let containerWidth = 0;
+  let singleWidth = 0;
+  let container: HTMLDivElement;
+
+  let startX = 0;
+  let startPosition = 0;
+  let dragDistance = 0;
+  let wasDragging = false;
 
   function pauseScrolling() {
     isPaused = true;
@@ -34,10 +44,97 @@
   function resumeScrolling() {
     isPaused = false;
   }
+
+  function onPointerDown(e: PointerEvent) {
+    if (e.button !== 0 && e.pointerType === "mouse") return;
+    isDragging = true;
+    startX = e.clientX;
+    startPosition = position;
+    dragDistance = 0;
+    if (container) {
+      container.setPointerCapture(e.pointerId);
+    }
+  }
+
+  function onPointerMove(e: PointerEvent) {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    dragDistance = Math.abs(deltaX);
+    
+    let newPos = startPosition + deltaX;
+    
+    if (singleWidth > 0) {
+      // Keeps the position within [-singleWidth, 0] seamlessly
+      newPos = ((newPos % singleWidth) - singleWidth) % singleWidth;
+    }
+    position = newPos;
+  }
+
+  function onPointerUp(e: PointerEvent) {
+    if (!isDragging) return;
+    isDragging = false;
+    if (container) {
+      container.releasePointerCapture(e.pointerId);
+    }
+    
+    if (dragDistance > 5) {
+      wasDragging = true;
+      setTimeout(() => {
+        wasDragging = false;
+      }, 50);
+    }
+  }
+
+  function onClick(e: MouseEvent) {
+    if (wasDragging) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+
+  $effect(() => {
+    if (!container) return;
+    
+    const updateWidths = () => {
+      containerWidth = container.scrollWidth;
+      singleWidth = containerWidth / 4;
+    };
+    
+    updateWidths();
+    window.addEventListener("resize", updateWidths);
+    
+    let lastTime = performance.now();
+    let frameId: number;
+
+    const animate = (time: number) => {
+      frameId = requestAnimationFrame(animate);
+      
+      const delta = time - lastTime;
+      lastTime = time;
+
+      if (!isPaused && !isDragging && singleWidth > 0) {
+        // Match the original 80s linear marquee speed: (2 * singleWidth) / 80000 ms
+        const speed = (2 * singleWidth) / 80000;
+        position -= speed * delta;
+        
+        // Wrap position
+        if (position <= -singleWidth) {
+          position += singleWidth;
+        }
+      }
+    };
+
+    frameId = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("resize", updateWidths);
+      cancelAnimationFrame(frameId);
+    };
+  });
 </script>
 
 <div 
-  class="w-full py-4 md:py-6 select-none bg-card/10 overflow-hidden relative"
+  class="w-full py-4 md:py-6 select-none bg-card/10 overflow-hidden relative touch-none"
 >
   <!-- Overlay Gradients for smooth fade out at edges -->
   <div class="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
@@ -45,10 +142,16 @@
 
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div 
+    bind:this={container}
     class={cn(
-      "flex gap-4 md:gap-8 w-max animate-marquee",
-      isPaused && "[animation-play-state:paused]"
+      "flex gap-4 md:gap-8 w-max cursor-grab active:cursor-grabbing will-change-transform"
     )}
+    style="transform: translate3d({position}px, 0, 0);"
+    onpointerdown={onPointerDown}
+    onpointermove={onPointerMove}
+    onpointerup={onPointerUp}
+    onpointercancel={onPointerUp}
+    onclick={onClick}
     onmouseenter={pauseScrolling}
     onmouseleave={resumeScrolling}
   >

@@ -35,7 +35,7 @@
       name: "BYD Clothing E-Commerce",
       tags: ["WEB", "E-COMMERCE", "AI INTEGRATION"],
       description:
-        "<strong>Beyond Doubt Clothing (BYD)</strong> is a <strong>premium streetwear e-commerce</strong> platform. Features an interactive <strong>shopping catalog</strong>, dynamic <strong>shopping cart</strong>, a secure <strong>checkout pipeline</strong>, and a dedicated <strong>admin panel</strong> to manage inventory and orders. Integrated with a custom <strong>AI Chatbot assistant</strong> for customer support, and <strong>Leaflet Maps</strong> (geocoding API) for precise <strong>delivery address selection</strong> on signup.",
+        "I built <strong>Beyond Doubt Clothing (BYD)</strong> back in my <strong>second year of college</strong> as our core <strong>software engineering project</strong>. It's a full-fledged <strong>premium streetwear e-commerce</strong> platform designed with a casual but highly functional vibe. The site features an interactive <strong>shopping catalog</strong>, a dynamic <strong>shopping cart</strong>, and a secure <strong>checkout pipeline</strong>, all backed by a dedicated <strong>admin panel</strong> to manage inventory and keep track of orders. To push the boundaries of what we could do, we also integrated a custom <strong>AI Chatbot assistant</strong> to handle customer support, along with <strong>Leaflet Maps</strong> for precise <strong>delivery address selection</strong> during the signup process.",
       status: "ONLINE",
       stack: [
         "PHP",
@@ -66,7 +66,7 @@
       name: "Student Management System",
       tags: ["WEB", "DESKTOP", "EDUCATION"],
       description:
-        "A full-stack <strong>High School Student Information System (SET-2)</strong> aligned with the Philippine DepEd curriculum. Features comprehensive portals for <strong>students</strong> (grades, rankings, todo), <strong>teachers</strong> (grading spreadsheets, advisory rosters), and <strong>admins</strong> (CRUD masterlists, archives, room/time slot scheduling). Integrates <strong>dual AI engines (OpenRouter & Google AI)</strong> for automated <strong>grade analytics</strong>, <strong>administrative insights</strong>, and a <strong>document assistant chatbot</strong>, plus server-side <strong>PDF generation</strong>. Available as a <strong>PWA</strong> and an <strong>Electron-based desktop</strong> wrapper application.",
+        "I developed this <strong>High School Student Information System (SET-2)</strong> during the <strong>first semester of my third year</strong> for an <strong>SIA 1 project</strong>. Since I was working completely solo, it was an incredibly time-consuming journey where I had to build literally every subsystem from scratch. The platform is fully aligned with the <strong>Philippine DepEd curriculum</strong> and features comprehensive portals for <strong>students</strong>, <strong>teachers</strong>, and <strong>admins</strong>. By far, the hardest feature to code was the built-in <strong>grading spreadsheet</strong> for teachers. Despite the workload, I also managed to integrate <strong>dual AI engines (OpenRouter & Google AI)</strong> for automated <strong>grade analytics</strong> and a <strong>document assistant chatbot</strong>, along with server-side <strong>PDF generation</strong>. It's fully available as both a <strong>PWA</strong> and an <strong>Electron-based desktop app</strong>.",
       status: "ONLINE",
       stack: [
         "SvelteKit",
@@ -109,7 +109,7 @@
       name: "At iba pa POS and IMS",
       tags: ["DESKTOP", "IMS", "TAURI"],
       description:
-        "A dual-app <strong>desktop application</strong> built with <strong>Tauri v2</strong> (Rust backend) and React. Incorporates <strong>Cashier POS</strong> (offline-first checkout, PIN auth, customer display) and <strong>Admin IMS</strong> (inventory CRUD, reports, activity logs). Features an <strong>Ollama-orchestrated AI assistant</strong> leveraging cloud models for superior token limits and context capacity, integrated with <strong>agentic workflows</strong> for <strong>task automation</strong> and <strong>Retrieval-Augmented Generation (RAG)</strong> to query sales data and business documents. Uses <strong>SQLite</strong> with <strong>Supabase cloud mirroring</strong> and an embedded <strong>local LAN server</strong> for multi-device sync.",
+        "I built this for my <strong>SIA 2 project</strong>, which required us to work with an actual real-world client. I partnered with a local minimart and developed this dual-app <strong>desktop application</strong> using <strong>Tauri v2</strong> (Rust) and React to serve as their complete <strong>Cashier POS</strong> and <strong>Admin IMS</strong>. One of the toughest challenges was ensuring the two systems stayed synced in real-time. I ended up using an embedded <strong>local LAN server</strong> and <strong>Supabase cloud mirroring</strong>, all while keeping the checkout <strong>offline-first</strong>. I also integrated an <strong>Ollama-orchestrated AI assistant</strong> with <strong>agentic workflows</strong> for task automation. Getting the AI's <strong>tool calling</strong> to be consistent and dialing in the <strong>Retrieval-Augmented Generation (RAG)</strong> to accurately query their sales data was a massive headache, but it turned out to be an incredibly powerful feature.",
       status: "ONLINE",
       stack: [
         "Tauri v2",
@@ -135,7 +135,7 @@
       name: "Vaultleg",
       tags: ["MOBILE", "FINANCE", "RETRO"],
       description:
-        "An <strong>offline-first personal finance tracker</strong> mobile application designed to securely manage <strong>expenses, incomes, debts, and budgets</strong>. Features <strong>local storage</strong> with automatic <strong>GitHub Gist synchronization</strong>. Available in <strong>IPA (iOS)</strong> and <strong>APK (Android)</strong> formats.",
+        "I built this during the <strong>summer break before my fourth year</strong> as a personal utility app to securely manage my <strong>expenses, incomes, debts, and budgets</strong>. It actually started as a PWA, but once I discovered iOS sideloading, I realized I could use <strong>GitHub Actions</strong> to compile <strong>IPA files</strong> without needing a paid developer certificate. Figuring out GitHub Actions from scratch was definitely the hardest part, but this was the project that completely hooked me on <strong>native mobile development</strong>. I even built my own custom <strong>TUI (Terminal User Interface)</strong> inspired design system for it. It runs entirely <strong>offline-first</strong> using <strong>local storage</strong>, but features an automatic <strong>GitHub Gist synchronization</strong> to keep my data backed up. It's fully packaged in both <strong>IPA (iOS)</strong> and <strong>APK (Android)</strong> formats.",
       status: "ONLINE",
       stack: [
         "React Native",
@@ -158,7 +158,7 @@
       name: "BootSked",
       tags: ["MOBILE", "SCHEDULER", "RETRO"],
       description:
-        "An <strong>offline-first mobile scheduler</strong> and <strong>activity reminder</strong> application. Allows users to schedule <strong>daily events, study sessions, workouts, and game times</strong> with customized parameters (intensity, focus topic). Integrated with the <strong>Expo Notifications service</strong> to trigger <strong>local push notifications, reminder alerts, and conflict warnings</strong>. Available in <strong>IPA (iOS)</strong> and <strong>APK (Android)</strong> formats.",
+        "I built this <strong>offline-first mobile scheduler</strong> right after Vaultleg. Initially, I designed it to manage my school subjects, but since my fourth-year schedule didn't really need tracking, my girlfriend suggested turning it into a daily routine app instead—so I dedicated this project entirely to her! It allows users to schedule <strong>daily events, study sessions, workouts, and game times</strong> with custom parameters. Since I already had my custom TUI design system laid out from my previous project, the toughest part was figuring out how to get the <strong>Expo Notifications service</strong> to reliably trigger <strong>local push notifications, reminder alerts, and conflict warnings</strong> while completely offline. It's packaged and available in both <strong>IPA (iOS)</strong> and <strong>APK (Android)</strong> formats.",
       status: "ONLINE",
       stack: [
         "React Native",
@@ -181,7 +181,7 @@
       name: "BootHub",
       tags: ["MOBILE", "DESKTOP", "UTILITY"],
       description:
-        "A cross-platform <strong>clipboard, folder organizer, and media dump</strong> ecosystem. Consists of a companion <strong>desktop client</strong> built with <strong>Tauri v2</strong> and an <strong>iOS application</strong> (available in IPA format) featuring a <strong>native iOS share extension</strong> to quickly dump content, links, images, or files. Powered by a custom <strong>bidirectional synchronization engine</strong> running over <strong>Google Drive API (OAuth2)</strong> to seamlessly replicate <strong>folder structures, clipboard histories, and binary assets</strong> across devices.",
+        "I built this during the same <strong>summer break</strong> right after finishing BootSked. I wanted my own personalized clipboard ecosystem where I could instantly dump files, links, images, and text without relying on third-party apps. To make it truly seamless, I built a companion <strong>desktop client</strong> using <strong>Tauri v2</strong> so everything syncs directly to my PC. It's powered by a custom <strong>bidirectional synchronization engine</strong> running over the <strong>Google Drive API (OAuth2)</strong> to replicate <strong>folder structures, clipboard histories, and binary assets</strong> across devices. Getting the <strong>native iOS share extension</strong> to work required some extensive research, and nailing down a consistent zoom animation for the photo viewer was surprisingly tough, but the end result is incredibly smooth.",
       status: "ONLINE",
       stack: [
         "Tauri v2",
@@ -229,7 +229,7 @@
       name: "Kwiz",
       tags: ["MOBILE", "DESKTOP", "AI"],
       description:
-        "An <strong>AI-powered educational quiz ecosystem</strong> comprising a <strong>Tauri v2 desktop application</strong> and an <strong>Expo React Native mobile client</strong>. Features <strong>automated quiz generation</strong> from <strong>text prompts or PDF attachments</strong> (using local text extraction) powered by the <strong>Mistral AI API</strong>. Formats quiz configurations using <strong>TOON (Token-Oriented Object Notation)</strong> to minimize token consumption as much as possible, and supports <strong>offline playback, scoring, and sharing/importing</strong> of custom <strong>.kwiz files</strong>. Available in <strong>IPA (iOS)</strong> and <strong>APK (Android)</strong> formats.",
+        "I also built this during my <strong>summer break</strong> because I really wanted to try making a mobile quiz app. It's an <strong>AI-powered educational ecosystem</strong> featuring both a <strong>Tauri v2 desktop client</strong> and an <strong>Expo React Native mobile app</strong>. It uses the <strong>Mistral AI API</strong> to automatically generate quizzes from <strong>text prompts or PDF attachments</strong> (using local text extraction). I even came up with a custom data format called <strong>TOON (Token-Oriented Object Notation)</strong> to minimize API token consumption, and added support for offline playback and sharing custom <strong>.kwiz files</strong>. Ironically, I realized halfway through that we wouldn't even have many quizzes in my fourth year, which was a bit of a bummer! Technically it was a pretty straightforward build, so my main challenge was just polishing the UX to make it feel as good as possible.",
       status: "ONLINE",
       stack: [
         "Tauri v2",
@@ -255,7 +255,7 @@
       name: "Marigold Video Scanner",
       tags: ["MOBILE", "AUTOMATION", "CLIENT"],
       description:
-        "A <strong>bespoke offline-first mobile application</strong> developed for my client, <strong>Marigold</strong>, to solve critical inefficiencies in their <strong>packing workflows</strong>. Built with <strong>React Native and Expo</strong>, the app leverages <strong>react-native-vision-camera</strong> for high-performance <strong>barcode and QR code scanning</strong>. It automatically <strong>records the packing process</strong>, dynamically <strong>renames the resulting video files</strong> based on decoded symbologies, and utilizes the <strong>Google Drive API (via OAuth2)</strong> to seamlessly <strong>upload and synchronize the artifacts</strong> for automated record-keeping. Storage and local state are managed using the ultra-fast <strong>MMKV key-value store</strong>.",
+        "I also built this during my <strong>summer break</strong>, but this time it was my first actual paid freelance gig! A friend referred me to a client, <strong>Marigold</strong>, who was struggling to organize the videos of their packing workflows. To solve this, I built them a bespoke <strong>offline-first mobile app</strong> using <strong>React Native and Expo</strong>. It leverages <strong>react-native-vision-camera</strong> to scan barcodes, automatically record the packing process, and then sync the dynamically renamed files to <strong>Google Drive</strong>. The hardest part was ditching FFmpeg post-processing in favor of engraving timestamps onto the video in real-time. I literally had to hack the core Kotlin files inside `node_modules` to get it working! It broke iOS compatibility, but since the client only uses Android phones, it was perfect. Overall, it was an amazing experience learning how to draft contracts and communicate with a client directly.",
       status: "ONLINE",
       stack: [
         "React Native",
@@ -278,6 +278,7 @@
   let isContainerVisible = $state(false)
   let isContentVisible = $state(false)
   let isMobile = $state(false)
+  let isBottomSheetOpen = $state(false)
   let containerRef = $state<HTMLDivElement>()
 
   // Dynamic grid layouts based on project count
@@ -517,6 +518,7 @@
 
       // 1. Fade out the content first (200ms CSS duration)
       isContentVisible = false
+      isBottomSheetOpen = false
 
       // 2. Wait 120ms, then start container zoom out (500ms CSS duration)
       setTimeout(() => {
@@ -561,6 +563,7 @@
       isExpanded = false
       isContainerVisible = false
       isContentVisible = false
+      isBottomSheetOpen = false
 
       // 1. Fade in the container and start widening concurrently (500ms CSS duration)
       setTimeout(() => {
@@ -579,7 +582,8 @@
 <div
   bind:this={containerRef}
   id="projects-section"
-  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in min-h-screen flex flex-col justify-start relative z-50"
+  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-50"
+  style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <!-- Centered Projects Header -->
   <div
@@ -673,19 +677,19 @@
         >
           <!-- Wrap in overflow-hidden to prevent corner bleed without breaking fieldset legend -->
           <div
-            class="w-full h-full overflow-hidden"
+            class="absolute inset-0 overflow-hidden"
             style="border-radius: {isExpanded ? 0 : 4}px;"
           >
             <!-- Project content container (fades content in/out controlled by JS lifecycle) -->
             <div
-              class="w-full h-full flex flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-200 {isContentVisible
+              class="absolute inset-0 flex flex-col transition-opacity duration-200 {isContentVisible
                 ? 'opacity-100'
                 : 'opacity-0 pointer-events-none'}"
             >
               <!-- Header (Click to close) -->
                <button
                 onclick={() => toggleProject(null)}
-                class="w-full flex items-center justify-between p-4 sm:p-6 md:p-8 border-b border-border/40 bg-card/25 hover:bg-card/40 transition-colors cursor-pointer text-left group/header"
+                class="w-full flex items-center justify-between p-4 sm:p-6 md:p-8 border-b border-border/40 bg-card/25 hover:bg-card/40 transition-colors cursor-pointer text-left group/header shrink-0"
               >
                 <div class="flex items-center gap-3 sm:gap-4 md:gap-6">
                   <span
@@ -712,12 +716,18 @@
                   </svg>
                 </span>
               </button>
+              <!-- Scrollable Content Area -->
+              <div
+                class="flex-1 overflow-y-auto overflow-x-hidden"
+                style="-webkit-overflow-scrolling: touch;"
+                data-lenis-prevent
+              >
 <!-- Content Area -->
               <div
                 class="grid bg-card/10 transition-all grid-rows-[1fr] flex-1 relative"
               >
                 <div
-                  class="p-4 sm:p-6 md:p-10 flex flex-col md:grid md:grid-cols-5 gap-6 md:gap-10 flex-1"
+                  class="p-4 pb-20 sm:pb-6 sm:p-6 md:p-10 flex flex-col md:grid md:grid-cols-5 gap-6 md:gap-10 flex-1"
                 >
                   <!-- Left Column: Content + Stack -->
                   <div
@@ -742,17 +752,37 @@
                         {@html project.description}
                       </p>
                     </div>
-
                     <!-- Stack and Meta -->
-                    <div class="pt-6 space-y-4">
-                      {#if project.sourceUrl || project.sourceUrls || project.demoUrl || project.releasesUrl || project.releasesUrls}
-                        <div class="flex flex-wrap gap-3 pb-3">
-                          {#if project.sourceUrls}
-                            {#each project.sourceUrls as repo}
+                    {#if !isMobile}
+                      <div class="pt-6 space-y-4">
+                        {#if project.sourceUrl || project.sourceUrls || project.demoUrl || project.releasesUrl || project.releasesUrls}
+                          <div class="flex flex-wrap gap-3 pb-3">
+                            {#if project.sourceUrls}
+                              {#each project.sourceUrls as repo}
+                                <a
+                                  href={repo.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
+                                >
+                                  <svg
+                                    class="w-4.5 h-4.5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"
+                                    /></svg
+                                  >
+                                  {repo.label}
+                                </a>
+                              {/each}
+                            {:else if project.sourceUrl}
                               <a
-                                href={repo.url}
+                                href={project.sourceUrl}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                  rel="noopener noreferrer"
                                 class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
                               >
                                 <svg
@@ -765,33 +795,35 @@
                                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"
                                   /></svg
                                 >
-                                {repo.label}
+                                REPOSITORY
                               </a>
-                            {/each}
-                          {:else if project.sourceUrl}
-                            <a
-                              href={project.sourceUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
-                            >
-                              <svg
-                                class="w-4.5 h-4.5"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                ><path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"
-                                /></svg
-                              >
-                              REPOSITORY
-                            </a>
-                          {/if}
-                          {#if project.releasesUrls}
-                            {#each project.releasesUrls as rel}
+                            {/if}
+                            {#if project.releasesUrls}
+                              {#each project.releasesUrls as rel}
+                                <a
+                                  href={rel.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
+                                >
+                                  <svg
+                                    class="w-4.5 h-4.5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    ><path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                                    /></svg
+                                  >
+                                  {rel.label}
+                                </a>
+                              {/each}
+                            {:else if project.releasesUrl}
                               <a
-                                href={rel.url}
+                                href={project.releasesUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
@@ -808,70 +840,49 @@
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                                   /></svg
                                 >
-                                {rel.label}
+                                RELEASES
                               </a>
-                            {/each}
-                          {:else if project.releasesUrl}
-                            <a
-                              href={project.releasesUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
-                            >
-                              <svg
-                                class="w-4.5 h-4.5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                                ><path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                                /></svg
+                            {/if}
+                            {#if project.demoUrl}
+                              <a
+                                href={project.demoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
                               >
-                              RELEASES
-                            </a>
-                          {/if}
-                          {#if project.demoUrl}
-                            <a
-                              href={project.demoUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              class="inline-flex items-center gap-2 text-xs md:text-sm font-bold border border-border/60 hover:border-primary hover:text-primary px-3 py-2 md:px-4 md:py-2.5 transition-all font-mono"
-                            >
-                              <svg
-                                class="w-4.5 h-4.5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                                ><path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                /></svg
-                              >
-                              LIVE_DEMO
-                            </a>
-                          {/if}
-                        </div>
-                      {/if}
+                                <svg
+                                  class="w-4.5 h-4.5"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                  stroke-width="2.5"
+                                  ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                  /></svg
+                                >
+                                LIVE_DEMO
+                              </a>
+                            {/if}
+                          </div>
+                        {/if}
 
-                      <span
-                        class="text-sm font-bold text-muted-foreground uppercase tracking-wider block"
-                        >TECH STACK:</span
-                      >
-                      <div class="flex flex-wrap gap-2">
-                        {#each project.stack as tech}
-                          <span
-                            class="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none"
-                          >
-                            {tech}
-                          </span>
-                        {/each}
+                        <span
+                          class="text-sm font-bold text-muted-foreground uppercase tracking-wider block"
+                          >TECH STACK:</span
+                        >
+                        <div class="flex flex-wrap gap-2">
+                          {#each project.stack as tech}
+                            <span
+                              class="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none"
+                            >
+                              {tech}
+                            </span>
+                          {/each}
+                        </div>
                       </div>
-                    </div>
+                    {/if}
                   </div>
 
                   <!-- Right Column: Images Carousel -->
@@ -906,6 +917,152 @@
                 </div>
               </div>
             </div>
+          </div>
+
+            {#if isMobile}
+              <!-- Bottom Sheet Backdrop -->
+              {#if isBottomSheetOpen}
+                <!-- svelte-ignore a11y_click_events_have_key_events -->
+                <!-- svelte-ignore a11y_no_static_element_interactions -->
+                <div 
+                  class="absolute inset-0 bg-black/60 z-30 transition-opacity duration-300"
+                  onclick={() => isBottomSheetOpen = false}
+                ></div>
+              {/if}
+
+              <!-- Bottom Sheet Body -->
+              <!-- svelte-ignore a11y_click_events_have_key_events -->
+              <!-- svelte-ignore a11y_no_static_element_interactions -->
+              <div 
+                class="absolute bottom-0 left-0 right-0 z-40 bg-background border-t-2 border-border/60 transition-transform duration-300 ease-out-back flex flex-col max-h-[70vh]"
+                style="transform: translateY({isBottomSheetOpen ? '0' : 'calc(100% - 3.5rem)'});"
+                onclick={(e) => e.stopPropagation()}
+              >
+                <!-- Sheet Header / Toggle Handle -->
+                <div 
+                  class="flex items-center justify-between px-4 py-4 bg-card/45 hover:bg-card/60 cursor-pointer border-b border-border/40 select-none h-14 shrink-0"
+                  onclick={() => isBottomSheetOpen = !isBottomSheetOpen}
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold font-mono tracking-wider text-foreground">
+                      TECH STACK & LINKS
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <svg 
+                      class="w-4 h-4 text-muted-foreground transition-transform duration-300 {isBottomSheetOpen ? 'rotate-180' : ''}" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor" 
+                      stroke-width="2.5"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Sheet Content (scrollable) -->
+                <div 
+                  class="overflow-y-auto p-4 space-y-6 flex-1 bg-background/95"
+                  style="-webkit-overflow-scrolling: touch;"
+                  data-lenis-prevent
+                >
+                  <!-- Links Section -->
+                  {#if project.sourceUrl || project.sourceUrls || project.demoUrl || project.releasesUrl || project.releasesUrls}
+                    <div class="space-y-2">
+                      <span class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider font-mono block">
+                        ATTACHMENTS
+                      </span>
+                      <div class="flex flex-row gap-2 w-full">
+                        {#if project.sourceUrls}
+                          {#each project.sourceUrls as repo}
+                            <a
+                              href={repo.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="inline-flex items-center justify-center gap-1.5 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-2.5 py-2 transition-all font-mono bg-card/20 flex-1 min-w-0"
+                            >
+                              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" />
+                              </svg>
+                              <span class="truncate">{repo.label}</span>
+                            </a>
+                          {/each}
+                        {:else if project.sourceUrl}
+                          <a
+                            href={project.sourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1.5 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-2.5 py-2 transition-all font-mono bg-card/20 flex-1 min-w-0"
+                          >
+                            <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.197 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" />
+                            </svg>
+                            <span class="truncate">REPOSITORY</span>
+                          </a>
+                        {/if}
+
+                        {#if project.releasesUrls}
+                          {#each project.releasesUrls as rel}
+                            <a
+                              href={rel.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="inline-flex items-center justify-center gap-1.5 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-2.5 py-2 transition-all font-mono bg-card/20 flex-1 min-w-0"
+                            >
+                              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                              </svg>
+                              <span class="truncate">{rel.label}</span>
+                            </a>
+                          {/each}
+                        {:else if project.releasesUrl}
+                          <a
+                            href={project.releasesUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1.5 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-2.5 py-2 transition-all font-mono bg-card/20 flex-1 min-w-0"
+                          >
+                            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span class="truncate">RELEASES</span>
+                          </a>
+                        {/if}
+
+                        {#if project.demoUrl}
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1.5 text-xs font-bold border border-border/60 hover:border-primary hover:text-primary px-2.5 py-2 transition-all font-mono bg-card/20 flex-1 min-w-0"
+                          >
+                            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            <span class="truncate">LIVE_DEMO</span>
+                          </a>
+                        {/if}
+                      </div>
+                    </div>
+                  {/if}
+
+                  <!-- Tech Stack Section -->
+                  <div class="space-y-2">
+                    <span class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider font-mono block">
+                      TECH STACK
+                    </span>
+                    <div class="flex flex-wrap gap-2">
+                      {#each project.stack as tech}
+                        <span class="text-sm font-bold px-3 py-1.5 bg-card border border-border/60 text-foreground font-mono select-none">
+                          {tech}
+                        </span>
+                      {/each}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {/if}
           </div></TuiContainer
         >
       {/if}

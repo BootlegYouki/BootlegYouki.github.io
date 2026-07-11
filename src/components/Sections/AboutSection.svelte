@@ -102,7 +102,7 @@
   });
 </script>
 
-<section id="about-section" bind:this={containerRef} class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in min-h-screen flex flex-col justify-start relative z-10">
+<section id="about-section" bind:this={containerRef} class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10" style="min-height: calc(var(--vh, 1vh) * 100);">
   <!-- Centered About Header -->
   <div class="flex flex-col items-center justify-center py-8 md:py-12 mb-8 select-none">
     <h2 class="text-6xl sm:text-8xl md:text-9xl font-black font-nippo tracking-tight text-foreground about-header opacity-0 uppercase">
@@ -110,9 +110,9 @@
     </h2>
   </div>
 
-  <div class="w-full min-h-[85vh] flex flex-col lg:flex-row gap-6 relative z-10">
+  <div class="w-full flex flex-col lg:flex-row gap-6 relative z-10 about-container">
   <!-- Left Container: Bio / Info -->
-  <div class="w-full lg:w-2/3 flex flex-col min-h-[80vh] lg:min-h-0">
+  <div class="w-full lg:w-2/3 flex flex-col lg:min-h-0 about-left-container">
     <TuiContainer
       label="ABOUT"
       borderColor="border-border/80 hover:border-foreground/40"
@@ -129,13 +129,13 @@
 
           <p class="text-[clamp(14px,1.3vw,18px)] text-foreground font-bold leading-relaxed font-mono max-w-2xl">
             <span class="block gsap-reveal-lead-1">
-              I build responsive <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.2vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.2vw,16px)] font-mono text-foreground font-extrabold">mobile</code> apps, with a focus on
+              I love building <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.2vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.2vw,16px)] font-mono text-foreground font-extrabold">mobile</code> apps that don't just work,
             </span>
             <span class="block gsap-reveal-lead-2">
-              crafting intuitive <span class="text-primary font-black border-b border-primary/40">UI/UX designs</span> and integrating intelligent
+              but feel amazing to use. My sweet spot is mixing clean <span class="text-primary font-black border-b border-primary/40">UI/UX design</span>
             </span>
             <span class="block gsap-reveal-lead-3">
-              <span class="text-primary font-black border-b border-primary/40">AI capabilities</span> into software.
+              with cool <span class="text-primary font-black border-b border-primary/40">AI features</span> to make things smarter.
             </span>
           </p>
         </div>
@@ -147,19 +147,19 @@
           <div class="pt-6 font-mono max-w-2xl">
             <p class="text-[clamp(12px,1.1vw,15px)] text-muted-foreground leading-relaxed">
               <span class="block gsap-reveal-bio-1">
-                I specialize in building responsive, modern web interfaces and cross-
+                I'm a developer who genuinely enjoys the whole stack—from wiring up
               </span>
               <span class="block gsap-reveal-bio-2">
-                platform mobile apps. Blending clean engineering with intuitive design, I
+                the backend to obsessing over the tiniest animation details on the
               </span>
               <span class="block gsap-reveal-bio-3">
-                focus on crafting premium user interfaces (UI/UX) and integrating advanced
+                frontend. Whether I'm crafting a sleek cross-platform mobile app
               </span>
               <span class="block gsap-reveal-bio-4">
-                AI capabilities directly into software systems to create intelligent,
+                or hooking up a powerful AI agent, I just want to build cool stuff
               </span>
               <span class="block gsap-reveal-bio-5">
-                user-first solutions.
+                that solves real problems and looks good doing it.
               </span>
             </p>
           </div>
@@ -192,3 +192,17 @@
   </div>
   </div>
 </section>
+
+<style>
+  .about-container {
+    min-height: calc(var(--vh, 1vh) * 85);
+  }
+  .about-left-container {
+    min-height: calc(var(--vh, 1vh) * 80);
+  }
+  @media (min-width: 1024px) {
+    .about-left-container {
+      min-height: 0;
+    }
+  }
+</style>

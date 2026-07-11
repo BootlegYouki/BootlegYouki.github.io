@@ -41,11 +41,16 @@
   let containerClasses = $derived(
     animationStage === "initial"
       ? "w-28 h-28 md:w-36 md:h-36 flex items-center justify-center transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)] opacity-0 animate-fade-in [animation-delay:800ms]"
-      : "w-full h-[calc(100dvh-3rem)] flex flex-col transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)]"
+      : animationStage === "expanding"
+        ? "w-full flex flex-col transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)]"
+        : "w-full flex flex-col"
   );
 </script>
 
-<div class="w-full min-h-[100dvh] flex items-center justify-center p-6 relative">
+<div 
+  class="w-full flex items-center justify-center p-6 relative"
+  style="min-height: calc(var(--vh, 1vh) * 100);"
+>
   {#if animationStage === "initial"}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
       <FlickerSpinner size={120} />
@@ -57,6 +62,7 @@
     borderColor="border-border/80 hover:border-foreground/40"
     textColor="text-foreground/80 font-bold"
     class={containerClasses}
+    style={animationStage !== "initial" ? "height: calc(var(--vh, 1vh) * 100 - 3rem);" : ""}
   >
     {#if animationStage === "expanded"}
       <div class="flex flex-col justify-between h-full flex-1 p-6 md:p-16 animate-fade-in duration-300">
