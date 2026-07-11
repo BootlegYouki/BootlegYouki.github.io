@@ -198,7 +198,7 @@
       label="01"
       borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
       textColor="text-primary font-bold"
-      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
     >
       <div class="relative z-10 flex flex-col h-full justify-between gap-4">
         <h3
@@ -229,7 +229,7 @@
       label="02"
       borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
       textColor="text-primary font-bold"
-      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
     >
       <div class="relative z-10 flex flex-col h-full justify-between gap-4">
         <h3
@@ -262,7 +262,7 @@
       label="03"
       borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
       textColor="text-primary font-bold"
-      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
     >
       <div class="relative z-10 flex flex-col h-full justify-between gap-4">
         <h3
@@ -307,10 +307,10 @@
 
   @media (min-width: 1024px) {
     .step-prefix {
-      font-size: clamp(1.8rem, 2.2vw, 3.5rem);
+      font-size: clamp(2rem, 2.5vw, 4rem);
     }
     .step-subject {
-      font-size: clamp(2.8rem, 3.8vw, 5.8rem);
+      font-size: clamp(3rem, 4.5vw, 7rem);
     }
   }
 </style>
