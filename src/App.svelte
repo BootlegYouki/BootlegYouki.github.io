@@ -82,8 +82,8 @@
     {#if introExpanded}
       <div class="animate-fade-in duration-500">
         <TechTicker />
-        <AboutSection />
         <ProjectsSection />
+        <AboutSection />
         <ConceptSection />
         <ContactSection />
         <Footer />
