@@ -40,10 +40,10 @@
 
   let containerClasses = $derived(
     animationStage === "initial"
-      ? "w-28 h-28 md:w-36 md:h-36 flex items-center justify-center transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)] opacity-0 animate-fade-in [animation-delay:800ms]"
+      ? "w-32 h-32 md:w-40 md:h-40 flex items-center justify-center transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)] opacity-0 animate-fade-in [animation-delay:800ms]"
       : animationStage === "expanding"
-        ? "w-full flex flex-col transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)]"
-        : "w-full flex flex-col"
+        ? "w-full shrink-0 flex flex-col transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)]"
+        : "w-full shrink-0 flex flex-col"
   );
 </script>
 
@@ -53,7 +53,9 @@
 >
   {#if animationStage === "initial"}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-      <FlickerSpinner size={120} />
+      <div class="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center">
+        <FlickerSpinner />
+      </div>
     </div>
   {/if}
 
@@ -69,13 +71,13 @@
         <!-- Top Metadata Bar -->
         <div class="pb-8 relative">
           <div 
-            class="absolute bottom-0 left-0 right-0 h-[1px] bg-border/40 origin-center animate-border-expand"
+            class="absolute bottom-0 left-0 right-0 h-px bg-border/40 origin-center animate-border-expand"
             style="animation-delay: 0.5s"
           ></div>
           <div class="overflow-hidden">
-            <!-- Desktop Header Layout -->
+             <!-- Desktop Header Layout -->
             <div 
-              class="hidden sm:flex items-center justify-between text-[clamp(11px,1vw,14px)] text-muted-foreground animate-slide-down-reveal w-full"
+              class="hidden md:flex items-center justify-between text-[clamp(11px,1vw,14px)] text-muted-foreground animate-slide-down-reveal w-full"
               style="animation-delay: 1.0s"
             >
               <div class="flex items-center gap-x-6">
@@ -120,7 +122,7 @@
 
             <!-- Mobile Header Layout -->
             <div 
-              class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[11px] sm:hidden text-muted-foreground animate-slide-down-reveal w-full"
+              class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[11px] md:hidden text-muted-foreground animate-slide-down-reveal w-full"
               style="animation-delay: 1.0s"
             >
               <!-- Row 1 Left: GitHub -->
@@ -182,7 +184,7 @@
               </div>
               <div>
                 <h1 
-                  class="text-[14vw] sm:text-[20vw] md:text-[21vw] font-black tracking-tighter leading-[0.8] select-none text-foreground font-nippo w-full"
+                  class="text-[12vw] sm:text-[14vw] md:text-[15vw] lg:text-[16vw] font-black tracking-tighter leading-[0.8] select-none text-foreground font-nippo w-full"
                 >
                   Por<span class="pl-[0.045em]">tfolio</span>
                 </h1>
@@ -193,7 +195,7 @@
 
           <div class="pt-4 relative">
             <div 
-              class="absolute top-0 left-0 right-0 h-[1px] bg-border/40 origin-center animate-border-expand"
+              class="absolute top-0 left-0 right-0 h-px bg-border/40 origin-center animate-border-expand"
               style="animation-delay: 0.5s"
             ></div>
             <div class="overflow-hidden">
@@ -209,7 +211,7 @@
                   <span>Designer</span>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 text-[clamp(12px,1.2vw,16px)] font-semibold tracking-wider overflow-hidden">
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-[clamp(12px,1.2vw,16px)] font-semibold tracking-wider overflow-hidden">
                   <span class="text-muted-foreground break-all">EMAIL: <a href="mailto:bootlegyouki@gmail.com" class="text-foreground hover:underline transition-all break-all">bootlegyouki@gmail.com</a></span>
                   <span class="text-muted-foreground whitespace-nowrap">PHONE: <span class="text-foreground">+63 968 235 1236</span></span>
                 </div>
