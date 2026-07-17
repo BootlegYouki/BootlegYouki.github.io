@@ -54,7 +54,7 @@
       "source_file": "components.json",
       "source_location": "L6",
       "id": "portfolio_components_tailwind",
-      "community": 8,
+      "community": 3,
       "norm_label": "tailwind"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "components.json",
       "source_location": "L7",
       "id": "portfolio_components_tailwind_config",
-      "community": 8,
+      "community": 3,
       "norm_label": "config"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "components.json",
       "source_location": "L8",
       "id": "portfolio_components_tailwind_css",
-      "community": 8,
+      "community": 3,
       "norm_label": "css"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "components.json",
       "source_location": "L9",
       "id": "portfolio_components_tailwind_basecolor",
-      "community": 8,
+      "community": 3,
       "norm_label": "basecolor"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "components.json",
       "source_location": "L10",
       "id": "portfolio_components_tailwind_cssvariables",
-      "community": 8,
+      "community": 3,
       "norm_label": "cssvariables"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "components.json",
       "source_location": "L11",
       "id": "portfolio_components_tailwind_prefix",
-      "community": 8,
+      "community": 3,
       "norm_label": "prefix"
     },
     {
@@ -1210,16 +1210,6 @@
       "norm_label": "contactsection.svelte"
     },
     {
-      "label": "Footer.svelte",
-      "file_type": "code",
-      "source_file": "src/components/ui/Footer.svelte",
-      "confidence": "EXTRACTED",
-      "source_location": "L1",
-      "id": "src_components_ui_footer_svelte",
-      "community": 1,
-      "norm_label": "footer.svelte"
-    },
-    {
       "label": "lenis",
       "file_type": "code",
       "source_file": "lenis",
@@ -1383,6 +1373,26 @@
       "norm_label": "@/assets/photos/photo2.webp"
     },
     {
+      "label": "DitherBackground.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_ditherbackground_svelte",
+      "community": 1,
+      "norm_label": "ditherbackground.svelte"
+    },
+    {
+      "label": "Footer.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/Footer.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_footer_svelte",
+      "community": 1,
+      "norm_label": "footer.svelte"
+    },
+    {
       "label": "phosphor-svelte",
       "file_type": "code",
       "source_file": "phosphor-svelte",
@@ -1447,6 +1457,42 @@
       "id": "src_components_ui_projectcarousel_svelte",
       "community": 1,
       "norm_label": "projectcarousel.svelte"
+    },
+    {
+      "label": "if()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L36",
+      "id": "ui_ditherbackground_if",
+      "community": 1,
+      "norm_label": "if()"
+    },
+    {
+      "label": "handleMouseMove()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L132",
+      "id": "ui_ditherbackground_handlemousemove",
+      "community": 1,
+      "norm_label": "handlemousemove()"
+    },
+    {
+      "label": "handleMouseLeave()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L139",
+      "id": "ui_ditherbackground_handlemouseleave",
+      "community": 1,
+      "norm_label": "handlemouseleave()"
+    },
+    {
+      "label": "loop()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L172",
+      "id": "ui_ditherbackground_loop",
+      "community": 1,
+      "norm_label": "loop()"
     },
     {
       "label": "@/components/ui/Icons.svelte",
@@ -1976,7 +2022,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L15",
-      "community": 3,
+      "community": 8,
       "norm_label": "aliases",
       "id": "template_tui_components_aliases"
     },
@@ -1985,7 +2031,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L16",
-      "community": 3,
+      "community": 8,
       "norm_label": "components",
       "id": "template_tui_components_aliases_components"
     },
@@ -1994,7 +2040,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L17",
-      "community": 3,
+      "community": 8,
       "norm_label": "utils",
       "id": "template_tui_components_aliases_utils"
     },
@@ -2003,7 +2049,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L18",
-      "community": 3,
+      "community": 8,
       "norm_label": "ui",
       "id": "template_tui_components_aliases_ui"
     },
@@ -2012,7 +2058,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L19",
-      "community": 3,
+      "community": 8,
       "norm_label": "lib",
       "id": "template_tui_components_aliases_lib"
     },
@@ -2021,7 +2067,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L20",
-      "community": 3,
+      "community": 8,
       "norm_label": "hooks",
       "id": "template_tui_components_aliases_hooks"
     },
@@ -4856,6 +4902,14 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/ui/MouseTrail.svelte",
       "confidence_score": 1.0,
       "source": "src_components_ui_mousetrail_svelte",
@@ -4958,9 +5012,9 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Sections/AboutSection.svelte",
+      "confidence_score": 1.0,
       "source": "src_components_sections_aboutsection_svelte",
-      "target": "e_github_portfolio_src_assets_photos_photo1_webp",
-      "confidence_score": 1.0
+      "target": "e_github_portfolio_src_assets_photos_photo1_webp"
     },
     {
       "relation": "imports_from",
@@ -4974,9 +5028,9 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Sections/AboutSection.svelte",
+      "confidence_score": 1.0,
       "source": "src_components_sections_aboutsection_svelte",
-      "target": "e_github_portfolio_src_assets_photos_photo2_webp",
-      "confidence_score": 1.0
+      "target": "e_github_portfolio_src_assets_photos_photo2_webp"
     },
     {
       "relation": "imports_from",
@@ -5097,6 +5151,22 @@
       "confidence_score": 1.0,
       "source": "src_components_sections_contactsection_svelte",
       "target": "scrolltrigger"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "src_components_ui_ditherbackground_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "src_components_ui_footer_svelte"
     },
     {
       "relation": "imports_from",
@@ -5243,6 +5313,46 @@
       "confidence_score": 1.0,
       "source": "src_components_ui_tuicontainer_svelte",
       "target": "e_github_portfolio_src_lib_utils"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L117",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_handlemouseleave"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_handlemousemove"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_if"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L162",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_loop"
     },
     {
       "relation": "imports_from",
@@ -6632,5 +6742,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a56781cbd2c7f6fb65385dc0476c616c28a76931"
+  "built_at_commit": "8bda61bd470484f7a817c56e120ac706377dbe1d"
 }

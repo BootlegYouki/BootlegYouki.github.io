@@ -9,7 +9,7 @@
   import ProjectsSection from "@/components/Sections/ProjectsSection.svelte";
   import ConceptSection from "@/components/Sections/ConceptSection.svelte";
   import ContactSection from "@/components/Sections/ContactSection.svelte";
-  import Footer from "@/components/ui/Footer.svelte";
+
   import Lenis from "lenis";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -86,7 +86,7 @@
         <AboutSection />
         <ConceptSection />
         <ContactSection />
-        <Footer />
+
       </div>
     {/if}
   </main>

@@ -1,19 +1,18 @@
 <script lang="ts">
   import { onMount } from "svelte"
   import TuiContainer from "@/components/ui/TuiContainer.svelte"
+  import DitherBackground from "@/components/ui/DitherBackground.svelte"
+  import Footer from "@/components/ui/Footer.svelte"
   import { gsap } from "gsap"
   import { ScrollTrigger } from "gsap/ScrollTrigger"
   import {
-    MapPin,
-    Envelope,
-    ShareNetwork,
     GithubLogo,
     InstagramLogo,
   } from "phosphor-svelte"
 
   gsap.registerPlugin(ScrollTrigger)
 
-  let containerRef = $state<HTMLDivElement>()
+  let containerRef = $state<HTMLElement>()
 
   // Form State
   let name = $state("")
@@ -227,11 +226,14 @@
 <section
   id="contact-section"
   bind:this={containerRef}
-  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10 max-w-[90rem] mx-auto"
+  class="w-full pt-16 pb-0 md:pt-24 md:pb-0 animate-fade-in flex flex-col justify-start relative z-10 overflow-hidden"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <DitherBackground color="var(--color-primary)" opacity={0.25} scale={4} />
+  </div>
   <div
-    class="w-full flex flex-col lg:flex-row gap-16 lg:gap-36 xl:gap-48 relative z-10 mt-8 md:mt-16"
+    class="w-full max-w-360 mx-auto px-6 pb-20 md:pb-28 flex flex-col lg:flex-row gap-16 lg:gap-36 xl:gap-48 relative z-10 mt-8 md:mt-16"
   >
     <!-- Left Column: Heading -->
     <div
@@ -443,4 +445,5 @@
       </TuiContainer>
     </div>
   </div>
+  <Footer />
 </section>

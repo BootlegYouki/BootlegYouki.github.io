@@ -54,7 +54,7 @@
       "source_file": "components.json",
       "source_location": "L6",
       "id": "portfolio_components_tailwind",
-      "community": 8,
+      "community": 3,
       "norm_label": "tailwind"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "components.json",
       "source_location": "L7",
       "id": "portfolio_components_tailwind_config",
-      "community": 8,
+      "community": 3,
       "norm_label": "config"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "components.json",
       "source_location": "L8",
       "id": "portfolio_components_tailwind_css",
-      "community": 8,
+      "community": 3,
       "norm_label": "css"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "components.json",
       "source_location": "L9",
       "id": "portfolio_components_tailwind_basecolor",
-      "community": 8,
+      "community": 3,
       "norm_label": "basecolor"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "components.json",
       "source_location": "L10",
       "id": "portfolio_components_tailwind_cssvariables",
-      "community": 8,
+      "community": 3,
       "norm_label": "cssvariables"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "components.json",
       "source_location": "L11",
       "id": "portfolio_components_tailwind_prefix",
-      "community": 8,
+      "community": 3,
       "norm_label": "prefix"
     },
     {
@@ -423,7 +423,7 @@
       "source_file": "package.json",
       "source_location": "L26",
       "id": "portfolio_package_dependencies_svelte",
-      "community": 23,
+      "community": 1,
       "norm_label": "svelte"
     },
     {
@@ -819,7 +819,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L1",
       "id": "tsconfig_node_json",
-      "community": 18,
+      "community": 5,
       "norm_label": "tsconfig.node.json"
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L23",
       "id": "portfolio_tsconfig_node_include",
-      "community": 18,
+      "community": 5,
       "norm_label": "include"
     },
     {
@@ -1210,16 +1210,6 @@
       "norm_label": "contactsection.svelte"
     },
     {
-      "label": "Footer.svelte",
-      "file_type": "code",
-      "source_file": "src/components/ui/Footer.svelte",
-      "confidence": "EXTRACTED",
-      "source_location": "L1",
-      "id": "src_components_ui_footer_svelte",
-      "community": 1,
-      "norm_label": "footer.svelte"
-    },
-    {
       "label": "lenis",
       "file_type": "code",
       "source_file": "lenis",
@@ -1369,18 +1359,38 @@
       "file_type": "code",
       "source_file": "src/assets/Photos/Photo1.webp",
       "confidence": "EXTRACTED",
-      "id": "e_github_portfolio_src_assets_photos_photo1_jpg",
+      "id": "e_github_portfolio_src_assets_photos_photo1_webp",
       "community": 1,
-      "norm_label": "@/assets/photos/photo1.jpg"
+      "norm_label": "@/assets/photos/photo1.webp"
     },
     {
       "label": "@/assets/Photos/Photo2.webp",
       "file_type": "code",
       "source_file": "src/assets/Photos/Photo2.webp",
       "confidence": "EXTRACTED",
-      "id": "e_github_portfolio_src_assets_photos_photo2_jpg",
+      "id": "e_github_portfolio_src_assets_photos_photo2_webp",
       "community": 1,
-      "norm_label": "@/assets/photos/photo2.jpg"
+      "norm_label": "@/assets/photos/photo2.webp"
+    },
+    {
+      "label": "DitherBackground.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_ditherbackground_svelte",
+      "community": 1,
+      "norm_label": "ditherbackground.svelte"
+    },
+    {
+      "label": "Footer.svelte",
+      "file_type": "code",
+      "source_file": "src/components/ui/Footer.svelte",
+      "confidence": "EXTRACTED",
+      "source_location": "L1",
+      "id": "src_components_ui_footer_svelte",
+      "community": 1,
+      "norm_label": "footer.svelte"
     },
     {
       "label": "phosphor-svelte",
@@ -1447,6 +1457,42 @@
       "id": "src_components_ui_projectcarousel_svelte",
       "community": 1,
       "norm_label": "projectcarousel.svelte"
+    },
+    {
+      "label": "if()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L35",
+      "id": "ui_ditherbackground_if",
+      "community": 1,
+      "norm_label": "if()"
+    },
+    {
+      "label": "handleMouseMove()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L106",
+      "id": "ui_ditherbackground_handlemousemove",
+      "community": 1,
+      "norm_label": "handlemousemove()"
+    },
+    {
+      "label": "handleMouseLeave()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L113",
+      "id": "ui_ditherbackground_handlemouseleave",
+      "community": 1,
+      "norm_label": "handlemouseleave()"
+    },
+    {
+      "label": "loop()",
+      "file_type": "code",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L146",
+      "id": "ui_ditherbackground_loop",
+      "community": 1,
+      "norm_label": "loop()"
     },
     {
       "label": "@/components/ui/Icons.svelte",
@@ -1747,6 +1793,24 @@
       "norm_label": "6. (optional)"
     },
     {
+      "label": "@/assets/Photos/Photo1.webp",
+      "file_type": "code",
+      "source_file": "src/assets/Photos/Photo1.webp",
+      "confidence": "EXTRACTED",
+      "community": 1,
+      "norm_label": "@/assets/photos/photo1.webp",
+      "id": "e_github_portfolio_src_assets_photos_photo1_jpg"
+    },
+    {
+      "label": "@/assets/Photos/Photo2.webp",
+      "file_type": "code",
+      "source_file": "src/assets/Photos/Photo2.webp",
+      "confidence": "EXTRACTED",
+      "community": 1,
+      "norm_label": "@/assets/photos/photo2.webp",
+      "id": "e_github_portfolio_src_assets_photos_photo2_jpg"
+    },
+    {
       "label": "radix-ui",
       "file_type": "code",
       "source_file": "package.json",
@@ -1958,7 +2022,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L15",
-      "community": 3,
+      "community": 8,
       "norm_label": "aliases",
       "id": "template_tui_components_aliases"
     },
@@ -1967,7 +2031,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L16",
-      "community": 3,
+      "community": 8,
       "norm_label": "components",
       "id": "template_tui_components_aliases_components"
     },
@@ -1976,7 +2040,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L17",
-      "community": 3,
+      "community": 8,
       "norm_label": "utils",
       "id": "template_tui_components_aliases_utils"
     },
@@ -1985,7 +2049,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L18",
-      "community": 3,
+      "community": 8,
       "norm_label": "ui",
       "id": "template_tui_components_aliases_ui"
     },
@@ -1994,7 +2058,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L19",
-      "community": 3,
+      "community": 8,
       "norm_label": "lib",
       "id": "template_tui_components_aliases_lib"
     },
@@ -2003,7 +2067,7 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L20",
-      "community": 3,
+      "community": 8,
       "norm_label": "hooks",
       "id": "template_tui_components_aliases_hooks"
     },
@@ -2804,7 +2868,7 @@
       "file_type": "code",
       "source_file": "tsconfig.node.json",
       "source_location": "L23",
-      "community": 18,
+      "community": 5,
       "norm_label": "include",
       "id": "template_tui_tsconfig_node_include"
     },
@@ -4740,9 +4804,9 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/App.svelte",
+      "confidence_score": 1.0,
       "source": "src_app_svelte",
-      "target": "src_components_ui_footer_svelte",
-      "confidence_score": 1.0
+      "target": "src_components_ui_footer_svelte"
     },
     {
       "relation": "imports_from",
@@ -4833,6 +4897,14 @@
       "source_file": "src/components/Sections/ProjectsSection.svelte",
       "confidence_score": 1.0,
       "source": "src_components_sections_projectssection_svelte",
+      "target": "svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
       "target": "svelte"
     },
     {
@@ -4942,7 +5014,23 @@
       "source_file": "src/components/Sections/AboutSection.svelte",
       "confidence_score": 1.0,
       "source": "src_components_sections_aboutsection_svelte",
+      "target": "e_github_portfolio_src_assets_photos_photo1_webp"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/AboutSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_aboutsection_svelte",
       "target": "e_github_portfolio_src_assets_photos_photo2_jpg"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/AboutSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_aboutsection_svelte",
+      "target": "e_github_portfolio_src_assets_photos_photo2_webp"
     },
     {
       "relation": "imports_from",
@@ -5063,6 +5151,22 @@
       "confidence_score": 1.0,
       "source": "src_components_sections_contactsection_svelte",
       "target": "scrolltrigger"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "src_components_ui_ditherbackground_svelte"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sections/ContactSection.svelte",
+      "source": "src_components_sections_contactsection_svelte",
+      "target": "src_components_ui_footer_svelte",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5209,6 +5313,46 @@
       "confidence_score": 1.0,
       "source": "src_components_ui_tuicontainer_svelte",
       "target": "e_github_portfolio_src_lib_utils"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L117",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_handlemouseleave"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_handlemousemove"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_if"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/DitherBackground.svelte",
+      "source_location": "L162",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_ditherbackground_svelte",
+      "target": "ui_ditherbackground_loop"
     },
     {
       "relation": "imports_from",
@@ -6598,5 +6742,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9ae556919a7e27ff8545bc0417b982e01aefe57a"
+  "built_at_commit": "8bda61bd470484f7a817c56e120ac706377dbe1d"
 }

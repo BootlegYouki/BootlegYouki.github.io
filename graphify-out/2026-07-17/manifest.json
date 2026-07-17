@@ -200,193 +200,503 @@
     "semantic_hash": "880185617cd0224059c2623eae121873"
   },
   "E:\\Github\\portfolio\\components.json": {
-    "mtime": 1781838365.578772,
+    "mtime": 1784269265.9614737,
     "ast_hash": "795055f4f117f39c05e05671d1d2ff7b",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\package.json": {
-    "mtime": 1783696456.9334235,
+    "mtime": 1784270484.4814544,
     "ast_hash": "6a95c441fb566168c58b390f64e77567",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\tsconfig.app.json": {
-    "mtime": 1781838365.6049166,
+    "mtime": 1784269266.0530505,
     "ast_hash": "30f69dfd8d129381ee28d4ccc45370d8",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\tsconfig.json": {
-    "mtime": 1781838365.6049166,
+    "mtime": 1784269266.0530505,
     "ast_hash": "8f8d299e26b59b553cd694eb06cbea80",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\tsconfig.node.json": {
-    "mtime": 1781838365.6049166,
+    "mtime": 1784269266.0530505,
     "ast_hash": "1cd4c6b260b0dccbad5bc0a25029f390",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\vite.config.ts": {
-    "mtime": 1782188804.4492528,
+    "mtime": 1784270484.6059406,
     "ast_hash": "b0dc2bbbf35efba41ae3f387ecacc1cf",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\scripts\\int-template.js": {
-    "mtime": 1781838365.5894718,
+    "mtime": 1784269266.0276644,
     "ast_hash": "6af886627941b5bf6213275b5bb110a1",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\scripts\\rm-template.js": {
-    "mtime": 1781838365.5894718,
+    "mtime": 1784269266.0276644,
     "ast_hash": "f78fee054f26e37e18fe33429709385d",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\lib\\utils.ts": {
-    "mtime": 1781838365.6049166,
+    "mtime": 1784269266.0520456,
     "ast_hash": "1d8011eb18769078bf77502b220daa5e",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\CLAUDE.md": {
-    "mtime": 1781838365.5777433,
-    "ast_hash": "9211bc2a9b4e7bf514aab7ecdcc2da77",
+    "mtime": 1784274261.7644868,
+    "ast_hash": "60baaf526aa0c0a2f55543d1f5ff9d34",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\index.html": {
-    "mtime": 1784268956.7967484,
-    "ast_hash": "48a4457a7e029d9dfcc333c08f103562",
+    "mtime": 1784272572.525816,
+    "ast_hash": "2b6c83fbd912f7aec18e7df6522a07d6",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\README.md": {
-    "mtime": 1781838365.578772,
+    "mtime": 1784269265.9614737,
     "ast_hash": "936cf0197b528c2b670b4e679e06e03b",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.agents\\rules\\graphify.md": {
-    "mtime": 1781838365.5757356,
+    "mtime": 1784269265.958961,
     "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.agents\\workflows\\graphify.md": {
-    "mtime": 1781838365.5767434,
+    "mtime": 1784269265.958961,
     "ast_hash": "637776aa6f7496d069afe7520c845c8a",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\assets\\Nippo_Complete\\Fonts\\WEB\\README.md": {
-    "mtime": 1781840133.7313163,
-    "ast_hash": "a4fc42ee41d2af50bd896902ddf863a2",
+    "mtime": 1784269266.0317385,
+    "ast_hash": "f3d91e58a42cd37dd77f48bc23a30f00",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\assets\\Nippo_Complete\\License\\FFL.txt": {
-    "mtime": 1781840133.9061985,
-    "ast_hash": "d7f311f2ab9c0160a9e4ed0921d1aefb",
+    "mtime": 1784269266.044279,
+    "ast_hash": "58bee6c9eb6cfc5a1968b885b1b65aa3",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\.github\\workflows\\deploy.yml": {
-    "mtime": 1783700848.8830585,
-    "ast_hash": "2430178ef4318bd0af0bd68cf3996431",
+    "mtime": 1784270484.468428,
+    "ast_hash": "f63781422ec35d0b2748c7a60692015a",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.svelte": {
-    "mtime": 1784103485.2750657,
-    "ast_hash": "7916216df3711b9359a560b5ae006718",
+    "mtime": 1784274727.1777647,
+    "ast_hash": "4d05f7f681ab4c03522085d6c25e0999",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.ts": {
-    "mtime": 1782180273.7961113,
-    "ast_hash": "c5c6245e8128be526ff68a02750f77a3",
+    "mtime": 1784270484.6059406,
+    "ast_hash": "9f2b8658ddbb573a5c69b708f40f00f7",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\theme-provider.ts": {
-    "mtime": 1783701131.7049925,
-    "ast_hash": "c0e0743132f3a3cf5d7b5bce8568ff9a",
+    "mtime": 1784270484.6019163,
+    "ast_hash": "5eb23a0cd043199ce38da93ed0a1cfb5",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\Separator.svelte": {
-    "mtime": 1782180108.9422174,
-    "ast_hash": "60f7ef3352c4e6ccd18a401e2dac9890",
+    "mtime": 1784270484.603929,
+    "ast_hash": "145bb7ba5cc05c592d59fd9d80d62f48",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\TuiContainer.svelte": {
-    "mtime": 1783700191.1631556,
+    "mtime": 1784270484.6049347,
     "ast_hash": "261d31e1701460140006479247143303",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\svelte.config.js": {
-    "mtime": 1782180428.9547799,
-    "ast_hash": "050554be04a585a31057f55e877df7b7",
+    "mtime": 1784270484.6059406,
+    "ast_hash": "a7dbacb15e5d1c6ddb72103ec14ad5fe",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\Sections\\AboutSection.svelte": {
-    "mtime": 1783736814.3344717,
-    "ast_hash": "8b9b42200ab494082931026b8106f18a",
+    "mtime": 1784272139.386567,
+    "ast_hash": "adf5e023b06ccb973d362f974c99c17e",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\Sections\\IntroSection.svelte": {
-    "mtime": 1783736631.9731898,
+    "mtime": 1784270484.6008995,
     "ast_hash": "90d12b7b24a77ef3af2735639bda2704",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\Sections\\ProjectsSection.svelte": {
-    "mtime": 1783737772.2698398,
-    "ast_hash": "025cb6b564680655440a04b04697d1df",
+    "mtime": 1784272139.3885808,
+    "ast_hash": "fcb4a9fdf0ee59aa30d17536648e437a",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\FlickerSpinner.svelte": {
-    "mtime": 1782180132.6880054,
-    "ast_hash": "73b57be4f52b29cb25b1f19b5ce0ca31",
+    "mtime": 1784270484.6019163,
+    "ast_hash": "f13ed991b7247c76c8f55f710e713b28",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\Icons.svelte": {
-    "mtime": 1782190175.742168,
-    "ast_hash": "26f106229fc5292d2eaeaac544cde875",
+    "mtime": 1784270484.6029234,
+    "ast_hash": "a9a8f515ebcafaef7107f802078c2479",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\MouseTrail.svelte": {
-    "mtime": 1784267502.678768,
+    "mtime": 1784270484.6029234,
     "ast_hash": "8631ca0a3e272ad747e7717faafe8f5e",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\ProjectCarousel.svelte": {
-    "mtime": 1783736716.0158415,
+    "mtime": 1784270484.6029234,
     "ast_hash": "5719247e7ecfcd5c4054ce3d4d9fec3d",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\ScrollProgress.svelte": {
-    "mtime": 1782180329.971448,
-    "ast_hash": "9399959be144e88e663cc51492d2fc06",
+    "mtime": 1784270484.603929,
+    "ast_hash": "f694670d6d942b64dfd41d2c3715134d",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\ScrollToTop.svelte": {
-    "mtime": 1783690570.415014,
-    "ast_hash": "42b9946159ba1065f4097d4faaaa47a7",
+    "mtime": 1784270484.603929,
+    "ast_hash": "6d587adff753afb6d523ee04f02a9286",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\TechTicker.svelte": {
-    "mtime": 1783733499.1962733,
-    "ast_hash": "f4dece14bc013c360dc71bff202e29c2",
+    "mtime": 1784270484.6049347,
+    "ast_hash": "0edbe35889e4fce5f4d818ba344f155f",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\Sections\\ConceptSection.svelte": {
-    "mtime": 1783741474.9068909,
+    "mtime": 1784270484.5993752,
     "ast_hash": "7aac1122d93cd438ba385e271584bad8",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\Sections\\ContactSection.svelte": {
-    "mtime": 1783736560.7299097,
-    "ast_hash": "7c69fe885eaf490578d003be42263278",
+    "mtime": 1784274775.9811938,
+    "ast_hash": "05d233b3957fe8529459ee17f0263971",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\Footer.svelte": {
-    "mtime": 1783697475.1866798,
-    "ast_hash": "f499d85b869bbfc86e705618cd1bc4a1",
+    "mtime": 1784274782.1888986,
+    "ast_hash": "46820ecd71b2922a667572a763ad1078",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\public\\llms.txt": {
-    "mtime": 1784268973.110041,
-    "ast_hash": "b1d7007625d04ced53b933690c56f1cf",
+    "mtime": 1784272581.5273094,
+    "ast_hash": "a0e2d46c4a5acafd71775bdd654a8b55",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\public\\robots.txt": {
-    "mtime": 1784269028.319243,
-    "ast_hash": "beead385036b782e85fa69cb54dd390a",
+    "mtime": 1784270484.5895493,
+    "ast_hash": "bd0cdd2db9366d31250b411693111744",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\google1cb7ba1451b0cdb2.html": {
+    "mtime": 1784270555.477478,
+    "ast_hash": "7cec7b64d575dd1b627a1e2ab8577449",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\metaimage.webp": {
+    "mtime": 1784272124.9193165,
+    "ast_hash": "36281a96b4069f9ce81dcb9d8f0553f7",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\image copy 3.webp": {
+    "mtime": 1784272125.1314578,
+    "ast_hash": "80d073e5dc0ef83f586f1e7183579baf",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\image copy 4.webp": {
+    "mtime": 1784272125.3701863,
+    "ast_hash": "a6bd094ffb60d26a6980e24fe9074493",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\image copy 5.webp": {
+    "mtime": 1784272125.654668,
+    "ast_hash": "64c466c2f7beea82175e0330da453e30",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\Screenshot 2026-06-19 200839.webp": {
+    "mtime": 1784272125.849813,
+    "ast_hash": "e5d350fdbaab8f7d126b4641e83309e3",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\Screenshot 2026-06-19 200843.webp": {
+    "mtime": 1784272126.056779,
+    "ast_hash": "b8e7b595b24acc800529b31706884814",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\Screenshot 2026-06-19 200848.webp": {
+    "mtime": 1784272126.269212,
+    "ast_hash": "b9052adb9f09842b27365b369b9ba7cb",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\Screenshot 2026-06-19 200851.webp": {
+    "mtime": 1784272126.473618,
+    "ast_hash": "b185b6fc6c6109054bbba83cd42fe5e5",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\Screenshot 2026-06-19 200855.webp": {
+    "mtime": 1784272126.6903706,
+    "ast_hash": "b93ba776b0c22b2db5ed656d2db2777e",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\Screenshot 2026-06-19 200858.webp": {
+    "mtime": 1784272126.9010644,
+    "ast_hash": "b1c278ab281f97441cada132b1d1749d",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\01\\Screenshot 2026-06-19 200902.webp": {
+    "mtime": 1784272127.0982845,
+    "ast_hash": "8170c433b64b773a8679166120c9ead1",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200459.webp": {
+    "mtime": 1784272127.2882175,
+    "ast_hash": "1009eac7d98b52b28fc31d21533d39e2",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200506.webp": {
+    "mtime": 1784272127.471486,
+    "ast_hash": "4a4ba75a2855e343cd6d31f9e9bceadd",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200509.webp": {
+    "mtime": 1784272127.658827,
+    "ast_hash": "2b628bf1907ef39d82507ca1fb7b898f",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200512.webp": {
+    "mtime": 1784272127.855216,
+    "ast_hash": "2fdae07542380880939eb4346da92462",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200515.webp": {
+    "mtime": 1784272128.043758,
+    "ast_hash": "1995ba0aeb5d7225c3de3f7e9d7a3727",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200518.webp": {
+    "mtime": 1784272128.2417054,
+    "ast_hash": "3ac3a2654e8e78cb53ae3d8aa493bca4",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200521.webp": {
+    "mtime": 1784272128.4307716,
+    "ast_hash": "1dce34bbd51744ce2a1028ef7a567a19",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200525.webp": {
+    "mtime": 1784272128.6318245,
+    "ast_hash": "dab668f1c458fe780c0cfbda7a3f9568",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200528.webp": {
+    "mtime": 1784272128.8261452,
+    "ast_hash": "c0c824a14691424a8e0fb68a79a28421",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200531.webp": {
+    "mtime": 1784272129.0217812,
+    "ast_hash": "e5b1485c297aee479ff000aec9a71539",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200534.webp": {
+    "mtime": 1784272129.2101018,
+    "ast_hash": "a09f442bc03c5c2f636dd41dded93632",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200549.webp": {
+    "mtime": 1784272129.4034226,
+    "ast_hash": "bea3c2a803370a0e410063038aebd5e0",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200554.webp": {
+    "mtime": 1784272129.5866933,
+    "ast_hash": "ad88d9177aa0398a6c0648d1806aeabd",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200558.webp": {
+    "mtime": 1784272129.7783263,
+    "ast_hash": "28397caf13c49019a03c7a77f7c0a080",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200601.webp": {
+    "mtime": 1784272129.980687,
+    "ast_hash": "02218dec64fc7cbfb640feedc9474e1a",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200604.webp": {
+    "mtime": 1784272130.1650865,
+    "ast_hash": "77fc34256ac1f81ad5538ddf093275bd",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200610.webp": {
+    "mtime": 1784272130.3702128,
+    "ast_hash": "a4b9db2a03da30d19b08fe35c2193786",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200615.webp": {
+    "mtime": 1784272130.5695722,
+    "ast_hash": "479991a433750903bfad6cf39588220c",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200619.webp": {
+    "mtime": 1784272130.7668862,
+    "ast_hash": "9e4c7dc590fb6b705af9e08bde8f5282",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200638.webp": {
+    "mtime": 1784272130.9586854,
+    "ast_hash": "69196ccc5a8201f48ff4d4512948bf7c",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\02\\Screenshot 2026-06-19 200641.webp": {
+    "mtime": 1784272131.1511848,
+    "ast_hash": "6aaf95cc4ccd2622bb511ed01e50a498",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\03\\admin\\admin dashboard.webp": {
+    "mtime": 1784272131.3615253,
+    "ast_hash": "b817f7e54841967987495ac6db158a84",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\03\\admin\\inventory page.webp": {
+    "mtime": 1784272131.5662913,
+    "ast_hash": "e4dcf680aa2fa7bc19ccd67a92997bc1",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\03\\cashier\\cashier pos.webp": {
+    "mtime": 1784272131.7936294,
+    "ast_hash": "116bc40e57f4a2f788cfbb8b327adc8f",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\03\\cashier\\customer screen cart.webp": {
+    "mtime": 1784272131.9846072,
+    "ast_hash": "38381e58bff9473537985628d493639f",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\04\\photo_1781848129322_0-portrait.webp": {
+    "mtime": 1784272132.2715907,
+    "ast_hash": "ea67db0c6fce96cd2fcf4d6a9861d9e2",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\04\\photo_1781848129322_1-portrait.webp": {
+    "mtime": 1784272132.6151867,
+    "ast_hash": "82f14c6961cd98bbabef82122b0cc57e",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\04\\photo_1781848129322_2-portrait.webp": {
+    "mtime": 1784272132.935032,
+    "ast_hash": "25b84a79c632137e7d04c9e16a7010b1",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\04\\photo_1781848129322_3-portrait.webp": {
+    "mtime": 1784272133.2348516,
+    "ast_hash": "56205a8e7ce190c3c242f5d7731bee33",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\05\\photo_1781869938792_0-portrait.webp": {
+    "mtime": 1784272133.506324,
+    "ast_hash": "61fe366db255cb74cb6cb960889a7e9f",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\05\\photo_1781869938792_1-portrait.webp": {
+    "mtime": 1784272133.759585,
+    "ast_hash": "79efb6cb31828a422cc969cfe63d5d80",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\05\\photo_1781869938792_2-portrait.webp": {
+    "mtime": 1784272134.0260394,
+    "ast_hash": "4cca0c0a097a673019fc4ede638aab22",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\05\\photo_1781869938792_3-portrait.webp": {
+    "mtime": 1784272134.304633,
+    "ast_hash": "886da73dbef0ecc4647ae4f5284bae50",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\desktop\\image copy 2.webp": {
+    "mtime": 1784272134.518488,
+    "ast_hash": "124644d081d07e596c7e514d60396a04",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\desktop\\image copy.webp": {
+    "mtime": 1784272134.709967,
+    "ast_hash": "8052c958b5b0066de59c888e21a27321",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\desktop\\image.webp": {
+    "mtime": 1784272134.9518983,
+    "ast_hash": "699e487160ad7dcacad0acd84e3c7c67",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\mobile\\photo_1781849550632_0-portrait.webp": {
+    "mtime": 1784272135.2421155,
+    "ast_hash": "de2a0d35bb7d4b1223456da9f3ea3ca5",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\mobile\\photo_1781849550632_1-portrait.webp": {
+    "mtime": 1784272135.520201,
+    "ast_hash": "9156f13a5af0cd1cb30b73ea0890f059",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\mobile\\photo_1781849550632_2-portrait.webp": {
+    "mtime": 1784272135.7880633,
+    "ast_hash": "bad719f28d691963ccdd59b5dbc6c6eb",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\mobile\\photo_1781849550632_3-portrait.webp": {
+    "mtime": 1784272136.096287,
+    "ast_hash": "f959ce37aa5f4a66d436f2660bd70e9e",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\06\\mobile\\photo_1781849585552_0-portrait.webp": {
+    "mtime": 1784272136.3560874,
+    "ast_hash": "3f0e7e1608b8a3c0d07d7dda0109377b",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\07\\photo_1781868166488_0-portrait.webp": {
+    "mtime": 1784272136.6874928,
+    "ast_hash": "f35ad17fed4efdb27abece9083eb58eb",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\07\\photo_1781868166488_1-portrait.webp": {
+    "mtime": 1784272136.9688509,
+    "ast_hash": "d3cc8d50fb3f0a766667ba7268f99931",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\07\\photo_1781868166488_2-portrait.webp": {
+    "mtime": 1784272137.2289193,
+    "ast_hash": "4238ab17fc3218fc684a29f038ca0372",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\07\\photo_1781868166488_3-portrait.webp": {
+    "mtime": 1784272137.485221,
+    "ast_hash": "5ccaed8ad59b127c2aa3f0d3ffbe34df",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\08\\1000038438-portrait.webp": {
+    "mtime": 1784272137.8502784,
+    "ast_hash": "a1c6351943cf386e89f143a8e03fbc4d",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\projects\\08\\1000038439-portrait.webp": {
+    "mtime": 1784272138.240676,
+    "ast_hash": "1f2c11ffa45b243a6b738fc3b9b720c0",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\assets\\Photos\\Photo1.webp": {
+    "mtime": 1784272943.8744233,
+    "ast_hash": "a032960ee115f0e1ebc4075d595e0f9f",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\assets\\Photos\\Photo2.webp": {
+    "mtime": 1784272944.8800356,
+    "ast_hash": "48076dc93c8c75e20cd06c19781e9345",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\DitherBackground.svelte": {
+    "mtime": 1784274749.0845158,
+    "ast_hash": "6c2e277f0559a66530a9a29a113d8ac6",
     "semantic_hash": ""
   }
 }

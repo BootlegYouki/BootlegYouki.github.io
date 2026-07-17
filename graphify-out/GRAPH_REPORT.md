@@ -1,16 +1,16 @@
 # Graph Report - portfolio  (2026-07-17)
 
 ## Corpus Check
-- 33 files · ~183,995 words
+- 34 files · ~185,380 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 341 nodes · 359 edges · 24 communities (20 shown, 4 thin omitted)
+- 346 nodes · 366 edges · 24 communities (20 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a56781cb`
+- Built from commit: `8bda61bd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -65,7 +65,7 @@ Cohesion: 0.09
 Nodes (22): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+14 more)
 
 ### Community 1 - "Vivid TUI Components Hub"
-Cohesion: 0.12
+Cohesion: 0.10
 Nodes (12): @/assets/Photos/Photo1.webp, @/assets/Photos/Photo1.webp, @/assets/Photos/Photo2.webp, @/assets/Photos/Photo2.webp, @/components/theme-provider, @/lib/utils, svelte/easing, svelte/elements (+4 more)
 
 ### Community 2 - "Community 2"
@@ -94,7 +94,7 @@ Nodes (18): name, private, scripts, build, dev, format, init-template, int-templ
 
 ### Community 8 - "Community 8"
 Cohesion: 0.33
-Nodes (6): tailwind, baseColor, config, css, cssVariables, prefix
+Nodes (6): aliases, components, hooks, lib, ui, utils
 
 ### Community 9 - "Terminal UI Collective"
 Cohesion: 0.14
@@ -141,16 +141,16 @@ Nodes (17): dependencies, class-variance-authority, clsx, @fontsource-variable/j
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `Community 23` to `Vivid TUI Components Hub`, `Community 7`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
+  _High betweenness centrality (0.091) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 6` to `Community 7`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `Community 2` to `Community 7`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._
+- **Why does `svelte` connect `Vivid TUI Components Hub` to `Community 23`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
   _249 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tactical UI Components Forge` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `Vivid TUI Components Hub` be split into smaller, more focused modules?**
-  _Cohesion score 0.11827956989247312 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09841269841269841 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._

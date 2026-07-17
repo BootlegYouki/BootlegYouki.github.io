@@ -245,8 +245,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\CLAUDE.md": {
-    "mtime": 1784269265.9614737,
-    "ast_hash": "9211bc2a9b4e7bf514aab7ecdcc2da77",
+    "mtime": 1784274261.7644868,
+    "ast_hash": "60baaf526aa0c0a2f55543d1f5ff9d34",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\index.html": {
@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\App.svelte": {
-    "mtime": 1784270484.5905511,
-    "ast_hash": "7916216df3711b9359a560b5ae006718",
+    "mtime": 1784274727.1777647,
+    "ast_hash": "4d05f7f681ab4c03522085d6c25e0999",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\main.ts": {
@@ -330,8 +330,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\FlickerSpinner.svelte": {
-    "mtime": 1784270484.6019163,
-    "ast_hash": "f13ed991b7247c76c8f55f710e713b28",
+    "mtime": 1784275053.6141903,
+    "ast_hash": "7ae655a3c11e7e71f37849a5e8c694d7",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\Icons.svelte": {
@@ -370,13 +370,13 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\Sections\\ContactSection.svelte": {
-    "mtime": 1784270484.5993752,
-    "ast_hash": "20e7892546e12c12fa9f4f489acfbab4",
+    "mtime": 1784274914.0054624,
+    "ast_hash": "a669f10b930f061e93930269145bcad9",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\Footer.svelte": {
-    "mtime": 1784270484.6019163,
-    "ast_hash": "1b0d55d07417b0b121be3e56b886c49c",
+    "mtime": 1784274782.1888986,
+    "ast_hash": "46820ecd71b2922a667572a763ad1078",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\public\\llms.txt": {
@@ -685,13 +685,18 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\assets\\Photos\\Photo1.webp": {
-    "mtime": 1784272138.3086572,
+    "mtime": 1784272943.8744233,
     "ast_hash": "a032960ee115f0e1ebc4075d595e0f9f",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\assets\\Photos\\Photo2.webp": {
-    "mtime": 1784272139.3489199,
-    "ast_hash": "4cb404c5220ae3009eb890c1a3e98e90",
+    "mtime": 1784272944.8800356,
+    "ast_hash": "48076dc93c8c75e20cd06c19781e9345",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\src\\components\\ui\\DitherBackground.svelte": {
+    "mtime": 1784274986.9940026,
+    "ast_hash": "3e7e3b3032ebff671c11778143e32afa",
     "semantic_hash": ""
   }
 }
