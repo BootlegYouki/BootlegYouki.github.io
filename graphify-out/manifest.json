@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\index.html": {
-    "mtime": 1784267432.7147653,
-    "ast_hash": "06f960686eac72d197924ad99c3b7deb",
+    "mtime": 1784268956.7967484,
+    "ast_hash": "48a4457a7e029d9dfcc333c08f103562",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\README.md": {
@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\MouseTrail.svelte": {
-    "mtime": 1784267355.6574981,
-    "ast_hash": "4ddc115b37dda94ac5485c3fb71f4c0a",
+    "mtime": 1784267502.678768,
+    "ast_hash": "8631ca0a3e272ad747e7717faafe8f5e",
     "semantic_hash": ""
   },
   "E:\\Github\\portfolio\\src\\components\\ui\\ProjectCarousel.svelte": {
@@ -377,6 +377,16 @@
   "E:\\Github\\portfolio\\src\\components\\ui\\Footer.svelte": {
     "mtime": 1783697475.1866798,
     "ast_hash": "f499d85b869bbfc86e705618cd1bc4a1",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\llms.txt": {
+    "mtime": 1784268973.110041,
+    "ast_hash": "b1d7007625d04ced53b933690c56f1cf",
+    "semantic_hash": ""
+  },
+  "E:\\Github\\portfolio\\public\\robots.txt": {
+    "mtime": 1784269028.319243,
+    "ast_hash": "beead385036b782e85fa69cb54dd390a",
     "semantic_hash": ""
   }
 }
