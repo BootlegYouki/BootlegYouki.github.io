@@ -79,6 +79,7 @@
           <div class="overflow-hidden">
              <!-- Desktop Header Layout -->
             <nav 
+              data-nosnippet
               aria-label="Desktop Social links and settings"
               class="hidden md:flex items-center justify-between text-[clamp(11px,1vw,14px)] text-muted-foreground animate-slide-down-reveal w-full"
               style="animation-delay: 1.0s"
@@ -125,6 +126,7 @@
 
             <!-- Mobile Header Layout -->
             <nav 
+              data-nosnippet
               aria-label="Mobile Social links and settings"
               class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[11px] md:hidden text-muted-foreground animate-slide-down-reveal w-full"
               style="animation-delay: 1.0s"
@@ -215,7 +217,10 @@
                   <span>Designer</span>
                 </div>
 
-                <address class="not-italic flex flex-col md:flex-row gap-6 md:gap-12 text-[clamp(12px,1.2vw,16px)] font-semibold tracking-wider overflow-hidden">
+                <address 
+                  data-nosnippet
+                  class="not-italic flex flex-col md:flex-row gap-6 md:gap-12 text-[clamp(12px,1.2vw,16px)] font-semibold tracking-wider overflow-hidden"
+                >
                   <span class="text-muted-foreground break-all">EMAIL: <a href="mailto:bootlegyouki@gmail.com" class="text-foreground hover:underline transition-all break-all">bootlegyouki@gmail.com</a></span>
                   <span class="text-muted-foreground whitespace-nowrap">PHONE: <span class="text-foreground">+63 968 235 1236</span></span>
                 </address>
