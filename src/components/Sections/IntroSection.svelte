@@ -47,7 +47,9 @@
   );
 </script>
 
-<div 
+<section 
+  id="intro"
+  aria-label="Introduction"
   class="w-full flex items-center justify-center p-6 relative"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
@@ -76,7 +78,8 @@
           ></div>
           <div class="overflow-hidden">
              <!-- Desktop Header Layout -->
-            <div 
+            <nav 
+              aria-label="Desktop Social links and settings"
               class="hidden md:flex items-center justify-between text-[clamp(11px,1vw,14px)] text-muted-foreground animate-slide-down-reveal w-full"
               style="animation-delay: 1.0s"
             >
@@ -118,10 +121,11 @@
                   {$theme.toUpperCase()}
                 </button>
               </div>
-            </div>
+            </nav>
 
             <!-- Mobile Header Layout -->
-            <div 
+            <nav 
+              aria-label="Mobile Social links and settings"
               class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[11px] md:hidden text-muted-foreground animate-slide-down-reveal w-full"
               style="animation-delay: 1.0s"
             >
@@ -164,7 +168,7 @@
                   {$theme.toUpperCase()}
                 </button>
               </div>
-            </div>
+            </nav>
           </div>
         </div>
 
@@ -184,9 +188,9 @@
               </div>
               <div>
                 <h1 
-                  class="text-[12vw] sm:text-[14vw] md:text-[15vw] lg:text-[16vw] font-black tracking-tighter leading-[0.8] select-none text-foreground font-nippo w-full"
+                  class="text-[18vw] sm:text-[20vw] md:text-[21vw] lg:text-[20vw] font-black tracking-tighter leading-[0.8] select-none text-foreground font-nippo w-full"
                 >
-                  Por<span class="pl-[0.045em]">tfolio</span>
+                  Por<span class="pl-[0.045em]">tfolio</span><span class="text-red-500" style="color: #ef4444;">.</span>
                 </h1>
               </div>
               <div class="h-4"></div>
@@ -211,10 +215,10 @@
                   <span>Designer</span>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-[clamp(12px,1.2vw,16px)] font-semibold tracking-wider overflow-hidden">
+                <address class="not-italic flex flex-col md:flex-row gap-6 md:gap-12 text-[clamp(12px,1.2vw,16px)] font-semibold tracking-wider overflow-hidden">
                   <span class="text-muted-foreground break-all">EMAIL: <a href="mailto:bootlegyouki@gmail.com" class="text-foreground hover:underline transition-all break-all">bootlegyouki@gmail.com</a></span>
                   <span class="text-muted-foreground whitespace-nowrap">PHONE: <span class="text-foreground">+63 968 235 1236</span></span>
-                </div>
+                </address>
               </div>
             </div>
           </div>
@@ -222,4 +226,4 @@
       </div>
     {/if}
   </TuiContainer>
-</div>
+</section>

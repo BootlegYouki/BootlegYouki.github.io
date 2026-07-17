@@ -8,7 +8,7 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let containerRef = $state<HTMLDivElement>();
+  let containerRef = $state<HTMLElement>();
 
   onMount(() => {
     if (!containerRef) return;
@@ -104,11 +104,11 @@
 
 <section id="about-section" bind:this={containerRef} class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10" style="min-height: calc(var(--vh, 1vh) * 100);">
   <!-- Centered About Header -->
-  <div class="flex flex-col items-center justify-center py-8 md:py-12 mb-8 select-none">
+  <header class="flex flex-col items-center justify-center py-8 md:py-12 mb-8 select-none">
     <h2 class="text-6xl sm:text-8xl md:text-9xl font-black font-nippo tracking-tight text-foreground about-header opacity-0 uppercase">
       Who Am I
     </h2>
-  </div>
+  </header>
 
   <div class="w-full flex flex-col lg:flex-row gap-6 relative z-10 about-container">
   <!-- Left Container: Bio / Info -->
@@ -119,7 +119,7 @@
       textColor="text-foreground/80 font-bold"
       class="flex-1 h-full flex flex-col justify-between !p-0 [&>legend]:ml-4"
     >
-      <div class="flex flex-col justify-between h-full flex-1 p-6 md:p-12">
+      <article class="flex flex-col justify-between h-full flex-1 p-6 md:p-12">
         <div>
           <h2 class="text-[clamp(40px,8vw,100px)] font-extrabold font-nippo leading-[1.1] tracking-tight text-foreground mb-8">
             <span class="block gsap-reveal-title-1">Hello!</span>
@@ -164,7 +164,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </article>
     </TuiContainer>
   </div>
 
@@ -178,14 +178,14 @@
     >
       <div class="w-full h-full min-h-[500px] lg:min-h-0 relative">
         <div class="absolute inset-0 flex flex-col gap-4">
-          <div class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-1 relative group/photo1">
-            <img src={photo1} alt="Portrait 1" class="w-full h-full object-cover object-[75%_center] scale-[1.3] transition-all duration-500 filter grayscale group-hover/photo1:grayscale-0" />
+          <figure class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-1 relative group/photo1 m-0">
+            <img src={photo1} alt="Mark Darren Oandasan - Casual Portrait" class="w-full h-full object-cover object-[75%_center] scale-[1.3] transition-all duration-500 filter grayscale group-hover/photo1:grayscale-0" />
             <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/photo1:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-          </div>
-          <div class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-2 relative group/photo2">
-            <img src={photo2} alt="Portrait 2" class="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover/photo2:grayscale-0" />
+          </figure>
+          <figure class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-2 relative group/photo2 m-0">
+            <img src={photo2} alt="Mark Darren Oandasan - Developer Portrait" class="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover/photo2:grayscale-0" />
             <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/photo2:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-          </div>
+          </figure>
         </div>
       </div>
     </TuiContainer>

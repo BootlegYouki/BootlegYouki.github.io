@@ -6,8 +6,8 @@
 
   gsap.registerPlugin(ScrollTrigger)
 
-  let containerRef = $state<HTMLDivElement>()
-  let rowRef = $state<HTMLDivElement>()
+  let containerRef = $state<HTMLElement>()
+  let rowRef = $state<HTMLOListElement>()
   let arrow1Width = $state(0)
   let arrow2Width = $state(0)
 
@@ -145,7 +145,7 @@
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <!-- Centered Workflow Header -->
-  <div
+  <header
     class="flex flex-col items-center justify-center py-8 md:py-12 mb-8 select-none"
   >
     <h2
@@ -153,11 +153,11 @@
     >
       WORKFLOW
     </h2>
-  </div>
+  </header>
 
-  <div
+  <ol
     bind:this={rowRef}
-    class="w-full flex flex-col lg:flex-row gap-6 relative z-10 lg:my-12"
+    class="w-full flex flex-col lg:flex-row gap-6 relative z-10 lg:my-12 list-none p-0"
   >
     <!-- Arrow 1: Bottom Connector (Box 1 to Box 2) -->
     <div
@@ -194,105 +194,111 @@
     </div>
 
     <!-- Step 1 -->
-    <TuiContainer
-      label="01"
-      borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
-      textColor="text-primary font-bold"
-      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
-    >
-      <div class="relative z-10 flex flex-col h-full justify-between gap-4">
-        <h3
-          class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
-        >
-          Tell Me The<br />
-          <span
-            class="text-primary font-black font-nippo step-subject"
+    <li class="flex-1 flex flex-col">
+      <TuiContainer
+        label="01"
+        borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
+        textColor="text-primary font-bold"
+        class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+      >
+        <article class="relative z-10 flex flex-col h-full justify-between gap-4 flex-1">
+          <h3
+            class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
           >
-            Problem.
-          </span>
-        </h3>
-        <p
-          class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
-        >
-          Everything starts with a <span class="text-primary font-bold"
-            >bottleneck</span
-          >. Just shoot me a message and tell me what's
-          <span class="text-primary font-bold">slowing you down</span>, costing you money, or driving you crazy. Don't worry about
-          the technical details yet—just explain the
-          <span class="text-primary font-bold">core issue</span> you want fixed.
-        </p>
-      </div>
-    </TuiContainer>
+            Tell Me The<br />
+            <span
+              class="text-primary font-black font-nippo step-subject"
+            >
+              Problem.
+            </span>
+          </h3>
+          <p
+            class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
+          >
+            Everything starts with a <span class="text-primary font-bold"
+              >bottleneck</span
+            >. Just shoot me a message and tell me what's
+            <span class="text-primary font-bold">slowing you down</span>, costing you money, or driving you crazy. Don't worry about
+            the technical details yet—just explain the
+            <span class="text-primary font-bold">core issue</span> you want fixed.
+          </p>
+        </article>
+      </TuiContainer>
+    </li>
 
     <!-- Step 2 -->
-    <TuiContainer
-      label="02"
-      borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
-      textColor="text-primary font-bold"
-      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
-    >
-      <div class="relative z-10 flex flex-col h-full justify-between gap-4">
-        <h3
-          class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
-        >
-          Designing A<br />
-          <span
-            class="text-primary font-black font-nippo step-subject"
+    <li class="flex-1 flex flex-col">
+      <TuiContainer
+        label="02"
+        borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
+        textColor="text-primary font-bold"
+        class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+      >
+        <article class="relative z-10 flex flex-col h-full justify-between gap-4 flex-1">
+          <h3
+            class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
           >
-            Solution.
-          </span>
-        </h3>
-        <p
-          class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
-        >
-          I don't just start blindly typing code. I actually take the time to <span class="text-primary font-bold"
-            >figure out the best approach</span
-          > for your specific situation. We'll look at the
-          <span class="text-primary font-bold">right tools for the job</span>
-          and map out a
-          <span class="text-primary font-bold"
-            >solid, cost-effective game plan</span
-          > that makes sense for you.
-        </p>
-      </div>
-    </TuiContainer>
+            Designing A<br />
+            <span
+              class="text-primary font-black font-nippo step-subject"
+            >
+              Solution.
+            </span>
+          </h3>
+          <p
+            class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
+          >
+            I don't just start blindly typing code. I actually take the time to <span class="text-primary font-bold"
+              >figure out the best approach</span
+            > for your specific situation. We'll look at the
+            <span class="text-primary font-bold">right tools for the job</span>
+            and map out a
+            <span class="text-primary font-bold"
+              >solid, cost-effective game plan</span
+            > that makes sense for you.
+          </p>
+        </article>
+      </TuiContainer>
+    </li>
 
     <!-- Step 3 -->
-    <TuiContainer
-      label="03"
-      borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
-      textColor="text-primary font-bold"
-      class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
-    >
-      <div class="relative z-10 flex flex-col h-full justify-between gap-4">
-        <h3
-          class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
-        >
-          Building The<br />
-          <span
-            class="text-primary font-black font-nippo step-subject"
+    <li class="flex-1 flex flex-col">
+      <TuiContainer
+        label="03"
+        borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
+        textColor="text-primary font-bold"
+        class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+      >
+        <article class="relative z-10 flex flex-col h-full justify-between gap-4 flex-1">
+          <h3
+            class="font-black font-nippo text-foreground uppercase tracking-tight step-prefix"
           >
-            Product.
-          </span>
-        </h3>
-        <p
-          class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
-        >
-          From the first prototype all the way to <span class="text-primary font-bold"
-            >launch day</span
-          >, I'll handle the heavy lifting. You'll get a
-          <span class="text-primary font-bold"
-            >fully polished app</span
+            Building The<br />
+            <span
+              class="text-primary font-black font-nippo step-subject"
+            >
+              Product.
+            </span>
+          </h3>
+          <p
+            class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
           >
-          that actually solves the problem we talked about in step one,
-          complete with a
-          <span class="text-primary font-bold"
-            >super smooth user experience</span
-          >.
-        </p>
-      </div>
-    </TuiContainer>
-  </div>
+            From the first prototype all the way to <span class="text-primary font-bold"
+              >launch day</span
+            >, I'll handle the heavy lifting. You'll get a
+            <span class="text-primary font-bold"
+              >fully polished app</span
+            >
+            that actually solves the problem we talked about in step one,
+            complete with a
+            <span class="text-primary font-bold"
+              >super smooth user experience</span
+            >.
+          </p>
+        </article>
+      </TuiContainer>
+    </li>
+  </ol>
 </section>
 
 <style>

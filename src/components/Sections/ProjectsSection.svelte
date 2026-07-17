@@ -281,7 +281,7 @@
   let isBottomSheetOpen = $state(false)
   let isThumbnailVisible = $state(false)
   let showThumbnailPhoto = $state(false)
-  let containerRef = $state<HTMLDivElement>()
+  let containerRef = $state<HTMLElement>()
 
   // Dynamic grid layouts based on project count
   let gridColsClass = $derived.by(() => {
@@ -598,14 +598,14 @@
   }
 </script>
 
-<div
+<section
   bind:this={containerRef}
   id="projects-section"
   class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-50"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <!-- Centered Projects Header -->
-  <div
+  <header
     class="flex flex-col items-center justify-center pt-8 md:pt-12 pb-6 select-none"
   >
     <h2
@@ -613,27 +613,25 @@
     >
       PROJECTS
     </h2>
-  </div>
+  </header>
 
   <div
     id="projects-container"
     class="w-full {containerWidthClass} mx-auto flex-1 relative pt-4 pb-4"
   >
-    <div
+    <ul
       class="grid {gridColsClass} gap-4 md:gap-6 {openProjectId !== null
         ? 'pointer-events-none'
-        : ''}"
+        : ''} list-none p-0 m-0"
     >
       {#each projects as project, i}
-        <button
-          id="project-card-{project.id}"
-          disabled={openProjectId !== null}
-          onclick={() => toggleProject(project.id)}
-          class="gsap-reveal-project-card group relative flex flex-col items-start text-left border border-border/60 bg-card/10 hover:bg-card/20 hover:border-primary/60 transition-colors duration-500 overflow-hidden aspect-square w-full rounded-sm {getCardSpanClass(
-            i,
-            projects.length
-          )}"
-        >
+        <li class="w-full aspect-square {getCardSpanClass(i, projects.length)}">
+          <button
+            id="project-card-{project.id}"
+            disabled={openProjectId !== null}
+            onclick={() => toggleProject(project.id)}
+            class="gsap-reveal-project-card group relative flex flex-col items-start text-left border border-border/60 bg-card/10 hover:bg-card/20 hover:border-primary/60 transition-colors duration-500 overflow-hidden w-full h-full rounded-sm"
+          >
           <!-- Background Image -->
           <div class="absolute inset-0 z-0 overflow-hidden">
             {#if project.images && project.images.length > 0}
@@ -663,9 +661,10 @@
               {project.id}
             </span>
           </div>
-        </button>
+          </button>
+        </li>
       {/each}
-    </div>
+    </ul>
 
     {#if openProjectId !== null}
       {@const project = projects.find((p) => p.id === openProjectId)}
@@ -727,41 +726,49 @@
             {/if}
 
             <!-- Project content container (fades content in/out controlled by JS lifecycle) -->
-            <div
+            <article
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
               class="absolute inset-0 flex flex-col transition-opacity duration-200 {isContentVisible
                 ? 'opacity-100'
                 : 'opacity-0 pointer-events-none'}"
             >
               <!-- Header (Click to close) -->
-               <button
-                onclick={() => toggleProject(null)}
-                class="w-full flex items-center justify-between p-4 sm:p-6 md:p-8 border-b border-border/40 bg-card/25 hover:bg-card/40 transition-colors cursor-pointer text-left group/header shrink-0"
-              >
-                <div class="flex items-center gap-3 sm:gap-4 md:gap-6">
-                  <span
-                    class="text-sm sm:text-base md:text-xl text-muted-foreground font-bold"
-                    >{project.id}</span
-                  >
-                  <span
-                    class="text-base sm:text-xl md:text-4xl font-extrabold text-foreground"
-                    >{project.name}</span
-                  >
-                </div>
-                <span
-                  class="text-muted-foreground group-hover/header:text-foreground transition-colors select-none flex items-center justify-center shrink-0 ml-4"
+              <header class="w-full border-b border-border/40 bg-card/25 hover:bg-card/40 transition-colors shrink-0 flex items-center">
+                <button
+                  id="project-modal-close-btn"
+                  onclick={() => toggleProject(null)}
+                  class="w-full flex items-center justify-between p-4 sm:p-6 md:p-8 cursor-pointer text-left group/header"
+                  aria-label="Close project details"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    class="w-6 h-6 md:w-8 md:h-8"
-                    fill="currentColor"
+                  <div class="flex items-center gap-3 sm:gap-4 md:gap-6">
+                    <span
+                      class="text-sm sm:text-base md:text-xl text-muted-foreground font-bold"
+                      >{project.id}</span
+                    >
+                    <h3
+                      id="project-modal-title"
+                      class="text-base sm:text-xl md:text-4xl font-extrabold text-foreground"
+                      >{project.name}</h3
+                    >
+                  </div>
+                  <span
+                    class="text-muted-foreground group-hover/header:text-foreground transition-colors select-none flex items-center justify-center shrink-0 ml-4"
                   >
-                    <path
-                      d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
-                    />
-                  </svg>
-                </span>
-              </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 256 256"
+                      class="w-6 h-6 md:w-8 md:h-8"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </header>
               <!-- Scrollable Content Area -->
               <div
                 class="flex-1 overflow-y-auto overflow-x-hidden md:overflow-visible md:h-full md:flex md:flex-col"
@@ -963,7 +970,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
             {#if isMobile && isContentVisible}
               <!-- Bottom Sheet Backdrop -->
@@ -1114,7 +1121,7 @@
       {/if}
     {/if}
   </div>
-</div>
+</section>
 
 {#if previewImage}
   <!-- svelte-ignore a11y_no_static_element_interactions -->

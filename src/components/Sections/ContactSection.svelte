@@ -262,7 +262,7 @@
         textColor="text-foreground/80 font-bold"
         class="p-6 md:p-8 flex flex-col gap-6"
       >
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <address class="grid grid-cols-1 md:grid-cols-2 gap-6 not-italic font-mono">
           <div class="group/item flex flex-col justify-start">
             <span
               class="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-0.5"
@@ -325,7 +325,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </address>
       </TuiContainer>
 
       <!-- Send Message Box -->
