@@ -3,8 +3,8 @@
   import TuiContainer from "@/components/ui/TuiContainer.svelte";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import photo1 from "@/assets/Photos/Photo1.jpg";
-  import photo2 from "@/assets/Photos/Photo2.jpg";
+  import photo1 from "@/assets/Photos/Photo1.webp";
+  import photo2 from "@/assets/Photos/Photo2.webp";
 
   gsap.registerPlugin(ScrollTrigger);
 

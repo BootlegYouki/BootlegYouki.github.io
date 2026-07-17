@@ -1355,18 +1355,18 @@
       "norm_label": "tuicontainer.svelte"
     },
     {
-      "label": "@/assets/Photos/Photo1.jpg",
+      "label": "@/assets/Photos/Photo1.webp",
       "file_type": "code",
-      "source_file": "src/assets/Photos/Photo1.jpg",
+      "source_file": "src/assets/Photos/Photo1.webp",
       "confidence": "EXTRACTED",
       "id": "e_github_portfolio_src_assets_photos_photo1_jpg",
       "community": 1,
       "norm_label": "@/assets/photos/photo1.jpg"
     },
     {
-      "label": "@/assets/Photos/Photo2.jpg",
+      "label": "@/assets/Photos/Photo2.webp",
       "file_type": "code",
-      "source_file": "src/assets/Photos/Photo2.jpg",
+      "source_file": "src/assets/Photos/Photo2.webp",
       "confidence": "EXTRACTED",
       "id": "e_github_portfolio_src_assets_photos_photo2_jpg",
       "community": 1,

@@ -1,16 +1,16 @@
-# Graph Report - portfolio  (2026-07-10)
+# Graph Report - portfolio  (2026-07-17)
 
 ## Corpus Check
-- 33 files · ~17,942 words
+- 33 files · ~183,995 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 339 nodes · 357 edges · 24 communities (20 shown, 4 thin omitted)
+- 341 nodes · 359 edges · 24 communities (20 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9ae55691`
+- Built from commit: `a56781cb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -65,8 +65,8 @@ Cohesion: 0.09
 Nodes (22): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+14 more)
 
 ### Community 1 - "Vivid TUI Components Hub"
-Cohesion: 0.14
-Nodes (9): @/assets/Photos/Photo1.jpg, @/assets/Photos/Photo2.jpg, @/components/theme-provider, @/lib/utils, svelte/easing, svelte/elements, gsap/ScrollTrigger, @/components/ui/Icons.svelte (+1 more)
+Cohesion: 0.12
+Nodes (12): @/assets/Photos/Photo1.webp, @/assets/Photos/Photo1.webp, @/assets/Photos/Photo2.webp, @/assets/Photos/Photo2.webp, @/components/theme-provider, @/lib/utils, svelte/easing, svelte/elements (+4 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.12
@@ -81,8 +81,8 @@ Cohesion: 0.10
 Nodes (20): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection, moduleResolution (+12 more)
 
 ### Community 5 - "Data Pulse Hub"
-Cohesion: 0.12
-Nodes (16): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+8 more)
+Cohesion: 0.11
+Nodes (18): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+10 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.09
@@ -113,8 +113,8 @@ Cohesion: 0.18
 Nodes (10): compilerOptions, paths, files, @/*, references, compilerOptions, paths, files (+2 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.11
-Nodes (18): include, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution (+10 more)
+Cohesion: 0.12
+Nodes (16): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+8 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.22
@@ -129,28 +129,28 @@ Cohesion: 0.25
 Nodes (7): 1., 2., 3. (Optional), 4., 5., 6. (Optional), Installing Webfonts
 
 ### Community 23 - "Community 23"
-Cohesion: 0.10
-Nodes (18): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, gsap, lenis, phosphor-svelte, radix-ui (+10 more)
+Cohesion: 0.11
+Nodes (17): dependencies, class-variance-authority, clsx, @fontsource-variable/jetbrains-mono, gsap, lenis, phosphor-svelte, radix-ui (+9 more)
 
 ## Knowledge Gaps
-- **244 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+239 more)
+- **246 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+241 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `Community 23` to `Community 7`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Community 23` to `Vivid TUI Components Hub`, `Community 7`?**
+  _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 6` to `Community 7`?**
   _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Community 2` to `Community 7`?**
   _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _247 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _249 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tactical UI Components Forge` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `Vivid TUI Components Hub` be split into smaller, more focused modules?**
-  _Cohesion score 0.13756613756613756 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11827956989247312 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
