@@ -1,6 +1,6 @@
 # Mark Darren Oandasan (BootlegYouki)
 
-Mark Darren Oandasan (known online as **BootlegYouki**) is a Full-Stack Software Engineer, Mobile Application Developer, and UI/UX Designer based in Quezon City, Philippines. He specializes in building high-fidelity web and mobile applications featuring retro-brutalist and TUI (Terminal User Interface) design systems, clean UX animations, and deep AI/LLM agent integrations.
+Mark Darren Oandasan (known online as **BootlegYouki**) is a Web and Mobile Developer and UI/UX Designer based in Quezon City, Philippines. He specializes in building high-fidelity web and mobile applications featuring clean UI/UX animations and smart AI/LLM agent integrations.
 
 - **Location:** Quezon City, Philippines
 - **Portfolio Website:** <https://bootlegyouki.github.io/>
