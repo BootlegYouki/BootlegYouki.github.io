@@ -17,7 +17,10 @@ async function prerender() {
     const url = `http://localhost:${port}`;
     console.log(`Server running at ${url}`);
 
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({ 
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+    });
     const page = await browser.newPage();
     
     // Intercept and disable network requests we don't need for prerendering to speed it up
