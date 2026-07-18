@@ -7,7 +7,7 @@
   gsap.registerPlugin(ScrollTrigger)
 
   let containerRef = $state<HTMLElement>()
-  let rowRef = $state<HTMLOListElement>()
+  let rowRef = $state<HTMLDivElement>()
   let arrow1Width = $state(0)
   let arrow2Width = $state(0)
 
@@ -155,7 +155,8 @@
     </h2>
   </header>
 
-  <ol
+  <div
+    role="list"
     bind:this={rowRef}
     class="w-full flex flex-col lg:flex-row gap-6 relative z-10 lg:my-12 list-none p-0"
   >
@@ -194,7 +195,7 @@
     </div>
 
     <!-- Step 1 -->
-    <li class="flex-1 flex flex-col">
+    <div role="listitem" class="flex-1 flex flex-col">
       <TuiContainer
         label="01"
         borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
@@ -224,10 +225,10 @@
           </p>
         </article>
       </TuiContainer>
-    </li>
+    </div>
 
     <!-- Step 2 -->
-    <li class="flex-1 flex flex-col">
+    <div role="listitem" class="flex-1 flex flex-col">
       <TuiContainer
         label="02"
         borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
@@ -259,10 +260,10 @@
           </p>
         </article>
       </TuiContainer>
-    </li>
+    </div>
 
     <!-- Step 3 -->
-    <li class="flex-1 flex flex-col">
+    <div role="listitem" class="flex-1 flex flex-col">
       <TuiContainer
         label="03"
         borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
@@ -297,8 +298,8 @@
           </p>
         </article>
       </TuiContainer>
-    </li>
-  </ol>
+    </div>
+  </div>
 </section>
 
 <style>
