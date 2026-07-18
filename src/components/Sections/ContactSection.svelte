@@ -266,7 +266,7 @@
                 rel="noopener noreferrer"
                 class="text-sm font-bold hover:text-primary transition-colors flex items-center gap-2"
               >
-                <GithubLogo size={16} class="w-4 h-4" />
+                <GithubLogo size={16} class="w-4 h-4" aria-label="GitHub Logo" />
                 github.com/BootlegYouki
               </a>
               <a
@@ -275,7 +275,7 @@
                 rel="noopener noreferrer"
                 class="text-sm font-bold hover:text-primary transition-colors flex items-center gap-2"
               >
-                <LinkedinLogo size={16} class="w-4 h-4" />
+                <LinkedinLogo size={16} class="w-4 h-4" aria-label="LinkedIn Logo" />
                 linkedin.com/in/mark-darren
               </a>
               <a
@@ -284,7 +284,7 @@
                 rel="noopener noreferrer"
                 class="text-sm font-bold hover:text-primary transition-colors flex items-center gap-2"
               >
-                <InstagramLogo size={16} class="w-4 h-4" />
+                <InstagramLogo size={16} class="w-4 h-4" aria-label="Instagram Logo" />
                 instagram.com/bootlegyouki
               </a>
             </div>

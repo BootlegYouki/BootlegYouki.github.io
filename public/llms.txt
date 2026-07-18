@@ -3,9 +3,9 @@
 Mark Darren Oandasan (known online as **BootlegYouki**) is a Web and Mobile Developer and UI/UX Designer based in Quezon City, Philippines. He specializes in building high-fidelity web and mobile applications featuring clean UI/UX animations and smart AI/LLM agent integrations.
 
 - **Location:** Quezon City, Philippines
-- **Portfolio Website:** <https://bootlegyouki.github.io/>
-- **GitHub:** <https://github.com/BootlegYouki>
-- **Email:** <bootlegyouki@gmail.com>
+- **Portfolio Website:** [bootlegyouki.github.io](https://bootlegyouki.github.io/)
+- **GitHub:** [github.com/BootlegYouki](https://github.com/BootlegYouki)
+- **Email:** [bootlegyouki@gmail.com](mailto:bootlegyouki@gmail.com)
 
 ---
 
@@ -23,38 +23,38 @@ Mark Darren Oandasan (known online as **BootlegYouki**) is a Web and Mobile Deve
 ### 1. Kwiz
 An AI-powered educational ecosystem. Uses Mistral AI to automatically generate quizzes from text prompts or PDF documents.
 - **Stack:** Tauri v2, React Native, Expo, React 19, TypeScript, Mistral AI, custom TOON (Token-Oriented Object Notation) format
-- **Repository:** <https://github.com/BootlegYouki/Kwiz>
+- **Repository:** [Kwiz on GitHub](https://github.com/BootlegYouki/Kwiz)
 
 ### 2. At iba pa POS & IMS
 A real-time desktop POS (Point of Sale) and IMS (Inventory Management System) built for a local client. Features offline-first operations, LAN-based real-time syncing, and cloud mirroring.
 - **Stack:** Tauri v2 (Rust), React, TypeScript, SQLite, Supabase, Ollama (local/cloud AI agent workflows)
-- **Repository:** <https://github.com/BootlegYouki/at-iba-pa>
+- **Repository:** [at-iba-pa on GitHub](https://github.com/BootlegYouki/at-iba-pa)
 
 ### 3. BootHub
 A cross-platform clipboard ecosystem for syncing text, files, and images between mobile devices and PC.
 - **Stack:** Tauri v2, React Native, Expo, React 19, TypeScript, Google Drive API (OAuth2)
-- **Repository:** <https://github.com/BootlegYouki/BootHub>
+- **Repository:** [BootHub on GitHub](https://github.com/BootlegYouki/BootHub)
 
 ### 4. Vaultleg
 An offline-first mobile personal finance tracker. Uses a custom TUI (Terminal User Interface) design system and GitHub Gist syncing.
 - **Stack:** React Native, Expo, TypeScript, AsyncStorage, GitHub Gist Sync
-- **Repository:** <https://github.com/BootlegYouki/VaultlegV2>
+- **Repository:** [VaultlegV2 on GitHub](https://github.com/BootlegYouki/VaultlegV2)
 
 ### 5. BootSked
 An offline-first daily routine scheduler with push notifications and study session logs.
 - **Stack:** React Native, Expo, TypeScript, Expo Notifications
-- **Repository:** <https://github.com/BootlegYouki/BootSked>
+- **Repository:** [BootSked on GitHub](https://github.com/BootlegYouki/BootSked)
 
 ### 6. Student Management System (SET-2)
 A Philippine DepEd curriculum-compliant portal for students, teachers, and admins. Includes dual AI engine grading analytics.
 - **Stack:** SvelteKit, Svelte 5, Electron, MongoDB, OpenRouter API, Google AI, PDFKit
-- **Repository:** <https://github.com/BootlegYouki/set-2-system>
+- **Repository:** [set-2-system on GitHub](https://github.com/BootlegYouki/set-2-system)
 
 ### 7. Beyond Doubt (BYD) Clothing E-Commerce
 A streetwear e-commerce platform with customer support AI chatbots and interactive delivery maps.
 - **Stack:** PHP, JavaScript, Bootstrap, Leaflet Maps, AI Chatbot API, PostgreSQL
-- **Repository:** <https://github.com/BootlegYouki/BYD-Clothing-E-Commerce>
+- **Repository:** [BYD-Clothing-E-Commerce on GitHub](https://github.com/BootlegYouki/BYD-Clothing-E-Commerce)
 
 ### 8. Marigold Video Scanner
-A bespoke client workflow automation mobile app to scan barcodes, record videos, and stamp metadata in real-time.
+Bespoke client workflow automation mobile app to scan barcodes, record videos, and stamp metadata in real-time.
 - **Stack:** React Native, Expo, Kotlin (native Android vision modification), Google Drive API
