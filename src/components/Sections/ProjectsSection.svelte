@@ -544,7 +544,7 @@
 <section
   bind:this={containerRef}
   id="projects-section"
-  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10"
+  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative {openProjectId !== null ? 'z-30' : 'z-10'}"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <!-- Centered Projects Header -->
