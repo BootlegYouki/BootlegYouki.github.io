@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { SVGAttributes } from "svelte/elements";
 
   let {
     name,
@@ -129,7 +128,7 @@
         <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
         <feGaussianBlur result="effect1_foregroundBlur_242_20653" stdDeviation="1.473" />
       </filter>
-      <filter id="SVGfqIWhbIE" width="10.754" height="11.321" x="74.525" y="-3.383" color-interpolation-filters="sRGB" filterUnits="sRGB">
+      <filter id="SVGfqIWhbIE" width="10.754" height="11.321" x="74.525" y="-3.383" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
         <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
         <feGaussianBlur result="effect1_foregroundBlur_242_20653" stdDeviation="1.473" />

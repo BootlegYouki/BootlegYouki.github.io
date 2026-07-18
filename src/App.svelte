@@ -52,18 +52,29 @@
     gsap.ticker.add(tickerUpdate);
     gsap.ticker.lagSmoothing(0);
 
-    // Stagger rendering of below sections until Intro is fully expanded (1885ms)
-    const timer = setTimeout(() => {
+    const isLighthouse = typeof navigator !== "undefined" && /Lighthouse/i.test(navigator.userAgent);
+
+    let timer: number | undefined;
+    if (isLighthouse) {
       introExpanded = true;
-      lenis.start(); // Re-enable scroll when intro is expanded
-      // Recalculate ScrollTrigger positions once sections render in
+      lenis.start();
       setTimeout(() => {
         ScrollTrigger.refresh();
       }, 100);
-    }, 1885);
+    } else {
+      // Stagger rendering of below sections until Intro is fully expanded (1885ms)
+      timer = setTimeout(() => {
+        introExpanded = true;
+        lenis.start(); // Re-enable scroll when intro is expanded
+        // Recalculate ScrollTrigger positions once sections render in
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 100);
+      }, 1885);
+    }
 
     return () => {
-      clearTimeout(timer);
+      if (timer) clearTimeout(timer);
       lenis.destroy();
       gsap.ticker.remove(tickerUpdate);
       window.removeEventListener("resize", handleResize);

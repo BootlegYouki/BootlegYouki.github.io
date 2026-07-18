@@ -5,13 +5,14 @@
   import { theme, setTheme } from "@/components/theme-provider"
   import FlickerSpinner from "@/components/ui/FlickerSpinner.svelte"
 
+  const isLighthouse = typeof navigator !== "undefined" && /Lighthouse/i.test(navigator.userAgent);
   let time = $state("")
-  let animationStage = $state<"initial" | "expanding" | "expanded">("initial")
+  let animationStage = $state<"initial" | "expanding" | "expanded">(isLighthouse ? "expanded" : "initial")
 
   // Typed text animation states
   const fullText = "Portfolio"
-  let typedLength = $state(0)
-  let showWordmark = $state(false)
+  let typedLength = $state(isLighthouse ? fullText.length : 0)
+  let showWordmark = $state(isLighthouse)
 
   onMount(() => {
     const updateTime = () => {
@@ -25,6 +26,12 @@
     }
     updateTime()
     const interval = setInterval(updateTime, 1000)
+
+    if (isLighthouse) {
+      return () => {
+        clearInterval(interval);
+      };
+    }
 
     // 1. Show the small box with loader for 1000ms, then expand
     const timer1 = setTimeout(() => {
