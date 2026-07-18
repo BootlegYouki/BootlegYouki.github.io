@@ -237,11 +237,11 @@
       <div class="w-full h-full min-h-[500px] lg:min-h-0 relative">
         <div class="absolute inset-0 flex flex-col gap-4">
           <figure class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-1 relative group/photo1 m-0">
-            <img src={photo1} alt="Mark Darren Oandasan - Casual Portrait" class="w-full h-full object-cover object-[75%_center] scale-[1.3] transition-all duration-500 filter grayscale group-hover/photo1:grayscale-0" />
+            <img src={photo1} alt="Mark Darren Oandasan - Casual Portrait" loading="lazy" width="600" height="800" class="w-full h-full object-cover object-[75%_center] scale-[1.3] transition-all duration-500 filter grayscale group-hover/photo1:grayscale-0" />
             <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/photo1:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           </figure>
           <figure class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-2 relative group/photo2 m-0">
-            <img src={photo2} alt="Mark Darren Oandasan - Developer Portrait" class="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover/photo2:grayscale-0" />
+            <img src={photo2} alt="Mark Darren Oandasan - Developer Portrait" loading="lazy" width="600" height="800" class="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover/photo2:grayscale-0" />
             <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/photo2:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           </figure>
         </div>

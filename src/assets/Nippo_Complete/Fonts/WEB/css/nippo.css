@@ -74,7 +74,7 @@
        url('../fonts/Nippo-Variable.woff') format('woff'),
        url('../fonts/Nippo-Variable.ttf') format('truetype');
   font-weight: 200 700;
-  font-display: block;
+  font-display: swap;
   font-style: normal;
 }
 
