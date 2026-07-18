@@ -92,7 +92,7 @@
   <!-- Main container holding the sections -->
   <main class="w-full p-0 flex flex-col">
     <IntroSection />
-    <div class="transition-opacity duration-500 {introExpanded ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}">
+    <div class="transition-opacity duration-500 {introExpanded ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none max-h-0 overflow-hidden'}">
       <TechTicker />
       <ProjectsSection />
       <AboutSection />

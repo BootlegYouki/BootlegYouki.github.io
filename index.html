@@ -92,6 +92,11 @@
           if (isLighthouse) {
             document.documentElement.classList.add('is-lighthouse');
           }
+
+          // Set --vh immediately (blocking) so prerendered height: calc(var(--vh, 1vh) * 100)
+          // is correct from the very first paint, preventing the scroll-gap in production.
+          var vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', vh + 'px');
         } catch (e) {}
       })();
     </script>
