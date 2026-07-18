@@ -544,7 +544,7 @@
 <section
   bind:this={containerRef}
   id="projects-section"
-  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-50"
+  class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <!-- Centered Projects Header -->
@@ -620,7 +620,7 @@
             : ''} {isContainerVisible ? 'opacity-100' : 'opacity-0'}"
           style="
             position: fixed;
-            z-index: 50;
+            z-index: 40;
             top: {isExpanded ? (isMobile ? '0.5rem' : '1.5rem') : `${originRect?.top || 0}px`};
             left: {isExpanded ? (isMobile ? '0.5rem' : '1.5rem') : `${originRect?.left || 0}px`};
             width: {isExpanded
