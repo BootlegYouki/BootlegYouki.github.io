@@ -29,3 +29,11 @@ graphify-out/cache/
 # Local Environment Secrets
 .env
 .env.local
+
+# Agentic Skills
+.agents/skills/seo/
+
+# SEO Audit Generated Files
+ACTION-PLAN.md
+FULL-AUDIT-REPORT.md
+SEO-REPORT.html

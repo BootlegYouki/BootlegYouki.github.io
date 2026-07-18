@@ -350,73 +350,7 @@
 
     if (!containerRef) return
     const ctx = gsap.context(() => {
-      // Helper function to create direction-sensitive scroll reveals
-      const createScrollDirectionReveal = (
-        target: string,
-        viewportThreshold: string,
-        scaleEffect = false
-      ) => {
-        gsap.set(target, { opacity: 0 })
 
-        ScrollTrigger.create({
-          trigger: target,
-          start: `top ${viewportThreshold}`,
-          onEnter: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 0, y: 25, scale: scaleEffect ? 0.96 : 1 },
-              {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.6,
-                ease: "power2.out",
-                overwrite: "auto",
-              }
-            )
-          },
-          onLeave: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 1, y: 0 },
-              {
-                opacity: 0,
-                y: -25,
-                duration: 0.25,
-                ease: "power2.in",
-                overwrite: "auto",
-              }
-            )
-          },
-          onEnterBack: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 0, y: -25, scale: scaleEffect ? 0.96 : 1 },
-              {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.6,
-                ease: "power2.out",
-                overwrite: "auto",
-              }
-            )
-          },
-          onLeaveBack: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 1, y: 0 },
-              {
-                opacity: 0,
-                y: 25,
-                duration: 0.25,
-                ease: "power2.in",
-                overwrite: "auto",
-              }
-            )
-          },
-        })
-      }
     }, containerRef)
 
     return () => {
@@ -430,7 +364,8 @@
 
   $effect(() => {
     // Read projects.length to make this effect run reactively when the count changes
-    const total = projects.length
+    projects.length
+
 
     // First kill any existing card ScrollTriggers
     batchTriggers.forEach((t) => t.kill())
@@ -438,23 +373,26 @@
 
     // Make sure DOM has updated and elements exist
     const timer = setTimeout(() => {
-      // Set initial opacity to 0
-      gsap.set(".gsap-reveal-project-card", { opacity: 0 })
-
+      // Set initial opacity and scale
+      gsap.set(".gsap-reveal-project-card", { opacity: 0, scale: 0.9 })
+ 
       // Create new batch and store references
       const batch = ScrollTrigger.batch(".gsap-reveal-project-card", {
-        start: "top 92%",
+        start: "top 72%",
         onEnter: (elements) => {
           gsap.fromTo(
             elements,
-            { opacity: 0, y: 25, scale: 0.96 },
+            { opacity: 0, y: 25, scale: 0.9 },
             {
               opacity: 1,
               y: 0,
-              scale: 1,
+              scale: 1.0,
               duration: 0.6,
               ease: "power2.out",
-              stagger: { each: 0.08, from: "random" },
+              stagger: {
+                amount: 0.3,
+                from: "random",
+              },
               overwrite: "auto",
             }
           )
@@ -462,10 +400,11 @@
         onLeave: (elements) => {
           gsap.fromTo(
             elements,
-            { opacity: 1, y: 0 },
+            { opacity: 1, y: 0, scale: 1.0 },
             {
               opacity: 0,
               y: -25,
+              scale: 0.9,
               duration: 0.25,
               ease: "power2.in",
               overwrite: "auto",
@@ -475,14 +414,17 @@
         onEnterBack: (elements) => {
           gsap.fromTo(
             elements,
-            { opacity: 0, y: -25, scale: 0.96 },
+            { opacity: 0, y: -25, scale: 0.9 },
             {
               opacity: 1,
               y: 0,
-              scale: 1,
+              scale: 1.0,
               duration: 0.6,
               ease: "power2.out",
-              stagger: { each: 0.08, from: "random" },
+              stagger: {
+                amount: 0.3,
+                from: "random",
+              },
               overwrite: "auto",
             }
           )
@@ -490,10 +432,11 @@
         onLeaveBack: (elements) => {
           gsap.fromTo(
             elements,
-            { opacity: 1, y: 0 },
+            { opacity: 1, y: 0, scale: 1.0 },
             {
               opacity: 0,
               y: 25,
+              scale: 0.9,
               duration: 0.25,
               ease: "power2.in",
               overwrite: "auto",

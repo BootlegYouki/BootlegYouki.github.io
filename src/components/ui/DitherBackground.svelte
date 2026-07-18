@@ -8,6 +8,7 @@
     speed = 0.8,
     interactive = true,
     glowSize = 0.25,
+    yOffset = 0.82,
   } = $props<{
     color?: string;
     opacity?: number;
@@ -15,6 +16,7 @@
     speed?: number;
     interactive?: boolean;
     glowSize?: number;
+    yOffset?: number;
   }>();
 
   let canvasElement = $state<HTMLCanvasElement>();
@@ -82,22 +84,18 @@
     updateResolvedRGB(color);
   });
 
-  // Generate random phase offsets, frequencies, and amplitudes on load
-  // to ensure each page session has a completely unique and organic wave shape.
+  // Multi-octave sine wave — smooth, organic, curvy
   const waveParams = {
     freq1: 0.0035 + Math.random() * 0.0015,
-    freq2: 0.007 + Math.random() * 0.003,
-    freq3: 0.015 + Math.random() * 0.005,
-    
+    freq2: 0.007  + Math.random() * 0.003,
+    freq3: 0.015  + Math.random() * 0.005,
     speed1: 0.4 + Math.random() * 0.2,
     speed2: 0.8 + Math.random() * 0.4,
     speed3: 1.6 + Math.random() * 0.8,
-    
     phase1: Math.random() * Math.PI * 2,
     phase2: Math.random() * Math.PI * 2,
     phase3: Math.random() * Math.PI * 2,
-    
-    amp1: 0.06 + Math.random() * 0.02, // main slow wave amplitude
+    amp1: 0.06 + Math.random() * 0.02,
     amp2: 0.025 + Math.random() * 0.01,
     amp3: 0.008 + Math.random() * 0.004,
   };
@@ -156,80 +154,144 @@
     let animationFrameId: number;
     let lastTime = 0;
     let time = 0;
+    let isVisible = false; // pause when off-screen
 
-    // 8x8 Bayer ordered dithering matrix
-    const bayer8 = [
-      [0, 48, 12, 60, 3, 51, 15, 63],
-      [32, 16, 44, 28, 35, 19, 47, 31],
-      [8, 56, 4, 52, 11, 59, 7, 55],
-      [40, 24, 36, 20, 43, 27, 39, 23],
-      [2, 50, 14, 62, 1, 49, 13, 61],
-      [34, 18, 46, 30, 33, 17, 45, 29],
-      [10, 58, 6, 54, 9, 57, 5, 53],
-      [42, 26, 38, 22, 41, 25, 37, 21],
-    ];
+    // Flat Float32Array Bayer 8x8 thresholds — faster than nested array lookups
+    const bayer8Flat = new Float32Array([
+       0, 48, 12, 60,  3, 51, 15, 63,
+      32, 16, 44, 28, 35, 19, 47, 31,
+       8, 56,  4, 52, 11, 59,  7, 55,
+      40, 24, 36, 20, 43, 27, 39, 23,
+       2, 50, 14, 62,  1, 49, 13, 61,
+      34, 18, 46, 30, 33, 17, 45, 29,
+      10, 58,  6, 54,  9, 57,  5, 53,
+      42, 26, 38, 22, 41, 25, 37, 21,
+    ].map(v => (v + 0.5) / 64)); // pre-divide once
+
+    const TARGET_FPS = 16;
+    const FRAME_INTERVAL = 1000 / TARGET_FPS;
+    let lastRender = 0;
+
+    // Cache context and ImageData — avoid reallocating every frame
+    let ctx: CanvasRenderingContext2D | null = null;
+    let imgData: ImageData | null = null;
+    let cachedW = 0;
+    let cachedH = 0;
+
+    // Pause rendering when the canvas is not visible in the viewport
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => { isVisible = entries[0].isIntersecting; },
+      { threshold: 0 }
+    );
+    if (canvasElement) intersectionObserver.observe(canvasElement);
 
     function loop(now: number) {
       animationFrameId = requestAnimationFrame(loop);
 
-      if (!canvasElement) return;
-      const ctx = canvasElement.getContext("2d");
-      if (!ctx) return;
+      // Skip entirely if not visible or throttled
+      if (!isVisible || !canvasElement) return;
+      if (now - lastRender < FRAME_INTERVAL) return;
 
       const dt = now - lastTime;
       lastTime = now;
+      lastRender = now;
       time += (dt * 0.001) * speed;
 
       const logicalW = Math.floor(width);
       const logicalH = Math.floor(height);
       if (logicalW <= 0 || logicalH <= 0) return;
 
-      // Low-resolution canvas physical dimensions
       const step = Math.max(2, scale);
       const w = Math.ceil(logicalW / step);
       const h = Math.ceil(logicalH / step);
 
+      // Resize canvas only when dimensions change
       if (canvasElement.width !== w || canvasElement.height !== h) {
         canvasElement.width = w;
         canvasElement.height = h;
+        ctx = null; // reset cached context after resize
+        imgData = null;
       }
 
-      ctx.clearRect(0, 0, w, h);
+      // Cache 2d context — avoid getContext() every frame
+      if (!ctx) ctx = canvasElement.getContext("2d");
+      if (!ctx) return;
 
-      // Create raw ImageData buffer for razor-sharp pixel manipulation
-      const imgData = ctx.createImageData(w, h);
+      // Reuse ImageData buffer — avoid GC allocation every frame
+      if (!imgData || cachedW !== w || cachedH !== h) {
+        imgData = ctx.createImageData(w, h);
+        cachedW = w;
+        cachedH = h;
+      }
+
       const data = imgData.data;
       const [r, g, b] = resolvedRGB;
 
-      for (let y = 0; y < h; y++) {
-        for (let x = 0; x < w; x++) {
-          // Map low-res loop coordinates back to logical pixels for wave & mouse logic
-          const px = x * step;
-          const py = y * step;
+      // Precompute waveY per column — smooth multi-octave sine, runs W times not W*H
+      const waveCenter = logicalH * yOffset;
+      const waveYs = new Float32Array(w);
+      for (let x = 0; x < w; x++) {
+        const px = x * step;
+        waveYs[x] = waveCenter
+          + Math.sin(px * waveParams.freq1 + time * waveParams.speed1 + waveParams.phase1) * (logicalH * waveParams.amp1)
+          + Math.cos(px * waveParams.freq2 - time * waveParams.speed2 + waveParams.phase2) * (logicalH * waveParams.amp2)
+          + Math.sin(px * waveParams.freq3 + time * waveParams.speed3 + waveParams.phase3) * (logicalH * waveParams.amp3);
+      }
 
-          // Normalized horizontal sine wave rolling across screen (multi-octave noise)
-          const waveCenter = logicalH * 0.82; // Shift wave center closer to bottom
-          const waveOffset = Math.sin(px * waveParams.freq1 + time * waveParams.speed1 + waveParams.phase1) * (logicalH * waveParams.amp1) +
-                             Math.cos(px * waveParams.freq2 - time * waveParams.speed2 + waveParams.phase2) * (logicalH * waveParams.amp2) +
-                             Math.sin(px * waveParams.freq3 + time * waveParams.speed3 + waveParams.phase3) * (logicalH * waveParams.amp3);
-          const waveY = waveCenter + waveOffset;
+      // Clear pixel buffer
+      data.fill(0);
+
+      for (let y = 0; y < h; y++) {
+        const py = y * step;
+        const bayerRow = (y & 7) * 8;
+
+        for (let x = 0; x < w; x++) {
+          const px = x * step;
+          const waveY = waveYs[x];
 
           let wave = 0;
           if (py > waveY) {
-            // Below the wave: solid dense dithered area (cap at 0.82 for halftone grid texture)
-            wave = 0.82;
+            // 3 layers below wave based on 60 (solid) : 30 (dither) : 20 (more dither) ratio
+            // Normalized: more dither = 20/110, dither = 30/110, solid = 60/110
+            const progress = (py - waveY) / Math.max(1, logicalH - waveY);
+            
+            const b1 = 20 / 110;
+            const b2 = 50 / 110;
+            const tWidth = 0.04; // Narrow transition band (4% of height below wave)
+            
+            if (progress < tWidth) {
+              // Transition from 0.0 to 0.25 at the top wave crest
+              const t = progress / tWidth;
+              wave = t * 0.25;
+            } else if (progress < b1 - tWidth) {
+              // "more dither" layer (25% density)
+              wave = 0.25;
+            } else if (progress < b1 + tWidth) {
+              // Transition from 0.25 to 0.50
+              const t = (progress - (b1 - tWidth)) / (2 * tWidth);
+              wave = 0.25 + t * 0.25;
+            } else if (progress < b2 - tWidth) {
+              // "dither" layer (50% density)
+              wave = 0.50;
+            } else if (progress < b2 + tWidth) {
+              // Transition from 0.50 to 1.00
+              const t = (progress - (b2 - tWidth)) / (2 * tWidth);
+              wave = 0.50 + t * 0.50;
+            } else {
+              // "solid" layer (100% density)
+              wave = 1.0;
+            }
           } else {
-            // Above the wave: fade out within a transition band
-            const fadeBand = logicalH * 0.12; // Narrower fade transition band
-            const distAbove = waveY - py;
-            wave = Math.max(0, 1 - distAbove / fadeBand) * 0.82;
-            wave = Math.pow(wave, 1.8); // Curve top boundary gradient
+            // Above wave: transparent
+            wave = 0;
           }
 
-          // Interactive mouse glow (tracks mouse position in logical pixels)
+          // Interactive mouse glow
           let glow = 0;
           if (mouseX !== null && mouseY !== null) {
-            const dist = Math.hypot(px - mouseX, py - mouseY);
+            const dx = px - mouseX;
+            const dy = py - mouseY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
             const maxRadius = Math.max(logicalW, logicalH) * glowSize;
             if (dist < maxRadius) {
               const normalDist = dist / maxRadius;
@@ -237,17 +299,15 @@
             }
           }
 
-          const brightness = Math.min(1.0, wave + glow);
-
-          // Retrieve threshold from Bayer 8x8 matrix
-          const threshold = (bayer8[y % 8][x % 8] + 0.5) / 64;
+          const brightness = wave + glow > 1.0 ? 1.0 : wave + glow;
+          const threshold = bayer8Flat[bayerRow + (x & 7)]; // x % 8
 
           if (brightness > threshold) {
             const idx = (y * w + x) * 4;
             data[idx] = r;
             data[idx + 1] = g;
             data[idx + 2] = b;
-            data[idx + 3] = 255; // Set pixel opaque in the low-res canvas
+            data[idx + 3] = 255;
           }
         }
       }
@@ -259,6 +319,7 @@
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      intersectionObserver.disconnect();
     };
   });
 </script>

@@ -3,16 +3,21 @@
   import TuiContainer from "@/components/ui/TuiContainer.svelte"
   import DitherBackground from "@/components/ui/DitherBackground.svelte"
   import Footer from "@/components/ui/Footer.svelte"
-  import { gsap } from "gsap"
-  import { ScrollTrigger } from "gsap/ScrollTrigger"
   import {
     GithubLogo,
     InstagramLogo,
+    LinkedinLogo,
   } from "phosphor-svelte"
 
-  gsap.registerPlugin(ScrollTrigger)
-
-  let containerRef = $state<HTMLElement>()
+  // Track dark mode via .dark class on <html>
+  let isDark = $state(document.documentElement.classList.contains('dark'))
+  $effect(() => {
+    const observer = new MutationObserver(() => {
+      isDark = document.documentElement.classList.contains('dark')
+    })
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  })
 
   // Form State
   let name = $state("")
@@ -150,74 +155,9 @@
   }
 
   onMount(() => {
-    if (!containerRef) return
-    const ctx = gsap.context(() => {
-      // Box animation
-      ScrollTrigger.batch(".contact-box", {
-        start: "top 85%",
-        onEnter: (batch) => {
-          gsap.fromTo(
-            batch,
-            { opacity: 0, y: 25, scale: 0.98 },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "power2.out",
-              stagger: 0.15,
-              overwrite: "auto",
-            }
-          )
-        },
-        onLeave: (batch) => {
-          gsap.fromTo(
-            batch,
-            { opacity: 1, y: 0 },
-            {
-              opacity: 0,
-              y: -25,
-              duration: 0.25,
-              ease: "power2.in",
-              overwrite: "auto",
-            }
-          )
-        },
-        onEnterBack: (batch) => {
-          gsap.fromTo(
-            batch,
-            { opacity: 0, y: -25, scale: 0.98 },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "power2.out",
-              stagger: 0.15,
-              overwrite: "auto",
-            }
-          )
-        },
-        onLeaveBack: (batch) => {
-          gsap.fromTo(
-            batch,
-            { opacity: 1, y: 0 },
-            {
-              opacity: 0,
-              y: 25,
-              duration: 0.25,
-              ease: "power2.in",
-              overwrite: "auto",
-            }
-          )
-        },
-      })
-    }, containerRef)
-
     startCooldownTimer()
 
     return () => {
-      ctx.revert()
       if (timerInterval) clearInterval(timerInterval)
     }
   })
@@ -225,19 +165,34 @@
 
 <section
   id="contact-section"
-  bind:this={containerRef}
   class="w-full pt-16 pb-0 md:pt-24 md:pb-0 animate-fade-in flex flex-col justify-start relative z-10 overflow-hidden"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-    <DitherBackground color="var(--color-primary)" opacity={0.25} scale={4} />
+    <!-- Back layer: darker in dark mode, lighter in light mode -->
+    <DitherBackground
+      color={isDark ? 'oklch(0.35 0 0)' : 'oklch(0.72 0 0)'}
+      opacity={1}
+      scale={4}
+      speed={0.3}
+      yOffset={0.65}
+      interactive={false}
+    />
+    <!-- Front layer: brighter in dark mode, darker in light mode -->
+    <DitherBackground
+      color={isDark ? 'oklch(0.92 0 0)' : 'oklch(0.15 0 0)'}
+      opacity={1}
+      scale={4}
+      speed={0.8}
+      yOffset={0.79}
+    />
   </div>
   <div
     class="w-full max-w-360 mx-auto px-6 pb-20 md:pb-28 flex flex-col lg:flex-row gap-16 lg:gap-36 xl:gap-48 relative z-10 mt-8 md:mt-16"
   >
     <!-- Left Column: Heading -->
     <div
-      class="w-full lg:w-[45%] flex flex-col justify-between contact-box opacity-0"
+      class="w-full lg:w-[45%] flex flex-col justify-between"
     >
       <div class="space-y-12">
         <h2
@@ -254,7 +209,7 @@
     </div>
 
     <!-- Right Column: Info + Form -->
-    <div class="w-full lg:w-[50%] flex flex-col gap-16 contact-box opacity-0">
+    <div class="w-full lg:w-[50%] flex flex-col gap-16">
       <!-- Contact Info Box -->
       <TuiContainer
         label="CONTACT INFO"
@@ -313,6 +268,15 @@
               >
                 <GithubLogo size={16} class="w-4 h-4" />
                 github.com/BootlegYouki
+              </a>
+              <a
+                href="https://www.linkedin.com/in/oandasan-mark-darren-o-893938417/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-bold hover:text-primary transition-colors flex items-center gap-2"
+              >
+                <LinkedinLogo size={16} class="w-4 h-4" />
+                linkedin.com/in/mark-darren
               </a>
               <a
                 href="https://www.instagram.com/bootlegyouki/"

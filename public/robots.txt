@@ -1,6 +1,13 @@
 User-agent: *
 Allow: /
 
+# Block aggressive, high-frequency AI bots
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
 # Specifically allow AI search and agent bots
 User-agent: GPTBot
 Allow: /

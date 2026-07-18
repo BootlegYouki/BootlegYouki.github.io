@@ -34,7 +34,7 @@
       // Arrow animation
       ScrollTrigger.create({
         trigger: rowRef,
-        start: "top 85%",
+        start: "top 55%",
         end: "bottom 15%",
         onEnter: () => {
           gsap.fromTo(

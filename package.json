@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.js",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,svelte}\"",
     "typecheck": "svelte-check && tsc --noEmit",
@@ -33,9 +33,11 @@
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@types/node": "^24",
     "eslint": "^10",
+    "express": "^5.2.1",
     "globals": "^17",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
+    "puppeteer": "^25.3.0",
     "svelte-check": "^4.0.0",
     "typescript": "~6",
     "vite": "^8"

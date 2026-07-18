@@ -40,6 +40,7 @@
       lerp: 0.08, // Controls the deceleration speed
     });
     (window as any).lenis = lenis;
+    lenis.stop(); // Stop scroll while intro animation is playing
 
     // Connect Lenis scroll events to ScrollTrigger updates
     lenis.on("scroll", ScrollTrigger.update);
@@ -54,6 +55,7 @@
     // Stagger rendering of below sections until Intro is fully expanded (1885ms)
     const timer = setTimeout(() => {
       introExpanded = true;
+      lenis.start(); // Re-enable scroll when intro is expanded
       // Recalculate ScrollTrigger positions once sections render in
       setTimeout(() => {
         ScrollTrigger.refresh();
@@ -79,15 +81,12 @@
   <!-- Main container holding the sections -->
   <main class="w-full p-0 flex flex-col">
     <IntroSection />
-    {#if introExpanded}
-      <div class="animate-fade-in duration-500">
-        <TechTicker />
-        <ProjectsSection />
-        <AboutSection />
-        <ConceptSection />
-        <ContactSection />
-
-      </div>
-    {/if}
+    <div class="transition-opacity duration-500 {introExpanded ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}">
+      <TechTicker />
+      <ProjectsSection />
+      <AboutSection />
+      <ConceptSection />
+      <ContactSection />
+    </div>
   </main>
 </div>

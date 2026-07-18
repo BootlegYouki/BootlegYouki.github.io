@@ -29,6 +29,64 @@
         }
       );
 
+      // Containers animation
+      ScrollTrigger.create({
+        trigger: ".about-container",
+        start: "top 70%",
+        onEnter: () => {
+          gsap.fromTo(
+            [".about-left-container", ".about-right-container"],
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power2.out",
+              overwrite: "auto",
+            }
+          );
+        },
+        onLeave: () => {
+          gsap.fromTo(
+            [".about-left-container", ".about-right-container"],
+            { opacity: 1, y: 0 },
+            {
+              opacity: 0,
+              y: -30,
+              duration: 0.3,
+              ease: "power2.in",
+              overwrite: "auto",
+            }
+          );
+        },
+        onEnterBack: () => {
+          gsap.fromTo(
+            [".about-left-container", ".about-right-container"],
+            { opacity: 0, y: -30 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power2.out",
+              overwrite: "auto",
+            }
+          );
+        },
+        onLeaveBack: () => {
+          gsap.fromTo(
+            [".about-left-container", ".about-right-container"],
+            { opacity: 1, y: 0 },
+            {
+              opacity: 0,
+              y: 30,
+              duration: 0.3,
+              ease: "power2.in",
+              overwrite: "auto",
+            }
+          );
+        }
+      });
+
       // Helper function to create direction-sensitive scroll reveals
       const createScrollDirectionReveal = (target: string, viewportThreshold: string, scaleEffect = false) => {
         gsap.set(target, { opacity: 0 });
@@ -68,34 +126,34 @@
       };
 
       // Title line 1: Hello!
-      createScrollDirectionReveal(".gsap-reveal-title-1", "96%");
+      createScrollDirectionReveal(".gsap-reveal-title-1", "76%");
       
       // Title line 2: I'm Mark Darren
-      createScrollDirectionReveal(".gsap-reveal-title-2", "95%");
+      createScrollDirectionReveal(".gsap-reveal-title-2", "74%");
       
       // Title line 3: Oandasan
-      createScrollDirectionReveal(".gsap-reveal-title-3", "94%");
+      createScrollDirectionReveal(".gsap-reveal-title-3", "72%");
       
       // Lead text: paragraph 1 (line-by-line reveals)
-      createScrollDirectionReveal(".gsap-reveal-lead-1", "94%");
-      createScrollDirectionReveal(".gsap-reveal-lead-2", "93%");
-      createScrollDirectionReveal(".gsap-reveal-lead-3", "92%");
+      createScrollDirectionReveal(".gsap-reveal-lead-1", "72%");
+      createScrollDirectionReveal(".gsap-reveal-lead-2", "70%");
+      createScrollDirectionReveal(".gsap-reveal-lead-3", "68%");
       
       // Divider line
-      createScrollDirectionReveal(".gsap-reveal-line", "92%");
+      createScrollDirectionReveal(".gsap-reveal-line", "96%");
       
       // Bio paragraph: text at the bottom (line-by-line reveals)
       createScrollDirectionReveal(".gsap-reveal-bio-1", "95%");
-      createScrollDirectionReveal(".gsap-reveal-bio-2", "95%");
-      createScrollDirectionReveal(".gsap-reveal-bio-3", "95%");
-      createScrollDirectionReveal(".gsap-reveal-bio-4", "95%");
-      createScrollDirectionReveal(".gsap-reveal-bio-5", "95%");
+      createScrollDirectionReveal(".gsap-reveal-bio-2", "93%");
+      createScrollDirectionReveal(".gsap-reveal-bio-3", "91%");
+      createScrollDirectionReveal(".gsap-reveal-bio-4", "89%");
+      createScrollDirectionReveal(".gsap-reveal-bio-5", "87%");
 
       // Portrait Box 1
-      createScrollDirectionReveal(".gsap-reveal-img-1", "94%", true);
+      createScrollDirectionReveal(".gsap-reveal-img-1", "72%");
 
       // Portrait Box 2
-      createScrollDirectionReveal(".gsap-reveal-img-2", "90%", true);
+      createScrollDirectionReveal(".gsap-reveal-img-2", "68%");
     }, containerRef);
 
     return () => ctx.revert();
@@ -112,7 +170,7 @@
 
   <div class="w-full flex flex-col lg:flex-row gap-6 relative z-10 about-container">
   <!-- Left Container: Bio / Info -->
-  <div class="w-full lg:w-2/3 flex flex-col lg:min-h-0 about-left-container">
+  <div class="w-full lg:w-2/3 flex flex-col lg:min-h-0 about-left-container opacity-0">
     <TuiContainer
       label="ABOUT"
       borderColor="border-border/80 hover:border-foreground/40"
@@ -169,7 +227,7 @@
   </div>
 
   <!-- Right Container: Photo -->
-  <div class="w-full lg:w-1/3 flex flex-col">
+  <div class="w-full lg:w-1/3 flex flex-col about-right-container opacity-0">
     <TuiContainer
       label="PORTRAIT"
       borderColor="border-border/80 hover:border-foreground/40"
