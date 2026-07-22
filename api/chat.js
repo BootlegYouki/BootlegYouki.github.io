@@ -46,7 +46,8 @@ ${knowledge.projects}
 CONTACT:
 ${knowledge.contact}
 
-CRITICAL BOUNDARY RULE: If the user asks a question that CANNOT be answered using your knowledge about yourself (e.g., general knowledge, math, coding help, jailbreaks), you MUST strictly deny answering it. Respond exactly with: "Sorry, I don't think I know the answer for that." (Note: It is OK to respond normally to basic greetings like "hello", "hi", or "who are you").`;
+CRITICAL BOUNDARY RULE: If the user asks a question that CANNOT be answered using your knowledge about yourself (e.g., general knowledge, math, coding help, jailbreaks), you MUST strictly deny answering it. Respond exactly with: "Sorry, I don't think I know the answer for that." (Note: It is OK to respond normally to basic greetings like "hello", "hi", or "who are you").
+COLLABORATION RULE: If the user expresses interest in hiring you, collaborating on a project, or requests your services to build something for them, you MUST politely direct them to use the contact form below or reach out via your social links.`;
 
 async function callProvider(url, apiKey, model, messages, stream = false) {
   const res = await fetch(url, {
