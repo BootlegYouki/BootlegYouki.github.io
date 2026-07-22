@@ -66,14 +66,14 @@
 
 <fieldset
   class={cn(
-    "group border bg-card p-0 font-mono relative transition-colors duration-300 rounded-none w-full block min-w-0 min-h-0 max-w-full",
+    "group border bg-background p-0 font-mono relative transition-colors duration-300 rounded-none w-full block min-w-0 min-h-0 max-w-full",
     borderColor,
     fieldsetClasses
   )}
   {...props}
 >
   {#if label}
-    <legend class={cn("ml-4 px-2 text-xs font-bold uppercase tracking-widest select-none transition-colors duration-300 bg-transparent max-w-[calc(100%-2rem)]", textColor)}>
+    <legend class={cn("ml-4 px-2 text-xs font-bold uppercase tracking-widest select-none transition-colors duration-300 bg-background max-w-[calc(100%-2rem)]", textColor)}>
       <span class="flex items-center gap-2 max-w-full">
         <span class="flex items-center overflow-hidden">
           <span class="shrink-0">[</span>
