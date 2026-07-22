@@ -1,5 +1,12 @@
 {
   "name": "bootlegyouki-chat",
   "framework": null,
-  "buildCommand": "echo \"Skipping frontend build for API-only deployment\""
+  "buildCommand": "echo \"Skipping frontend build for API-only deployment\"",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://bootlegyouki.github.io/",
+      "permanent": false
+    }
+  ]
 }
