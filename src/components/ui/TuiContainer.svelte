@@ -66,7 +66,7 @@
 
 <fieldset
   class={cn(
-    "group border bg-card p-0 font-mono relative transition-colors duration-300 rounded-none w-full flex flex-col min-w-0 min-h-0",
+    "group border bg-card p-0 font-mono relative transition-colors duration-300 rounded-none w-full block min-w-0 min-h-0 max-w-full",
     borderColor,
     fieldsetClasses
   )}
