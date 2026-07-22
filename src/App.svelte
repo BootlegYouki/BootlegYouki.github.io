@@ -5,8 +5,8 @@
   import MouseTrail from "@/components/ui/MouseTrail.svelte";
   import IntroSection from "@/components/Sections/IntroSection.svelte";
   import TechTicker from "@/components/ui/TechTicker.svelte";
-  import AboutSection from "@/components/Sections/AboutSection.svelte";
   import ProjectsSection from "@/components/Sections/ProjectsSection.svelte";
+  import AboutSection from "@/components/Sections/AboutSection.svelte";
   import ConceptSection from "@/components/Sections/ConceptSection.svelte";
   import ContactSection from "@/components/Sections/ContactSection.svelte";
 
@@ -37,7 +37,8 @@
 
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
-      lerp: 0.08, // Controls the deceleration speed
+      lerp: 0.06, // Lowered from 0.08 for a smoother, more relaxed deceleration
+      wheelMultiplier: 0.6, // Decreases the distance scrolled per mouse wheel tick
     });
     (window as any).lenis = lenis;
     lenis.stop(); // Stop scroll while intro animation is playing

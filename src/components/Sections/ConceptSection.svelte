@@ -31,46 +31,29 @@
         }
       )
 
-      // Arrow animation
+      // Create a single timeline for the arrows so GSAP perfectly manages the playhead
+      // This prevents animations from fighting if you scroll rapidly back and forth
+      const arrowTl = gsap.timeline({ paused: true });
+      
+      arrowTl.fromTo(
+        ".concept-arrow",
+        { opacity: 1, "--dash-offset": 1 },
+        {
+          "--dash-offset": 0,
+          duration: 0.8,
+          stagger: 0.7,
+          ease: "power2.inOut",
+        }
+      );
+
+      // Single coordinated entrance and exit for the arrows
       ScrollTrigger.create({
         trigger: rowRef,
-        start: "top 55%",
-        end: "bottom 15%",
-        onEnter: () => {
-          gsap.fromTo(
-            ".concept-arrow",
-            { opacity: 0, "--dash-offset": 1 },
-            {
-              opacity: 1,
-              "--dash-offset": 0,
-              duration: 0.8,
-              stagger: 0.8,
-              ease: "power2.inOut",
-              overwrite: "auto",
-            }
-          )
-        },
-        onLeave: () => {
-          gsap.to(".concept-arrow", { opacity: 0, duration: 0.2, overwrite: "auto" })
-        },
-        onEnterBack: () => {
-          gsap.fromTo(
-            ".concept-arrow",
-            { opacity: 0, "--dash-offset": 1 },
-            {
-              opacity: 1,
-              "--dash-offset": 0,
-              duration: 0.8,
-              stagger: 0.8,
-              ease: "power2.inOut",
-              overwrite: "auto",
-            }
-          )
-        },
-        onLeaveBack: () => {
-          gsap.to(".concept-arrow", { opacity: 0, duration: 0.2, overwrite: "auto" })
-        }
-      })
+        start: "top 50%",
+        end: "bottom 40%",
+        animation: arrowTl,
+        toggleActions: "play reverse play reverse",
+      });
 
       gsap.set(".concept-box", { opacity: 0 })
       ScrollTrigger.batch(".concept-box", {
@@ -162,7 +145,7 @@
   >
     <!-- Arrow 1: Bottom Connector (Box 1 to Box 2) -->
     <div
-      class="hidden lg:block absolute -bottom-[3rem] left-[calc(16.666%-8px)] right-[50%] h-[3rem] pointer-events-none opacity-0 concept-arrow"
+      class="hidden lg:block absolute -bottom-12 left-[calc(16.666%-8px)] right-[50%] h-12 pointer-events-none opacity-0 concept-arrow"
       bind:clientWidth={arrow1Width}
     >
       <svg width="100%" height="100%" class="overflow-visible">
@@ -179,7 +162,7 @@
 
     <!-- Arrow 2: Top Connector (Box 2 to Box 3) -->
     <div
-      class="hidden lg:block absolute -top-[3rem] left-[50%] right-[calc(16.666%-8px)] h-[3.5rem] pointer-events-none opacity-0 concept-arrow"
+      class="hidden lg:block absolute -top-12 left-[50%] right-[calc(16.666%-8px)] h-14 pointer-events-none opacity-0 concept-arrow"
       bind:clientWidth={arrow2Width}
     >
       <svg width="100%" height="100%" class="overflow-visible">
@@ -200,7 +183,7 @@
         label="01"
         borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
         textColor="text-primary font-bold"
-        class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+        class="concept-box opacity-0 flex-1 min-h-112.5 lg:min-h-125 p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
       >
         <article class="relative z-10 flex flex-col h-full justify-between gap-4 flex-1">
           <h3
@@ -233,7 +216,7 @@
         label="02"
         borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
         textColor="text-primary font-bold"
-        class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+        class="concept-box opacity-0 flex-1 min-h-112.5 lg:min-h-125 p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
       >
         <article class="relative z-10 flex flex-col h-full justify-between gap-4 flex-1">
           <h3
@@ -268,7 +251,7 @@
         label="03"
         borderColor="border-border/80 hover:border-primary/50 transition-colors duration-500"
         textColor="text-primary font-bold"
-        class="concept-box opacity-0 flex-1 min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
+        class="concept-box opacity-0 flex-1 min-h-112.5 lg:min-h-125 p-6 sm:p-8 lg:p-6 xl:p-8 flex flex-col gap-6 relative overflow-hidden group bg-card/5 hover:bg-card/10"
       >
         <article class="relative z-10 flex flex-col h-full justify-between gap-4 flex-1">
           <h3

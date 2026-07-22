@@ -1,0 +1,5 @@
+{
+  "name": "bootlegyouki-chat",
+  "framework": null,
+  "buildCommand": "echo \"Skipping frontend build for API-only deployment\""
+}

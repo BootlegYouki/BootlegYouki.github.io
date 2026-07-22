@@ -79,6 +79,11 @@
     }
   }
 
+  function smoothstep(min: number, max: number, value: number): number {
+    const x = Math.max(0, Math.min(1, (value - min) / (max - min)));
+    return x * x * (3 - 2 * x);
+  }
+
   // Update resolved RGB color whenever the color changes
   $effect(() => {
     updateResolvedRGB(color);
@@ -121,11 +126,9 @@
     };
   });
 
-  // Track mouse coordinates relative to the canvas (in logical coordinates)
+  // Track mouse coordinates relative to the canvas globally (solves pointer-events-none overlay issues)
   $effect(() => {
     if (!canvasElement) return;
-    const parent = canvasElement.parentElement;
-    if (!parent) return;
 
     function handleMouseMove(e: MouseEvent) {
       if (!canvasElement) return;
@@ -134,18 +137,21 @@
       mouseY = e.clientY - rect.top;
     }
 
-    function handleMouseLeave() {
-      mouseX = null;
-      mouseY = null;
+    function handleMouseLeave(e: MouseEvent) {
+      // Only clear if the mouse actually left the browser window
+      if (!e.relatedTarget && e.clientY <= 0 || e.clientX <= 0 || e.clientX >= window.innerWidth || e.clientY >= window.innerHeight) {
+        mouseX = null;
+        mouseY = null;
+      }
     }
 
     if (interactive) {
-      parent.addEventListener("mousemove", handleMouseMove, { passive: true });
-      parent.addEventListener("mouseleave", handleMouseLeave, { passive: true });
+      window.addEventListener("mousemove", handleMouseMove, { passive: true });
+      window.addEventListener("mouseout", handleMouseLeave, { passive: true });
 
       return () => {
-        parent.removeEventListener("mousemove", handleMouseMove);
-        parent.removeEventListener("mouseleave", handleMouseLeave);
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseout", handleMouseLeave);
       };
     }
   });
@@ -175,8 +181,56 @@
     // Cache context and ImageData — avoid reallocating every frame
     let ctx: CanvasRenderingContext2D | null = null;
     let imgData: ImageData | null = null;
+    let data32: Uint32Array | null = null;
     let cachedW = 0;
     let cachedH = 0;
+
+    // Pre-allocated arrays for column-based caching
+    let waveYs = new Float32Array(0);
+    let baseP = new Float32Array(0);
+    let stepP = new Float32Array(0);
+
+    // Precompute Glow LUT to avoid Math.pow/cos per pixel
+    const GLOW_LUT_SIZE = 1024;
+    const glowLUT = new Float32Array(GLOW_LUT_SIZE);
+    for (let i = 0; i < GLOW_LUT_SIZE; i++) {
+      const normalDist = Math.sqrt(i / (GLOW_LUT_SIZE - 1));
+      glowLUT[i] = Math.pow(Math.cos(normalDist * Math.PI * 0.5), 1.5) * 0.75;
+    }
+
+    // Precompute Wave LUT to avoid branching/smoothstep per pixel
+    const WAVE_LUT_SIZE = 1024;
+    const waveLUT = new Float32Array(WAVE_LUT_SIZE);
+    for (let i = 0; i < WAVE_LUT_SIZE; i++) {
+      const p = (i / (WAVE_LUT_SIZE - 1)) * 100;
+      let wave = 0;
+      if (p <= 40) {
+        wave = 1.0;
+      } else if (p < 60) {
+        const t = smoothstep(40, 60, p);
+        wave = 1.0 - t * 0.5;
+      } else if (p <= 70) {
+        wave = 0.5;
+      } else if (p < 90) {
+        const t = smoothstep(70, 90, p);
+        wave = 0.5 - t * 0.25;
+      } else if (p <= 97) {
+        const t = smoothstep(90, 97, p);
+        wave = 0.25 - t * 0.125;
+      } else {
+        if (p > 99) {
+          const t = smoothstep(100, 99, p);
+          wave = t * 0.125;
+        } else {
+          wave = 0.125;
+        }
+      }
+      waveLUT[i] = wave;
+    }
+
+    const colorBuf = new ArrayBuffer(4);
+    const color8 = new Uint8Array(colorBuf);
+    const color32 = new Uint32Array(colorBuf);
 
     // Pause rendering when the canvas is not visible in the viewport
     const intersectionObserver = new IntersectionObserver(
@@ -222,93 +276,131 @@
         imgData = ctx.createImageData(w, h);
         cachedW = w;
         cachedH = h;
+        try {
+          data32 = new Uint32Array(imgData.data.buffer, imgData.data.byteOffset, w * h);
+        } catch (e) {
+          data32 = null;
+        }
+      }
+
+      if (waveYs.length < w) {
+        waveYs = new Float32Array(w);
+        baseP = new Float32Array(w);
+        stepP = new Float32Array(w);
       }
 
       const data = imgData.data;
       const [r, g, b] = resolvedRGB;
+      
+      color8[0] = r;
+      color8[1] = g;
+      color8[2] = b;
+      color8[3] = 255;
+      const pixelColor32 = color32[0];
 
       // Precompute waveY per column — smooth multi-octave sine, runs W times not W*H
-      const waveCenter = logicalH * yOffset;
-      const waveYs = new Float32Array(w);
+      // Dynamically lower the wave position on smaller screens (lower width)
+      // As the width decreases, we increase the vertical offset (Y goes down)
+      let dynamicYOffset = yOffset;
+      if (logicalW < 1200) {
+        const t = Math.max(0, Math.min(1, (1200 - logicalW) / (1200 - 360)));
+        dynamicYOffset = Math.min(0.96, yOffset + t * 0.12);
+      }
+      const waveCenter = logicalH * dynamicYOffset;
+      // Base the amplitude scale on device width so it shrinks on narrower screens (like mobile)
+      const ampRef = Math.min(logicalH, logicalW * 0.45);
+      
+      const hasMouse = mouseX !== null && mouseY !== null;
+      let currentMouseX = 0;
+      let currentMouseY = 0;
+      let maxRadiusSq = 0;
+      let maxRadiusSqInv = 0;
+      
+      if (hasMouse) {
+        currentMouseX = mouseX || 0;
+        currentMouseY = mouseY || 0;
+        const maxRadius = Math.max(logicalW, logicalH) * glowSize;
+        maxRadiusSq = maxRadius * maxRadius;
+        maxRadiusSqInv = 1.0 / maxRadiusSq;
+      }
+
+      // Pre-compute wave height and progress constants per column to save math in inner loop
       for (let x = 0; x < w; x++) {
         const px = x * step;
-        waveYs[x] = waveCenter
-          + Math.sin(px * waveParams.freq1 + time * waveParams.speed1 + waveParams.phase1) * (logicalH * waveParams.amp1)
-          + Math.cos(px * waveParams.freq2 - time * waveParams.speed2 + waveParams.phase2) * (logicalH * waveParams.amp2)
-          + Math.sin(px * waveParams.freq3 + time * waveParams.speed3 + waveParams.phase3) * (logicalH * waveParams.amp3);
+        let waveY = waveCenter
+          + Math.sin(px * waveParams.freq1 + time * waveParams.speed1 + waveParams.phase1) * (ampRef * waveParams.amp1)
+          + Math.cos(px * waveParams.freq2 - time * waveParams.speed2 + waveParams.phase2) * (ampRef * waveParams.amp2)
+          + Math.sin(px * waveParams.freq3 + time * waveParams.speed3 + waveParams.phase3) * (ampRef * waveParams.amp3);
+        
+        waveYs[x] = waveY;
+
+        const maxTransition = Math.max(80, ampRef * 0.35);
+        const transitionHeight = Math.max(1, Math.min(maxTransition, logicalH - waveY));
+        
+        baseP[x] = 100 + (100 * waveY) / transitionHeight;
+        stepP[x] = 100 / transitionHeight;
       }
 
       // Clear pixel buffer
-      data.fill(0);
+      if (data32) {
+        data32.fill(0);
+      } else {
+        data.fill(0);
+      }
 
+      let idx = 0;
       for (let y = 0; y < h; y++) {
         const py = y * step;
         const bayerRow = (y & 7) * 8;
 
+        let dySq = 0;
+        if (hasMouse) {
+          const dy = py - currentMouseY;
+          dySq = dy * dy;
+        }
+
         for (let x = 0; x < w; x++) {
-          const px = x * step;
           const waveY = waveYs[x];
 
           let wave = 0;
           if (py > waveY) {
-            // 3 layers below wave based on 60 (solid) : 30 (dither) : 20 (more dither) ratio
-            // Normalized: more dither = 20/110, dither = 30/110, solid = 60/110
-            const progress = (py - waveY) / Math.max(1, logicalH - waveY);
-            
-            const b1 = 20 / 110;
-            const b2 = 50 / 110;
-            const tWidth = 0.04; // Narrow transition band (4% of height below wave)
-            
-            if (progress < tWidth) {
-              // Transition from 0.0 to 0.25 at the top wave crest
-              const t = progress / tWidth;
-              wave = t * 0.25;
-            } else if (progress < b1 - tWidth) {
-              // "more dither" layer (25% density)
-              wave = 0.25;
-            } else if (progress < b1 + tWidth) {
-              // Transition from 0.25 to 0.50
-              const t = (progress - (b1 - tWidth)) / (2 * tWidth);
-              wave = 0.25 + t * 0.25;
-            } else if (progress < b2 - tWidth) {
-              // "dither" layer (50% density)
-              wave = 0.50;
-            } else if (progress < b2 + tWidth) {
-              // Transition from 0.50 to 1.00
-              const t = (progress - (b2 - tWidth)) / (2 * tWidth);
-              wave = 0.50 + t * 0.50;
-            } else {
-              // "solid" layer (100% density)
+            const p = baseP[x] - stepP[x] * py;
+            if (p <= 40) {
               wave = 1.0;
+            } else if (p >= 100) {
+              wave = 0.0;
+            } else {
+              const lutIndex = (p * 10.23) | 0;
+              wave = waveLUT[lutIndex];
             }
-          } else {
-            // Above wave: transparent
-            wave = 0;
           }
 
-          // Interactive mouse glow
           let glow = 0;
-          if (mouseX !== null && mouseY !== null) {
-            const dx = px - mouseX;
-            const dy = py - mouseY;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            const maxRadius = Math.max(logicalW, logicalH) * glowSize;
-            if (dist < maxRadius) {
-              const normalDist = dist / maxRadius;
-              glow = Math.pow(Math.cos(normalDist * Math.PI * 0.5), 1.5) * 0.75;
+          if (hasMouse) {
+            const px = x * step;
+            const dx = px - currentMouseX;
+            const distSq = dx * dx + dySq;
+            if (distSq < maxRadiusSq) {
+              const lutIndex = (distSq * maxRadiusSqInv * 1023) | 0;
+              glow = glowLUT[lutIndex];
             }
           }
 
-          const brightness = wave + glow > 1.0 ? 1.0 : wave + glow;
-          const threshold = bayer8Flat[bayerRow + (x & 7)]; // x % 8
+          const brightness = wave + glow;
+          const threshold = bayer8Flat[bayerRow + (x & 7)];
 
           if (brightness > threshold) {
-            const idx = (y * w + x) * 4;
-            data[idx] = r;
-            data[idx + 1] = g;
-            data[idx + 2] = b;
-            data[idx + 3] = 255;
+            if (data32) {
+              data32[idx] = pixelColor32;
+            } else {
+              const idx4 = idx * 4;
+              data[idx4] = r;
+              data[idx4 + 1] = g;
+              data[idx4 + 2] = b;
+              data[idx4 + 3] = 255;
+            }
           }
+          idx++;
         }
       }
 

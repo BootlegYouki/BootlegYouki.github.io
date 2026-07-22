@@ -162,6 +162,8 @@
     }
   html {
     @apply font-mono;
+    scrollbar-width: thin;
+    scrollbar-color: var(--foreground) transparent;
     }
 }
 
@@ -228,3 +230,44 @@ html.lenis body {
 .lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* Desktop-only TUI row heights */
+@media (min-width: 1024px) {
+  .row-65 {
+    flex: 65 65 0% !important;
+  }
+  .row-35 {
+    flex: 35 35 0% !important;
+  }
+}
+
+/* Custom Blocky TUI Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Completely Hide Scrollbar */
+html {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+

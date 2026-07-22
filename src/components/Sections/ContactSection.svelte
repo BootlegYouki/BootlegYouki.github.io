@@ -6,11 +6,15 @@
   import {
     GithubLogo,
     InstagramLogo,
-    LinkedinLogo,
   } from "phosphor-svelte"
+  import { gsap } from "gsap"
+  import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 
   // Track dark mode via .dark class on <html>
   let isDark = $state(document.documentElement.classList.contains('dark'))
+  let parallaxProgress = $state(0.5)
+  
   $effect(() => {
     const observer = new MutationObserver(() => {
       isDark = document.documentElement.classList.contains('dark')
@@ -156,43 +160,60 @@
 
   onMount(() => {
     startCooldownTimer()
+    
+    gsap.registerPlugin(ScrollTrigger)
+    ScrollTrigger.create({
+      trigger: "#contact-section",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      onUpdate: (self) => {
+        parallaxProgress = self.progress
+      }
+    })
 
     return () => {
       if (timerInterval) clearInterval(timerInterval)
+      ScrollTrigger.getAll().forEach(t => {
+        if (t.trigger === document.getElementById("contact-section")) t.kill()
+      })
     }
   })
 </script>
 
 <section
   id="contact-section"
-  class="w-full pt-16 pb-0 md:pt-24 md:pb-0 animate-fade-in flex flex-col justify-start relative z-10 overflow-hidden"
+  class="w-full pt-16 pb-0 md:pt-24 md:pb-0 animate-fade-in flex flex-col justify-between relative z-10 overflow-hidden"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-    <!-- Back layer: darker in dark mode, lighter in light mode -->
+    <!-- Back layer: deeper and more pixelated for extreme parallax -->
     <DitherBackground
       color={isDark ? 'oklch(0.35 0 0)' : 'oklch(0.72 0 0)'}
-      opacity={1}
-      scale={4}
+      opacity={0.7}
+      scale={6}
       speed={0.3}
-      yOffset={0.65}
-      interactive={false}
+      yOffset={0.52 + (parallaxProgress - 0.5) * 0.15}
+      interactive={true}
+      glowSize={0}
     />
-    <!-- Front layer: brighter in dark mode, darker in light mode -->
+    <!-- Front layer: sharper, faster, and brighter -->
     <DitherBackground
       color={isDark ? 'oklch(0.92 0 0)' : 'oklch(0.15 0 0)'}
       opacity={1}
       scale={4}
       speed={0.8}
-      yOffset={0.79}
+      yOffset={0.75 - (parallaxProgress - 0.5) * 0.25}
+      interactive={true}
+      glowSize={0}
     />
   </div>
   <div
-    class="w-full max-w-360 mx-auto px-6 pb-20 md:pb-28 flex flex-col lg:flex-row gap-16 lg:gap-36 xl:gap-48 relative z-10 mt-8 md:mt-16"
+    class="w-full max-w-360 mx-auto px-6 py-12 md:py-16 flex-1 flex flex-col lg:flex-row lg:items-start justify-center gap-16 lg:gap-36 xl:gap-48 relative z-10"
   >
     <!-- Left Column: Heading -->
     <div
-      class="w-full lg:w-[45%] flex flex-col justify-between"
+      class="w-full lg:w-[45%] flex flex-col justify-start"
     >
       <div class="space-y-12">
         <h2
@@ -201,7 +222,7 @@
           Get In<br />Touch
         </h2>
         <p
-          class="text-base md:text-lg text-muted-foreground leading-relaxed font-mono max-w-lg"
+          class="text-base md:text-lg text-foreground leading-relaxed font-mono max-w-lg"
         >
           Got a cool idea, a fun project, or some annoying bottleneck you need fixed? Hit me up and let's build something awesome together.
         </p>
@@ -259,7 +280,7 @@
               class="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-0.5"
               >Socials</span
             >
-            <div class="flex flex-wrap gap-x-6 gap-y-2 mt-1">
+            <div class="flex flex-col gap-3 mt-1.5">
               <a
                 href="https://github.com/BootlegYouki"
                 target="_blank"
@@ -275,7 +296,16 @@
                 rel="noopener noreferrer"
                 class="text-sm font-bold hover:text-primary transition-colors flex items-center gap-2"
               >
-                <LinkedinLogo size={16} class="w-4 h-4" aria-label="LinkedIn Logo" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                  class="w-4 h-4 fill-current transition-colors translate-y-0.5"
+                  aria-label="LinkedIn Logo"
+                >
+                  <path
+                    d="M8.268 28H2.463V9.306h5.805zM5.362 6.756C3.506 6.756 2 5.218 2 3.362a3.362 3.362 0 0 1 6.724 0c0 1.856-1.506 3.394-3.362 3.394M29.994 28h-5.792v-9.1c0-2.169-.044-4.95-3.018-4.95c-3.018 0-3.481 2.356-3.481 4.794V28h-5.799V9.306h5.567v2.55h.081c.775-1.469 2.668-3.019 5.492-3.019c5.875 0 6.955 3.869 6.955 8.894V28z"
+                  />
+                </svg>
                 linkedin.com/in/mark-darren
               </a>
               <a
@@ -315,9 +345,9 @@
                 bind:value={name}
                 placeholder="Enter your name"
                 disabled={isSubmitting || submitSuccess}
-                class="w-full px-4 py-3 bg-card/20 border {errors.name
+                class="w-full px-4 py-3 bg-background border {errors.name
                   ? 'border-destructive/80 focus:border-destructive'
-                  : 'border-border/60 focus:border-primary/80'} text-foreground font-mono text-sm transition-all duration-300 outline-none rounded-none placeholder:text-muted-foreground/35 focus:bg-card/45"
+                  : 'border-border/60 focus:border-primary/80'} text-foreground font-mono text-sm transition-all duration-300 outline-none rounded-none placeholder:text-muted-foreground/35 focus:bg-card"
               />
               {#if errors.name}
                 <span class="block text-xs font-semibold text-destructive"
@@ -340,9 +370,9 @@
                 bind:value={email}
                 placeholder="you@example.com"
                 disabled={isSubmitting || submitSuccess}
-                class="w-full px-4 py-3 bg-card/20 border {errors.email
+                class="w-full px-4 py-3 bg-background border {errors.email
                   ? 'border-destructive/80 focus:border-destructive'
-                  : 'border-border/60 focus:border-primary/80'} text-foreground font-mono text-sm transition-all duration-300 outline-none rounded-none placeholder:text-muted-foreground/35 focus:bg-card/45"
+                  : 'border-border/60 focus:border-primary/80'} text-foreground font-mono text-sm transition-all duration-300 outline-none rounded-none placeholder:text-muted-foreground/35 focus:bg-card"
               />
               {#if errors.email}
                 <span class="block text-xs font-semibold text-destructive"
@@ -366,9 +396,9 @@
               bind:value={message}
               placeholder="How can I help you?"
               disabled={isSubmitting || submitSuccess}
-              class="w-full px-4 py-3 bg-card/20 border {errors.message
+              class="w-full px-4 py-3 bg-background border {errors.message
                 ? 'border-destructive/80 focus:border-destructive'
-                : 'border-border/60 focus:border-primary/80'} text-foreground font-mono text-sm transition-all duration-300 outline-none rounded-none placeholder:text-muted-foreground/35 resize-none focus:bg-card/45"
+                : 'border-border/60 focus:border-primary/80'} text-foreground font-mono text-sm transition-all duration-300 outline-none rounded-none placeholder:text-muted-foreground/35 resize-none focus:bg-card"
             ></textarea>
             {#if errors.message}
               <span class="block text-xs font-semibold text-destructive"
@@ -382,7 +412,7 @@
             <button
               type="submit"
               disabled={isSubmitting || cooldownRemaining > 0}
-              class="px-8 py-3 border border-border/60 bg-card/20 text-muted-foreground font-bold font-mono text-sm transition-all duration-300 cursor-pointer select-none hover:border-primary/80 hover:bg-card/40 hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
+              class="px-8 py-3 border border-border/60 bg-background text-muted-foreground font-bold font-mono text-sm transition-all duration-300 cursor-pointer select-none hover:border-primary/80 hover:bg-card hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
             >
               {isSubmitting
                 ? "SENDING..."

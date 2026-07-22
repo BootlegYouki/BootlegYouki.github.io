@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  import { fade, scale } from "svelte/transition"
-  import { cubicOut } from "svelte/easing"
+  import { fade } from "svelte/transition"
   import { gsap } from "gsap"
   import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -669,7 +668,7 @@
             {/if}
 
             <!-- Project content container (fades content in/out controlled by JS lifecycle) -->
-            <article
+            <div
               role="dialog"
               aria-modal="true"
               aria-labelledby="project-modal-title"
@@ -913,7 +912,7 @@
                 </div>
               </div>
             </div>
-          </article>
+            </div>
 
             {#if isMobile && isContentVisible}
               <!-- Bottom Sheet Backdrop -->

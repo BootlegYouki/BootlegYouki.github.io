@@ -111,9 +111,9 @@
   </style>
 </svelte:head>
 
-<!-- Stays on top (z-50) for both custom cursor, explosions, and trails -->
+<!-- Stays on top (z-[9999]) for both custom cursor, explosions, and trails -->
 {#if isEnabled}
-  <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+  <div class="pointer-events-none fixed inset-0 overflow-hidden z-[9999]">
     <!-- Active Custom Cursor -->
     {#if isVisible}
       <div

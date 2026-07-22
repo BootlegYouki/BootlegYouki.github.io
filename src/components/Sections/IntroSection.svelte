@@ -274,7 +274,7 @@
             <!-- Wordmark: MARK DARREN -->
             <div class="mb-0.5 md:-mb-2.5 overflow-hidden">
               <span
-                class="text-base sm:text-xl font-bold tracking-[0.25em] text-primary uppercase block ml-[1.6vw] pb-1 font-mono transition-transform duration-300"
+                class="text-base sm:text-xl font-bold tracking-[0.25em] text-primary uppercase block ml-[1.6vw] pb-1 font-mono"
                 class:translate-y-full={!showWordmark}
                 class:animate-slide-up-reveal={showWordmark}
                 style={!showWordmark ? "transform: translateY(101%);" : ""}

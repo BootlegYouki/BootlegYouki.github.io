@@ -4,18 +4,14 @@
 
   const tools = [
     { name: "React", icon: "react", color: "#61dafb", description: "Component-based UI library for building dynamic, responsive web interfaces.", hoverStyle: "hover:bg-[#61dafb]/15 hover:border-[#61dafb]/80 hover:text-[#61dafb] hover:shadow-[0_0_20px_rgba(97,218,251,0.2)]" },
-    { name: "Vite", icon: "vite", color: "#bd34fe", description: "Next-generation, ultra-fast frontend build tool and dev server.", hoverStyle: "hover:bg-[#bd34fe]/15 hover:border-[#bd34fe]/80 hover:text-[#bd34fe] hover:shadow-[0_0_20px_rgba(189,52,254,0.2)]" },
     { name: "Tauri", icon: "tauri", color: "#24c8db", description: "Secure, lightweight framework for building tiny desktop apps with web frontends.", hoverStyle: "hover:bg-[#24c8db]/15 hover:border-[#24c8db]/80 hover:text-[#24c8db] hover:shadow-[0_0_20px_rgba(36,200,219,0.2)]" },
     { name: "Node.js", icon: "nodejs", color: "#339933", description: "JavaScript runtime environment designed for building scalable server-side applications.", hoverStyle: "hover:bg-[#339933]/15 hover:border-[#339933]/80 hover:text-[#339933] hover:shadow-[0_0_20px_rgba(51,153,51,0.2)]" },
     { name: "TypeScript", icon: "typescript", color: "#3178c6", description: "Strongly typed superset of JavaScript that compiles to plain JavaScript.", hoverStyle: "hover:bg-[#3178c6]/15 hover:border-[#3178c6]/80 hover:text-[#3178c6] hover:shadow-[0_0_20px_rgba(49,120,198,0.2)]" },
     { name: "Electron", icon: "electron", color: "#47848f", description: "Framework for building cross-platform desktop apps using web technologies.", hoverStyle: "hover:bg-[#47848f]/15 hover:border-[#47848f]/80 hover:text-[#47848f] hover:shadow-[0_0_20px_rgba(71,132,143,0.2)]" },
     { name: "TailwindCSS", icon: "tailwindcss", color: "#38bdf8", description: "Utility-first CSS framework for rapid and responsive UI development.", hoverStyle: "hover:bg-[#38bdf8]/15 hover:border-[#38bdf8]/80 hover:text-[#38bdf8] hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]" },
-    { name: "CSS3", icon: "css", color: "#1572b6", description: "Cascading Style Sheets for describing the presentation of web pages.", hoverStyle: "hover:bg-[#1572b6]/15 hover:border-[#1572b6]/80 hover:text-[#1572b6] hover:shadow-[0_0_20px_rgba(21,114,182,0.2)]" },
     { name: "Svelte", icon: "svelte", color: "#ff3e00", description: "Compiler-based framework that compiles components to tiny, vanilla JavaScript.", hoverStyle: "hover:bg-[#ff3e00]/15 hover:border-[#ff3e00]/80 hover:text-[#ff3e00] hover:shadow-[0_0_20px_rgba(255,62,0,0.2)]" },
     { name: "React Native", icon: "react", color: "#61dafb", description: "Framework for building native mobile applications using React.", hoverStyle: "hover:bg-[#61dafb]/15 hover:border-[#61dafb]/80 hover:text-[#61dafb] hover:shadow-[0_0_20px_rgba(97,218,251,0.2)]" },
     { name: "Expo", icon: "expo", color: "#e2e8f0", description: "Platform and ecosystem for universal React applications running on Android, iOS, and web.", hoverStyle: "hover:bg-foreground/10 hover:border-foreground/80 hover:text-foreground hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]", iconClass: "dark:invert" },
-    { name: "GitHub", icon: "github", color: "#e2e8f0", description: "World's leading AI-powered developer platform to build, scale, and deliver secure software.", hoverStyle: "hover:bg-foreground/10 hover:border-foreground/80 hover:text-foreground hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]", iconClass: "dark:invert" },
-    { name: "HTML5", icon: "html", color: "#e34f26", description: "Standard markup language for structure and content presentation on the World Wide Web.", hoverStyle: "hover:bg-[#e34f26]/15 hover:border-[#e34f26]/80 hover:text-[#e34f26] hover:shadow-[0_0_20px_rgba(227,79,38,0.2)]" },
     { name: "PostgreSQL", icon: "postgresql", color: "#4169e1", description: "Powerful, open-source object-relational database system.", hoverStyle: "hover:bg-[#4169e1]/15 hover:border-[#4169e1]/80 hover:text-[#4169e1] hover:shadow-[0_0_20px_rgba(65,105,225,0.2)]" },
     { name: "SQLite", icon: "sqlite", color: "#003b57", description: "Lightweight, serverless, self-contained SQL database engine.", hoverStyle: "hover:bg-[#003b57]/15 hover:border-[#003b57]/80 hover:text-[#003b57] hover:shadow-[0_0_20px_rgba(0,59,87,0.2)]" },
     { name: "Supabase", icon: "supabase", color: "#3ecf8e", description: "Open-source Firebase alternative providing database, auth, and real-time APIs.", hoverStyle: "hover:bg-[#3ecf8e]/15 hover:border-[#3ecf8e]/80 hover:text-[#3ecf8e] hover:shadow-[0_0_20px_rgba(62,207,142,0.2)]" },
@@ -141,6 +137,7 @@
   <div class="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
   <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
   <div 
     bind:this={container}
     class={cn(
@@ -155,7 +152,7 @@
     onmouseenter={pauseScrolling}
     onmouseleave={resumeScrolling}
   >
-    {#each repeatedTools as tool, idx}
+    {#each repeatedTools as tool}
       <!-- svelte-ignore a11y_no_static_element_interactions -->
       <span
         class={cn(

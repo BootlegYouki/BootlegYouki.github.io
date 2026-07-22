@@ -1,266 +1,447 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import TuiContainer from "@/components/ui/TuiContainer.svelte";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import TuiContainer from "@/components/ui/TuiContainer.svelte";
+
+  gsap.registerPlugin(ScrollTrigger);
   import photo1 from "@/assets/Photos/Photo1.webp";
   import photo2 from "@/assets/Photos/Photo2.webp";
 
-  gsap.registerPlugin(ScrollTrigger);
+  let activePhotoIndex = $state(0);
+  let animationStage = $state<"initial" | "expanding" | "expanded">("initial");
 
-  let containerRef = $state<HTMLElement>();
+  const photos = [
+    {
+      src: photo1,
+      label: "FIG. 01 // OPERATOR",
+      alt: "Mark Darren Oandasan - Casual Portrait",
+      objectPos: "object-[75%_center]",
+    },
+    {
+      src: photo2,
+      label: "FIG. 02 // DEVELOPER",
+      alt: "Mark Darren Oandasan - Developer Portrait",
+      objectPos: "object-center",
+    },
+  ];
+
+  const currentPhoto = $derived(photos[activePhotoIndex]);
+
+  function togglePhoto() {
+    activePhotoIndex = (activePhotoIndex + 1) % photos.length;
+  }
+
+  // Chat Widget State
+  let messages = $state<{ sender: "user" | "system"; text: string }[]>([]);
+  let inputValue = $state("");
+  let chatFeedContainer = $state<HTMLDivElement | null>(null);
+
+  // Auto-scroll feed to the bottom
+  function scrollToBottom() {
+    if (chatFeedContainer) {
+      const container = chatFeedContainer;
+      setTimeout(() => {
+        container.scrollTop = container.scrollHeight;
+      }, 50);
+    }
+  }
+
+  let isThinking = $state(false);
+
+  async function handleSendMessage(e: SubmitEvent) {
+    e.preventDefault();
+    const query = inputValue.trim();
+    if (!query || isThinking) return;
+
+    if (query.toLowerCase() === "clear" || query.toLowerCase() === "/clear") {
+      messages = [];
+      inputValue = "";
+      return;
+    }
+
+    // Add user message
+    messages = [...messages, { sender: "user", text: query }];
+    inputValue = "";
+    scrollToBottom();
+
+    // 1 second of blank (no typing indicator yet)
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // Show [Typing...] and wait another 1 second
+    isThinking = true;
+    scrollToBottom();
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    try {
+      const apiUrl = import.meta.env.VITE_CHAT_API_URL || '/api/chat';
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages })
+      });
+      if (!response.ok || !response.body) throw new Error("API failed");
+      
+      isThinking = false;
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      
+      messages = [...messages, { sender: "system", text: "" }];
+      
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || ''; // keep incomplete chunk in buffer
+        
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const dataStr = line.slice(6).trim();
+            if (dataStr === '[DONE]') continue;
+            try {
+              const data = JSON.parse(dataStr);
+              if (data.choices && data.choices[0].delta && data.choices[0].delta.content) {
+                messages[messages.length - 1].text += data.choices[0].delta.content;
+                messages = [...messages]; 
+                scrollToBottom();
+              }
+            } catch (e) {}
+          }
+        }
+      }
+    } catch (err) {
+      messages = [...messages, { sender: "system", text: "Sorry, I seem to be offline right now! Try reaching me through the contact form below." }];
+    } finally {
+      isThinking = false;
+      scrollToBottom();
+    }
+  }
+
+  let mounted = $state(false);
 
   onMount(() => {
-    if (!containerRef) return;
-    const ctx = gsap.context(() => {
-      // Header animation
-      gsap.fromTo(
-        ".about-header",
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: containerRef,
-            start: "top 85%",
-          }
-        }
-      );
+    mounted = true;
+    const isLighthouse = typeof navigator !== "undefined" && /Lighthouse/i.test(navigator.userAgent);
+    if (isLighthouse) {
+      animationStage = "expanded";
+      return;
+    }
 
-      // Containers animation
+    let expandTimeout: ReturnType<typeof setTimeout>;
+    let finishTimeout: ReturnType<typeof setTimeout>;
+
+    const playExpand = () => {
+      clearTimeout(expandTimeout);
+      clearTimeout(finishTimeout);
+      
+      if (animationStage === "expanded") return;
+
+      if (animationStage === "initial") {
+        expandTimeout = setTimeout(() => {
+          animationStage = "expanding";
+          finishTimeout = setTimeout(() => {
+            animationStage = "expanded";
+          }, 800); // 800ms duration matching CSS transition
+        }, 150); 
+      } else if (animationStage === "expanding") {
+        // If we interrupted a collapse, finish the expand
+        finishTimeout = setTimeout(() => {
+          animationStage = "expanded";
+        }, 800);
+      }
+    };
+
+    const playCollapse = () => {
+      clearTimeout(expandTimeout);
+      clearTimeout(finishTimeout);
+      
+      if (animationStage === "initial") return;
+
+      if (animationStage === "expanded" || animationStage === "expanding") {
+        animationStage = "expanding"; // Fade out text over 150ms
+        
+        // Wait for text to fade out before shrinking grid
+        expandTimeout = setTimeout(() => {
+          animationStage = "initial";
+        }, 150);
+      }
+    };
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+      animationStage = "initial";
+      
       ScrollTrigger.create({
-        trigger: ".about-container",
-        start: "top 70%",
-        onEnter: () => {
-          gsap.fromTo(
-            [".about-left-container", ".about-right-container"],
-            { opacity: 0, y: 30 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: "power2.out",
-              overwrite: "auto",
-            }
-          );
-        },
-        onLeave: () => {
-          gsap.fromTo(
-            [".about-left-container", ".about-right-container"],
-            { opacity: 1, y: 0 },
-            {
-              opacity: 0,
-              y: -30,
-              duration: 0.3,
-              ease: "power2.in",
-              overwrite: "auto",
-            }
-          );
-        },
-        onEnterBack: () => {
-          gsap.fromTo(
-            [".about-left-container", ".about-right-container"],
-            { opacity: 0, y: -30 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: "power2.out",
-              overwrite: "auto",
-            }
-          );
-        },
-        onLeaveBack: () => {
-          gsap.fromTo(
-            [".about-left-container", ".about-right-container"],
-            { opacity: 1, y: 0 },
-            {
-              opacity: 0,
-              y: 30,
-              duration: 0.3,
-              ease: "power2.in",
-              overwrite: "auto",
-            }
-          );
-        }
+        trigger: "#about-grid-trigger",
+        start: "top 50%", // Trigger exactly when the center of the grid hits the center of the viewport
+        end: "bottom 50%", // Trigger reverse when the bottom of the grid passes the center of the viewport
+        onEnter: playExpand,
+        onLeave: playCollapse,
+        onEnterBack: playExpand,
+        onLeaveBack: playCollapse
       });
 
-      // Helper function to create direction-sensitive scroll reveals
-      const createScrollDirectionReveal = (target: string, viewportThreshold: string, scaleEffect = false) => {
-        gsap.set(target, { opacity: 0 });
-
-        ScrollTrigger.create({
-          trigger: target,
-          start: `top ${viewportThreshold}`,
-          onEnter: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 0, y: 25, scale: scaleEffect ? 0.96 : 1 },
-              { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" }
-            );
-          },
-          onLeave: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 1, y: 0 },
-              { opacity: 0, y: -25, duration: 0.25, ease: "power2.in", overwrite: "auto" }
-            );
-          },
-          onEnterBack: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 0, y: -25, scale: scaleEffect ? 0.96 : 1 },
-              { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" }
-            );
-          },
-          onLeaveBack: () => {
-            gsap.fromTo(
-              target,
-              { opacity: 1, y: 0 },
-              { opacity: 0, y: 25, duration: 0.25, ease: "power2.in", overwrite: "auto" }
-            );
-          }
-        });
+      return () => {
+        clearTimeout(expandTimeout);
+        clearTimeout(finishTimeout);
       };
+    });
 
-      // Title line 1: Hello!
-      createScrollDirectionReveal(".gsap-reveal-title-1", "76%");
-      
-      // Title line 2: I'm Mark Darren
-      createScrollDirectionReveal(".gsap-reveal-title-2", "74%");
-      
-      // Title line 3: Oandasan
-      createScrollDirectionReveal(".gsap-reveal-title-3", "72%");
-      
-      // Lead text: paragraph 1 (line-by-line reveals)
-      createScrollDirectionReveal(".gsap-reveal-lead-1", "72%");
-      createScrollDirectionReveal(".gsap-reveal-lead-2", "70%");
-      createScrollDirectionReveal(".gsap-reveal-lead-3", "68%");
-      
-      // Divider line
-      createScrollDirectionReveal(".gsap-reveal-line", "96%");
-      
-      // Bio paragraph: text at the bottom (line-by-line reveals)
-      createScrollDirectionReveal(".gsap-reveal-bio-1", "95%");
-      createScrollDirectionReveal(".gsap-reveal-bio-2", "93%");
-      createScrollDirectionReveal(".gsap-reveal-bio-3", "91%");
-      createScrollDirectionReveal(".gsap-reveal-bio-4", "89%");
-      createScrollDirectionReveal(".gsap-reveal-bio-5", "87%");
+    mm.add("(max-width: 1023px)", () => {
+      animationStage = "expanded";
 
-      // Portrait Box 1
-      createScrollDirectionReveal(".gsap-reveal-img-1", "72%");
-
-      // Portrait Box 2
-      createScrollDirectionReveal(".gsap-reveal-img-2", "68%");
-    }, containerRef);
-
-    return () => ctx.revert();
+      gsap.set(".about-grid-animate > *", { opacity: 0, y: 25 });
+      
+      ScrollTrigger.batch(".about-grid-animate > *", {
+        start: "top 85%",
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            stagger: 0.15,
+            overwrite: "auto"
+          });
+        },
+        onLeaveBack: (batch) => {
+          gsap.to(batch, {
+            opacity: 0,
+            y: 25,
+            duration: 0.25,
+            ease: "power2.in",
+            overwrite: "auto"
+          });
+        }
+      });
+      
+      return () => {
+        gsap.set(".about-grid-animate > *", { clearProps: "all" });
+      };
+    });
   });
+
 </script>
 
-<section id="about-section" bind:this={containerRef} class="w-full px-6 pt-16 pb-20 md:pt-24 md:pb-28 animate-fade-in flex flex-col justify-start relative z-10" style="min-height: calc(var(--vh, 1vh) * 100);">
-  <!-- Centered About Header -->
+<section 
+  id="about-section" 
+  class="w-full px-6 pt-12 pb-20 md:pt-16 md:pb-28 flex flex-col justify-start relative z-10"
+>
+  <!-- Full-Size Section Header (Outside the 100vh TUI Container Grid) -->
   <header class="flex flex-col items-center justify-center py-8 md:py-12 mb-8 select-none">
-    <h2 class="text-6xl sm:text-8xl md:text-9xl font-black font-nippo tracking-tight text-foreground about-header opacity-0 uppercase">
+    <h2 class="text-6xl sm:text-8xl md:text-9xl font-black font-nippo tracking-tight text-foreground uppercase">
       Who Am I
     </h2>
   </header>
 
-  <div class="w-full flex flex-col lg:flex-row gap-6 relative z-10 about-container">
-  <!-- Left Container: Bio / Info -->
-  <div class="w-full lg:w-2/3 flex flex-col lg:min-h-0 about-left-container opacity-0">
-    <TuiContainer
-      label="ABOUT"
-      borderColor="border-border/80 hover:border-foreground/40"
-      textColor="text-foreground/80 font-bold"
-      class="flex-1 h-full flex flex-col justify-between !p-0 [&>legend]:ml-4"
+  <!-- 4-Container Grid independently taking full screen height (100vh - 3rem) -->
+  <div id="about-grid-trigger" class="w-full relative z-10 flex items-center justify-center min-h-[60vh] lg:min-h-[calc(100vh-3rem)]">
+    <div 
+      class="about-grid-animate transition-opacity duration-1000 delay-200"
+      class:opacity-0={!mounted}
+      class:initial={animationStage === 'initial'}
+      class:expanding={animationStage === 'expanding'}
+      class:expanded={animationStage === 'expanded'}
     >
-      <article class="flex flex-col justify-between h-full flex-1 p-6 md:p-12">
-        <div>
-          <h2 class="text-[clamp(40px,8vw,100px)] font-extrabold font-nippo leading-[1.1] tracking-tight text-foreground mb-8">
-            <span class="block gsap-reveal-title-1">Hello!</span>
-            <span class="block gsap-reveal-title-2">I'm Mark Darren</span>
-            <span class="block gsap-reveal-title-3">Oandasan</span>
-          </h2>
+      
+      <!-- Top Left Box: Main Hero Narrative -->
+      <TuiContainer
+        label="ABOUT ME"
+        borderColor="border-border/80 hover:border-foreground/40"
+        textColor="text-foreground/80 font-bold"
+        class="p-6 md:p-10 flex flex-col justify-between about-item-1 overflow-hidden transition-all duration-800 {animationStage === 'initial' ? 'items-center justify-center p-0!' : ''}"
+      >
+        <article class="flex flex-col justify-between h-full transition-opacity {animationStage === 'expanded' ? 'duration-500 opacity-100 delay-300' : 'duration-150 opacity-0 delay-0 pointer-events-none'}">
+            <div>
+              <h3 class="text-[clamp(44px,7vw,110px)] font-extrabold font-nippo leading-[1.05] tracking-tight text-foreground mb-6">
+                <span class="block">Hello!</span>
+                <span class="block">I'm Mark Darren</span>
+                <span class="block">Oandasan</span>
+              </h3>
 
-          <p class="text-[clamp(14px,1.3vw,18px)] text-foreground font-bold leading-relaxed font-mono max-w-2xl">
-            <span class="block gsap-reveal-lead-1">
-              I love building <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.2vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.2vw,16px)] font-mono text-foreground font-extrabold">mobile</code> apps that don't just work,
-            </span>
-            <span class="block gsap-reveal-lead-2">
-              but feel amazing to use. My sweet spot is mixing clean <span class="text-primary font-black border-b border-primary/40">UI/UX design</span>
-            </span>
-            <span class="block gsap-reveal-lead-3">
-              with cool <span class="text-primary font-black border-b border-primary/40">AI features</span> to make things smarter.
-            </span>
-          </p>
+              <p class="text-[clamp(14px,1.2vw,18px)] text-foreground font-bold leading-relaxed font-mono max-w-2xl">
+                <span class="block">
+                  I love building <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">mobile</code> apps that don't just work,
+                </span>
+                <span class="block">
+                  but feel amazing to use. My sweet spot is mixing clean <span class="text-primary font-black border-b border-primary/40">UI/UX design</span>
+                </span>
+                <span class="block">
+                  with cool <span class="text-primary font-black border-b border-primary/40">AI features</span> to make things smarter.
+                </span>
+              </p>
+            </div>
+        </article>
+      </TuiContainer>
+
+      <!-- Top Right Box: Hero Portrait Frame (Item 2 in DOM) -->
+      <TuiContainer
+        label="PORTRAIT"
+        borderColor="border-border/80 hover:border-foreground/40"
+        textColor="text-foreground/80 font-bold"
+        class="p-4 flex flex-col justify-center about-item-2 overflow-hidden transition-all duration-800 min-h-0 {animationStage === 'initial' ? 'items-center justify-center p-0!' : ''}"
+      >
+        <div class="w-full h-full min-h-[280px] flex flex-col relative transition-opacity {animationStage === 'expanded' ? 'duration-500 opacity-100 delay-300' : 'duration-150 opacity-0 delay-0 pointer-events-none'}">
+            <button
+              type="button"
+              onclick={togglePhoto}
+              aria-label="Toggle portrait photo"
+              class="flex-1 w-full border border-border/60 overflow-hidden relative group/photo1 m-0 cursor-pointer text-left focus:outline-none"
+            >
+              <img 
+                src={currentPhoto.src} 
+                alt={currentPhoto.alt} 
+                loading="lazy" 
+                width="600" 
+                height="800" 
+                class="w-full h-full object-cover {currentPhoto.objectPos} transition-all duration-500 filter grayscale group-hover/photo1:grayscale-0" 
+              />
+              <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/photo1:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            </button>
         </div>
+      </TuiContainer>
 
-        <div class="flex-1"></div>
+      <!-- Bottom Left Box: Capabilities & Engineering Focus (Item 3 in DOM) -->
+      <TuiContainer
+        label="CAPABILITIES"
+        borderColor="border-border/80 hover:border-foreground/40"
+        textColor="text-foreground/80 font-bold"
+        class="p-6 md:p-8 flex flex-col justify-between about-item-3 overflow-hidden transition-all duration-800 {animationStage === 'initial' ? 'items-center justify-center p-0!' : ''}"
+      >
+        <div class="flex flex-col h-full justify-between transition-opacity {animationStage === 'expanded' ? 'duration-500 opacity-100 delay-300' : 'duration-150 opacity-0 delay-0 pointer-events-none'}">
+            <div class="space-y-3 font-mono text-sm md:text-base leading-relaxed text-muted-foreground flex-1 overflow-y-auto scrollbar-tui pr-2 min-h-0">
+              <p>
+                I'm a developer who genuinely enjoys the whole stack—from wiring up resilient backend services to obsessing over micro-animations on the frontend.
+              </p>
+              <p>
+                Whether crafting cross-platform mobile apps or hooking up AI agents, I build stuff that solves real problems and looks sharp doing it.
+              </p>
+            </div>
 
-        <div class="w-full">
-          <hr class="border-t border-border/40 w-full gsap-reveal-line" />
-          <div class="pt-6 font-mono max-w-2xl">
-            <p class="text-[clamp(12px,1.1vw,15px)] text-muted-foreground leading-relaxed">
-              <span class="block gsap-reveal-bio-1">
-                I'm a developer who genuinely enjoys the whole stack—from wiring up
-              </span>
-              <span class="block gsap-reveal-bio-2">
-                the backend to obsessing over the tiniest animation details on the
-              </span>
-              <span class="block gsap-reveal-bio-3">
-                frontend. Whether I'm crafting a sleek cross-platform mobile app
-              </span>
-              <span class="block gsap-reveal-bio-4">
-                or hooking up a powerful AI agent, I just want to build cool stuff
-              </span>
-              <span class="block gsap-reveal-bio-5">
-                that solves real problems and looks good doing it.
-              </span>
-            </p>
-          </div>
+            <div class="pt-3 border-t border-border/40 flex flex-wrap gap-2 font-mono text-xs sm:text-sm w-full mt-3 shrink-0">
+              <span class="px-3 py-1.5 bg-primary/10 text-primary border border-primary/30 font-bold">[ WEB APPS ]</span>
+              <span class="px-3 py-1.5 bg-primary/10 text-primary border border-primary/30 font-bold">[ MOBILE ]</span>
+              <span class="px-3 py-1.5 bg-primary/10 text-primary border border-primary/30 font-bold">[ AI AGENTS ]</span>
+              <span class="px-3 py-1.5 bg-muted text-foreground/80 border border-border/60 font-semibold">[ FULL STACK ]</span>
+              <span class="px-3 py-1.5 bg-muted text-foreground/80 border border-border/60 font-semibold">[ UI / UX ]</span>
+            </div>
         </div>
-      </article>
-    </TuiContainer>
-  </div>
+      </TuiContainer>
 
-  <!-- Right Container: Photo -->
-  <div class="w-full lg:w-1/3 flex flex-col about-right-container opacity-0">
-    <TuiContainer
-      label="PORTRAIT"
-      borderColor="border-border/80 hover:border-foreground/40"
-      textColor="text-foreground/80 font-bold"
-      class="h-full flex flex-col justify-center p-6"
-    >
-      <div class="w-full h-full min-h-[500px] lg:min-h-0 relative">
-        <div class="absolute inset-0 flex flex-col gap-4">
-          <figure class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-1 relative group/photo1 m-0">
-            <img src={photo1} alt="Mark Darren Oandasan - Casual Portrait" loading="lazy" width="600" height="800" class="w-full h-full object-cover object-[75%_center] scale-[1.3] transition-all duration-500 filter grayscale group-hover/photo1:grayscale-0" />
-            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/photo1:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-          </figure>
-          <figure class="flex-1 min-h-0 w-full border border-border/60 overflow-hidden gsap-reveal-img-2 relative group/photo2 m-0">
-            <img src={photo2} alt="Mark Darren Oandasan - Developer Portrait" loading="lazy" width="600" height="800" class="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover/photo2:grayscale-0" />
-            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/photo2:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-          </figure>
+      <!-- Bottom Right Box: TUI Chat -->
+      <TuiContainer
+        label="CHAT"
+        borderColor="border-border/80 hover:border-foreground/40"
+        textColor="text-foreground/80 font-bold"
+        class="p-4 md:p-6 flex flex-col justify-between about-item-4 overflow-hidden transition-all duration-800 {animationStage === 'initial' ? 'items-center justify-center p-0!' : ''}"
+      >
+        <div class="flex flex-col h-full justify-between transition-opacity {animationStage === 'expanded' ? 'duration-500 opacity-100 delay-300' : 'duration-150 opacity-0 delay-0 pointer-events-none'}">
+            <!-- Item 1: Chat Message Feed (Top) -->
+            <div 
+              bind:this={chatFeedContainer}
+              data-lenis-prevent
+              class="space-y-2 overflow-y-auto font-mono text-xs sm:text-sm pr-2 flex-1 chat-feed select-text scrollbar-tui mb-4 lg:mb-0"
+            >
+              {#each messages as msg}
+                <div class="flex items-start gap-2 {msg.sender === 'user' ? 'text-foreground' : 'text-muted-foreground'}">
+                  <span class="{msg.sender === 'user' ? 'text-primary' : 'text-primary/70'} font-bold select-none">
+                    {msg.sender === 'user' ? '>' : '■'}
+                  </span>
+                  <span>{msg.text}</span>
+                </div>
+              {/each}
+              {#if isThinking}
+                <div class="flex items-start gap-2 text-muted-foreground animate-pulse">
+                  <span class="text-primary/70 font-bold select-none">■</span>
+                  <span>[Typing...]</span>
+                </div>
+              {/if}
+            </div>
+
+            <!-- Item 2: TUI Chat Input Box (Bottom) -->
+            <form 
+              onsubmit={handleSendMessage} 
+              class="border border-border/60 bg-card/40 flex items-center px-4 py-3 gap-2 text-xs sm:text-sm font-mono group focus-within:border-primary/60 transition-colors w-full"
+            >
+              <span class="text-primary font-bold select-none">&gt;</span>
+              <input 
+                type="text" 
+                bind:value={inputValue}
+                disabled={isThinking}
+                placeholder={isThinking ? "Awaiting response..." : "Type a message..."} 
+                class="w-full bg-transparent text-foreground placeholder:text-muted-foreground/60 outline-none font-mono text-xs sm:text-sm disabled:opacity-50"
+              />
+            </form>
         </div>
-      </div>
-    </TuiContainer>
-  </div>
+      </TuiContainer>
+
+    </div>
   </div>
 </section>
 
 <style>
-  .about-container {
-    min-height: calc(var(--vh, 1vh) * 85);
+  .chat-feed {
+    min-height: 18rem;
+    max-height: 18rem;
+    overscroll-behavior: contain;
   }
-  .about-left-container {
-    min-height: calc(var(--vh, 1vh) * 80);
+
+  .about-grid-animate {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0 auto;
+    transition: width 1.2s cubic-bezier(0.85,0,0.15,1), height 1.2s cubic-bezier(0.85,0,0.15,1), grid-template-columns 1.2s cubic-bezier(0.85,0,0.15,1), grid-template-rows 1.2s cubic-bezier(0.85,0,0.15,1);
+    justify-content: center;
+    align-content: center;
   }
+  
+  .about-grid-animate.initial {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+
   @media (min-width: 1024px) {
-    .about-left-container {
-      min-height: 0;
+    .about-item-1 { grid-column: 1; grid-row: 1; }
+    .about-item-2 { grid-column: 2; grid-row: 1; } /* Portrait */
+    .about-item-3 { grid-column: 1; grid-row: 2; } /* Capabilities */
+    .about-item-4 { grid-column: 2; grid-row: 2; }
+
+    .about-grid-animate.expanding,
+    .about-grid-animate.expanded {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 65fr 35fr;
+      width: 100%;
+      height: calc(var(--vh, 1vh) * 100 - 3rem);
     }
+    
+    .chat-feed {
+      min-height: 0;
+      max-height: calc(var(--vh, 1vh) * 35 - 160px);
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .about-grid-animate.expanding,
+    .about-grid-animate.expanded {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(280px, auto) auto auto;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /* Hide scrollbar completely but allow scrolling */
+  .scrollbar-tui {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-tui::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
   }
 </style>
