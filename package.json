@@ -9,10 +9,7 @@
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,svelte}\"",
     "typecheck": "svelte-check && tsc --noEmit",
-    "preview": "vite preview",
-    "rm-template": "node scripts/rm-template.js",
-    "int-template": "node scripts/int-template.js",
-    "init-template": "node scripts/int-template.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
