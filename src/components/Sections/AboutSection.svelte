@@ -394,7 +394,7 @@
     display: grid;
     gap: 1.5rem;
     margin: 0 auto;
-    transition: width 1.2s cubic-bezier(0.85,0,0.15,1), height 1.2s cubic-bezier(0.85,0,0.15,1), grid-template-columns 1.2s cubic-bezier(0.85,0,0.15,1), grid-template-rows 1.2s cubic-bezier(0.85,0,0.15,1);
+    transition: width 0.8s cubic-bezier(0.85,0,0.15,1), height 0.8s cubic-bezier(0.85,0,0.15,1), grid-template-columns 0.8s cubic-bezier(0.85,0,0.15,1), grid-template-rows 0.8s cubic-bezier(0.85,0,0.15,1);
     justify-content: center;
     align-content: center;
   }

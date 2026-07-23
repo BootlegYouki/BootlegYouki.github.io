@@ -271,3 +271,10 @@ html {
   height: 0;
 }
 
+/* Prevent iOS / Mobile Safari automatic page zoom on input focus */
+/* Prevent iOS / Mobile Safari automatic page zoom on input focus */
+@media (max-width: 767px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
