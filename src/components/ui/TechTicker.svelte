@@ -99,6 +99,11 @@
     updateWidths();
     window.addEventListener("resize", updateWidths);
     
+    let isRevealing = true;
+    const revealTimer = setTimeout(() => {
+      isRevealing = false;
+    }, 1000); // Wait for the slide-down-reveal animation
+
     let lastTime = performance.now();
     let frameId: number;
 
@@ -108,7 +113,7 @@
       const delta = time - lastTime;
       lastTime = time;
 
-      if (!isPaused && !isDragging && singleWidth > 0) {
+      if (!isPaused && !isDragging && singleWidth > 0 && !isRevealing) {
         // Match the original 80s linear marquee speed: (2 * singleWidth) / 80000 ms
         const speed = (2 * singleWidth) / 80000;
         position -= speed * delta;
@@ -125,6 +130,7 @@
     return () => {
       window.removeEventListener("resize", updateWidths);
       cancelAnimationFrame(frameId);
+      clearTimeout(revealTimer);
     };
   });
 </script>

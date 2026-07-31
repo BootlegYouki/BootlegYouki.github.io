@@ -4,6 +4,7 @@
   import Separator from "@/components/ui/Separator.svelte"
   import { theme, setTheme } from "@/components/theme-provider"
   import FlickerSpinner from "@/components/ui/FlickerSpinner.svelte"
+  import TechTicker from "@/components/ui/TechTicker.svelte"
 
   const isLighthouse = typeof navigator !== "undefined" && /Lighthouse/i.test(navigator.userAgent);
   let time = $state("")
@@ -64,11 +65,11 @@
     }
   })
 
-  let containerClasses = $derived(
+  const containerClasses = $derived(
     animationStage === "initial"
-      ? "w-32 h-32 md:w-40 md:h-40 flex items-center justify-center transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)] opacity-0 animate-fade-in [animation-delay:800ms]"
+      ? "w-32 h-32 md:w-40 md:h-40 flex items-center justify-center transition-all duration-800 ease-[cubic-bezier(0.85,0,0.15,1)] opacity-0 animate-fade-in [animation-delay:800ms]"
       : animationStage === "expanding"
-        ? "w-full shrink-0 flex flex-col transition-[width,height] duration-800 ease-[cubic-bezier(0.85,0,0.15,1)]"
+        ? "w-full shrink-0 flex flex-col transition-all duration-800 ease-[cubic-bezier(0.85,0,0.15,1)]"
         : "w-full shrink-0 flex flex-col"
   )
 </script>
@@ -76,7 +77,7 @@
 <section
   id="intro"
   aria-label="Introduction"
-  class="w-full flex items-center justify-center p-6 relative"
+  class="w-full flex items-center justify-center p-6 relative overflow-hidden"
   style="min-height: calc(var(--vh, 1vh) * 100);"
 >
   {#if animationStage === "initial"}
@@ -93,10 +94,10 @@
     label="INTRO"
     borderColor="border-border/80 hover:border-foreground/40"
     textColor="text-foreground/80 font-bold"
-    class="{containerClasses} p-0!"
+    class="{containerClasses} p-0! relative z-20"
     style={animationStage !== "initial"
-      ? "height: calc(var(--vh, 1vh) * 100 - 3rem);"
-      : ""}
+      ? "height: calc(var(--vh, 1vh) * 100 - 9rem); transform: translateY(-3rem);"
+      : "transform: translateY(0);"}
   >
     {#if animationStage === "expanded"}
       <div class="flex flex-col justify-between h-full flex-1 p-6 md:p-12 lg:p-16">
@@ -344,6 +345,12 @@
       </div>
     {/if}
   </TuiContainer>
+
+  {#if animationStage === "expanded"}
+    <div class="absolute bottom-0 left-0 w-full animate-slide-down-reveal z-10">
+      <TechTicker />
+    </div>
+  {/if}
 </section>
 
 <style>

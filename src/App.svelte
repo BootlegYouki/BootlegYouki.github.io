@@ -4,7 +4,6 @@
   import ScrollToTop from "@/components/ui/ScrollToTop.svelte";
   import MouseTrail from "@/components/ui/MouseTrail.svelte";
   import IntroSection from "@/components/Sections/IntroSection.svelte";
-  import TechTicker from "@/components/ui/TechTicker.svelte";
   import ProjectsSection from "@/components/Sections/ProjectsSection.svelte";
   import AboutSection from "@/components/Sections/AboutSection.svelte";
   import ConceptSection from "@/components/Sections/ConceptSection.svelte";
@@ -94,7 +93,6 @@
   <main class="w-full p-0 flex flex-col">
     <IntroSection />
     <div class="transition-opacity duration-500 {introExpanded ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none max-h-0 overflow-hidden'}">
-      <TechTicker />
       <ProjectsSection />
       <AboutSection />
       <ConceptSection />
