@@ -17,7 +17,7 @@ I am used to working across the entire stack, from frontend micro-animations to 
 3. Student Management System (SET-2): A massive SvelteKit + Electron school system with dual AI engines (OpenRouter & Google AI) for grade analytics.
 4. BYD Clothing E-Commerce: A premium streetwear e-commerce platform (PHP/JS) with an AI Chatbot and Leaflet Maps.
 5. Vaultleg & BootSked: Offline-first native mobile apps (React Native) for finance management and scheduling, featuring custom TUI design and GitHub Gist sync.
-6. BootHub: A cross-platform clipboard ecosystem (Tauri Desktop + React Native Mobile) syncing via Google Drive API.
+6. BootHub: A cross-platform clipboard ecosystem (Tauri Desktop + React Native Mobile) syncing via a custom P2P local network engine.
 7. Kwiz: An AI-powered educational ecosystem (Mistral AI) that generates quizzes from PDFs.
 8. AI Portfolio: The very site you are on now! Built with Svelte, GSAP micro-animations, and Vercel Serverless.`,
 

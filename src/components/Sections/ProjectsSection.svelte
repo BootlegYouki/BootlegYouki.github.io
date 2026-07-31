@@ -180,7 +180,7 @@
       name: "BootHub",
       tags: ["MOBILE", "DESKTOP", "UTILITY"],
       description:
-        "I built this during the same <strong>summer break</strong> right after finishing BootSked. I wanted my own personalized clipboard ecosystem where I could instantly dump files, links, images, and text without relying on third-party apps. To make it truly seamless, I built a companion <strong>desktop client</strong> using <strong>Tauri v2</strong> so everything syncs directly to my PC. It's powered by a custom <strong>bidirectional synchronization engine</strong> running over the <strong>Google Drive API (OAuth2)</strong> to replicate <strong>folder structures, clipboard histories, and binary assets</strong> across devices. Getting the <strong>native iOS share extension</strong> to work required some extensive research, and nailing down a consistent zoom animation for the photo viewer was surprisingly tough, but the end result is incredibly smooth.",
+        "I built this during the same <strong>summer break</strong> right after finishing BootSked. I wanted my own personalized clipboard ecosystem where I could instantly dump files, links, images, and text without relying on third-party apps. To make it truly seamless, I built a companion <strong>desktop client</strong> using <strong>Tauri v2</strong> so everything syncs directly to my PC. It's powered by a custom <strong>bidirectional peer-to-peer (P2P) synchronization engine</strong> running over the <strong>local network</strong> to replicate <strong>folder structures, clipboard histories, and binary assets</strong> across devices. Getting the <strong>native iOS share extension</strong> to work required some extensive research, and nailing down a consistent zoom animation for the photo viewer was surprisingly tough, but the end result is incredibly smooth.",
       status: "ONLINE",
       stack: [
         "Tauri v2",
@@ -188,8 +188,7 @@
         "Expo",
         "React 19",
         "TypeScript",
-        "Google Drive API",
-        "OAuth2",
+        "P2P Sync",
         "TailwindCSS",
       ],
       images: [
