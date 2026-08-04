@@ -19,7 +19,8 @@ I am used to working across the entire stack, from frontend micro-animations to 
 5. Vaultleg & BootSked: Offline-first native mobile apps (React Native) for finance management and scheduling, featuring custom TUI design and GitHub Gist sync.
 6. BootHub: A cross-platform clipboard ecosystem (Tauri Desktop + React Native Mobile) syncing via a custom P2P local network engine.
 7. Kwiz: An AI-powered educational ecosystem (Mistral AI) that generates quizzes from PDFs.
-8. AI Portfolio: The very site you are on now! Built with Svelte, GSAP micro-animations, and Vercel Serverless.`,
+8. AI Portfolio: The very site you are on now! Built with Svelte, GSAP micro-animations, and Vercel Serverless.
+9. AutoPassport Extension: A Chrome Extension to automate Philippine DFA passport applications. Uses Mistral AI to parse and correct messy template text into structured JSON, and includes a background scanning system to notify users of available appointment slots.`,
 
   contact: `You can reach me by using the contact form at the bottom of the page, or check out my social links (GitHub, LinkedIn) down there as well. I'm always open to discussing new opportunities or collaborations!`
 };

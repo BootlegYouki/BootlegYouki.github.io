@@ -58,3 +58,7 @@ A streetwear e-commerce platform with customer support AI chatbots and interacti
 ### 8. Marigold Video Scanner
 Bespoke client workflow automation mobile app to scan barcodes, record videos, and stamp metadata in real-time.
 - **Stack:** React Native, Expo, Kotlin (native Android vision modification), Google Drive API
+
+### 9. AutoPassport Extension
+A Chrome Extension to automate the tedious process of filling out Philippine DFA passport application forms and monitoring appointment slots. Uses Mistral AI to parse and correct messy template text into structured JSON. Includes a Scan Sites system to cycle through DFA locations and notify users of available slots.
+- **Stack:** React, TypeScript, Vite, TailwindCSS, Chrome Extension API, Mistral AI API, Content Scripts
