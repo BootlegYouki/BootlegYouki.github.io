@@ -268,6 +268,27 @@
         "/projects/08/1000038439-portrait.webp",
       ],
     },
+    {
+      id: "09",
+      name: "AutoPassport Extension",
+      tags: ["EXTENSION", "AUTOMATION", "AI"],
+      description:
+        "I developed this <strong>Chrome Extension</strong> to automate the tedious process of filling out Philippine DFA passport application forms and monitoring appointment slots. The extension features two main tabs: an <strong>Autofill Panel</strong> and a <strong>Scan Sites Panel</strong>. The autofill system uses a local parser combined with <strong>Mistral AI</strong> to parse and correct messy, free-form template text (like mismatched dates, missing fields, or misplaced address details) and standardizes them into structured JSON before injecting them into the DFA forms. The Scan Sites system allows users to configure a checklist of DFA locations and a target date range, then cycles through them in the background to automatically identify and notify the user of newly available appointment slots. Overcoming the limits of browser extensions, such as cross-script asynchronous messaging and service-worker lifecycle constraints, was an excellent engineering challenge.",
+      status: "ONLINE",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "TailwindCSS",
+        "Chrome Extension API",
+        "Mistral AI API",
+        "Content Scripts",
+      ],
+      images: [
+        "/projects/09/AutoFill.png",
+        "/projects/09/Scan Sites.png",
+      ],
+    },
   ]
 
   let openProjectId = $state<string | null>(null)
@@ -322,6 +343,8 @@
       const remainder = total % 3
       if (remainder === 1 && index === total - 1) {
         classes.push("lg:col-span-3 md:col-span-2")
+      } else if (remainder === 0 && index === total - 1) {
+        classes.push("lg:col-span-1")
       }
     }
     return classes.join(" ")
