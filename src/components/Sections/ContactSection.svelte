@@ -408,7 +408,21 @@
           </div>
 
           <!-- Form Actions -->
-          <div class="flex items-center gap-6">
+          <div class="flex flex-col sm:flex-row items-end sm:items-center justify-end gap-4 sm:gap-6">
+            {#if submitSuccess}
+              <span
+                class="text-emerald-500 font-mono text-sm font-bold animate-fade-in text-right sm:text-left"
+              >
+                Got it! I'll get back to you as soon as possible after reading your message.
+              </span>
+            {/if}
+            {#if submitError}
+              <span
+                class="text-destructive font-mono text-sm font-bold animate-fade-in text-right sm:text-left"
+              >
+                {submitError}
+              </span>
+            {/if}
             <button
               type="submit"
               disabled={isSubmitting || cooldownRemaining > 0}
@@ -420,20 +434,6 @@
                   ? `COOLDOWN (${cooldownRemaining}s)`
                   : "SEND MESSAGE"}
             </button>
-            {#if submitSuccess}
-              <span
-                class="text-emerald-500 font-mono text-sm font-bold animate-fade-in"
-              >
-                Message sent successfully!
-              </span>
-            {/if}
-            {#if submitError}
-              <span
-                class="text-destructive font-mono text-sm font-bold animate-fade-in"
-              >
-                {submitError}
-              </span>
-            {/if}
           </div>
         </form>
       </TuiContainer>
