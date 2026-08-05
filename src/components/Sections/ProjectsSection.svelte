@@ -31,14 +31,13 @@
   const projects: Project[] = [
     {
       id: "01",
-      name: "BYD Clothing E-Commerce",
+      name: "BYD: Streetwear E-Commerce",
       tags: ["WEB", "E-COMMERCE", "AI INTEGRATION"],
       description:
         "I built <strong>Beyond Doubt Clothing (BYD)</strong> back in my <strong>second year of college</strong> as our core <strong>software engineering project</strong>. It's a full-fledged <strong>premium streetwear e-commerce</strong> platform designed with a casual but highly functional vibe. The site features an interactive <strong>shopping catalog</strong>, a dynamic <strong>shopping cart</strong>, and a secure <strong>checkout pipeline</strong>, all backed by a dedicated <strong>admin panel</strong> to manage inventory and keep track of orders. To push the boundaries of what we could do, we also integrated a custom <strong>AI Chatbot assistant</strong> to handle customer support, along with <strong>Leaflet Maps</strong> for precise <strong>delivery address selection</strong> during the signup process.",
       status: "ONLINE",
       stack: [
         "PHP",
-        "JavaScript",
         "Bootstrap",
         "Leaflet Maps",
         "AI Chatbot API",
@@ -69,7 +68,6 @@
       status: "ONLINE",
       stack: [
         "SvelteKit",
-        "Svelte 5",
         "Electron",
         "MongoDB",
         "OpenRouter API",
@@ -105,7 +103,7 @@
     },
     {
       id: "03",
-      name: "At iba pa POS and IMS",
+      name: "At Iba Pa: Local-First POS & IMS",
       tags: ["DESKTOP", "IMS", "TAURI"],
       description:
         "I built this for my <strong>SIA 2 project</strong>, which required us to work with an actual real-world client. I partnered with a local minimart and developed this dual-app <strong>desktop application</strong> using <strong>Tauri v2</strong> (Rust) and React to serve as their complete <strong>Cashier POS</strong> and <strong>Admin IMS</strong>. One of the toughest challenges was ensuring the two systems stayed synced in real-time. I ended up using an embedded <strong>local LAN server</strong> and <strong>Supabase cloud mirroring</strong>, all while keeping the checkout <strong>offline-first</strong>. I also integrated an <strong>Ollama-orchestrated AI assistant</strong> with <strong>agentic workflows</strong> for task automation. Getting the AI's <strong>tool calling</strong> to be consistent and dialing in the <strong>Retrieval-Augmented Generation (RAG)</strong> to accurately query their sales data was a massive headache, but it turned out to be an incredibly powerful feature.",
@@ -113,12 +111,10 @@
       stack: [
         "Tauri v2",
         "React",
-        "TypeScript",
         "Rust",
         "SQLite",
         "Supabase",
         "Ollama (Cloud Models)",
-        "pnpm",
       ],
       images: [
         "/projects/03/admin/admin dashboard.webp",
@@ -131,15 +127,13 @@
     },
     {
       id: "04",
-      name: "Vaultleg",
+      name: "Vaultleg: Retro Finance Tracker",
       tags: ["MOBILE", "FINANCE", "RETRO"],
       description:
         "I built this during the <strong>summer break before my fourth year</strong> as a personal utility app to securely manage my <strong>expenses, incomes, debts, and budgets</strong>. It actually started as a PWA, but once I discovered iOS sideloading, I realized I could use <strong>GitHub Actions</strong> to compile <strong>IPA files</strong> without needing a paid developer certificate. Figuring out GitHub Actions from scratch was definitely the hardest part, but this was the project that completely hooked me on <strong>native mobile development</strong>. I even built my own custom <strong>TUI (Terminal User Interface)</strong> inspired design system for it. It runs entirely <strong>offline-first</strong> using <strong>local storage</strong>, but features an automatic <strong>GitHub Gist synchronization</strong> to keep my data backed up. It's fully packaged in both <strong>IPA (iOS)</strong> and <strong>APK (Android)</strong> formats.",
       status: "ONLINE",
       stack: [
         "React Native",
-        "Expo",
-        "TypeScript",
         "AsyncStorage",
         "GitHub Gist Sync",
       ],
@@ -154,15 +148,13 @@
     },
     {
       id: "05",
-      name: "BootSked",
+      name: "BootSked: Daily Routine Scheduler",
       tags: ["MOBILE", "SCHEDULER", "RETRO"],
       description:
         "I built this <strong>offline-first mobile scheduler</strong> right after Vaultleg. Initially, I designed it to manage my school subjects, but since my fourth-year schedule didn't really need tracking, my girlfriend suggested turning it into a daily routine app instead—so I dedicated this project entirely to her! It allows users to schedule <strong>daily events, study sessions, workouts, and game times</strong> with custom parameters. Since I already had my custom TUI design system laid out from my previous project, the toughest part was figuring out how to get the <strong>Expo Notifications service</strong> to reliably trigger <strong>local push notifications, reminder alerts, and conflict warnings</strong> while completely offline. It's packaged and available in both <strong>IPA (iOS)</strong> and <strong>APK (Android)</strong> formats.",
       status: "ONLINE",
       stack: [
         "React Native",
-        "Expo",
-        "TypeScript",
         "Expo Notifications",
         "AsyncStorage",
       ],
@@ -177,7 +169,7 @@
     },
     {
       id: "06",
-      name: "BootHub",
+      name: "BootHub: P2P Clipboard Share",
       tags: ["MOBILE", "DESKTOP", "UTILITY"],
       description:
         "I built this during the same <strong>summer break</strong> right after finishing BootSked. I wanted my own personalized clipboard ecosystem where I could instantly dump files, links, images, and text without relying on third-party apps. To make it truly seamless, I built a companion <strong>desktop client</strong> using <strong>Tauri v2</strong> so everything syncs directly to my PC. It's powered by a custom <strong>bidirectional peer-to-peer (P2P) synchronization engine</strong> running over the <strong>local network</strong> to replicate <strong>folder structures, clipboard histories, and binary assets</strong> across devices. Getting the <strong>native iOS share extension</strong> to work required some extensive research, and nailing down a consistent zoom animation for the photo viewer was surprisingly tough, but the end result is incredibly smooth.",
@@ -185,11 +177,7 @@
       stack: [
         "Tauri v2",
         "React Native",
-        "Expo",
-        "React 19",
-        "TypeScript",
         "P2P Sync",
-        "TailwindCSS",
       ],
       images: [
         "/projects/06/desktop/image.webp",
@@ -224,7 +212,7 @@
     },
     {
       id: "07",
-      name: "Kwiz",
+      name: "Kwiz: AI-Powered Quiz Generator",
       tags: ["MOBILE", "DESKTOP", "AI"],
       description:
         "I also built this during my <strong>summer break</strong> because I really wanted to try making a mobile quiz app. It's an <strong>AI-powered educational ecosystem</strong> featuring both a <strong>Tauri v2 desktop client</strong> and an <strong>Expo React Native mobile app</strong>. It uses the <strong>Mistral AI API</strong> to automatically generate quizzes from <strong>text prompts or PDF attachments</strong> (using local text extraction). I even came up with a custom data format called <strong>TOON (Token-Oriented Object Notation)</strong> to minimize API token consumption, and added support for offline playback and sharing custom <strong>.kwiz files</strong>. Ironically, I realized halfway through that we wouldn't even have many quizzes in my fourth year, which was a bit of a bummer! Technically it was a pretty straightforward build, so my main challenge was just polishing the UX to make it feel as good as possible.",
@@ -232,12 +220,8 @@
       stack: [
         "Tauri v2",
         "React Native",
-        "Expo",
-        "React 19",
-        "TypeScript",
         "Mistral AI",
         "TOON Format",
-        "TailwindCSS",
       ],
       images: [
         "/projects/07/photo_1781868166488_0-portrait.webp",
@@ -250,18 +234,16 @@
     },
     {
       id: "08",
-      name: "Marigold Video Scanner",
+      name: "Marigold: Workflow Video Scanner",
       tags: ["MOBILE", "AUTOMATION", "CLIENT"],
       description:
         "I also built this during my <strong>summer break</strong>, but this time it was my first actual paid freelance gig! A friend referred me to a client, <strong>Marigold</strong>, who was struggling to organize the videos of their packing workflows. To solve this, I built them a bespoke <strong>offline-first mobile app</strong> using <strong>React Native and Expo</strong>. It leverages <strong>react-native-vision-camera</strong> to scan barcodes, automatically record the packing process, and then sync the dynamically renamed files to <strong>Google Drive</strong>. The hardest part was ditching FFmpeg post-processing in favor of engraving timestamps onto the video in real-time. I literally had to hack the core Kotlin files inside `node_modules` to get it working! It broke iOS compatibility, but since the client only uses Android phones, it was perfect. Overall, it was an amazing experience learning how to draft contracts and communicate with a client directly.",
       status: "ONLINE",
       stack: [
         "React Native",
-        "Expo",
         "Vision Camera",
         "Google Drive API",
         "MMKV",
-        "TypeScript",
       ],
       images: [
         "/projects/08/1000038438-portrait.webp",
@@ -270,16 +252,13 @@
     },
     {
       id: "09",
-      name: "AutoPassport Extension",
+      name: "AutoPassport: DFA Application Automator",
       tags: ["EXTENSION", "AUTOMATION", "AI"],
       description:
         "I developed this <strong>Chrome Extension</strong> to automate the tedious process of filling out Philippine DFA passport application forms and monitoring appointment slots. The extension features two main tabs: an <strong>Autofill Panel</strong> and a <strong>Scan Sites Panel</strong>. The autofill system uses a local parser combined with <strong>Mistral AI</strong> to parse and correct messy, free-form template text (like mismatched dates, missing fields, or misplaced address details) and standardizes them into structured JSON before injecting them into the DFA forms. The Scan Sites system allows users to configure a checklist of DFA locations and a target date range, then cycles through them in the background to automatically identify and notify the user of newly available appointment slots. Overcoming the limits of browser extensions, such as cross-script asynchronous messaging and service-worker lifecycle constraints, was an excellent engineering challenge.",
       status: "ONLINE",
       stack: [
         "React",
-        "TypeScript",
-        "Vite",
-        "TailwindCSS",
         "Chrome Extension API",
         "Mistral AI API",
         "Content Scripts",

@@ -15,21 +15,7 @@
     if (!containerRef) return
 
     const ctx = gsap.context(() => {
-      // Header animation
-      gsap.fromTo(
-        ".concept-header",
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: containerRef,
-            start: "top 85%",
-          },
-        }
-      )
+
 
       // Create a single timeline for the arrows so GSAP perfectly manages the playhead
       // This prevents animations from fighting if you scroll rapidly back and forth
@@ -132,7 +118,7 @@
     class="flex flex-col items-center justify-center py-8 md:py-12 mb-8 select-none"
   >
     <h2
-      class="text-6xl sm:text-8xl md:text-9xl font-black font-nippo tracking-tight text-foreground concept-header opacity-0"
+      class="text-6xl sm:text-8xl md:text-9xl font-black font-nippo tracking-tight text-foreground"
     >
       WORKFLOW
     </h2>
@@ -202,7 +188,7 @@
             Everything starts with a <span class="text-primary font-bold"
               >bottleneck</span
             >. Just shoot me a message and tell me what's
-            <span class="text-primary font-bold">slowing you down</span>, costing you money, or driving you crazy. Don't worry about
+            <span class="text-primary font-bold">slowing you down</span> or costing you money. Don't worry about
             the technical details yet—just explain the
             <span class="text-primary font-bold">core issue</span> you want fixed.
           </p>
@@ -271,12 +257,12 @@
               >launch day</span
             >, I'll handle the heavy lifting. You'll get a
             <span class="text-primary font-bold"
-              >fully polished app</span
+              >functional app</span
             >
             that actually solves the problem we talked about in step one,
             complete with a
             <span class="text-primary font-bold"
-              >super smooth user experience</span
+              >clean user experience</span
             >.
           </p>
         </article>

@@ -2,7 +2,7 @@
   import { onMount } from "svelte"
   import TuiContainer from "@/components/ui/TuiContainer.svelte"
   import Separator from "@/components/ui/Separator.svelte"
-  import { theme, setTheme } from "@/components/theme-provider"
+  import { resolvedTheme, toggleTheme } from "@/components/theme-provider"
   import FlickerSpinner from "@/components/ui/FlickerSpinner.svelte"
   import TechTicker from "@/components/ui/TechTicker.svelte"
 
@@ -176,11 +176,11 @@
                 <span>TIME: {time || "00:00:00"}</span>
                 <Separator orientation="vertical" class="h-4 bg-border/40" />
                 <button
-                  onclick={() => setTheme($theme === "dark" ? "light" : "dark")}
+                  onclick={toggleTheme}
                   class="text-[clamp(10px,0.9vw,13px)] text-muted-foreground hover:text-foreground font-mono transition-colors border border-border/40 hover:border-foreground/30 px-2 py-0.5 bg-card/30 hover:bg-card select-none cursor-pointer"
                   aria-label="Toggle theme"
                 >
-                  {$theme.toUpperCase()}
+                  {$resolvedTheme.toUpperCase()}
                 </button>
               </div>
             </nav>
@@ -255,11 +255,11 @@
               <!-- Row 3 Right: Toggle -->
               <div class="flex items-center justify-end">
                 <button
-                  onclick={() => setTheme($theme === "dark" ? "light" : "dark")}
+                  onclick={toggleTheme}
                   class="text-[10px] text-muted-foreground hover:text-foreground font-mono transition-colors border border-border/40 hover:border-foreground/30 px-2 py-0.5 bg-card/30 hover:bg-card select-none cursor-pointer"
                   aria-label="Toggle theme"
                 >
-                  {$theme.toUpperCase()}
+                  {$resolvedTheme.toUpperCase()}
                 </button>
               </div>
             </nav>

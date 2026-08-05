@@ -67,6 +67,9 @@ const initialTheme: Theme = (() => {
 })()
 
 export const theme: Writable<Theme> = writable(initialTheme)
+export const resolvedTheme: Writable<ResolvedTheme> = writable(
+  initialTheme === "system" ? getSystemTheme() : initialTheme
+)
 
 let userInitiated = false
 let isFirstMount = true
@@ -75,11 +78,12 @@ export function applyTheme(nextTheme: Theme, skipTransition = false) {
   if (typeof window === "undefined") return
 
   const root = document.documentElement
-  const resolvedTheme = nextTheme === "system" ? getSystemTheme() : nextTheme
+  const resolved = nextTheme === "system" ? getSystemTheme() : nextTheme
+  resolvedTheme.set(resolved)
 
   const updateTheme = () => {
     root.classList.remove("light", "dark")
-    root.classList.add(resolvedTheme)
+    root.classList.add(resolved)
   }
 
   const supportsViewTransition =
@@ -98,7 +102,7 @@ export function applyTheme(nextTheme: Theme, skipTransition = false) {
   }
 
   const currentResolvedTheme = root.classList.contains("dark") ? "dark" : "light"
-  if (currentResolvedTheme !== resolvedTheme) {
+  if (currentResolvedTheme !== resolved) {
     root.setAttribute("data-theme-direction", currentResolvedTheme === "dark" ? "to-light" : "to-dark")
   }
 
@@ -121,6 +125,15 @@ export function setTheme(nextTheme: Theme) {
   userInitiated = true
   localStorage.setItem(storageKey, nextTheme)
   theme.set(nextTheme)
+}
+
+export function toggleTheme() {
+  let currentTheme: Theme = "system"
+  theme.subscribe((t) => {
+    currentTheme = t
+  })()
+  const resolved = currentTheme === "system" ? getSystemTheme() : currentTheme
+  setTheme(resolved === "dark" ? "light" : "dark")
 }
 
 // Set up listeners (run in browser)

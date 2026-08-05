@@ -154,21 +154,6 @@
       }
     };
 
-    const playCollapse = () => {
-      clearTimeout(expandTimeout);
-      clearTimeout(finishTimeout);
-      
-      if (animationStage === "initial") return;
-
-      if (animationStage === "expanded" || animationStage === "expanding") {
-        animationStage = "expanding"; // Fade out text over 150ms
-        
-        // Wait for text to fade out before shrinking grid
-        expandTimeout = setTimeout(() => {
-          animationStage = "initial";
-        }, 150);
-      }
-    };
 
     let mm = gsap.matchMedia();
 
@@ -178,11 +163,8 @@
       ScrollTrigger.create({
         trigger: "#about-grid-trigger",
         start: "top 50%", // Trigger exactly when the center of the grid hits the center of the viewport
-        end: "bottom 50%", // Trigger reverse when the bottom of the grid passes the center of the viewport
         onEnter: playExpand,
-        onLeave: playCollapse,
-        onEnterBack: playExpand,
-        onLeaveBack: playCollapse
+        once: true
       });
 
       return () => {
@@ -198,6 +180,7 @@
       
       ScrollTrigger.batch(".about-grid-animate > *", {
         start: "top 85%",
+        once: true,
         onEnter: (batch) => {
           gsap.to(batch, {
             opacity: 1,
@@ -205,15 +188,6 @@
             duration: 0.6,
             ease: "power2.out",
             stagger: 0.15,
-            overwrite: "auto"
-          });
-        },
-        onLeaveBack: (batch) => {
-          gsap.to(batch, {
-            opacity: 0,
-            y: 25,
-            duration: 0.25,
-            ease: "power2.in",
             overwrite: "auto"
           });
         }
@@ -265,13 +239,13 @@
 
               <p class="text-[clamp(14px,1.2vw,18px)] text-foreground font-bold leading-relaxed font-mono max-w-2xl">
                 <span class="block">
-                  I love building <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">mobile</code> apps that don't just work,
+                  I build <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">mobile</code> applications focused on clean, intuitive
                 </span>
                 <span class="block">
-                  but feel amazing to use. My sweet spot is mixing clean <span class="text-primary font-black border-b border-primary/40">UI/UX design</span>
+                  <span class="text-primary font-black border-b border-primary/40">UI/UX design</span> and seamless <span class="text-primary font-black border-b border-primary/40">AI integrations</span> to deliver
                 </span>
                 <span class="block">
-                  with cool <span class="text-primary font-black border-b border-primary/40">AI features</span> to make things smarter.
+                  polished, user-first software solutions.
                 </span>
               </p>
             </div>
@@ -323,11 +297,11 @@
             </div>
 
             <div class="pt-3 border-t border-border/40 flex flex-wrap gap-2 font-mono text-xs sm:text-sm w-full mt-3 shrink-0">
-              <span class="px-3 py-1.5 bg-primary/10 text-primary border border-primary/30 font-bold">[ WEB APPS ]</span>
-              <span class="px-3 py-1.5 bg-primary/10 text-primary border border-primary/30 font-bold">[ MOBILE ]</span>
-              <span class="px-3 py-1.5 bg-primary/10 text-primary border border-primary/30 font-bold">[ AI AGENTS ]</span>
-              <span class="px-3 py-1.5 bg-muted text-foreground/80 border border-border/60 font-semibold">[ FULL STACK ]</span>
-              <span class="px-3 py-1.5 bg-muted text-foreground/80 border border-border/60 font-semibold">[ UI / UX ]</span>
+              <span class="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none">Web Apps</span>
+              <span class="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none">Mobile</span>
+              <span class="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none">AI Agents</span>
+              <span class="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none">Full Stack</span>
+              <span class="text-xs md:text-sm font-bold px-2.5 py-1 md:px-3.5 md:py-1.5 bg-card border border-border/60 text-foreground font-mono select-none">UI / UX</span>
             </div>
         </div>
       </TuiContainer>
