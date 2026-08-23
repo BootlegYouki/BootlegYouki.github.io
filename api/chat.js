@@ -90,14 +90,6 @@ function createSyntheticStream(text) {
 async function runAgent(apiMessages) {
   const providers = [];
   
-  if (process.env.GROQ_API_KEY) {
-    providers.push({
-      url: 'https://api.groq.com/openai/v1/chat/completions',
-      key: process.env.GROQ_API_KEY,
-      model: 'llama-3.3-70b-versatile',
-      name: 'Groq'
-    });
-  }
   if (process.env.MISTRAL_API_KEY) {
     providers.push({
       url: 'https://api.mistral.ai/v1/chat/completions',
