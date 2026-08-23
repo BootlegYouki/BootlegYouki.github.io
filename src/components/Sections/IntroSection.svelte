@@ -5,11 +5,8 @@
   import { resolvedTheme, toggleTheme } from "@/components/theme-provider"
   import FlickerSpinner from "@/components/ui/FlickerSpinner.svelte"
   import TechTicker from "@/components/ui/TechTicker.svelte"
-  import CvModal from "@/components/CvModal.svelte"
 
   const isLighthouse = typeof navigator !== "undefined" && /Lighthouse/i.test(navigator.userAgent);
-  let time = $state("")
-  let isCvModalOpen = $state(false)
   let animationStage = $state<"initial" | "expanding" | "expanded">(isLighthouse ? "expanded" : "initial")
 
   // Typed text animation states
@@ -18,22 +15,8 @@
   let showWordmark = $state(isLighthouse)
 
   onMount(() => {
-    const updateTime = () => {
-      const now = new Date()
-      time = now.toLocaleTimeString("en-US", {
-        hour12: false,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      })
-    }
-    updateTime()
-    const interval = setInterval(updateTime, 1000)
-
     if (isLighthouse) {
-      return () => {
-        clearInterval(interval);
-      };
+      return () => {};
     }
 
     // 1. Show the small box with loader for 1000ms, then expand
@@ -175,15 +158,17 @@
                 <span>LOCATION: Quezon City, Philippines</span>
               </div>
               <div class="flex items-center gap-6">
-                <button
-                  onclick={() => (isCvModalOpen = true)}
-                  class="hover:text-foreground transition-colors group flex items-center gap-1 cursor-pointer select-none text-[clamp(10px,0.9vw,13px)]"
-                  aria-label="Open Curriculum Vitae and Resume modal"
+                <a
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-foreground transition-colors group flex items-center gap-1 cursor-pointer select-none text-[clamp(10px,0.9vw,13px)] font-mono"
+                  aria-label="View Curriculum Vitae and Resume PDF"
                 >
                   <span class="text-primary font-bold">[</span>
                   <span class="font-bold underline underline-offset-4 decoration-border/60 group-hover:decoration-primary">CV / RESUME</span>
                   <span class="text-primary font-bold">]</span>
-                </button>
+                </a>
                 <Separator orientation="vertical" class="h-4 bg-border/40" />
                 <button
                   onclick={toggleTheme}
@@ -260,16 +245,18 @@
               <!-- Row 2 Right: Location -->
               <span class="text-right justify-self-end">QC, Philippines</span>
 
-              <!-- Row 3 Left: CV Button -->
-              <button
-                onclick={() => (isCvModalOpen = true)}
-                class="hover:text-foreground transition-colors group flex items-center gap-1 cursor-pointer select-none text-[11px] justify-self-start"
-                aria-label="Open Curriculum Vitae and Resume modal"
+              <!-- Row 3 Left: CV Link -->
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-foreground transition-colors group flex items-center gap-1 cursor-pointer select-none text-[11px] justify-self-start font-mono"
+                aria-label="View Curriculum Vitae and Resume PDF"
               >
                 <span class="text-primary font-bold">[</span>
                 <span class="font-bold underline underline-offset-4 decoration-border/60 group-hover:decoration-primary">CV / RESUME</span>
                 <span class="text-primary font-bold">]</span>
-              </button>
+              </a>
               <!-- Row 3 Right: Toggle -->
               <div class="flex items-center justify-end">
                 <button
@@ -369,8 +356,6 @@
       <TechTicker />
     </div>
   {/if}
-
-  <CvModal isOpen={isCvModalOpen} onClose={() => (isCvModalOpen = false)} />
 </section>
 
 <style>
