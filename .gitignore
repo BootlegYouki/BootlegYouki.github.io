@@ -39,3 +39,4 @@ FULL-AUDIT-REPORT.md
 SEO-REPORT.html
 
 .vercel
+.env*

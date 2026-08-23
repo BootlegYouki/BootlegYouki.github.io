@@ -74,7 +74,7 @@
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     try {
-      const apiUrl = import.meta.env.VITE_CHAT_API_URL || '/api/chat';
+      const apiUrl = import.meta.env.VITE_CHAT_API_URL || 'https://bootlegyouki-chat.vercel.app/api/chat';
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
