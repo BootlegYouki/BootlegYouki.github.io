@@ -94,7 +94,7 @@ async function runAgent(apiMessages) {
     providers.push({
       url: 'https://api.mistral.ai/v1/chat/completions',
       key: process.env.MISTRAL_API_KEY,
-      model: 'mistral-small-latest',
+      model: 'ministral-3b-latest',
       name: 'Mistral'
     });
   }
