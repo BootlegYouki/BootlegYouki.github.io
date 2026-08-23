@@ -32,6 +32,36 @@
     activePhotoIndex = (activePhotoIndex + 1) % photos.length;
   }
 
+  function renderMarkdown(raw: string): string {
+    if (!raw) return "";
+    let html = raw
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+    // Code blocks
+    html = html.replace(/```([\s\S]*?)```/g, '<pre class="bg-foreground/10 text-primary p-2 rounded text-xs font-mono my-1 overflow-x-auto"><code>$1</code></pre>');
+    // Inline code
+    html = html.replace(/`([^`\n]+)`/g, '<code class="bg-foreground/10 text-primary px-1 py-0.5 rounded text-[0.85em] font-mono">$1</code>');
+    // Bold + Italic
+    html = html.replace(/(\*\*\*|___)(.*?)\1/g, '<strong class="font-bold text-foreground"><em class="italic">$2</em></strong>');
+    // Bold
+    html = html.replace(/(\*\*|__)(.*?)\1/g, '<strong class="font-bold text-foreground">$2</strong>');
+    // Strikethrough
+    html = html.replace(/~~(.*?)~~/g, '<del class="line-through opacity-75">$1</del>');
+    // Italic
+    html = html.replace(/(^|[^\w*])\*([^*\n]+)\*(?=[^\w*]|$)/g, '$1<em class="italic text-foreground/90">$2</em>');
+    html = html.replace(/(^|[^\w_])_([^_\n]+)_(?=[^\w_]|$)/g, '$1<em class="italic text-foreground/90">$2</em>');
+    // Links
+    html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-2 hover:opacity-80">$1</a>');
+    // Line breaks
+    html = html.replace(/\n/g, '<br />');
+
+    return html;
+  }
+
   // Chat Widget State
   let messages = $state<{ sender: "user" | "system"; text: string }[]>([]);
   let inputValue = $state("");
@@ -325,7 +355,7 @@
                   <span class="{msg.sender === 'user' ? 'text-primary' : 'text-primary/70'} font-bold select-none">
                     {msg.sender === 'user' ? '>' : '■'}
                   </span>
-                  <span>{msg.text}</span>
+                  <span class="break-words leading-relaxed whitespace-pre-wrap flex-1">{@html renderMarkdown(msg.text)}</span>
                 </div>
               {/each}
               {#if isThinking}
