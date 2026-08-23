@@ -1,8 +1,8 @@
 {
-  "name": "bootlegyouki-chat",
   "framework": null,
   "installCommand": "echo \"Skipping install for API-only deployment\"",
   "buildCommand": "echo \"Skipping frontend build for API-only deployment\"",
+  "outputDirectory": "public",
   "redirects": [
     {
       "source": "/",

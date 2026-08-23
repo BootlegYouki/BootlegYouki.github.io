@@ -5,9 +5,11 @@
   import { resolvedTheme, toggleTheme } from "@/components/theme-provider"
   import FlickerSpinner from "@/components/ui/FlickerSpinner.svelte"
   import TechTicker from "@/components/ui/TechTicker.svelte"
+  import CvModal from "@/components/CvModal.svelte"
 
   const isLighthouse = typeof navigator !== "undefined" && /Lighthouse/i.test(navigator.userAgent);
   let time = $state("")
+  let isCvModalOpen = $state(false)
   let animationStage = $state<"initial" | "expanding" | "expanded">(isLighthouse ? "expanded" : "initial")
 
   // Typed text animation states
@@ -173,7 +175,15 @@
                 <span>LOCATION: Quezon City, Philippines</span>
               </div>
               <div class="flex items-center gap-6">
-                <span>TIME: {time || "00:00:00"}</span>
+                <button
+                  onclick={() => (isCvModalOpen = true)}
+                  class="hover:text-foreground transition-colors group flex items-center gap-1 cursor-pointer select-none text-[clamp(10px,0.9vw,13px)]"
+                  aria-label="Open Curriculum Vitae and Resume modal"
+                >
+                  <span class="text-primary font-bold">[</span>
+                  <span class="font-bold underline underline-offset-4 decoration-border/60 group-hover:decoration-primary">CV / RESUME</span>
+                  <span class="text-primary font-bold">]</span>
+                </button>
                 <Separator orientation="vertical" class="h-4 bg-border/40" />
                 <button
                   onclick={toggleTheme}
@@ -250,8 +260,16 @@
               <!-- Row 2 Right: Location -->
               <span class="text-right justify-self-end">QC, Philippines</span>
 
-              <!-- Row 3 Left: Time -->
-              <span class="text-left justify-self-start">TIME: {time || "00:00:00"}</span>
+              <!-- Row 3 Left: CV Button -->
+              <button
+                onclick={() => (isCvModalOpen = true)}
+                class="hover:text-foreground transition-colors group flex items-center gap-1 cursor-pointer select-none text-[11px] justify-self-start"
+                aria-label="Open Curriculum Vitae and Resume modal"
+              >
+                <span class="text-primary font-bold">[</span>
+                <span class="font-bold underline underline-offset-4 decoration-border/60 group-hover:decoration-primary">CV / RESUME</span>
+                <span class="text-primary font-bold">]</span>
+              </button>
               <!-- Row 3 Right: Toggle -->
               <div class="flex items-center justify-end">
                 <button
@@ -351,6 +369,8 @@
       <TechTicker />
     </div>
   {/if}
+
+  <CvModal isOpen={isCvModalOpen} onClose={() => (isCvModalOpen = false)} />
 </section>
 
 <style>
