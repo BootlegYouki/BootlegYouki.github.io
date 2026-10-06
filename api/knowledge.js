@@ -20,7 +20,8 @@ I am used to working across the entire stack, from frontend micro-animations to 
 6. BootHub: P2P Clipboard Share: A cross-platform clipboard ecosystem (Tauri Desktop + React Native Mobile) syncing via a custom P2P local network engine.
 7. Kwiz: AI-Powered Quiz Generator: An AI-powered educational ecosystem (Mistral AI) that generates quizzes from PDFs.
 8. AI Portfolio: The very site you are on now! Built with Svelte, GSAP micro-animations, and Vercel Serverless.
-9. AutoPassport: DFA Application Automator: A Chrome Extension to automate Philippine DFA passport applications. Uses Mistral AI to parse and correct messy template text into structured JSON, and includes a background scanning system to notify users of available appointment slots.`,
+9. AutoPassport: DFA Application Automator: A Chrome Extension to automate Philippine DFA passport applications. Uses Mistral AI to parse and correct messy template text into structured JSON, and includes a background scanning system to notify users of available appointment slots.
+10. IT Support Desk: Helpdesk Ticketing System: A PHP 8 + htmx rebuild of a legacy office ticketing tool that runs on the existing database. It has a live ticket queue with infinite scroll, messenger-style conversations with image attachments, real-time updates over Server-Sent Events, three access levels, an audit log, and a token-based design system on stock Bootstrap with dark mode. It installs on XAMPP from a USB stick with no build step.`,
 
   contact: `You can reach me by using the contact form at the bottom of the page, or check out my social links (GitHub, LinkedIn) down there as well. I'm always open to discussing new opportunities or collaborations!`
 };

@@ -268,6 +268,30 @@
         "/projects/09/Scan Sites.png",
       ],
     },
+    {
+      id: "10",
+      name: "IT Support Desk: Helpdesk Ticketing System",
+      tags: ["WEB", "HELPDESK", "REAL-TIME"],
+      description:
+        "I rebuilt the office's old <strong>PHP ticketing tool</strong> as a proper <strong>MVC web app</strong> and designed it to drop onto the <strong>existing production database</strong> without dropping or renaming a single table. Employees file tickets with screenshots, and the IT team works them from a <strong>live queue</strong> with search, filters, sorting, and <strong>infinite scroll</strong> that I stress-tested with <strong>8,000 seeded tickets</strong>. Every ticket opens as a <strong>messenger-style conversation</strong> with image attachments, and new messages, status changes, and technician assignments appear on the other person's screen in about a second through <strong>Server-Sent Events</strong> and <strong>htmx</strong> out-of-band swaps. It has <strong>three access levels</strong> (Super Admin, Admin, Employee), a <strong>User:Pass directory</strong> with account management, <strong>CSRF protection</strong> on every POST, and a read-only <strong>audit log</strong> of who changed what. My boss wanted to keep <strong>stock Bootstrap</strong> class names, so I wrote a <strong>token-based design system</strong> on top of it that looks like shadcn, with a proper <strong>dark mode</strong>. The tricky part was making it safe to roll out: it runs on a plain <strong>XAMPP</strong> server with <strong>no Composer, npm, or build step</strong>, installs from a USB stick through a one-click <strong>setup page</strong> that only adds what's missing, and the old legacy URLs redirect to the new pages.",
+      status: "ONLINE",
+      stack: [
+        "PHP 8",
+        "MariaDB",
+        "htmx",
+        "Server-Sent Events",
+        "Bootstrap 5",
+        "Apache (XAMPP)",
+      ],
+      images: [
+        "/projects/10/01-queue-light.webp",
+        "/projects/10/02-queue-dark.webp",
+        "/projects/10/03-ticket-chat.webp",
+        "/projects/10/04-directory.webp",
+        "/projects/10/05-logs.webp",
+        "/projects/10/06-users.webp",
+      ],
+    },
   ]
 
   let openProjectId = $state<string | null>(null)

@@ -62,3 +62,7 @@ Bespoke client workflow automation mobile app to scan barcodes, record videos, a
 ### 9. AutoPassport Extension
 A Chrome Extension to automate the tedious process of filling out Philippine DFA passport application forms and monitoring appointment slots. Uses Mistral AI to parse and correct messy template text into structured JSON. Includes a Scan Sites system to cycle through DFA locations and notify users of available slots.
 - **Stack:** React, TypeScript, Vite, TailwindCSS, Chrome Extension API, Mistral AI API, Content Scripts
+
+### 10. IT Support Desk
+A helpdesk ticketing system that replaces a legacy PHP ticketing tool on the same production database. Features a live ticket queue with infinite scroll, messenger-style conversations with image attachments, real-time updates over Server-Sent Events and htmx, three access levels, a User:Pass directory, an audit log, and a token-based design system on stock Bootstrap with dark mode. Installs on XAMPP from a USB stick with no build step.
+- **Stack:** PHP 8, MariaDB, htmx, Server-Sent Events, Bootstrap 5, Apache (XAMPP)
