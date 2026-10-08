@@ -56,7 +56,7 @@ A streetwear e-commerce platform with customer support AI chatbots and interacti
 - **Repository:** [BYD-Clothing-E-Commerce on GitHub](https://github.com/BootlegYouki/BYD-Clothing-E-Commerce)
 
 ### 8. Marigold Video Scanner
-Bespoke client workflow automation mobile app to scan barcodes, record videos, and stamp metadata in real-time.
+A custom client workflow mobile app that scans barcodes, records videos, and stamps metadata in real time.
 - **Stack:** React Native, Expo, Kotlin (native Android vision modification), Google Drive API
 
 ### 9. AutoPassport Extension

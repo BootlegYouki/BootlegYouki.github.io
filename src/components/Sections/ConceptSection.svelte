@@ -188,8 +188,8 @@
             Everything starts with a <span class="text-primary font-bold"
               >bottleneck</span
             >. Just shoot me a message and tell me what's
-            <span class="text-primary font-bold">slowing you down</span> or costing you money. Don't worry about
-            the technical details yet—just explain the
+            <span class="text-primary font-bold">slowing you down</span> or costing you money. You don't need
+            the technical details yet. Just explain the
             <span class="text-primary font-bold">core issue</span> you want fixed.
           </p>
         </article>
@@ -218,14 +218,14 @@
           <p
             class="text-muted-foreground text-base lg:text-lg leading-relaxed font-mono"
           >
-            I don't just start blindly typing code. I actually take the time to <span class="text-primary font-bold"
-              >figure out the best approach</span
-            > for your specific situation. We'll look at the
+            Before writing any code, I <span class="text-primary font-bold"
+              >work out the best approach</span
+            > for your situation. We'll pick the
             <span class="text-primary font-bold">right tools for the job</span>
             and map out a
             <span class="text-primary font-bold"
-              >solid, cost-effective game plan</span
-            > that makes sense for you.
+              >cost-effective plan</span
+            > that fits your budget.
           </p>
         </article>
       </TuiContainer>

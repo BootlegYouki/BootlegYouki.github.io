@@ -269,13 +269,10 @@
 
               <p class="text-[clamp(14px,1.2vw,18px)] text-foreground font-bold leading-relaxed font-mono max-w-2xl">
                 <span class="block">
-                  I build <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">mobile</code> applications focused on clean, intuitive
+                  I build <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">web</code> & <code class="bg-muted px-1.5 py-0.5 border border-border/60 text-[clamp(12px,1.1vw,16px)] font-mono text-foreground font-extrabold">mobile</code> applications with a focus on clear
                 </span>
                 <span class="block">
-                  <span class="text-primary font-black border-b border-primary/40">UI/UX design</span> and seamless <span class="text-primary font-black border-b border-primary/40">AI integrations</span> to deliver
-                </span>
-                <span class="block">
-                  polished, user-first software solutions.
+                  <span class="text-primary font-black border-b border-primary/40">UI/UX design</span> and practical <span class="text-primary font-black border-b border-primary/40">AI integrations</span>.
                 </span>
               </p>
             </div>
@@ -319,10 +316,10 @@
         <div class="flex flex-col h-full justify-between transition-opacity {animationStage === 'expanded' ? 'duration-500 opacity-100 delay-300' : 'duration-150 opacity-0 delay-0 pointer-events-none'}">
             <div class="space-y-3 font-mono text-sm md:text-base leading-relaxed text-muted-foreground flex-1 overflow-y-auto scrollbar-tui pr-2 min-h-0">
               <p>
-                I'm a developer who genuinely enjoys the whole stack—from wiring up resilient backend services to obsessing over micro-animations on the frontend.
+                I work across the whole stack, from backend services to frontend micro-animations.
               </p>
               <p>
-                Whether crafting cross-platform mobile apps or hooking up AI agents, I build stuff that solves real problems and looks sharp doing it.
+                I build cross-platform mobile apps and AI agents that solve real problems and look good doing it.
               </p>
             </div>
 

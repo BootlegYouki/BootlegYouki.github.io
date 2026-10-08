@@ -224,7 +224,7 @@
         <p
           class="text-base md:text-lg text-foreground leading-relaxed font-mono max-w-lg"
         >
-          Got a cool idea, a fun project, or some annoying bottleneck you need fixed? Hit me up and let's build something awesome together.
+          Have a project idea or a bottleneck you need fixed? Send me a message and we can work out what to build.
         </p>
       </div>
     </div>
